@@ -1,0 +1,25 @@
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[user]
+	name = William Grant
+	email = willmgrant@gmail.com
+	site = https://github.com/yougotwill
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[merge]
+	tool = opendiff
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[commit]
+	template = ~/.stCommitMsg
+[diff]
+	tool = vimdiff
