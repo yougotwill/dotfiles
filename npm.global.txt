@@ -15,10 +15,6 @@ node-sass==@4.14.1
 npm==@6.14.5
 npm-check==@5.9.2
 npm-consider==@1.7.0
-react==
-react-dom==
-react-scripts==
-semistandard==@14.2.0
 sortifiler-cli==@0.2.0
 svgo==@1.3.2
 toggl-cli==@0.2.0
