@@ -23,7 +23,7 @@ Plug 'Lokaltog/vim-monotone'
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
-colorscheme monokai 
+colorscheme monokai
 
 let g:lightline = {
       \ 'active': {

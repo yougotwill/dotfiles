@@ -108,6 +108,7 @@ plugins=(zsh-autosuggestions fzf git nvm osx)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # User configuration
 
@@ -200,3 +201,4 @@ alias vimium-help='open ~/Documents/Vimium.md'
 alias sublproject='subl project.sublime-project'
 alias work='cd ~/_work'
 alias schoolworkbackup='rsync -arP --exclude 'dev' --exclude 'prep' /Volumes/WILL16GB/Documents SchoolWork'
+alias userchrome='vim ~/Library/Application\ Support/Firefox/Profiles/ijwtd4lv.default/chrome/userChrome.css'
