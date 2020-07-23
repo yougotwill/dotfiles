@@ -23,7 +23,6 @@ brew "cmake"
 brew "flac"
 brew "webp"
 brew "ffmpeg"
-brew "python"
 brew "cmus"
 brew "cmus-control", restart_service: true
 brew "ctags"
@@ -120,7 +119,6 @@ cask "maccy"
 cask "macsvg"
 cask "mark-text"
 cask "mixxx"
-cask "mono-mdk-for-visual-studio"
 cask "ngrok"
 cask "notable"
 cask "notion"
@@ -145,22 +143,21 @@ cask "steam"
 cask "sublime-text"
 cask "symboliclinker"
 cask "teamviewer"
+cask "tiled"
 cask "toggl"
 cask "tor-browser"
 cask "transmission"
 cask "tunnelbear"
 cask "typora"
 cask "vienna"
-cask "visual-studio"
 cask "visual-studio-code"
 cask "vlc"
 cask "wechat"
 cask "whatsapp"
-cask "yacreader"
-cask "zoomus"
 mas "AdBlock", id: 1402042596
 mas "CotEditor", id: 1024640650
 mas "Dark Reader for Safari", id: 1438243180
+mas "Flow", id: 1423210932
 mas "Furiganify!", id: 1151320968
 mas "Gapplin", id: 768053424
 mas "iMovie", id: 408981434

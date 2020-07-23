@@ -28,6 +28,7 @@ export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+export NVM_SYMLINK_CURRENT=true
 
 # pipenv
 export LC_ALL=en_US.UTF-8
@@ -135,6 +136,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # aliases
 # bluetooth
 alias bt='blueutil'
+alias btOn='blueutil -p 1'
+alias btOff='blueutil -p 0'
 
 # boilerplates
 alias boil-js="echo 'boiling...' && cp -a ~/Documents/SourceTree/js-boilerplate/. . && rm -Rf .git && rm src/assets/.keep && subl project.sublime-project"
@@ -202,3 +205,4 @@ alias sublproject='subl project.sublime-project'
 alias work='cd ~/_work'
 alias schoolworkbackup='rsync -arP --exclude 'dev' --exclude 'prep' /Volumes/WILL16GB/Documents SchoolWork'
 alias userchrome='vim ~/Library/Application\ Support/Firefox/Profiles/ijwtd4lv.default/chrome/userChrome.css'
+alias displayman='display_manager.py'
