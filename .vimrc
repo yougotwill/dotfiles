@@ -6,7 +6,8 @@ set tabstop=2 shiftwidth=2 expandtab " makes tabs 2 spaces
 set cursorline " highlights line with cursor on
 set termguicolors " terminal TrueColor support
 set mouse=a " allows mouse in all modes
-set noshowmode "hide mode status line for lightline
+set noshowmode " hide mode status line for lightline
+set ve+=onemore " puts cursor on empty space at EoL
 
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
@@ -55,20 +56,30 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " saves and restores code folds
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent! loadview
+" autocmd BufWinLeave * mkview
+" autocmd BufWinEnter * silent! loadview
 
-command! ConfigRefresh source $MYVIMRC
-command! ConfigEdit edit $MYVIMRC
+command! vimrc source $MYVIMRC
+command! vimrcLoad edit $MYVIMRC
 command! ColorsOn :colorscheme monokai
 command! ColorsOff :colorscheme monotone
 
+" shortcuts
+let mapleader = " "
+
 " pane navigation
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <leader>j <C-W>j
+map <leader>k <C-W>k
+map <leader>h <C-W>h
+map <leader>l <C-W>l
 
 " file nav
-map <C-p> :FZF<Cr>
-map <C-n> :CocCommand explorer<Cr>
+map <leader>q :Buffers<Cr>
+map <leader>p :Files<Cr>
+map <leader>e :CocCommand explorer<Cr>
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

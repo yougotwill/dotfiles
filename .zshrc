@@ -41,6 +41,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+# spicetify
+export SPICETIFY_INSTALL="/Users/neon/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -111,6 +115,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+eval "$(gh completion -s zsh)"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -145,7 +151,7 @@ alias boil-react="echo 'boiling...' && cp -a ~/Documents/SourceTree/react-starte
 
 # brew
 alias brewc='brew cask'
-alias brewoutdated='brew update && brew outdated && brew cask outdated --greedy && mas outdated'
+alias brewoutdated='brew update && brew outdated && brew outdated --cask --greedy && mas outdated'
 alias brewlist='brew list && brew cask list && mas list'
 alias brewdelete='brew rmtree'
 alias brews='brew services'
