@@ -59,8 +59,8 @@ inoremap <silent><expr> <Tab>
 " autocmd BufWinLeave * mkview
 " autocmd BufWinEnter * silent! loadview
 
-command! vimrc source $MYVIMRC
-command! vimrcLoad edit $MYVIMRC
+command! VimRCLoad source $MYVIMRC
+command! VimRC edit $MYVIMRC
 command! ColorsOn :colorscheme monokai
 command! ColorsOff :colorscheme monotone
 
