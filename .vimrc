@@ -19,6 +19,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'moll/vim-bbye'
 Plug 'sickill/vim-monokai'
 Plug 'Lokaltog/vim-monotone'
 Plug 'joshdick/onedark.vim'
@@ -74,9 +75,14 @@ map <leader>h <C-W>h
 map <leader>l <C-W>l
 
 " file nav
-map <leader>q :Buffers<Cr>
-map <leader>p :Files<Cr>
+map <leader>b :Buffers<Cr>
+map <leader>f :Files<Cr>
 map <leader>e :CocCommand explorer<Cr>
+
+" buffer control
+map <leader>q :Bdelete<Cr>
+map <leader>s :bprevious<Cr>
+map <leader>d :bnext<Cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
