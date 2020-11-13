@@ -8,6 +8,8 @@ set termguicolors " terminal TrueColor support
 set mouse=a " allows mouse in all modes
 set noshowmode " hide mode status line for lightline
 set ve+=onemore " puts cursor on empty space at EoL
+set ai " auto indentation
+set showtabline=2 " forces the tabline to always show
 
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
@@ -18,6 +20,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/vim-gitbranch'
 Plug 'moll/vim-bbye'
 Plug 'sickill/vim-monokai'
@@ -29,8 +32,17 @@ colorscheme monokai
 
 let g:lightline = {
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
       \ },
       \ 'component_function': {
       \   'gitbranch': 'gitbranch#name'
@@ -81,8 +93,8 @@ map <leader>e :CocCommand explorer<Cr>
 
 " buffer control
 map <leader>q :Bdelete<Cr>
-map <leader>s :bprevious<Cr>
-map <leader>d :bnext<Cr>
+map <leader>1 :bprevious<Cr>
+map <leader>0 :bnext<Cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
