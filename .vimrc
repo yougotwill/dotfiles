@@ -10,10 +10,12 @@ set noshowmode " hide mode status line for lightline
 set ve+=onemore " puts cursor on empty space at EoL
 set ai " auto indentation
 set showtabline=2 " forces the tabline to always show
+set splitright " vertical split goes to the right
 
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -25,12 +27,20 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'moll/vim-bbye'
 Plug 'sickill/vim-monokai'
 Plug 'Lokaltog/vim-monotone'
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 call plug#end()
 
+" dark theme
+set background=dark
 colorscheme monokai
 
+" light theme
+" set background=light
+" colorscheme one
+
+
 let g:lightline = {
+      \ 'colorscheme': 'default',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
@@ -48,6 +58,8 @@ let g:lightline = {
       \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
+let g:lightline#bufferline#clickable=1
+let g:lightline.component_raw = {'buffers': 1}
 
 let g:coc_global_extensions = [
       \'coc-explorer',
@@ -72,13 +84,19 @@ inoremap <silent><expr> <Tab>
 " autocmd BufWinLeave * mkview
 " autocmd BufWinEnter * silent! loadview
 
+" commands
 command! VimRCLoad source $MYVIMRC
 command! VimRC edit $MYVIMRC
+command! SessMake mksession! ~/.config/nvim/session.vim
+command! SessLoad source ~/.config/nvim/session.vim
 command! ColorsOn :colorscheme monokai
 command! ColorsOff :colorscheme monotone
 
 " shortcuts
 let mapleader = " "
+
+" window management
+map <leader>/ :vsp<Cr>
 
 " pane navigation
 map <leader>j <C-W>j
@@ -92,12 +110,15 @@ map <leader>f :Files<Cr>
 map <leader>e :CocCommand explorer<Cr>
 
 " buffer control
-map <leader>q :Bdelete<Cr>
-map <leader>1 :bprevious<Cr>
-map <leader>0 :bnext<Cr>
+map gq :Bdelete<Cr>
+map gp :bprevious<Cr>
+map gn :bnext<Cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" misc
+map <leader>s :mksession! ~/.config/nvim/session.vim<Cr>

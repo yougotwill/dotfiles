@@ -192,6 +192,7 @@ alias tmux-list='tmux list-session'
 
 # misc
 alias x='exit'
+alias vi='nvim'
 alias vim='nvim'
 alias vimf='vim $(fzf)'
 alias rm='rm -i'
