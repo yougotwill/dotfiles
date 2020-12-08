@@ -80,15 +80,12 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-" saves and restores code folds
-" autocmd BufWinLeave * mkview
-" autocmd BufWinEnter * silent! loadview
 
 " commands
 command! VimRCLoad source $MYVIMRC
 command! VimRC edit $MYVIMRC
-command! SessMake mksession! ~/.config/nvim/session.vim
-command! SessLoad source ~/.config/nvim/session.vim
+command! SessMake mksession! .session.vim
+command! SessLoad source .session.vim
 command! ColorsOn :colorscheme monokai
 command! ColorsOff :colorscheme monotone
 
@@ -121,4 +118,4 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " misc
-map <leader>s :mksession! ~/.config/nvim/session.vim<Cr>
+map <leader>s :mksession! .session.vim<Cr>
