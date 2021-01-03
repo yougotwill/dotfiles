@@ -105,6 +105,7 @@ map <leader>l <C-W>l
 map <leader>b :Buffers<Cr>
 map <leader>f :Files<Cr>
 map <leader>e :CocCommand explorer<Cr>
+map <leader>E :CocCommand explorer --focus --no-toggle<Cr>
 
 " buffer control
 map gq :Bdelete<Cr>
@@ -119,3 +120,4 @@ nmap <silent> gr <Plug>(coc-references)
 
 " misc
 map <leader>s :mksession! .session.vim<Cr>
+map <leader>t :enew<Cr>

@@ -24,6 +24,10 @@ export FZF_DEFAULT_COMMAND="fd"
 export FZF_CTRL_T_OPTS=""
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
+# java
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -49,7 +53,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="custom"
+ZSH_THEME="arrows"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,7 +113,7 @@ DISABLE_LS_COLORS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fzf git nvm osx)
+plugins=(zsh-autosuggestions fzf git nvm poetry osx)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
@@ -151,8 +155,8 @@ alias boil-react="echo 'boiling...' && cp -a ~/Documents/SourceTree/react-starte
 
 # brew
 alias brewc='brew cask'
-alias brewoutdated='brew update && brew outdated && brew outdated --cask --greedy && mas outdated'
-alias brewlist='brew list && brew cask list && mas list'
+alias brewoutdated='brew update && brew outdated && mas outdated'
+alias brewlist='brew list && mas list'
 alias brewdelete='brew rmtree'
 alias brews='brew services'
 
@@ -177,8 +181,9 @@ alias config-backup='cd ~ && rm Brewfile && brew bundle dump && rm requirements.
 
 # file navigation
 alias ls='exa -lF --time-style=long-iso'
-alias ll='exa -F'
 alias la='ls -a'
+alias lsg='ls --grid'
+alias lsga='ls -a --grid'
 
 # folder navigation
 alias desk='cd ~/Desktop'
@@ -191,6 +196,7 @@ alias tmux-attach='tmux attach-session -t'
 alias tmux-list='tmux list-session'
 
 # misc
+alias cl='clear'
 alias x='exit'
 alias vi='nvim'
 alias vim='nvim'
@@ -213,3 +219,7 @@ alias work='cd ~/_work'
 alias schoolworkbackup='rsync -arP --exclude 'dev' --exclude 'prep' /Volumes/WILL16GB/Documents SchoolWork'
 alias userchrome='vim ~/Library/Application\ Support/Firefox/Profiles/ijwtd4lv.default/chrome/userChrome.css'
 alias displayman='display_manager.py'
+alias genr='generact --root ~/Documents/SourceTree/react-starter/src/components'
+alias spd='brews start spotifyd'
+alias spdq='brews stop spotifyd'
+
