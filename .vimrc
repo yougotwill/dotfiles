@@ -15,7 +15,6 @@ set splitright " vertical split goes to the right
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -96,21 +95,21 @@ let mapleader = " "
 map <leader>/ :vsp<Cr>
 
 " pane navigation
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>h <C-W>h
-map <leader>l <C-W>l
+map <leader>wj <C-W>j
+map <leader>wk <C-W>k
+map <leader>wh <C-W>h
+map <leader>wl <C-W>l
 
 " file nav
 map <leader>b :Buffers<Cr>
 map <leader>f :Files<Cr>
 map <leader>e :CocCommand explorer<Cr>
 map <leader>E :CocCommand explorer --focus --no-toggle<Cr>
-
+map <Leader>r :CocList outline<Cr> 
 " buffer control
-map gq :Bdelete<Cr>
-map gp :bprevious<Cr>
-map gn :bnext<Cr>
+map bq :Bdelete<Cr>
+map bp :bprevious<Cr>
+map bn :bnext<Cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

@@ -19,6 +19,14 @@ export EDITOR='nvim'
 # reactjs
 export BROWSER=none
 
+# dotnet
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+# export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+# export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
+
+#flutter
+export PATH="/Users/neon/dev/flutter/bin:$PATH"
+
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
 export FZF_CTRL_T_OPTS=""
@@ -28,22 +36,17 @@ export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-export NVM_SYMLINK_CURRENT=true
+# pnpm
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # pipenv
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
+# ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
 export SPICETIFY_INSTALL="/Users/neon/spicetify-cli"
@@ -105,6 +108,10 @@ DISABLE_LS_COLORS="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+# Uncomment the following line if you want to ignore all duplicate commands in
+# the history list.
+HIST_IGNORE_ALL_DUPS="true"
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -113,10 +120,11 @@ DISABLE_LS_COLORS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions fzf git nvm poetry osx)
+plugins=(zsh-autosuggestions last-working-dir fzf git asdf zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
+source ~/.aliases
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(gh completion -s zsh)"
@@ -137,89 +145,10 @@ eval "$(gh completion -s zsh)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# aliases
-# bluetooth
-alias bt='blueutil'
-alias btOn='blueutil -p 1'
-alias btOff='blueutil -p 0'
-
-# boilerplates
-alias boil-js="echo 'boiling...' && cp -a ~/Documents/SourceTree/js-boilerplate/. . && rm -Rf .git && rm src/assets/.keep && subl project.sublime-project"
-alias boil-react="echo 'boiling...' && cp -a ~/Documents/SourceTree/react-starter/. . && rm -Rf .git && subl project.sublime-project"
-
-# brew
-alias brewc='brew cask'
-alias brewoutdated='brew update && brew outdated && mas outdated'
-alias brewlist='brew list && mas list'
-alias brewdelete='brew rmtree'
-alias brews='brew services'
-
-# cmus
-alias cmus='tmux new-session -A -D -s cmus cmus'
-alias cmus-control='brew services restart cmus-control'
-alias cmus-status='cmus-remote -Q'
-
-# configs
-alias rr="source ~/.zshrc"
-alias zshrc="${EDITOR} ~/.zshrc"
-alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
-alias vimrc="${EDITOR} ~/.vimrc"
-alias vimplugs="cd /Users/neon/.config/nvim/plugged"
-alias tmuxconf="${EDITOR} ~/.tmux.conf"
-alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
-
-# dotfiles backup
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='cd ~ && rm Brewfile && brew bundle dump && rm requirements.txt && pip freeze > requirements.txt && bkg backup'
-
-# file navigation
-alias ls='exa -lF --time-style=long-iso'
-alias la='ls -a'
-alias lsg='ls --grid'
-alias lsga='ls -a --grid'
-
-# folder navigation
-alias desk='cd ~/Desktop'
-alias down='cd ~/Downloads'
-alias prj='cd ~/Documents/SourceTree/'
-
-# tmux
-alias tmux-iterm='tmux -CC'
-alias tmux-attach='tmux attach-session -t'
-alias tmux-list='tmux list-session'
-
-# misc
-alias cl='clear'
-alias x='exit'
-alias vi='nvim'
-alias vim='nvim'
-alias vimf='vim $(fzf)'
-alias rm='rm -i'
-alias rmdir='rm -r'
-alias t='trash'
-alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
-alias gitdiff="git diff --name-only | uniq | xargs code"
-alias ydl='cd ~/Downloads && youtube-dl'
-alias ydl-audio='cd ~/Downloads && youtube-dl -x'
-alias yt='mpsyt'
-alias defb='defaultbrowser'
-alias diskfix='diskutil list && diskutil mount disk2s3' # hard drive fix when the FILES partition isn't loading
-alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
-alias neofetch='neofetch --config ~/.neofetch'
-alias vimium-help='open ~/Documents/Vimium.md'
-alias sublproject='subl project.sublime-project'
-alias work='cd ~/_work'
-alias schoolworkbackup='rsync -arP --exclude 'dev' --exclude 'prep' /Volumes/WILL16GB/Documents SchoolWork'
-alias userchrome='vim ~/Library/Application\ Support/Firefox/Profiles/ijwtd4lv.default/chrome/userChrome.css'
-alias displayman='display_manager.py'
-alias genr='generact --root ~/Documents/SourceTree/react-starter/src/components'
-alias spd='brews start spotifyd'
-alias spdq='brews stop spotifyd'
-
+#compdef toggl
+_toggl() {
+  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _TOGGL_COMPLETE=complete-zsh  toggl)
+}
+if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
+  compdef _toggl toggl
+fi
