@@ -24,22 +24,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/vim-gitbranch'
 Plug 'moll/vim-bbye'
-Plug 'sickill/vim-monokai'
-Plug 'Lokaltog/vim-monotone'
-Plug 'rakr/vim-one'
+" Plug 'sickill/vim-monokai'
+" Plug 'rakr/vim-one'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
-" dark theme
-set background=dark
-colorscheme monokai
-
-" light theme
-" set background=light
-" colorscheme one
-
+set t_Co=256
+colorscheme PaperColor
+" dark mode support
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+   set background=dark
+else
+  set background=light
+endif
 
 let g:lightline = {
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
@@ -66,6 +66,7 @@ let g:coc_global_extensions = [
       \'coc-json',
       \'coc-html',
       \'coc-css',
+      \'coc-tailwind-intellisense'
       \ ]
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -85,8 +86,6 @@ command! VimRCLoad source $MYVIMRC
 command! VimRC edit $MYVIMRC
 command! SessMake mksession! .session.vim
 command! SessLoad source .session.vim
-command! ColorsOn :colorscheme monokai
-command! ColorsOff :colorscheme monotone
 
 " shortcuts
 let mapleader = " "
