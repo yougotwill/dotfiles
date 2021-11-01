@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/neon/.oh-my-zsh"
+export ZSH="/Users/will/.oh-my-zsh"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH"
 
 # custom scripts
-export PATH="/Users/neon/bin/:$PATH"
+export PATH="/Users/will/bin/:$PATH"
 
 # for compilers
 export LDFLAGS="-L/usr/local/opt/readline/lib"
@@ -25,7 +25,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
 #flutter
-export PATH="/Users/neon/dev/flutter/bin:$PATH"
+export PATH="/Users/will/dev/flutter/bin:$PATH"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
@@ -49,7 +49,7 @@ export LANG=en_US.UTF-8
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
-export SPICETIFY_INSTALL="/Users/neon/spicetify-cli"
+export SPICETIFY_INSTALL="/Users/will/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -123,7 +123,7 @@ HIST_IGNORE_ALL_DUPS="true"
 plugins=(zsh-autosuggestions last-working-dir fzf git asdf zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.secrets # private tokens, aliases, etc.
+# source ~/.secrets # private tokens, aliases, etc.
 source ~/.aliases
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
