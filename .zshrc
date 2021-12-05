@@ -128,6 +128,8 @@ source ~/.aliases
 source ~/.aliases-work
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+source ~/.nnn/quitcd.bash_zsh
+
 eval "$(gh completion -s zsh)"
 
 # User configuration

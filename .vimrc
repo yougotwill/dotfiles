@@ -15,6 +15,7 @@ set splitright " vertical split goes to the right
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -140,3 +141,5 @@ nmap <leader>rn <Plug>(coc-rename)
 " misc
 map <leader>s :mksession! .session.vim<Cr>
 map <leader>t :enew<Cr>
+map <leader>z :Goyo x50%-25%<Cr>
+map <leader>Z :Goyo!<Cr>
