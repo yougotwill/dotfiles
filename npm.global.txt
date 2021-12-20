@@ -2,18 +2,12 @@
 # You can use # to comment a line manually.
 
 backup-global==@1.5.0
-create-next-app==@10.2.3
-create-react-app==@4.0.3
+create-next-app==@12.0.2
 degit==@2.8.4
-generact==@0.4.0
 neovim==@4.10.0
-pnpm==@6.6.2
-sb==@6.2.9
-svgo==@2.3.0
-yarn==@1.22.10
+svgo==@2.7.0
+yarn==@1.22.17
 
 
 # These are yarn packages under "[Yarn Global Packages]".
 [Yarn Global Packages]
-
-nodegyp==node-gyp@3.8.0
