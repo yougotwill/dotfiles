@@ -10,7 +10,7 @@ click-completion==0.5.2
 cloudscraper==1.2.58
 colorama==0.4.4
 cryptography==3.4.7
-Django==3.2.9
+Django==3.2.12
 idna==3.2
 inquirer==2.7.0
 iso8601==0.1.16
