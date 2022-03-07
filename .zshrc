@@ -120,7 +120,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions last-working-dir fzf git asdf zsh-interactive-cd npm yarn)
+plugins=(zsh-autosuggestions last-working-dir fzf git zsh-interactive-cd npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.secrets # private tokens, aliases, etc.
@@ -155,3 +155,5 @@ _toggl() {
 if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
   compdef _toggl toggl
 fi
+
+. /usr/local/opt/asdf/libexec/asdf.sh
