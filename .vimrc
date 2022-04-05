@@ -85,12 +85,8 @@ let mapleader = " "
 map <leader>\ :vsp<Cr>
 
 " pane navigation
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>h <C-W>h
-map <leader>l <C-W>l
 map <leader>q :close<Cr>
-
+map <leader>Q :qa!<Cr>
 " file nav
 map <leader>b :Buffers<Cr>
 map <leader>f :Files<Cr>
