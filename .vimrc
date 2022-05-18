@@ -73,8 +73,8 @@ let g:coc_global_extensions = [
 " commands
 command! VimRCLoad source $MYVIMRC
 command! VimRC edit $MYVIMRC
-command! SessMake mksession! .session.vim
-command! SessLoad source .session.vim
+command! SessMake mksession! ~/.session.vim
+command! SessLoad source  ~/.session.vim
 command! ThemeLight set background=light
 command! ThemeDark set background=dark
 
@@ -85,15 +85,14 @@ let mapleader = " "
 map <leader>\ :vsp<Cr>
 
 " pane navigation
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>h <C-W>h
-map <leader>l <C-W>l
-map <leader>q :close<Cr>
+map <leader>w :close<Cr>
+map <leader>q :qa!<Cr>
+
 
 " file nav
 map <leader>b :Buffers<Cr>
 map <leader>f :Files<Cr>
+map <leader>F :Ag<Cr>
 map <leader>e :CocCommand explorer<Cr>
 map <Leader>r :CocList outline<Cr> 
 
@@ -139,6 +138,6 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " misc
-map <leader>s :mksession! .session.vim<Cr>
+map <leader>s :SessMake<Cr>
 map <leader>t :enew<Cr>
 map <leader>z :Goyo x50%-25%<Cr>

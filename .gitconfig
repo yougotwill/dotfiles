@@ -16,16 +16,14 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [commit]
 	template = ~/.stCommitMsg
+[difftool]
+    prompt = false
 [diff]
-	tool = vimdiff
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [pull]
 	ff = only
 [init]
