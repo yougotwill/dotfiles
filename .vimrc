@@ -73,8 +73,8 @@ let g:coc_global_extensions = [
 " commands
 command! VimRCLoad source $MYVIMRC
 command! VimRC edit $MYVIMRC
-command! SessMake mksession! .session.vim
-command! SessLoad source .session.vim
+command! SessMake mksession! ~/.session.vim
+command! SessLoad source  ~/.session.vim
 command! ThemeLight set background=light
 command! ThemeDark set background=dark
 
@@ -85,11 +85,13 @@ let mapleader = " "
 map <leader>\ :vsp<Cr>
 
 " pane navigation
-map <leader>q :close<Cr>
-map <leader>Q :qa!<Cr>
+map <leader>w :close<Cr>
+map <leader>q :qa!<Cr>
+
 " file nav
 map <leader>b :Buffers<Cr>
 map <leader>f :Files<Cr>
+map <leader>F :Ag<Cr>
 map <leader>e :CocCommand explorer<Cr>
 map <Leader>r :CocList outline<Cr> 
 
@@ -110,14 +112,14 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
+inoremap <silent><expr><Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
 " Use <Tab> and <S-Tab> to navigate the completion list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -135,7 +137,7 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " misc
-map <leader>s :mksession! .session.vim<Cr>
+map <leader>s :SessMake<Cr>
 map <leader>t :enew<Cr>
 map <leader>z :Goyo x50%-25%<Cr>
 map <leader>Z :Goyo!<Cr>

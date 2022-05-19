@@ -14,9 +14,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [commit]
 	template = ~/.stCommitMsg
 [difftool]
