@@ -10,6 +10,9 @@ export PATH="/usr/local/sbin:$PATH"
 # custom scripts
 export PATH="/Users/neon/bin/:$PATH"
 
+#poetry
+export PATH="/Users/neon/.local/bin:$PATH"
+
 # for compilers
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
@@ -120,12 +123,14 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions last-working-dir fzf asdf zsh-interactive-cd npm yarn)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf asdf npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
 source ~/.aliases
 source ~/.aliases-work
+source ~/.functions
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.nnn/quitcd.bash_zsh

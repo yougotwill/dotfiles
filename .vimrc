@@ -30,8 +30,8 @@ call plug#end()
 set t_Co=256
 colorscheme PaperColor
 " dark mode support
-if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-   set background=dark
+if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
+  set background=dark
 else
   set background=light
 endif
