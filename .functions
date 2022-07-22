@@ -1,3 +1,3 @@
 webtorrentplayer () {
-  webtorrent download $1 --interactive-select --out ~/Downloads/_Torrents --iina --no-quit
+  webtorrent download $1 --interactive-select --out ~/Downloads/_Torrents --iina
 }
