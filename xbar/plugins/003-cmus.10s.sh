@@ -1,27 +1,25 @@
 #!/bin/bash
 
-# TODO make this work for spotify-tui
-
 # Edited by William Grant
 # FORMAT Strings https://linux.die.net/man/1/cmus
 #
 # Displays the current track being played by `cmus`, a console music player.
 # All thanks to the cmus-remote.
 #
+# originally written by Michael Chris Lopez (hello@michaelchris.space)
 # based on Spotify script by Jason Tokoph (jason@tokoph.net)
 #
 # Choose to launch cmus in iTerm2 (version 2.9.20150414+ only), Terminal or Kitty
 #
 # Metadata:
-# <bitbar.title>Cmus Now Playing</bitbar.title>
-# <bitbar.version>v1.0</bitbar.version>
-# <bitbar.author>Michael Chris Lopez</bitbar.author>
-# <bitbar.author.github>mcchrish</bitbar.author.github>
-# <bitbar.desc>Displays currently playing song from cmus. Control cmus in menubar.</bitbar.desc>
-# <bitbar.image>https://i.imgur.com/qeZCB0a.png</bitbar.image>
+# <xbar.title>Cmus Now Playing</xbar.title>
+# <xbar.version>v1.0</xbar.version>
+# <xbar.author>Michael Chris Lopez</xbar.author>
+# <xbar.author.github>mcchrish</xbar.author.github>
+# <xbar.desc>Displays currently playing song from cmus. Control cmus in menubar.</xbar.desc>
+# <xbar.image>https://i.imgur.com/qeZCB0a.png</xbar.image>
 
 export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
-
 
 if [ "$1" = 'launch-iterm' ]; then
   if [ "$(osascript -e 'application "iTerm" is running')" = "false" ]; then
@@ -62,7 +60,7 @@ if [ "$1" = 'launch-terminal' ]; then
   exit
 fi
 
-state=$(spotify-tui -C status | sed -n 1p | cut -d " " -f2)
+state=$(cmus-remote -C status | sed -n 1p | cut -d " " -f2)
 
 if [ "$state" = "" ]; then
   echo "♫ | color=gray"
@@ -137,18 +135,22 @@ follow=$(cmus-remote -C "format_print %{follow}")
 continue=$(cmus-remote -C "format_print %{continue}")
 
 if [ "$track" = "" ]; then
-  echo "${filename:0:20}...  $state_icon"
+  echo "${filename:0:40}...  $state_icon"
 else
-  echo "${track:0:20}...  $state_icon"
+  if ["${#track}" -ge 40]; then
+    echo "${track:0:40}... $state_icon"
+  else
+    echo "${track} $state_icon"
+  fi
 fi
-echo
+
 echo "---"
 
 case "$0" in
   *\ * )
    echo "Your script path | color=#ff0000"
    echo "($0) | color=#ff0000"
-   echo "has a space in it, which BitBar does not support. | color=#ff0000"
+   echo "has a space in it, which Xbar does not support. | color=#ff0000"
    echo "Play/Pause/Next/Previous buttons will not work. | color=#ff0000"
   ;;
 esac
@@ -169,11 +171,11 @@ else
 fi
 
 echo "---"
-echo "Track: $track | color=#333333 length=40"
-echo "Artist: $artist | color=#333333 length=40"
-echo "Album: $album | color=#333333 length=40"
-echo "File: $filename | color=#333333 length=40"
-echo "Progress: $position / $duration | color=#333333 length=40"
+echo "Track: $track | color=#333333 length=80"
+echo "Artist: $artist | color=#333333 length=80"
+echo "Album: $album | color=#333333 length=80"
+echo "File: $filename | color=#333333 length=80"
+echo "Progress: $position / $duration | color=#333333 length=80"
 
 echo "---"
 if [ "$shuffle" = "S" ]; then

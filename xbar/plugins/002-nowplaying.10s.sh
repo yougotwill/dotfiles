@@ -2,14 +2,14 @@
 
 # Edited by William Grant
 
-# <bitbar.title>Now playing</bitbar.title>
-# <bitbar.version>v1.1</bitbar.version>
-# <bitbar.author>Adam Kenyon</bitbar.author>
-# <bitbar.author.github>adampk90</bitbar.author.github>
-# <bitbar.desc>Shows and controls the music that is now playing. Currently supports Spotify, iTunes, and Vox.</bitbar.desc>
-# <bitbar.image>https://pbs.twimg.com/media/CbKmTS7VAAA84VS.png:small</bitbar.image>
-# <bitbar.dependencies></bitbar.dependencies>
-# <bitbar.abouturl></bitbar.abouturl>
+# <xbar.title>Now playing</xbar.title>
+# <xbar.version>v1.1</xbar.version>
+# <xbar.author>Adam Kenyon</xbar.author>
+# <xbar.author.github>adampk90</xbar.author.github>
+# <xbar.desc>Shows and controls the music that is now playing. Currently supports Spotify, iTunes, Vox.</xbar.desc>
+# <xbar.image>https://pbs.twimg.com/media/CbKmTS7VAAA84VS.png:small</xbar.image>
+# <xbar.dependencies></xbar.dependencies>
+# <xbar.abouturl></xbar.abouturl>
 
 # first, determine if there's an app that's playing or paused
 apps=(Music Spotify Vox)
@@ -143,8 +143,12 @@ else
   repeat_state=$(osascript -e "tell application \"$app\" to $repeat_state_query")
 
   if [ "$playing" != "" ]; then
-  echo "${track:0:20}... ▶" | awk -F '\ -' '{print $1}'
-  echo "---"
+    if [ "${#track}" -ge 40 ]; then
+       echo "${track:0:40}… ▶"
+    else
+      echo "${track} ▶"
+    fi
+    echo "---"
   fi
 
   if [ "$playing" != "" ]; then
