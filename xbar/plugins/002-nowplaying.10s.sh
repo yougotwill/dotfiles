@@ -79,7 +79,7 @@ fi
 # start outputting information to bitbar
 if [ "$playing" = "" ] && [ "$paused" = "" ]; then
   # nothing is even paused
-  echo "No music playing | color=gray"
+  echo "♫ | color=gray"
 else
   # something is playing or is paused
   track=""
@@ -164,10 +164,10 @@ else
 fi
 
 echo "---"
-echo "Track: $track | color=#333333 length=40"
-echo "Artist: $artist | color=#333333 length=40"
-echo "Album: $album | color=#333333 length=40"
-echo "Progress: $position / $duration | color=#333333 length=40"
+echo "Track: $track | color=#333333 length=80"
+echo "Artist: $artist | color=#333333 length=80"
+echo "Album: $album | color=#333333 length=80"
+echo "Progress: $position / $duration | color=#333333 length=80"
 echo "---"
 if [ "$shuffle_state" = "true" ]; then
   echo "Shuffle: On"
