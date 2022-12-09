@@ -1,7 +1,7 @@
 asgiref==3.4.1
 black==21.10b0
 blessed==1.18.1
-certifi==2021.5.30
+certifi==2022.12.7
 cffi==1.14.6
 chardet==4.0.0
 charset-normalizer==2.0.4
