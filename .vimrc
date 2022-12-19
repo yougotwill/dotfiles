@@ -1,6 +1,6 @@
 " Vim Config
 " By William Grant
-" 2022/10/20
+" 2022/10/31
 
 " Initialise plugins
 " Automatically executes `filetype plugin indent on` and `syntax enable`
@@ -23,11 +23,11 @@ set incsearch " shows results as you type
 set hlsearch " search matches are highlighted
 set smartcase "search cases intelligently
 
-set expandtab " use spaces instead of tabs
-
 " makes tabs 2 spaces
 set tabstop=2
 set shiftwidth=2
+
+set expandtab " use spaces instead of tabs
 
 set mouse=a " allows mouse in all modes
 set ai " auto indentation
@@ -76,18 +76,19 @@ map <leader><leader> :noh<cr>
 map <leader>e :Lexplore<cr>
 map <leader>p :Files<cr>
 map <leader>f :GFiles<cr>
-map <leader>a :Ag!<cr>
+map <leader>t :Ag!<cr>
 map <leader>b :Buffers<cr>
-map <leader>s /
-map <leader>S ?
 
 " Buffers
+" Save buffer
+map <leader>s :write<cr>
+
 " Close the current buffer
 map <leader>w :bd<cr>
 
 " Close all the buffers
 map <leader>q :wq<cr>
 
-map <leader>n :bnext<cr>
-map <leader>m :bprevious<cr>
+map <leader>k :bnext<cr>
+map <leader>j :bprevious<cr>
 
