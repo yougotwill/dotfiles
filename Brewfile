@@ -25,6 +25,7 @@ brew "openssl@3"
 brew "asdf"
 brew "asimov"
 brew "atomicparsley"
+brew "bat"
 brew "blueutil"
 brew "boost"
 brew "glib"
@@ -202,6 +203,7 @@ mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Dark Reader for Safari", id: 1438243180
 mas "Gapplin", id: 768053424
+mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
@@ -220,6 +222,7 @@ mas "Skip Tunes", id: 499695659
 mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641
 mas "stts", id: 1187772509
+mas "Toggl Track", id: 1291898086
 mas "Toothpicks", id: 998361254
 mas "UTM", id: 1538878817
 mas "WeChat", id: 836500024
