@@ -80,6 +80,7 @@ map <leader>e :Lexplore<cr>
 map <leader>p :Files<cr>
 map <leader>f :GFiles<cr>
 map <leader>t :Ag!<cr>
+map <leader>r :BTags<cr>
 map <leader>b :Buffers<cr>
 
 " Buffers
