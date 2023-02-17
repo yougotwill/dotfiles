@@ -6,6 +6,7 @@ export ZSH="/Users/neon/.oh-my-zsh"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # custom scripts
 export PATH="/Users/neon/bin/:$PATH"
@@ -27,8 +28,11 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 # export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
-#flutter
+# flutter
 export PATH="/Users/neon/dev/flutter/bin:$PATH"
+
+# go
+export PATH="/Users/neon/go/bin:$PATH"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
@@ -39,14 +43,16 @@ export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# pnpm
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
 # pipenv
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# pnpm
+export PNPM_HOME="/Users/neon/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

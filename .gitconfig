@@ -11,6 +11,10 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+[merge]
+	tool = meld 
+[mergetool "meld"]
+  cmd = /Applications/Meld.app/Contents/MacOS/Meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
@@ -19,9 +23,9 @@
 [difftool]
     prompt = false
 [diff]
-    tool = nvimdiff
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    tool = meld
+[difftool "meld"]
+    cmd = "/Applications/Meld.app/Contents/MacOS/Meld -a \"$LOCAL\" \"$REMOTE\""
 [pull]
 	ff = only
 [init]
