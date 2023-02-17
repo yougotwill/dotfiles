@@ -12,7 +12,7 @@ click-completion==0.5.2
 cloudscraper==1.2.66
 colorama==0.4.6
 cryptography==38.0.4
-Django==4.1.4
+Django==4.1.7
 greenlet==2.0.1
 h11==0.14.0
 httpcore==0.16.2
