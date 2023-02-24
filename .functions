@@ -1,9 +1,9 @@
 tx () {
-  tmux new -A -s "$1"
+  tmux new -A -s "$1" "$1"
 }
 
 txx () {
-  tmux new -A -s "$1" "$1"
+  tmux new -A -s "$1"
 }
 
 webtorrentplayer () {
