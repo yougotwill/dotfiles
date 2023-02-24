@@ -1,3 +1,7 @@
+tx () {
+  tmux new -A -s "$1" "$1"
+}
+
 webtorrentplayer () {
   webtorrent download $1 --interactive-select --out ~/Downloads/_Torrents --iina
 }
