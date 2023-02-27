@@ -1,6 +1,6 @@
 " Vim Config
 " By William Grant
-" 2023/02/17
+" 2023/02/27
 
 " Initialise plugins
 " Automatically executes `filetype plugin indent on` and `syntax enable`
@@ -96,3 +96,5 @@ map gq :wq<cr>
 map gn :bnext<cr>
 map gb :bprevious<cr>
 
+" Start vim in insert mode
+" autocmd BufRead,BufNewFile * start
