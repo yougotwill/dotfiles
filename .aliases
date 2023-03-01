@@ -3,6 +3,9 @@
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias aliases='${EDITOR} ~/.aliases'
+alias functions='${EDITOR} ~/.functions'
+
 # bluetooth
 alias bt='blueutil'
 alias btOn='blueutil -p 1'
@@ -12,6 +15,7 @@ alias btOff='blueutil -p 0'
 alias brewoutdated='brew update && brew outdated --greedy'
 alias brewdelete='brew rmtree'
 alias brews='brew services'
+alias brewupgrade='brew upgrade --cask --greedy && brew upgrade'
 
 # cmus
 alias cmux='tmux new-session -A -D -s cmus cmus'
@@ -41,9 +45,10 @@ alias lsg='ls --grid'
 alias lsga='ls -a --grid'
 
 # folder navigation
+alias appsupport='cd ~/Library/Application\ Support'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
-alias prj='cd ~/Documents/SourceTree/'
+alias prj='cd ~/work/projects/'
 
 # git
 alias g='git'
@@ -71,16 +76,20 @@ alias gs='git status'
 alias gsb='git status -sb'
 
 # tmux
+alias tmuxconf='${EDITOR} ~/.tmux.conf'
 alias tmux-iterm='tmux -CC'
-alias tmux-attach='tmux attach-session -t'
-alias tmux-list='tmux list-session'
 
-# misc
-alias cl='clear'
-alias x='exit'
+# vim
+alias vimrc='${EDITOR} ~/.vimrc'
+alias vimplugs='cd /Users/neon/.config/nvim/plugged'
 alias vi='nvim'
 alias vim='nvim'
-alias vimf='vim $(fzf)'
+alias vimf='nvim $(fzf)'
+
+# misc
+alias cat='bat'
+alias cl='clear'
+alias x='exit'
 alias rm='rm -i'
 alias rmdir='rm -r'
 alias t='trash'
@@ -88,7 +97,7 @@ alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displ
 alias gitdiff="git diff --name-only | uniq | xargs code"
 alias ydl='cd ~/Downloads && youtube-dl'
 alias ydl-audio='cd ~/Downloads && youtube-dl -x --embed-thumbnail'
-alias yt='mpsyt'
+alias yt='~/.asdf/installs/python/3.9.1/bin/yt'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias neofetch='neofetch --config ~/.neofetch'
@@ -98,4 +107,7 @@ alias displayman='display_manager.py'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias komga='java -jar ~/bin/komga.jar'
-
+alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
+alias yif='yarn install --frozen-lockfile'
+alias pd='pushd'
+alias qd='popd'

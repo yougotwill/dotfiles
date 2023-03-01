@@ -1,74 +1,67 @@
+" Vim Config
+" By William Grant
+" 2023/02/17
+
+" Initialise plugins
+" Automatically executes `filetype plugin indent on` and `syntax enable`
+call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf'
+Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'arzg/vim-colors-xcode'
+call plug#end()
+
 set title " terminal title
 set hidden " hides buffer when it is abandoned
 set number " shows line numbers
-set ignorecase " ignores case in search
-set tabstop=2 shiftwidth=2 expandtab " makes tabs 2 spaces
-set cursorline " highlights line with cursor on
-set termguicolors " terminal TrueColor support
+set laststatus=2 " always show the status line
+
+" Search
+set ignorecase " ignores case when searching
+set incsearch " shows results as you type
+set hlsearch " search matches are highlighted
+set smartcase "search cases intelligently
+
+set expandtab " use spaces instead of tabs
+
+" makes tabs 2 spaces
+set tabstop=2
+set shiftwidth=2
+
 set mouse=a " allows mouse in all modes
-set noshowmode " hide mode status line for lightline
-set ve+=onemore " puts cursor on empty space at EoL
 set ai " auto indentation
 set showtabline=2 " forces the tabline to always show
 set splitright " vertical split goes to the right
+set listchars=tab:▸\ ,eol:¬ " Visualise tabs and new lines
 
-call plug#begin('~/.config/nvim/plugged')
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
-Plug 'moll/vim-bbye'
-Plug 'NLKNguyen/papercolor-theme'
-call plug#end()
+" netrw
+let g:netrw_liststyle = 3 " directory liststyle
+let g:netrw_banner = 0 " hide banner
+let g:netrw_browse_split = 4 " open file in previous window
+let g:netrw_winsize = 30 " width of 30%
+let g:netrw_fastbrowse = 0 " closes netrw buffer if it's already open 
+" (slow performance)
+" let g:netrw_list_hide = netrw_gitignore#Hide() " .gitignore support
 
+" GUI
+set cursorline " highlights line with cursor on
+set termguicolors " terminal TrueColor support
 set t_Co=256
-colorscheme PaperColor
-" dark mode support
-if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-   set background=dark
+colorscheme xcodedarkhc
+
+" statusline
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " statusline with ruler set + git branch
+
+" Dark mode support
+if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
+set background=dark
+colorscheme xcodedarkhc
 else
-  set background=light
+set background=light
+colorscheme Papercolor
 endif
-
-let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveStatusline'
-      \ },
-      \ }
-let g:lightline#bufferline#clickable=1
-let g:lightline.component_raw = {'buffers': 1}
-
-let g:coc_global_extensions = [
-      \'coc-explorer',
-      \'coc-tsserver',
-      \'coc-json',
-      \'coc-html',
-      \'coc-css',
-      \'coc-tailwind-intellisense',
-      \'coc-prettier',
-      \'coc-svg',
-      \ ]
-
 
 " commands
 command! VimRCLoad source $MYVIMRC
@@ -78,66 +71,32 @@ command! SessLoad source  ~/.session.vim
 command! ThemeLight set background=light
 command! ThemeDark set background=dark
 
-" shortcuts
+" Shortcuts (leader is \ by default)
+
 let mapleader = " "
+map <leader><leader> :noh<cr>
 
-" window management
-map <leader>\ :vsp<Cr>
+" Navigation
+map <leader>e :Lexplore<cr>
+map <leader>p :Files<cr>
+map <leader>f :GFiles<cr>
+map <leader>t :Ag!<cr>
+map <leader>r :BTags<cr>
+map <leader>b :Buffers<cr>
 
-" pane navigation
-map <leader>w :close<Cr>
-map <leader>q :qa!<Cr>
+" Buffers
+" Save buffer
+map gs :write<cr>
 
+" Close the current buffer
+map gw :bd<cr>
 
-" file nav
-map <leader>b :Buffers<Cr>
-map <leader>f :Files<Cr>
-map <leader>F :Ag<Cr>
-map <leader>e :CocCommand explorer<Cr>
-map <Leader>r :CocList outline<Cr> 
+" Close all the buffers
+map gq :wq<cr>
 
-" buffer control
-map gq :Bdelete<Cr>
-map gp :bprevious<Cr>
-map gn :bnext<Cr>
+map gn :bnext<cr>
+map gb :bprevious<cr>
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" start vim in insert mode
+" autocmd BufRead,BufNewFile * start
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-" Use <Tab> and <S-Tab> to navigate the completion list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" misc
-map <leader>s :SessMake<Cr>
-map <leader>t :enew<Cr>
-map <leader>z :Goyo x50%-25%<Cr>

@@ -6,6 +6,8 @@ export ZSH="/Users/will/.oh-my-zsh"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 # custom scripts
 export PATH="/Users/will/bin/:$PATH"
@@ -24,7 +26,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 # export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
-#flutter
+# flutter
 export PATH="/Users/will/dev/flutter/bin:$PATH"
 
 # fzf
@@ -40,10 +42,15 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+export PNPM_HOME="/Users/will/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # pipenv
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# python
+export PYTHON_CONFIGURE_OPTS="--enable-framework" # cmus-osx
 
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
@@ -120,16 +127,19 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions last-working-dir fzf zsh-interactive-cd npm yarn)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf asdf npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.secrets # private tokens, aliases, etc.
 source ~/.aliases
 source ~/.aliases-work
+source ~/.functions
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.nnn/quitcd.bash_zsh
 
+eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 
 # User configuration
@@ -157,7 +167,3 @@ if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
 fi
 
 . /usr/local/opt/asdf/libexec/asdf.sh
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-
-export PNPM_HOME="/Users/will/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
