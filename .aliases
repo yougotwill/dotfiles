@@ -84,6 +84,7 @@ alias vimf='nvim $(fzf)'
 
 # misc
 alias cl='clear'
+alias duh='du -h -d 1'
 alias x='exit'
 alias rm='rm -i'
 alias rmdir='rm -r'
