@@ -69,7 +69,7 @@ alias gr='git remote'
 alias gra='git remote add'
 alias gs='git status'
 alias gsb='git status -sb'
-
+alias gt='git log --decorate --pretty=oneline'
 # tmux
 alias tmx='tmux new -s'
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
