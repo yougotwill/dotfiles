@@ -74,6 +74,7 @@ alias gr='git remote'
 alias gra='git remote add'
 alias gs='git status'
 alias gsb='git status -sb'
+alias gt='git log --decorate --pretty=oneline'
 
 # tmux
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
@@ -89,14 +90,15 @@ alias vimf='nvim $(fzf)'
 # misc
 alias cat='bat'
 alias cl='clear'
+alias duh='du -h -d 1'
 alias x='exit'
 alias rm='rm -i'
 alias rmdir='rm -r'
 alias t='trash'
 alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
 alias gitdiff="git diff --name-only | uniq | xargs code"
-alias ydl='cd ~/Downloads && youtube-dl'
-alias ydl-audio='cd ~/Downloads && youtube-dl -x --embed-thumbnail'
+alias ydl='cd ~/Downloads && yt-dlp'
+alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 alias yt='~/.asdf/installs/python/3.9.1/bin/yt'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'

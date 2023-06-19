@@ -38,16 +38,16 @@ export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# pnpm
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-export PNPM_HOME="/Users/will/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
 # pipenv
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# pnpm
+export PNPM_HOME="/Users/will/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # python
 export PYTHON_CONFIGURE_OPTS="--enable-framework" # cmus-osx
@@ -63,7 +63,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="arrows"
+ZSH_THEME="avit"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -165,5 +165,3 @@ _toggl() {
 if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
   compdef _toggl toggl
 fi
-
-. /usr/local/opt/asdf/libexec/asdf.sh

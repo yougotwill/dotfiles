@@ -1,6 +1,6 @@
 " Vim Config
 " By William Grant
-" 2023/02/17
+" 2023/02/27
 
 " Initialise plugins
 " Automatically executes `filetype plugin indent on` and `syntax enable`
@@ -24,11 +24,11 @@ set incsearch " shows results as you type
 set hlsearch " search matches are highlighted
 set smartcase "search cases intelligently
 
-set expandtab " use spaces instead of tabs
-
 " makes tabs 2 spaces
 set tabstop=2
 set shiftwidth=2
+
+set expandtab " use spaces instead of tabs
 
 set mouse=a " allows mouse in all modes
 set ai " auto indentation
@@ -72,7 +72,6 @@ command! ThemeLight set background=light
 command! ThemeDark set background=dark
 
 " Shortcuts (leader is \ by default)
-
 let mapleader = " "
 map <leader><leader> :noh<cr>
 
@@ -83,6 +82,9 @@ map <leader>f :GFiles<cr>
 map <leader>t :Ag!<cr>
 map <leader>r :BTags<cr>
 map <leader>b :Buffers<cr>
+
+map gs :SessMake<cr>
+map gS: SessLoad<cr>
 
 " Buffers
 " Save buffer
@@ -99,4 +101,3 @@ map gb :bprevious<cr>
 
 " start vim in insert mode
 " autocmd BufRead,BufNewFile * start
-
