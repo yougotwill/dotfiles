@@ -40,7 +40,7 @@ export FZF_CTRL_T_OPTS=""
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
 # java
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # pipenv

@@ -83,6 +83,9 @@ map <leader>t :Ag!<cr>
 map <leader>r :BTags<cr>
 map <leader>b :Buffers<cr>
 
+map gs :SessMake<cr>
+map gS: SessLoad<cr>
+
 " Buffers
 " Save buffer
 map gs :write<cr>

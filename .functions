@@ -1,3 +1,7 @@
+ios2usb () {
+  dd if="$1" of="$2" bs=1m status=progress
+}
+
 tx () {
   tmux new -A -s "$1" "$1"
 }
@@ -8,4 +12,8 @@ txx () {
 
 webtorrentplayer () {
   webtorrent download $1 --interactive-select --out ~/Downloads/_Torrents --iina
+}
+
+hl () {
+${@:2} | bat --paging=never -l $1
 }
