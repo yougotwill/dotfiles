@@ -5,19 +5,22 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Set Frontmost App as Default Browser
+# @raycast.title Set visible app as the default browser
 # @raycast.mode silent
-# Browser dev is developer version of Google Chrome
-# @raycast.argument1 { "type": "text", "placeholder": "Browser (chrome, dev, safari, ff, ffd)", "optional": true }
+# @raycast.argument1 { "type": "text", "placeholder": "Browser (brave, chrome, safari, ff, ffd)", "optional": true }
 
 # Optional parameters:
 # @raycast.packageName Browsing
-# @raycast.icon 🧭
+# @raycast.icon 🌐
 
 # Documentation:
-# @raycast.author Yohanes Bandung Bondowoso
-# @raycast.authorURL https://github.com/ybbond
-# @raycast.description Set Frontmost Web Browser as Default Browser.
+# @raycast.author William Grant
+# @raycast.authorURL https://github.com/yougotwill
+# @raycast.description Set visible app as the default browser
+
+# Acknowledgements
+# Original author: Yohanes Bandung Bondowoso
+# GitHub https://github.com/ybbond
 
 # raycastArgv is Raycast argument
 on run {raycastArgv}
@@ -38,10 +41,6 @@ if (raycastArgv is equal to "") then
     set browserName to "safari"
   else if (appName is equal to "Safari Technology Preview") then
     set browserName to "safaritechnologypreview"
-  # set Google chrome dev as default browser
-  # it need to put before Chrome
-  else if (appName contains "dev") then
-    set browserName to "dev"
   else if (appName contains "Chrome") then
     set browserName to "chrome"
   else if (appName is equal to "Chromium") then
@@ -55,18 +54,34 @@ else
   # appName is used for print log message
   set appName to raycastArgv
   
-  if (appName is equal to "ffd") then
+  if (appName is equal to "brave") then
+    set browserName to "browser"
+    set appName to "Brave"
+  else if (appName is equal to "safari") then
+    set browserName to "safari"
+    set appName to "Safari"
+  else if (appName is equal to "safaritechnologypreview") then
+    set browserName to "safaritechnologypreview"
+    set appName to "Safari Technology Preview"
+  else if (appName is equal to "chrome") then
+    set browserName to "chrome"
+    set appName to "Chrome"
+  else if (appName is equal to "chromium") then
+    set browserName to "chromium"
+    set appName to "Chromium"
+  else if (appName is equal to "ffd") then
     set browserName to "firefoxdeveloperedition"
     set appName to "Firefox Developer Edition"
   else if (appName is equal to "ff") then
-    set browsername to "firefox"
+    set browserName to "firefox"
     set appName to "Firefox"
-  else
+  else  
     set browserName to raycastArgv
   end if
+  
 end if  
 
-# display dialog ("Set defaut browser is " & raycastArgv & "!")
+# display dialog ("Set default browser to " & raycastArgv & "!")
 
 try
 	set commandResult to do shell script "defaultbrowser" & space & browserName & space & "2>/dev/null "
@@ -76,7 +91,7 @@ try
 	else if (commandResult contains "is already set as the default HTTP handler" or commandResult is equal to "") then
 		log appName & space & "already set as default browser"
 	else if (commandResult contains "is not available as an HTTP handler") then
-		log appName & space & "is not a web browser, or not handled yet :("
+		log appName & space & "(" & browserName & ")" & space & "is not a web browser, or not handled yet :("
 	end if
 on error errStr
 	set commandResult to errStr
@@ -86,7 +101,7 @@ on error errStr
 	else if (commandResult contains "is already set as the default HTTP handler" or commandResult is equal to "") then
 		log appName & space & "already set as default browser"
 	else if (commandResult contains "is not available as an HTTP handler") then
-		log appName & space & "is not a web browser, or not handled yet :("
+		log appName & space & "(" & browserName & ")" & space & "is not a web browser, or not handled yet :("
 	end if
 end try
 
@@ -104,4 +119,3 @@ try
 end try
 
 end run
-

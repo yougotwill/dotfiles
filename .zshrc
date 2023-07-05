@@ -129,7 +129,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf asdf npm yarn)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.secrets # private tokens, aliases, etc.
@@ -139,6 +139,8 @@ source ~/.functions
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+source ~/.asdf/asdf.sh
+source ~/.asdf/completions/asdf.bash
 source ~/.nnn/quitcd.bash_zsh
 
 eval "$(gh completion -s zsh)"
