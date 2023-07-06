@@ -141,7 +141,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source ~/.asdf/asdf.sh
 source ~/.asdf/completions/asdf.bash
-source ~/.nnn/quitcd.bash_zsh
 
 eval "$(gh completion -s zsh)"
 

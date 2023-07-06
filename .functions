@@ -15,5 +15,9 @@ webtorrentplayer () {
 }
 
 hl () {
-${@:2} | bat --paging=never -l $1
+  ${@:2} | bat --paging=never -l $1
+}
+
+write2File () {
+  ${@:2} > $1 
 }

@@ -200,19 +200,19 @@ cask "xld"
 cask "yacreader"
 mas "AdBlock", id: 1402042596
 mas "Bitwarden", id: 1352778147
+mas "Color Picker", id: 1545870783
+mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
 mas "Dark Reader for Safari", id: 1438243180
 mas "Gapplin", id: 768053424
+mas "Gifski", id: 1351639930
+mas "HEIC Converter", id: 1294126402
 mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
-mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Lynda.com", id: 985958984
-mas "Mindfulness Bell Menu Bar", id: 1144260305
 mas "Minim", id: 1406044470
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
 mas "Save to Pocket", id: 1477385213
@@ -223,10 +223,8 @@ mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641
 mas "stts", id: 1187772509
 mas "Toggl Track", id: 1291898086
-mas "Toothpicks", id: 998361254
 mas "UTM", id: 1538878817
 mas "WeChat", id: 836500024
-mas "XChat Azure", id: 447521961
 mas "Xcode", id: 497799835
 vscode "amatiasq.sort-imports"
 vscode "bcanzanella.openmatchingfiles"
