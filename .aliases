@@ -6,6 +6,9 @@
 alias aliases='${EDITOR} ~/.aliases'
 alias functions='${EDITOR} ~/.functions'
 
+# asdf
+alias asdfrc='${EDITOR} ~/.asdfrc'
+
 # bluetooth
 alias bt='blueutil'
 alias btOn='blueutil -p 1'
