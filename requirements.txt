@@ -4,7 +4,9 @@ Brotli==1.0.9
 certifi==2023.5.7
 charset-normalizer==3.1.0
 click==8.1.3
+distlib==0.3.6
 exceptiongroup==1.1.2
+filelock==3.12.2
 h11==0.14.0
 httpcore==0.17.2
 httpx==0.24.1
@@ -14,6 +16,7 @@ mypy-extensions==1.0.0
 packaging==23.1
 pathspec==0.11.1
 pip-review==1.3.0
+pipenv==2023.7.4
 platformdirs==3.8.0
 pycryptodomex==3.18.0
 pylast==5.2.0
@@ -21,8 +24,10 @@ pyperclip==1.8.2
 requests==2.31.0
 sniffio==1.3.0
 tomli==2.0.1
-typing-extensions==4.7.1
+typing_extensions==4.7.1
 urllib3==2.0.3
+virtualenv==20.23.1
+virtualenv-clone==0.5.7
 websockets==11.0.3
 yewtube==2.10.4
 youtube-search-python==1.6.6
