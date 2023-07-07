@@ -1,20 +1,15 @@
 tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
-tap "clangen/musikcube"
 tap "dteoh/devdocs"
-tap "dwarvesf/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "khanhas/tap"
 tap "mac-cleanup/mac-cleanup-py"
 tap "mcasper/formulae"
-tap "melonamin/formulae"
 tap "mongodb/brew"
-tap "srkomodo/tap"
 tap "thefox/brewery"
 tap "universal-ctags/universal-ctags"
 brew "libpng"
@@ -99,6 +94,7 @@ brew "trash"
 brew "wifi-password"
 brew "zsh"
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
+brew "mcasper/formulae/git-clean"
 brew "mongodb/brew/mongodb-community"
 brew "thefox/brewery/cmus-control"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
@@ -181,7 +177,6 @@ cask "spotifree"
 cask "spotify"
 cask "steam"
 cask "sublime-text"
-cask "sudofm"
 cask "symboliclinker"
 cask "telegram"
 cask "temurin8"
@@ -221,6 +216,7 @@ mas "Skip Tunes", id: 499695659
 mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641
 mas "stts", id: 1187772509
+mas "Tag Editor Lite", id: 984278082
 mas "Toggl Track", id: 1291898086
 mas "UTM", id: 1538878817
 mas "WeChat", id: 836500024
