@@ -34,6 +34,11 @@ export FZF_DEFAULT_COMMAND="fd"
 export FZF_CTRL_T_OPTS=""
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
+# go
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
 # java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -50,7 +55,6 @@ export PATH="$PNPM_HOME:$PATH"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # python
-export PYTHON_CONFIGURE_OPTS="--enable-framework" # cmus-osx
 
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
@@ -127,17 +131,17 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf asdf npm yarn)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.secrets # private tokens, aliases, etc.
 source ~/.aliases
 source ~/.aliases-work
 source ~/.functions
+source ~/.shortcuts
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source ~/.nnn/quitcd.bash_zsh
+source ~/.asdf/asdf.sh
+source ~/.asdf/completions/asdf.bash
 
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
@@ -158,10 +162,3 @@ eval "$(gh completion -s zsh)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-#compdef toggl
-_toggl() {
-  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _TOGGL_COMPLETE=complete-zsh  toggl)
-}
-if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
-  compdef _toggl toggl
-fi
