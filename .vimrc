@@ -22,7 +22,7 @@ set laststatus=2 " always show the status line
 set ignorecase " ignores case when searching
 set incsearch " shows results as you type
 set hlsearch " search matches are highlighted
-set smartcase "search cases intelligently
+set smartcase " search cases intelligently
 
 " makes tabs 2 spaces
 set tabstop=2

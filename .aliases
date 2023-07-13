@@ -41,6 +41,8 @@ alias ls='exa -lF --time-style=long-iso'
 alias la='ls -la'
 alias lsg='ls --grid'
 alias lsga='ls -a --grid'
+alias n='nnn'
+
 
 # folder navigation
 alias appsupport='cd ~/Library/Application\ Support'
@@ -70,9 +72,12 @@ alias gpo='git push origin'
 alias gpu='git push upstream'
 alias gr='git remote'
 alias gra='git remote add'
+alias grru='git remote rename origin upstream'
 alias gs='git status'
 alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
+
+
 # tmux
 alias tmx='tmux new -s'
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
@@ -110,4 +115,3 @@ alias pd='pushd'
 alias 'qd'='popd'
 alias py='python'
 alias cat='bat'
-alias n='nnn'

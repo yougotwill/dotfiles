@@ -31,13 +31,18 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # flutter
 export PATH="/Users/neon/dev/flutter/bin:$PATH"
 
-# go
-export PATH="/Users/neon/go/bin:$PATH"
-
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
 export FZF_CTRL_T_OPTS=""
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+
+# go
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# huff
+export PATH="$PATH:/Users/neon/.huff/bin"
 
 # java
 # export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -160,10 +165,4 @@ eval "$(gh completion -s zsh)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-#compdef toggl
-_toggl() {
-  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _TOGGL_COMPLETE=complete-zsh  toggl)
-}
-if [[ "$(basename -- ${(%):-%x})" != "_toggl" ]]; then
-  compdef _toggl toggl
-fi
+
