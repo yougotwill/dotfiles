@@ -1,13 +1,11 @@
 # This is a comment, this line will be ignored.
 # You can use # to comment a line manually.
 
-backup-global==@1.5.0
-create-next-app==@12.0.2
-degit==@2.8.4
-neovim==@4.10.0
-svgo==@2.7.0
-yarn==@1.22.17
+corepack==@0.19.0
+npm==@9.8.0
 
 
 # These are yarn packages under "[Yarn Global Packages]".
 [Yarn Global Packages]
+
+nodegyp==node-gyp@9.4.0
