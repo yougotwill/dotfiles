@@ -16,6 +16,7 @@ alias brewoutdated='brew update && brew outdated --greedy'
 alias brewdelete='brew rmtree'
 alias brews='brew services'
 alias brewupgrade='brew upgrade --cask --greedy && brew upgrade'
+alias brewcleanup='brew cleanup && brew autoremove'
 
 # cmus
 alias cmux='tmux new-session -A -D -s cmus cmus'
