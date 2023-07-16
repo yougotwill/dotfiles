@@ -25,7 +25,7 @@ alias cmus-play='cmus-remote -p'
 alias cmus-pause='cmus-remote -u'
 
 # configs
-alias rr="source ~/.zshrc"
+alias rr='source ~/.zshrc && source /Users/neon/.zshenv'
 alias zshrc="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
 alias vimrc="${EDITOR} ~/.vimrc"
