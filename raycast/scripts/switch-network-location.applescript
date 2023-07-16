@@ -28,7 +28,11 @@ if (raycastArgv is equal to "") then
   set location to automatic
 else if (raycastArgv is equal to "Automatic") then
   set location to automatic
+else if (raycastArgv is equal to "a") then
+  set location to automatic
 else if (raycastArgv is equal to "Home") then
+  set location to home
+else if (raycastArgv is equal to "h") then
   set location to home
 else
   set location to automatic
