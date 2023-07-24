@@ -148,6 +148,8 @@ source ~/.shortcuts
 source ~/.asdf/asdf.sh
 source ~/.asdf/completions/asdf.bash
 
+source ~/.colima/colima.zsh
+
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 
