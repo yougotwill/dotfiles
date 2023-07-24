@@ -11,6 +11,7 @@ Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'arzg/vim-colors-xcode'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 set title " terminal title
@@ -49,7 +50,7 @@ let g:netrw_fastbrowse = 0 " closes netrw buffer if it's already open
 set cursorline " highlights line with cursor on
 set termguicolors " terminal TrueColor support
 set t_Co=256
-colorscheme xcodedarkhc
+colorscheme codedark
 
 " statusline
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " statusline with ruler set + git branch
@@ -57,7 +58,7 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " status
 " Dark mode support
 if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
 set background=dark
-colorscheme xcodedarkhc
+colorscheme codedark
 else
 set background=light
 colorscheme Papercolor

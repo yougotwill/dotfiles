@@ -16,6 +16,10 @@ export PATH="/Users/will/bin/:$PATH"
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 
+# set locale and language environment
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 export EDITOR='nvim'
 
 # reactjs
@@ -43,10 +47,6 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# pipenv
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 # pnpm
 export PNPM_HOME="/Users/will/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -58,6 +58,8 @@ export PATH="$PNPM_HOME:$PATH"
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
 # python
+# for cmus-osx
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
@@ -98,16 +100,16 @@ ZSH_THEME="avit"
 # DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -134,7 +136,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.secrets # private tokens, aliases, etc.
@@ -152,16 +154,6 @@ eval "$(gh completion -s zsh)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
