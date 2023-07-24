@@ -150,6 +150,7 @@ source ~/.aliases-work
 source ~/.functions
 source ~/.asdf/asdf.sh
 source ~/.asdf/completions/asdf.bash
+source ~/.colima/colima.zsh
 
 eval "$(gh completion -s zsh)"
 
