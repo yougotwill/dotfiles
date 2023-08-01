@@ -5,8 +5,9 @@
 export ZSH="/Users/neon/.oh-my-zsh"
 
 # homebrew
-export PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
+export PATH="/usr/local/sbin:$PATH"
 
 # custom scripts
 export PATH="/Users/neon/bin/:$PATH"
