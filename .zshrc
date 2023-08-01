@@ -5,8 +5,9 @@
 export ZSH="/Users/will/.oh-my-zsh"
 
 # homebrew
-export PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 # custom scripts
