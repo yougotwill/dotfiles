@@ -44,7 +44,6 @@ alias ls='exa -lF --time-style=long-iso'
 alias la='ls -la'
 alias lsg='ls --grid'
 alias lsga='ls -a --grid'
-alias n='nnn'
 
 # folder navigation
 alias appsupport='cd ~/Library/Application\ Support'

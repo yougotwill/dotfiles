@@ -1,0 +1,15 @@
+tx () {
+  tmux new -A -s "$1" "$1"
+}
+
+txx () {
+  tmux new -A -s "$1"
+}
+
+hl () {
+  ${@:2} | bat --paging=never -l $1
+}
+
+lk () {
+  cd "$(walk "$@")"
+}
