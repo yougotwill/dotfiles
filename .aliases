@@ -43,8 +43,6 @@ alias ls='exa --color=never'
 alias la='ls -a'
 alias ll='ls -l --time-style=long-iso'
 alias lla='ll -a'
-alias n='nnn'
-
 
 # folder navigation
 alias appsupport='cd ~/Library/Application\ Support'
@@ -71,7 +69,9 @@ alias glo='git pull origin'
 alias glu='git pull upstream'
 alias gp='git push'
 alias gpo='git push origin'
+alias gpou='git push --set-upstream origin'
 alias gpu='git push upstream'
+alias gpuu='git push --set-upstream upstream'
 alias gr='git remote'
 alias grv='git remote -v'
 alias gra='git remote add'
