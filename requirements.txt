@@ -184,4 +184,4 @@ virtualenv-clone==0.5.7
 websockets==11.0.3
 yewtube==2.10.4
 youtube-search-python==1.6.6
-yt-dlp==2023.7.6
+yt-dlp==2023.9.24
