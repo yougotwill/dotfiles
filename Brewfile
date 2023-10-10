@@ -1,5 +1,6 @@
 tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
+tap "blacktop/tap"
 tap "dteoh/devdocs"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -15,6 +16,7 @@ tap "universal-ctags/universal-ctags"
 brew "act"
 brew "libpng"
 brew "xz"
+brew "openexr"
 brew "webp"
 brew "gettext"
 brew "openssl@3"
@@ -24,12 +26,11 @@ brew "atomicparsley"
 brew "bat"
 brew "blueutil"
 brew "glib"
-brew "openssl@1.1"
-brew "python@3.9"
-brew "tcl-tk"
 brew "cairo"
 brew "gcc"
+brew "openssl@1.1"
 brew "cava"
+brew "cffi"
 brew "cmake"
 brew "flac"
 brew "nettle"
@@ -47,7 +48,7 @@ brew "curl"
 brew "defaultbrowser"
 brew "docker"
 brew "docker-compose"
-brew "exa"
+brew "eza"
 brew "fd"
 brew "fzf"
 brew "gdb"
@@ -74,9 +75,11 @@ brew "node@14"
 brew "node@16"
 brew "openssh"
 brew "postgresql@15"
+brew "python@3.9"
 brew "ruby-build"
 brew "rust"
 brew "syncthing"
+brew "tcl-tk"
 brew "the_silver_searcher"
 brew "tig"
 brew "tmux"
@@ -84,6 +87,7 @@ brew "trash"
 brew "walk"
 brew "wifi-password"
 brew "zsh"
+brew "blacktop/tap/lporg"
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
 brew "mcasper/formulae/git-clean"
 brew "mongodb/brew/mongodb-community"
@@ -144,6 +148,7 @@ cask "kitty"
 cask "krita"
 cask "libreoffice"
 cask "logseq"
+cask "losslesscut"
 cask "lyricsx"
 cask "maccy"
 cask "marta"
@@ -191,28 +196,34 @@ cask "xbar"
 cask "xld"
 cask "yacreader"
 mas "AdBlock", id: 1402042596
+mas "Battery Indicator", id: 1206020918
 mas "Bitwarden", id: 1352778147
 mas "Color Picker", id: 1545870783
 mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
 mas "Dark Reader for Safari", id: 1438243180
+mas "Dato", id: 1470584107
 mas "Gapplin", id: 768053424
 mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
 mas "Hidden Bar", id: 1452453066
-mas "iMovie", id: 408981434
+mas "Iconology", id: 1463452867
 mas "Just Focus", id: 1142151959
 mas "LINE", id: 539883307
+mas "Lungo", id: 1263070803
 mas "Lynda.com", id: 985958984
 mas "Minim", id: 1406044470
+mas "Pages", id: 409201541
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
 mas "Save to Pocket", id: 1477385213
+mas "Shareful", id: 1522267256
 mas "Shazam", id: 897118787
 mas "Simple Comic", id: 1497435571
 mas "Skip Tunes", id: 499695659
 mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641
+mas "Speediness", id: 1596706466
 mas "stts", id: 1187772509
 mas "Tag Editor Lite", id: 984278082
 mas "Toggl Track", id: 1291898086

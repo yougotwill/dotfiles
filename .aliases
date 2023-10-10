@@ -39,7 +39,7 @@ alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh
 alias config-backup='cd ~ && rm Brewfile && brew bundle dump && rm requirements.txt && pip freeze > requirements.txt && bkg backup'
 
 # file navigation
-alias ls='exa --color=never'
+alias ls='eza --color=never'
 alias la='ls -a'
 alias ll='ls -l --time-style=long-iso'
 alias lla='ll -a'
