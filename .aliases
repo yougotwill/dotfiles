@@ -36,7 +36,7 @@ alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='cd ~ && rm Brewfile && brew bundle dump && rm requirements.txt && pip freeze > requirements.txt && bkg backup'
+alias config-backup='cd ~ && rm Brewfile && brew bundle dump --all && rm requirements.txt && pip freeze > requirements.txt && bkg backup'
 
 # file navigation
 alias ls='eza --color=never'
