@@ -1,14 +1,14 @@
 " Vim Config
 " By William Grant
-" 2023/02/27
+" 2024/01/20
 
 " Initialise plugins
 " Automatically executes `filetype plugin indent on` and `syntax enable`
 call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
-Plug 'https://github.com/junegunn/fzf.vim'
-Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'arzg/vim-colors-xcode'
 Plug 'tomasiser/vim-code-dark'
@@ -61,7 +61,7 @@ set background=dark
 colorscheme codedark
 else
 set background=light
-colorscheme Papercolor
+colorscheme PaperColor
 endif
 
 " commands
