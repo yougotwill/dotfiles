@@ -26,7 +26,7 @@ alias cmus-play='cmus-remote -p'
 alias cmus-pause='cmus-remote -u'
 
 # configs
-alias rr='source ~/.zshrc && source /Users/neon/.zshenv'
+alias rr='source ~/.zshrc && source /Users/will/.zshenv'
 alias zshrc="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
 alias vimrc="${EDITOR} ~/.vimrc"
@@ -55,6 +55,7 @@ alias prj='cd ~/work/projects/'
 alias g='git'
 alias ga='git add'
 alias gaa='git add -all'
+alias gb='git branch'
 alias gc='git commit'
 alias gc!='git commit -v --amend'
 alias gcl='git clean -i'
@@ -109,6 +110,7 @@ alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias neofetch='neofetch --config ~/.neofetch'
 alias sublproject='subl project.sublime-project'
+alias sides='cd ~/sides'
 alias work='cd ~/work'
 alias displayman='display_manager.py'
 alias spd='brews start spotifyd'
