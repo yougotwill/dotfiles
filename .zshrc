@@ -55,8 +55,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# tabtab source for packages
+# pipx
+export PATH="$PATH:/Users/will/.local/bin"
 
+# tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
@@ -171,4 +173,3 @@ eval "$(register-python-argcomplete pipx)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
