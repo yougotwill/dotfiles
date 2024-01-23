@@ -50,8 +50,13 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # pnpm
 export PNPM_HOME="/Users/will/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # tabtab source for packages
+
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
@@ -137,7 +142,12 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+plugins=(tmux zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+
+# Tmux on startup
+ZSH_TMUX_AUTOSTART="true"
+# Don't automatically connect to a previous session if it exists, you can attached instead
+ZSH_TMUX_AUTOCONNECT="false"
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.secrets # private tokens, aliases, etc.
@@ -160,3 +170,4 @@ eval "$(gh completion -s zsh)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+

@@ -1,12 +1,7 @@
 # This is a comment, this line will be ignored.
 # You can use # to comment a line manually.
 
-corepack==@0.19.0
-docsify-cli==@4.4.4
-docsify-katex==@1.4.3
-docsify-themeable==@0.9.0
-katex==@0.16.8
-marked==@4.3.0
+corepack==@0.24.1
 npm==@9.8.1
 
 
