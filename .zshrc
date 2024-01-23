@@ -163,6 +163,7 @@ source ~/.colima/colima.zsh
 
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
+eval "$(register-python-argcomplete pipx)"
 
 # User configuration
 
