@@ -58,7 +58,7 @@ export PNPM_HOME="/Users/neon/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # postgres
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
@@ -147,16 +147,18 @@ plugins=(tmux zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm ya
 # Tmux on startup
 ZSH_TMUX_AUTOSTART="true"
 
-source $ZSH/oh-my-zsh.sh
-source ~/.secrets # private tokens, aliases, etc.
-source ~/.aliases
-source ~/.aliases-work
-source ~/.functions
-source ~/.asdf/asdf.sh
-source ~/.asdf/completions/asdf.bash
-source ~/.colima/colima.zsh
+# check if files exists and then source
+[ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.alises-work ] && source ~/.aliases-work
+[ -f ~/.functions ] && source ~/.functions 
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+[ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(gh completion -s zsh)"
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
