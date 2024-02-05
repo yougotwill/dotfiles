@@ -60,7 +60,7 @@ export PATH="$PATH:/Users/will/.local/bin"
 
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # postgres
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
@@ -151,21 +151,22 @@ ZSH_TMUX_AUTOSTART="true"
 # Don't automatically connect to a previous session if it exists, you can attached instead
 ZSH_TMUX_AUTOCONNECT="false"
 
-source $ZSH/oh-my-zsh.sh
-# source ~/.secrets # private tokens, aliases, etc.
-source ~/.aliases
-source ~/.aliases-work
-source ~/.functions
-source ~/.shortcuts
+# check if file exists and then source
+[ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.aliases-work ] && source ~/.aliases-work
+[ -f ~/.functions ] && source ~/.functions
+[ -f ~/.shortcuts ] && source ~/.shortcuts
 
-source ~/.asdf/asdf.sh
-source ~/.asdf/completions/asdf.bash
-
-source ~/.colima/colima.zsh
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+[ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
+[ -f ~/.fzf.sh ] && source ~/.fzf.zsh
 
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 eval "$(register-python-argcomplete pipx)"
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
