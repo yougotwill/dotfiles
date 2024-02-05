@@ -55,7 +55,14 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # pnpm
 export PNPM_HOME="/Users/neon/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# pipx
+export PATH="$PATH:/Users/neon/.local/bin"
+
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh || true
@@ -146,6 +153,8 @@ plugins=(tmux zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm ya
 
 # Tmux on startup
 ZSH_TMUX_AUTOSTART="true"
+# Don't automatically connect to a previous session if it exists, you can attach instead
+ZSH_TMUX_AUTOCONNECT="false"
 
 # check if files exists and then source
 [ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
@@ -157,6 +166,7 @@ ZSH_TMUX_AUTOSTART="true"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(gh completion -s zsh)"
+eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
 
