@@ -5,10 +5,21 @@
 export ZSH="/Users/will/.oh-my-zsh"
 
 # homebrew
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/sbin:$PATH"
+    export PATH="/opt/homebrew/openssl@3/bin:$PATH"
+    export EDITOR=/opt/homebrew/bin/nano
+    alias oldbrew=/usr/local/bin/brew
+else
+    export PATH="/usr/local/bin:$PATH"
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+    export EDITOR=/usr/local/bin/nano
+fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 # custom scripts
 export PATH="/Users/will/bin/:$PATH"
@@ -144,12 +155,12 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 
 # Tmux on startup
-ZSH_TMUX_AUTOSTART="true"
+# ZSH_TMUX_AUTOSTART="true"
 # Don't automatically connect to a previous session if it exists, you can attached instead
-ZSH_TMUX_AUTOCONNECT="false"
+# ZSH_TMUX_AUTOCONNECT="false"
 
 # check if file exists and then source
 [ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
@@ -164,7 +175,7 @@ ZSH_TMUX_AUTOCONNECT="false"
 
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
-eval "$(register-python-argcomplete pipx)"
+# eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
 

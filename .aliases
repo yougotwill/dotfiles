@@ -89,6 +89,7 @@ alias tmux-iterm='tmux -CC'
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
 alias vimplugs='cd /Users/neon/.config/nvim/plugged'
+alias n='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vimf='nvim $(fzf)'
