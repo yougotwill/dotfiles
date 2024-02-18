@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/will/.oh-my-zsh"
 
@@ -25,8 +22,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export PATH="/Users/will/bin/:$PATH"
 
 # for compilers
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
+export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
 
 # set locale and language environment
 export LC_ALL=en_US.UTF-8
@@ -39,8 +36,8 @@ export BROWSER=none
 
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
-# export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
-# export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
+# export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+# export MSBuildSDKsPath="/opt/homebrew/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
 # flutter
 export PATH="/Users/will/dev/flutter/bin:$PATH"
@@ -56,7 +53,7 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # java
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # pnpm
@@ -74,7 +71,7 @@ export PATH="$PATH:/Users/will/.local/bin"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # postgres
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # python
 # for cmus-osx
@@ -180,8 +177,6 @@ eval "$(gh completion -s zsh)"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
