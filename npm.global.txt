@@ -2,7 +2,7 @@
 # You can use # to comment a line manually.
 
 corepack==@0.24.1
-npm==@9.8.1
+npm==@9.5.0
 
 
 # These are yarn packages under "[Yarn Global Packages]".
