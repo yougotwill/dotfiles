@@ -82,13 +82,13 @@ alias gt='git log --decorate --pretty=oneline'
 
 
 # tmux
-alias tmx='tmux new -s'
+alias tm='tmux'
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
-alias tmux-iterm='tmux -CC'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
 alias vimplugs='cd /Users/neon/.config/nvim/plugged'
+alias n='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vimf='nvim $(fzf)'
@@ -119,3 +119,5 @@ alias pd='pushd'
 alias 'qd'='popd'
 alias py='python'
 alias cat='bat'
+alias flirc='flirc_util'
+alias zel='zellij'

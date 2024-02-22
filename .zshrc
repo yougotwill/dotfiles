@@ -149,12 +149,12 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 
 # Tmux on startup
-ZSH_TMUX_AUTOSTART="true"
+# ZSH_TMUX_AUTOSTART="true"
 # Don't automatically connect to a previous session if it exists, you can attach instead
-ZSH_TMUX_AUTOCONNECT="false"
+# ZSH_TMUX_AUTOCONNECT="false"
 
 # check if files exists and then source
 [ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
@@ -166,7 +166,7 @@ ZSH_TMUX_AUTOCONNECT="false"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(gh completion -s zsh)"
-eval "$(register-python-argcomplete pipx)"
+# eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
 
