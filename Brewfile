@@ -144,6 +144,7 @@ cask "keycastr"
 cask "kitty"
 cask "kodi"
 cask "krita"
+cask "launchpad-manager"
 cask "libreoffice"
 cask "lofi"
 cask "logseq"
@@ -192,18 +193,21 @@ mas "Bitwarden", id: 1352778147
 mas "Color Picker", id: 1545870783
 mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
+mas "CrystalFetch", id: 6454431289
 mas "Dark Reader for Safari", id: 1438243180
 mas "Dato", id: 1470584107
 mas "Gapplin", id: 768053424
 mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
 mas "Hidden Bar", id: 1452453066
+mas "Ice Cubes", id: 6444915884
 mas "Iconology", id: 1463452867
 mas "Just Focus", id: 1142151959
 mas "Keka", id: 470158793
 mas "LINE", id: 539883307
 mas "LocalSend", id: 1661733229
 mas "Lynda.com", id: 985958984
+mas "Manabi Reader", id: 1247286380
 mas "Minim", id: 1406044470
 mas "Pages", id: 409201541
 mas "PiPifier", id: 1160374471

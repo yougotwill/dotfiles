@@ -5,9 +5,21 @@
 export ZSH="/Users/neon/.oh-my-zsh"
 
 # homebrew
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/sbin:$PATH"
+    export PATH="/opt/homebrew/openssl@3/bin:$PATH"
+    export EDITOR=/opt/homebrew/bin/nano
+    alias oldbrew=/usr/local/bin/brew
+else
+    export PATH="/usr/local/bin:$PATH"
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+    export EDITOR=/usr/local/bin/nano
+fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
-export PATH="/usr/local/sbin:$PATH"
 
 # custom scripts
 export PATH="/Users/neon/bin/:$PATH"
