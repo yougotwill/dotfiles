@@ -81,8 +81,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
-export SPICETIFY_INSTALL="/Users/will/spicetify-cli"
-export PATH="$SPICETIFY_INSTALL:$PATH"
+export PATH=$PATH:/Users/will/.spicetify
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

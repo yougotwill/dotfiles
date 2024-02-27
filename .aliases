@@ -83,8 +83,8 @@ alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 
 # tmux
+alias tm='tmux'
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
-alias tmux-iterm='tmux -CC'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
@@ -121,3 +121,4 @@ alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/D
 alias yif='yarn install --frozen-lockfile'
 alias pd='pushd'
 alias qd='popd'
+alias zel='zellij'
