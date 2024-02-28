@@ -90,7 +90,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
-export SPICETIFY_INSTALL="/Users/neon/spicetify-cli"
+export SPICETIFY_INSTALL="/Users/neon/.spicetify"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
