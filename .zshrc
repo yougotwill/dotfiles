@@ -77,9 +77,6 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # for cmus-osx
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
-# ruby
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
 # spicetify
 export SPICETIFY_INSTALL="/Users/will/.spicetify"
 export PATH="$SPICETIFY_INSTALL:$PATH"
