@@ -161,7 +161,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn)
 
 # Tmux on startup
 # ZSH_TMUX_AUTOSTART="true"
@@ -178,6 +178,7 @@ plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(gh completion -s zsh)"
+eval "$(flutter zsh-completion)"
 # eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
