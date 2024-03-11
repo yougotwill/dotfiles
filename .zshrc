@@ -171,7 +171,7 @@ plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 # check if files exists and then source
 [ -f ~/.secrets ] && source ~/.secrets # private tokens, aliases, etc.
 [ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.alises-work ] && source ~/.aliases-work
+[ -f ~/.aliases-work ] && source ~/.aliases-work
 [ -f ~/.functions ] && source ~/.functions 
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
