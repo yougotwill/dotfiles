@@ -40,7 +40,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export MSBuildSDKsPath="/opt/homebrew/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
 # flutter
-export PATH="/Users/will/dev/flutter/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
@@ -149,7 +149,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn asdf)
 
 # Tmux on startup
 # ZSH_TMUX_AUTOSTART="true"
@@ -167,8 +167,10 @@ plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir fzf npm yarn z)
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
 [ -f ~/.fzf.sh ] && source ~/.fzf.zsh
 
+# completions
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
+eval "$(flutter zsh-completion)"
 # eval "$(register-python-argcomplete pipx)"
 
 source $ZSH/oh-my-zsh.sh
