@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/neon/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # homebrew
 CPU=$(uname -p)
@@ -22,10 +22,10 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
 # custom scripts
-export PATH="/Users/neon/bin/:$PATH"
+export PATH="$HOME/bin/:$PATH"
 
 #poetry
-export PATH="/Users/neon/.local/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 
 # for compilers
 export LDFLAGS="-L/usr/local/opt/readline/lib"
@@ -46,7 +46,10 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
 # flutter
-export PATH="/Users/neon/dev/flutter/bin:$PATH"
+export PATH="$HOME/dev/flutter/bin:$PATH"
+
+# foundry
+export PATH="$HOME/.foundry/bin:$PATH"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
@@ -59,21 +62,20 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # huff
-export PATH="$PATH:/Users/neon/.huff/bin"
+export PATH="$PATH:$HOME/.huff/bin"
 
 # java
-# export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+source ~/.asdf/plugins/java/set-java-home.zsh
 
 # pnpm
-export PNPM_HOME="/Users/neon/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 # pipx
-export PATH="$PATH:/Users/neon/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -82,15 +84,11 @@ export PATH="$PATH:/Users/neon/.local/bin"
 # postgres
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
-# python
-# for cmus-osx
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
-export SPICETIFY_INSTALL="/Users/neon/.spicetify"
+export SPICETIFY_INSTALL="$HOME/.spicetify"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -163,6 +161,15 @@ HIST_IGNORE_ALL_DUPS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn)
 
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
 # Tmux on startup
 # ZSH_TMUX_AUTOSTART="true"
 # Don't automatically connect to a previous session if it exists, you can attach instead
@@ -179,14 +186,4 @@ plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn)
 
 eval "$(gh completion -s zsh)"
 eval "$(flutter zsh-completion)"
-# eval "$(register-python-argcomplete pipx)"
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
