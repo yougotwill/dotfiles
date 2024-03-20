@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/will/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # homebrew
 CPU=$(uname -p)
@@ -19,7 +19,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
 # custom scripts
-export PATH="/Users/will/bin/:$PATH"
+export PATH="$HOME/bin/:$PATH"
 
 # for compilers
 export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
@@ -42,6 +42,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # flutter
 export PATH="$HOME/flutter/bin:$PATH"
 
+# foundry
+export PATH="$HOME/.foundry/bin:$PATH"
+
 # fzf
 export FZF_DEFAULT_COMMAND="fd"
 export FZF_CTRL_T_OPTS=""
@@ -52,19 +55,22 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
+# huff
+export PATH="$PATH:$HOME/.huff/bin"
+
 # java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f $HOME/.asdf/plugins/java/set-java-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # pnpm
-export PNPM_HOME="/Users/will/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 # pipx
-export PATH="$PATH:/Users/will/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -78,7 +84,7 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 # spicetify
-export SPICETIFY_INSTALL="/Users/will/.spicetify"
+export SPICETIFY_INSTALL="$HOME/.spicetify"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -151,6 +157,13 @@ HIST_IGNORE_ALL_DUPS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn asdf)
 
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
 # Tmux on startup
 # ZSH_TMUX_AUTOSTART="true"
 # Don't automatically connect to a previous session if it exists, you can attached instead
@@ -171,11 +184,4 @@ plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn 
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 eval "$(flutter zsh-completion)"
-# eval "$(register-python-argcomplete pipx)"
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"

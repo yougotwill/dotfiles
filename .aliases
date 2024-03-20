@@ -44,6 +44,7 @@ alias ls='eza -lF --time-style=long-iso'
 alias la='ls -la'
 alias lsg='ls --grid'
 alias lsga='ls -a --grid'
+alias lki='lk --icons'
 
 # folder navigation
 alias appsupport='cd ~/Library/Application\ Support'
@@ -81,6 +82,7 @@ alias grru='git remote rename origin upstream'
 alias gs='git status'
 alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
+alias lg='lazygit'
 
 # tmux
 alias tm='tmux'
@@ -106,7 +108,6 @@ alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displ
 alias gitdiff="git diff --name-only | uniq | xargs code"
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
-alias yt='~/.asdf/installs/python/3.9.1/bin/yt'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias neofetch='neofetch --config ~/.neofetch'
@@ -122,4 +123,3 @@ alias yif='yarn install --frozen-lockfile'
 alias pd='pushd'
 alias qd='popd'
 alias zel='zellij'
-alias lki='lk --icons'
