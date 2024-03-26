@@ -80,6 +80,7 @@ alias grru='git remote rename origin upstream'
 alias gs='git status'
 alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
+alias lg='lazygit'
 
 
 # tmux

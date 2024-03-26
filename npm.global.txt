@@ -2,7 +2,7 @@
 # You can use # to comment a line manually.
 
 backup-global==@1.5.0
-corepack==@0.24.1
+corepack==@0.26.0
 npm==@9.9.2
 
 
