@@ -1547,6 +1547,418 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "left_command + right_command + Escape is launchpad",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "apple_vendor_keyboard_key_code": "launchpad"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + left_shift + right is mouse right (fast)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": 1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + left_shift + left is mouse left (fast)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": -1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + left_shift + down is mouse down (fast)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": 1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + left_shift + up is mouse up (fast)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": -1536
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + right is mouse right (slow)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": 1024
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + left is mouse left (slow)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "x": -1024
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + down is mouse down (slow)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": 1024
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + up is mouse up (slow)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "y": -1024
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                      "description": "page up is mouse scroll up",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "page_up",
+                                  "modifiers": {
+                                      "optional": [
+                                          "any"
+                                      ]
+                                  }
+                              },
+                              "to": [
+                                  {
+                                      "mouse_key": {
+                                          "vertical_wheel": -32
+                                      }
+                                  }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                    },
+                    {
+                      "description": "page down is mouse scroll down",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "page_down",
+                                  "modifiers": {
+                                      "optional": [
+                                          "any"
+                                      ]
+                                  }
+                              },
+                              "to": [
+                                  {
+                                      "mouse_key": {
+                                          "vertical_wheel": 32
+                                      }
+                                  }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                    },
+                    {
+                      "description": "home is mouse scroll left",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "home",
+                                  "modifiers": {
+                                      "optional": [
+                                          "any"
+                                      ]
+                                  }
+                              },
+                              "to": [
+                                  {
+                                      "mouse_key": {
+                                          "horizontal_wheel": 32
+                                      }
+                                  }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                    },
+                    {
+                      "description": "end is mouse scroll right",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "end",
+                                  "modifiers": {
+                                      "optional": [
+                                          "any"
+                                      ]
+                                  }
+                              },
+                              "to": [
+                                  {
+                                      "mouse_key": {
+                                          "horizontal_wheel": -32
+                                      }
+                                  }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                    },
+                    {
+                        "description": "left_command + right_command + period is right click",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + comma is left click",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button1"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + F3 is mission_control",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f3",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "apple_vendor_keyboard_key_code": "mission_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1636,7 +2048,18 @@
                     "mouse_flip_y": false,
                     "mouse_swap_wheels": false,
                     "mouse_swap_xy": false,
-                    "simple_modifications": [],
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        }
+                    ],
                     "treat_as_built_in_keyboard": false
                 },
                 {
@@ -1652,6 +2075,28 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 6,
+                        "vendor_id": 8352
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
@@ -1789,18 +2234,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "non_us_backslash"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_control"
-                        }
-                    ]
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "country_code": 0,
@@ -1922,6 +2356,28 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 6,
+                        "vendor_id": 8352
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
