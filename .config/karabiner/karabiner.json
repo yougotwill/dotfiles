@@ -1593,7 +1593,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "x": 1536
+                                            "x": 2000
                                         }
                                     }
                                 ],
@@ -1621,7 +1621,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "x": -1536
+                                            "x": -2000
                                         }
                                     }
                                 ],
@@ -1649,7 +1649,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "y": 1536
+                                            "y": 2000
                                         }
                                     }
                                 ],
@@ -1677,7 +1677,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "y": -1536
+                                            "y": -2000
                                         }
                                     }
                                 ],
@@ -1794,96 +1794,96 @@
                         ]
                     },
                     {
-                      "description": "page up is mouse scroll up",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "page_up",
-                                  "modifiers": {
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "mouse_key": {
-                                          "vertical_wheel": -32
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
+                        "description": "page up is mouse scroll up",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "page_up",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "vertical_wheel": -32
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
-                      "description": "page down is mouse scroll down",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "page_down",
-                                  "modifiers": {
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "mouse_key": {
-                                          "vertical_wheel": 32
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
+                        "description": "page down is mouse scroll down",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "page_down",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "vertical_wheel": 32
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
-                      "description": "home is mouse scroll left",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "home",
-                                  "modifiers": {
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "mouse_key": {
-                                          "horizontal_wheel": 32
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
+                        "description": "home is mouse scroll left",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "horizontal_wheel": 32
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
-                      "description": "end is mouse scroll right",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "end",
-                                  "modifiers": {
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "mouse_key": {
-                                          "horizontal_wheel": -32
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
+                        "description": "end is mouse scroll right",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "end",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "horizontal_wheel": -32
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
                         "description": "left_command + right_command + period is right click",
