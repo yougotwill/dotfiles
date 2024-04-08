@@ -155,7 +155,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm yarn asdf)
+plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm pdm)
 
 source $ZSH/oh-my-zsh.sh
 

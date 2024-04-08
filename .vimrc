@@ -84,21 +84,21 @@ map <leader>t :Ag!<cr>
 map <leader>r :BTags<cr>
 map <leader>b :Buffers<cr>
 
+" Session
 map gs :SessMake<cr>
 map gS: SessLoad<cr>
 
 " Buffers
-" Save buffer
-map gs :write<cr>
-
-" Close the current buffer
-map gw :bd<cr>
-
-" Close all the buffers
-map gq :wq<cr>
-
 map gn :bnext<cr>
 map gb :bprevious<cr>
+map gs :write<cr>
+" Close the current buffer
+map gw :bdelete<cr>
+" Close all the buffers
+map gq :q<cr>
+
+" Windows
+map <leader><Bslash> :vsp<cr>
 
 " start vim in insert mode
 " autocmd BufRead,BufNewFile * start
