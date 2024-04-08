@@ -144,6 +144,7 @@ cask "steam"
 cask "sublime-text"
 cask "suspicious-package"
 cask "symboliclinker"
+cask "tailscale"
 cask "telegram"
 cask "thunderbird"
 cask "tor-browser"
@@ -156,14 +157,12 @@ cask "xbar"
 cask "xld"
 cask "yubico-authenticator"
 cask "yubico-yubikey-manager"
-mas "Bitwarden", id: 1352778147
 mas "Color Picker", id: 1545870783
 mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Dato", id: 1470584107
 mas "Gapplin", id: 768053424
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
 mas "Hidden Bar", id: 1452453066
