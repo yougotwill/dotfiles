@@ -185,7 +185,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.aliases-work ] && source ~/.aliases-work
 [ -f ~/.functions ] && source ~/.functions 
-[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
