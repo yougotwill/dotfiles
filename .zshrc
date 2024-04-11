@@ -24,8 +24,6 @@ export HOMEBREW_NO_ANALYTICS=1
 # custom scripts
 export PATH="$HOME/bin/:$PATH"
 
-#poetry
-export PATH="~/.local/bin:$PATH"
 
 # for compilers
 export LDFLAGS="-L/usr/local/opt/readline/lib"
@@ -37,8 +35,13 @@ export LANG=en_US.UTF-8
 
 export EDITOR='nvim'
 
-# reactjs
-export BROWSER=none
+# asdf
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
 
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
@@ -57,15 +60,14 @@ export FZF_CTRL_T_OPTS=""
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
 # go
-export GOPATH=$HOME/go
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+[ -f $HOME/.asdf/plugins/golang/set-env.sh ] && source $HOME/.asdf/plugins/golang/set-env.sh
 
 # huff
 export PATH="$PATH:$HOME/.huff/bin"
 
 # java
-source ~/.asdf/plugins/java/set-java-home.zsh
+[ -f $HOME/.asdf/plugins/java/setjava-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -83,6 +85,9 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # postgres
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+# reactjs
+export BROWSER=none
 
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
