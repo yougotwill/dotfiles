@@ -1,8 +1,8 @@
 # This is a comment, this line will be ignored.
 # You can use # to comment a line manually.
 
-corepack==@0.24.1
-npm==@9.9.2
+backup-global==@1.5.0
+npm==@9.6.7
 
 
 # These are yarn packages under "[Yarn Global Packages]".

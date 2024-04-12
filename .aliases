@@ -37,7 +37,7 @@ alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='cd ~ && rm Brewfile && brew bundle dump --all && rm requirements.txt && pip freeze > requirements.txt && bkg backup'
+alias config-backup='cd ~ && rm Brewfile && brew bundle dump --all && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export && bkg backup'
 
 # file navigation
 alias ls='eza -lF --time-style=long-iso'
@@ -84,6 +84,10 @@ alias gs='git status'
 alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
+
+# pipx
+alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > pipx.requirements.txt&& echo 'pipx packages exported to ${PWD}/pipx.requirements.txt'"
+alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
 
 # tmux
 alias tm='tmux'
