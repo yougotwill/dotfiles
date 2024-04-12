@@ -72,6 +72,7 @@ brew "ncspot"
 brew "neovim"
 brew "openssh"
 brew "pipx"
+brew "pnpm"
 brew "postgresql@15"
 brew "python@3.10"
 brew "python@3.9"
@@ -189,10 +190,8 @@ cask "xld"
 cask "yacreader"
 cask "yubico-authenticator"
 cask "yubico-yubikey-manager"
-mas "AdBlock", id: 1402042596
 mas "Bitwarden", id: 1352778147
 mas "Color Picker", id: 1545870783
-mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Dark Reader for Safari", id: 1438243180
@@ -209,7 +208,6 @@ mas "LINE", id: 539883307
 mas "LocalSend", id: 1661733229
 mas "Lynda.com", id: 985958984
 mas "Manabi Reader", id: 1247286380
-mas "Minim", id: 1406044470
 mas "Pages", id: 409201541
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
@@ -260,7 +258,6 @@ vscode "heybourn.headwind"
 vscode "huff-language.huff-language"
 vscode "jock.svg"
 vscode "juanblanco.solidity"
-vscode "maptz.regionfolder"
 vscode "marclipovsky.string-manipulation"
 vscode "mateocerquetella.xcode-12-theme"
 vscode "mathcale.theme-dracula-refined"
@@ -299,7 +296,6 @@ vscode "styled-components.vscode-styled-components"
 vscode "syler.sass-indented"
 vscode "tamasfe.even-better-toml"
 vscode "thomascsd.vscode-readme-pattern"
-vscode "tldraw-org.tldraw-vscode"
 vscode "tomoki1207.pdf"
 vscode "twxs.cmake"
 vscode "tyriar.lorem-ipsum"

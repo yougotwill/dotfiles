@@ -1,0 +1,3 @@
+   pdm==2.13.3
+   pip-autoremove==0.10.0
+   yt-dlp==2024.3.10
