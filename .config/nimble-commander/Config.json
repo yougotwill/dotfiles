@@ -1,0 +1,31 @@
+{
+    "general": {
+        "theme": "Dark",
+        "showToolbar": false,
+        "notifications": {}
+    },
+    "filePanel": {
+        "general": {
+            "fileSizeFormat": 2,
+            "selectionSizeFormat": 3
+        },
+        "presentation": {
+            "showQuickLookAsFloatingPanel": true
+        },
+        "quickSearch": {},
+        "spotlight": {},
+        "operations": {},
+        "layout": {}
+    },
+    "viewer": {
+        "modalMode": false
+    },
+    "terminal": {},
+    "externalTools": {
+        "tools_v1": []
+    },
+    "externalEditors": {},
+    "themes": {
+        "automaticSwitching": {}
+    }
+}
