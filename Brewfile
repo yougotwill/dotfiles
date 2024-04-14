@@ -1,4 +1,3 @@
-tap "beeftornado/rmtree"
 tap "dteoh/devdocs"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -39,6 +38,7 @@ brew "tesseract"
 brew "ffmpeg"
 brew "cmus"
 brew "colima"
+brew "cryptography"
 brew "openldap"
 brew "curl"
 brew "defaultbrowser"
@@ -60,7 +60,6 @@ brew "jq"
 brew "jrnl"
 brew "krb5"
 brew "lazygit"
-brew "magic-wormhole"
 brew "mas"
 brew "mongosh"
 brew "ncspot"
@@ -69,7 +68,6 @@ brew "pipx"
 brew "pnpm"
 brew "postgresql@15"
 brew "python@3.10"
-brew "python@3.9"
 brew "ruby-build"
 brew "rust"
 brew "syncthing"
@@ -172,6 +170,7 @@ mas "Hidden Bar", id: 1452453066
 mas "Iconology", id: 1463452867
 mas "iMovie", id: 408981434
 mas "Just Focus", id: 1142151959
+mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
 mas "LocalSend", id: 1661733229
 mas "Numbers", id: 409203825
