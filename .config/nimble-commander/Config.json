@@ -47,10 +47,14 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 432
+                                "width": 542
                             },
                             {
                                 "kind": 2,
+                                "width": 90
+                            },
+                            {
+                                "kind": 3,
                                 "width": 90
                             },
                             {
@@ -60,6 +64,10 @@
                             {
                                 "kind": 4,
                                 "width": 90
+                            },
+                            {
+                                "kind": 7,
+                                "width": 50
                             }
                         ],
                         "icon_scale": 1
