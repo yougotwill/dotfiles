@@ -21,6 +21,9 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
+# homebrew shell completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # custom scripts
 export PATH="$HOME/bin/:$PATH"
 
