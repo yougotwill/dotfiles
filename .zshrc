@@ -7,13 +7,13 @@ if [[ "$CPU" == "arm" ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
     export PATH="/opt/homebrew/sbin:$PATH"
     export PATH="/opt/homebrew/openssl@3/bin:$PATH"
-    export EDITOR=/opt/homebrew/bin/nano
-    alias oldbrew=/usr/local/bin/brew
+    export EDITOR="/opt/homebrew/bin/nvim"
+    alias oldbrew="/usr/local/bin/brew"
 else
     export PATH="/usr/local/bin:$PATH"
     export PATH="/usr/local/sbin:$PATH"
     export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-    export EDITOR=/usr/local/bin/nano
+    export EDITOR="/usr/local/bin/nvim"
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
@@ -32,7 +32,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export EDITOR='nvim'
 
 # asdf
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
@@ -99,7 +98,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -155,6 +154,12 @@ COMPLETION_WAITING_DOTS="true"
 # the history list.
 HIST_IGNORE_ALL_DUPS="true"
 
+# oh-my-zsh
+# Skip all plugin aliases
+zstyle ':omz:plugins:*' aliases no
+# except for the z plugin
+zstyle ':omz:plugins:z' aliases yes
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -163,7 +168,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-interactive-cd last-working-dir z fzf npm pdm)
+plugins=( zsh-interactive-cd zsh-autosuggestions fzf z npm pdm )
 
 source $ZSH/oh-my-zsh.sh
 
