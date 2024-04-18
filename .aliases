@@ -28,7 +28,7 @@ alias cmus-play='cmus-remote -p'
 alias cmus-pause='cmus-remote -u'
 
 # configs
-alias rr='source ~/.zshrc && source /Users/neon/.zshenv'
+alias rr='exec $SHELL'
 alias zshrc="${EDITOR} ~/.zshrc"
 alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
 alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
@@ -85,7 +85,7 @@ alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 
 # pipx
-alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ${PWD}/pipx.requirements.txt && echo 'pipx packages exported to ${PWD}/pipx.requirements.txt'"
+alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > /Users/neon/pipx.requirements.txt && echo 'pipx packages exported to /Users/neon/pipx.requirements.txt'"
 alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
 
 # tmux
