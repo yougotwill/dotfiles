@@ -127,3 +127,4 @@ alias cat='bat'
 alias flirc='flirc_util'
 alias zel='zellij'
 alias yif='yarn install --frozen-lockfile'
+alias nc="open  -a 'Nimble Commander'"
