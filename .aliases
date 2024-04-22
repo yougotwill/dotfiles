@@ -6,11 +6,6 @@
 alias aliases='${EDITOR} ~/.aliases'
 alias functions='${EDITOR} ~/.functions'
 
-# bluetooth
-alias bt='blueutil'
-alias btOn='blueutil -p 1'
-alias btOff='blueutil -p 0'
-
 # brew
 alias b='brew'
 alias boutdated='brew update && brew outdated --greedy'
@@ -108,25 +103,22 @@ alias cl='clear'
 alias duh='du -h -d 1'
 alias x='exit'
 alias rm='rm -i'
-alias rmdir='rm -r'
 alias t='trash'
 alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
-alias gitdiff="git diff --name-only | uniq | xargs code"
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias neofetch='neofetch --config ~/.neofetch'
-alias sublproject='subl project.sublime-project'
 alias sides='cd ~/sides'
 alias work='cd ~/work'
 alias displayman='display_manager.py'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
-alias komga='java -jar ~/bin/komga.jar'
 alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
 alias yif='yarn install --frozen-lockfile'
 alias pd='pushd'
 alias qd='popd'
 alias zel='zellij'
 alias yif='yarn install --frozen-lockfile'
+alias nc="open -a 'Nimble Commander'"
