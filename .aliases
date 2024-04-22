@@ -26,7 +26,7 @@ alias cmus-play='cmus-remote -p'
 alias cmus-pause='cmus-remote -u'
 
 # configs
-alias rr='source ~/.zshrc && source /Users/will/.zshenv'
+alias rr='exec $SHELL'
 alias zshrc="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
 alias vimrc="${EDITOR} ~/.vimrc"
@@ -40,8 +40,9 @@ alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh
 alias config-backup='cd ~ && rm Brewfile && brew bundle dump --all && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export && bkg backup'
 
 # file navigation
-alias ls='eza -lF --time-style=long-iso'
+alias ls='eza'
 alias la='ls -la'
+alias ll='ls -l --time-style=long-iso'
 alias lsg='ls --grid'
 alias lsga='ls -a --grid'
 alias lki='lk --icons'
@@ -63,7 +64,8 @@ alias gcl='git clean -i'
 alias gcm='git checkout $(git_main_branch)'
 alias gcd='git checkout $(git_develop_branch)'
 alias gch='git checkout'
-alias gd='git diff'
+alias gd='git diff --patch-with-stat'
+alias gdc='git diff --patch-with-stat --cached'
 alias gf='git fetch'
 alias gfa='git fetch --all'
 alias gfo='git fetch origin'
@@ -80,13 +82,12 @@ alias gr='git remote'
 alias grv='git remote -v'
 alias gra='git remote add'
 alias grru='git remote rename origin upstream'
-alias gs='git status'
-alias gsb='git status -sb'
+alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 
 # pipx
-alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ${PWD}/pipx.requirements.txt && echo 'pipx packages exported to ${PWD}/pipx.requirements.txt'"
+alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > /Users/will/pipx.requirements.txt && echo 'pipx packages exported to /Users/will/pipx.requirements.txt'"
 alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
 
 # tmux

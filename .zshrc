@@ -168,9 +168,13 @@ zstyle ':omz:plugins:z' aliases yes
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( zsh-interactive-cd zsh-autosuggestions fzf z npm pdm )
+plugins=( zsh-interactive-cd zsh-autosuggestions fzf z npm pdm vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+
+# vi-mode
+PROMPT="$PROMPT\$(vi_mode_prompt_info)"
+RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 
 # User configuration
 
@@ -196,4 +200,7 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 eval "$(flutter zsh-completion)"
+
+# syntax highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
