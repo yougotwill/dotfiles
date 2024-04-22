@@ -93,6 +93,8 @@ map gS: SessLoad<cr>
 map gn :bnext<cr>
 map gb :bprevious<cr>
 map gs :write<cr>
+" Refresh buffer discarding any unsaved changes
+map g<space> :e!<cr>
 " Close the current buffer
 map gw :bdelete<cr>
 " Close all the buffers
