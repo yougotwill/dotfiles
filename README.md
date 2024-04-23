@@ -8,8 +8,8 @@ Currently the following are included:
 
 ## Packages
 - Homebrew
-- Pip
-- Npm
+- asdf
+- pipx
 
 ## CLI
 
@@ -32,14 +32,14 @@ Check out the [npm.global.txt](npm.global.txt) for the list of my globalled inst
 - Google Chrome
 - Iina
 - LibreOffice
+- Logseq
 - Slack
 - Source Tree
 - Spotify
 - Sublime Text
+- Thunderbird
 - Typora
 - Visual Studio Code
-
-Check out my [Brewfile](Brewfile) for the rest of the applications that I use.
 
 ## How I manage my dotfiles
 Inspired by [https://www.atlassian.com/git/tutorials/dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
@@ -54,20 +54,20 @@ There are various ways to manage your dotfiles but I thought that this method ha
 
 ```zsh
 git clone --bare https://github.com/yougotwill/dotfiles.git $HOME/.dotfiles
-  2 function config {
-  3    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
-  4 }
-  5 mkdir -p .dotfiles-backup
-  6 config checkout
-  7 if [ $? = 0 ]; then
-  8   echo "dotfiles loaded successfully";
-  9   else
- 10     echo "Backing up pre-existing dot files.";
- 11     config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
- 12 fi;
- 13 config checkout
- 14 config config status.showUntrackedFiles no
- 15 echo "To install the global npm packages install node and run npx backup-global file" 
+function config {
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+}
+mkdir -p .dotfiles-backup
+config checkout
+if [ $? = 0 ]; then
+ echo "dotfiles loaded successfully";
+ else
+  echo "Backing up pre-existing dot files.";
+  config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+fi;
+config checkout
+config config status.showUntrackedFiles no
+echo "To install the global npm packages install node and run npx backup-global file" 
 ```
 
 2. Trust in the force.
@@ -80,7 +80,7 @@ git clone --bare https://github.com/yougotwill/dotfiles.git $HOME/.dotfiles
 
 5. Run `brew bundle`. This will install all the cli and application stuff.
 6. Grab a coffee or go for that run you keep procrastinating because this might take a while.
-7. Once that is all done run the following `pip install -r requirements.txt`.
+7. Once that is all done run the following `pipx-import`.
 8. To install the global npm packages install node and run `npx backup-global file`.
 8. That's it you should be finished!🎉
 
