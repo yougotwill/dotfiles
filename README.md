@@ -77,10 +77,26 @@ echo "To install the global npm packages install node and run npx backup-global 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+5. Install ohmyzsh by copying and pasting again into your terminal the code below.
 
-5. Run `brew bundle`. This will install all the cli and application stuff.
-6. Grab a coffee or go for that run you keep procrastinating because this might take a while.
-7. Once that is all done run the following `pipx-import`.
-8. To install the global npm packages install node and run `npx backup-global file`.
-8. That's it you should be finished!🎉
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+6. Install the spaceship zsh prompt by copying and pasting again into your terminal the code below.
+
+```bash
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+7. Install asdf by copying and pasting again into your terminal the code below.
+
+```bash
+/usr/bin/git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+```
+
+8. Run `brew bundle`. This will install all the cli and application stuff.
+9. Grab a coffee or go for that run you keep procrastinating because this might take a while.
+10. Once that is all done run the following `pipx-import`.
+11. To install the global npm packages install node and run `npx backup-global file`.
+12. That's it you should be finished!🎉
 
