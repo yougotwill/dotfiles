@@ -76,7 +76,7 @@ echo "To install the global npm packages install node and run npx backup-global 
 4. Install homebrew by copying and pasting again into your terminal the code below.
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 5. Install `ohmyzsh` by copying and pasting again into your terminal the code below.
 
