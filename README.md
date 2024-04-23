@@ -83,22 +83,27 @@ echo "To install the global npm packages install node and run npx backup-global 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-6. Install the `spaceship` prompt by copying and pasting again into your terminal the code below.
+6. Install `zsh-autosuggestions` by copying and pasting again into your terminal the code below.
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+7. Install the `spaceship` prompt by copying and pasting again into your terminal the code below.
 
 ```bash
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
-7. Install `asdf` by copying and pasting again into your terminal the code below.
+8. Install `asdf` by copying and pasting again into your terminal the code below.
 
 ```bash
 /usr/bin/git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ```
 
-8. Run `brestore`. This will install all the cli and application stuff. You can install parts separately by using the `brestore-` alias see [.aliases](.aliases) for more info.
-9. Grab a coffee or go for that run you keep procrastinating because this might take a while.
-10. Run `pip install -r requirements.txt`.
-11. Run `pipx-import`.
-12. To install the global npm packages install node and run `npx backup-global file`.
-13. That's it you should be finished!🎉
+9. Run `brestore`. This will install all the cli and application stuff. You can install parts separately by using the `brestore-` alias see [.aliases](.aliases) for more info.
+10. Grab a coffee or go for that run you keep procrastinating because this might take a while.
+11. Run `pip install -r requirements.txt`.
+12. Run `pipx-import`.
+13. To install the global npm packages install node and run `npx backup-global file`.
+14. That's it you should be finished!🎉
 
