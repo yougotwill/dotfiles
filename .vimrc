@@ -90,7 +90,7 @@ map gS: SessLoad<cr>
 
 " Buffers
 map gn :bnext<cr>
-map gb :bprevious<cr>
+map gN :bprevious<cr>
 map gs :write<cr>
 " Refresh buffer discarding any unsaved changes
 map g<space> :e!<cr>
