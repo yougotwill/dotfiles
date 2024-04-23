@@ -91,7 +91,7 @@ map gS: SessLoad<cr>
 " Buffers
 " Save buffer
 map gn :bnext<cr>
-map gb :bprevious<cr>
+map gm :bprevious<cr>
 map gs :write<cr>
 " Refresh buffer discarding any unsaved changes
 map g<space> :e!<cr>
@@ -105,3 +105,4 @@ map <leader><Bslash> :vsp<cr>
 
 " Start vim in insert mode
 " autocmd BufRead,BufNewFile * start
+
