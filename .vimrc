@@ -74,7 +74,7 @@ command! ThemeDark set background=dark
 
 " Shortcuts (leader is \ by default)
 let mapleader = " "
-map <leader><leader> :noh<cr>
+map <leader>c :noh<cr>
 
 " Navigation
 map <leader>e :Lexplore<cr>
