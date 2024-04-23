@@ -20,6 +20,18 @@ alias boutdated='brew update && brew outdated --greedy'
 alias brm='brew rmtree'
 alias bupgrade='brew upgrade --cask --greedy && brew upgrade'
 alias bcleanup='brew cleanup && brew autoremove'
+alias bbackup-taps='cd ~ && rm Brewfile-taps && brew bundle dump --taps --file Brewfile-taps'
+alias bbackup-brews='cd ~ && rm Brewfile-brews && brew bundle dump --brews --file Brewfile-brews'
+alias bbackup-casks='cd ~ && rm Brewfile-casks && brew bundle dump --casks --file Brewfile-casks'
+alias bbackup-mas='cd ~ && rm Brewfile-mas && brew bundle dump --mas --file Brewfile-mas'
+alias bbackup-vscode='cd ~ && rm Brewfile-vscode && brew bundle dump --vscode --file Brewfile-vscode'
+alias bbackup='bbackup-taps && bbackup-brews && bbackup-casks && bbackup-mas && bbackup-vscode'
+alias brestore-taps='cd ~ && brew bundle --file Brewfile-taps'
+alias brestore-brews='cd ~ && brew bundle --file Brewfile-brews'
+alias brestore-casks='cd ~ && brew bundle --file Brewfile-casks'
+alias brestore-mas='cd ~ && brew bundle --file Brewfile-mas'
+alias brestore-vscode='cd ~ && brew bundle --file Brewfile-vscode'
+alias brestore='brestore-taps && brestore-brews && brestore-casks && brestore-mas && brestore-vscode'
 
 # cmus
 alias cmus-control='brew services restart cmus-control'
@@ -36,7 +48,7 @@ alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='cd ~ && rm Brewfile && brew bundle dump --all && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export && bkg backup'
+alias config-backup='bbackup && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export && bkg backup'
 
 # file navigation
 alias ls='eza'
@@ -49,7 +61,7 @@ alias appsupport='cd ~/Library/Application\ Support'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias lki='lk --icons'
-alias prj='cd ~/Documents/SourceTree/'
+alias prj='cd ~/Documents/SourceTree/' 
 
 # git
 alias g='git'
