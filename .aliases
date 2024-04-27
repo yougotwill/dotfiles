@@ -48,7 +48,7 @@ alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='bbackup && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export && bkg backup'
+alias config-backup='bbackup && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export'
 
 # file navigation
 alias ls='eza'
