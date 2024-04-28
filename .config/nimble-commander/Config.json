@@ -2,6 +2,7 @@
     "general": {
         "theme": "Dark",
         "showToolbar": false,
+        "showTabs": true,
         "notifications": {}
     },
     "filePanel": {
@@ -47,7 +48,7 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 542
+                                "width": 525
                             },
                             {
                                 "kind": 2,
@@ -59,7 +60,7 @@
                             },
                             {
                                 "kind": 5,
-                                "width": 90
+                                "width": 103
                             },
                             {
                                 "kind": 4,
@@ -67,7 +68,7 @@
                             },
                             {
                                 "kind": 7,
-                                "width": 50
+                                "width": 58
                             }
                         ],
                         "icon_scale": 1
@@ -444,6 +445,13 @@
         "menu.view.toggle_layout_1": "⌘7",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
-        "menu.view.toggle_layout_4": "⌘0"
+        "menu.view.toggle_layout_4": "⌘0",
+        "menu.view.sorting_by_name": "⇧^1",
+        "menu.view.sorting_by_extension": "⇧^2",
+        "menu.view.sorting_by_modify_time": "⇧^3",
+        "menu.view.sorting_by_size": "⇧^4",
+        "menu.view.sorting_by_creation_time": "⇧^5",
+        "menu.view.sorting_by_added_time": "⇧^6",
+        "menu.view.sorting_by_accessed_time": "⇧^7"
     }
 }

@@ -201,6 +201,8 @@ eval $(thefuck --alias)
 eval "$(gh completion -s zsh)"
 eval "$(flutter zsh-completion)"
 
+source ~/bin/kitty-macos-match-appearance.sh
+
 # syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
