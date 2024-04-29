@@ -157,7 +157,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # oh-my-zsh
 # Skip all plugin aliases
 zstyle ':omz:plugins:*' aliases no
-# except for the z plugin
+# exceptions
 zstyle ':omz:plugins:z' aliases yes
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -168,13 +168,9 @@ zstyle ':omz:plugins:z' aliases yes
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( zsh-interactive-cd zsh-autosuggestions fzf z npm pdm vi-mode)
+plugins=( zsh-interactive-cd zsh-autosuggestions fzf z npm pdm)
 
 source $ZSH/oh-my-zsh.sh
-
-# vi-mode
-PROMPT="$PROMPT\$(vi_mode_prompt_info)"
-RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 
 # User configuration
 
@@ -192,9 +188,7 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 [ -f ~/.aliases-work ] && source ~/.aliases-work
 [ -f ~/.functions ] && source ~/.functions
 [ -f ~/.shortcuts ] && source ~/.shortcuts
-
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
-[ -f ~/.fzf.sh ] && source ~/.fzf.zsh
 
 # completions
 eval $(thefuck --alias)
