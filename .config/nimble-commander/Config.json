@@ -452,6 +452,8 @@
         "menu.view.sorting_by_size": "⇧^4",
         "menu.view.sorting_by_creation_time": "⇧^5",
         "menu.view.sorting_by_added_time": "⇧^6",
-        "menu.view.sorting_by_accessed_time": "⇧^7"
+        "menu.view.sorting_by_accessed_time": "⇧^7",
+        "menu.command.copy_to": "^n",
+        "menu.command.move_to": "^b"
     }
 }
