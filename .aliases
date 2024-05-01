@@ -140,3 +140,4 @@ alias flirc='flirc_util'
 alias zel='zellij'
 alias yif='yarn install --frozen-lockfile'
 alias nc="open  -a 'Nimble Commander'"
+alias nc-config-copy='cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json'

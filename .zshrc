@@ -160,7 +160,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # oh-my-zsh
 # Skip all plugin aliases
 zstyle ':omz:plugins:*' aliases no
-# except for the z plugin
+# exceptions
 zstyle ':omz:plugins:z' aliases yes
 
 # Would you like to use another custom folder than $ZSH/custom?

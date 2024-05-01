@@ -120,7 +120,15 @@
     },
     "terminal": {},
     "externalTools": {
-        "tools_v1": []
+        "tools_v1": [
+            {
+                "title": "Reveal in Finder",
+                "path": "/usr/bin/open",
+                "parameters": "-R %p",
+                "shortcut": "⇧⌘r",
+                "startup": 2
+            }
+        ]
     },
     "externalEditors": {},
     "themes": {
@@ -442,6 +450,7 @@
         ]
     },
     "hotkeyOverrides_v1": {
+        "menu.edit.deselect_all": "⇧⌘a",
         "menu.view.toggle_layout_1": "⌘7",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
@@ -453,6 +462,9 @@
         "menu.view.sorting_by_creation_time": "⇧^5",
         "menu.view.sorting_by_added_time": "⇧^6",
         "menu.view.sorting_by_accessed_time": "⇧^7",
+        "menu.view.show_tabs": "",
+        "menu.go.applications": "⌥⌘a",
+        "menu.go.restore_last_closed": "⇧⌘t",
         "menu.command.copy_to": "^n",
         "menu.command.move_to": "^b"
     }
