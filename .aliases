@@ -93,6 +93,11 @@ alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 
+# nimble commander
+alias nc="open -a 'Nimble Commander'"
+alias nc-import='cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json'
+alias nc-export='cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json'
+
 # pipx
 alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > /Users/will/pipx.requirements.txt && echo 'pipx packages exported to /Users/will/pipx.requirements.txt'"
 alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
@@ -133,4 +138,4 @@ alias pd='pushd'
 alias qd='popd'
 alias zel='zellij'
 alias yif='yarn install --frozen-lockfile'
-alias nc="open -a 'Nimble Commander'"
+
