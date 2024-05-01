@@ -466,6 +466,7 @@
         "menu.go.applications": "⌥⌘a",
         "menu.go.restore_last_closed": "⇧⌘t",
         "menu.command.copy_to": "^n",
-        "menu.command.move_to": "^b"
+        "menu.command.move_to": "^b",
+        "menu.command.rename_in_place": "⇧^m"
     }
 }
