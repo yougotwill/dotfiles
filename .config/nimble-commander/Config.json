@@ -1,7 +1,6 @@
 {
     "general": {
         "theme": "Dark",
-        "showToolbar": false,
         "showTabs": true,
         "notifications": {}
     },
@@ -14,6 +13,16 @@
             "showQuickLookAsFloatingPanel": true
         },
         "quickSearch": {},
+        "FinderTags": {
+            "tags": {
+                "v1": [
+                    "Red",
+                    "6",
+                    "Yellow",
+                    "5"
+                ]
+            }
+        },
         "spotlight": {},
         "operations": {},
         "layout": {
@@ -48,7 +57,7 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 525
+                                "width": 504
                             },
                             {
                                 "kind": 2,
@@ -68,7 +77,7 @@
                             },
                             {
                                 "kind": 7,
-                                "width": 58
+                                "width": 50
                             }
                         ],
                         "icon_scale": 1
@@ -79,10 +88,36 @@
                     "list": {
                         "columns": [
                             {
-                                "kind": 1
+                                "kind": 1,
+                                "width": 493
                             },
                             {
-                                "kind": 2
+                                "kind": 2,
+                                "width": 90
+                            },
+                            {
+                                "kind": 7,
+                                "width": 50
+                            },
+                            {
+                                "kind": 5,
+                                "width": 90
+                            },
+                            {
+                                "kind": 3,
+                                "width": 90
+                            },
+                            {
+                                "kind": 4,
+                                "width": 90
+                            },
+                            {
+                                "kind": 6,
+                                "width": 90
+                            },
+                            {
+                                "kind": 8,
+                                "width": 90
                             }
                         ],
                         "icon_scale": 1
