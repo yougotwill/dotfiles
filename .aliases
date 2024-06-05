@@ -63,6 +63,13 @@ alias down='cd ~/Downloads'
 alias lki='lk --icons'
 alias prj='cd ~/Documents/SourceTree/' 
 
+# flirc
+alias flirc='flirc_util'
+alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
+alias flirc-import='flirc_util loadconfig ~/skip/flirc-usb'
+alias flirc-settings='flirc_util settings > ~/skip/flirc-usb-settings.txt'
+alias flirc-backup="flirc-export && flirc-settings && echo 'flirc backup complete'"
+
 # git
 alias g='git'
 alias ga='git add'
@@ -141,6 +148,5 @@ alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
 alias pd='pushd'
 alias qd='popd'
 alias cat='bat'
-alias flirc='flirc_util'
 alias zel='zellij'
 alias yif='yarn install --frozen-lockfile'
