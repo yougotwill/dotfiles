@@ -1,24 +1,34 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
+  pager = delta
+[init]
+	defaultBranch = main
+[commit]
+	template = ~/.stCommitMsg
+[merge]
+  conflictstyle = diff3
+[interactive]
+  diffFilter = delta --color-only
+[diff]
+  colorMoved = default
+[pull]
+	ff = only
+[delta]
+  navigate = true
+  side-by-side = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[user]
-	name = William Grant
-	email = willmgrant@gmail.com
-	site = https://github.com/yougotwill
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-[core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = false
-[commit]
-	template = ~/.stCommitMsg
-[pull]
-	ff = only
-[init]
-	defaultBranch = main
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[user]
+	name = William Grant
+	email = willmgrant@gmail.com
+	site = https://github.com/yougotwill
