@@ -1,0 +1,21 @@
+# asdf
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+[ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# go
+[ -f $HOME/.asdf/plugins/golang/set-env.sh ] && source $HOME/.asdf/plugins/golang/set-env.sh
+
+# java
+[ -f $HOME/.asdf/plugins/java/setjava-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
+
+# kitty
+[ -f ~/bin/kitty-macos-match-appearence.sh ] && source ~/bin/kitty-macos-match-appearance.sh
+
+# syntax highlighting
+[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

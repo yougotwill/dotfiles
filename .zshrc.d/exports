@@ -1,0 +1,68 @@
+# homebrew
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/sbin:$PATH"
+    export PATH="/opt/homebrew/openssl@3/bin:$PATH"
+    export EDITOR="/opt/homebrew/bin/nvim"
+    alias oldbrew="/usr/local/bin/brew"
+else
+    export PATH="/usr/local/bin:$PATH"
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+    export EDITOR="/usr/local/bin/nvim"
+fi
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
+# for compilers
+export LDFLAGS="-L/usr/local/opt/readline/lib"
+export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+# set locale and language environment
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# dotnet
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+# export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+# export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
+
+# flutter
+export PATH="$HOME/dev/flutter/bin:$PATH"
+
+# foundry
+export PATH="$HOME/.foundry/bin:$PATH"
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd"
+export FZF_CTRL_T_OPTS=""
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+
+# go
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+# huff
+export PATH="$PATH:$HOME/.huff/bin"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# postgres
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+# reactjs
+export BROWSER=none
+
+# ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# spicetify
+export SPICETIFY_INSTALL="$HOME/.spicetify"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+
