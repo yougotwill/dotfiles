@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock key to hyper (control+option+shift. (Post escape key when pressed alone)",
+                        "description": "Change caps_lock key to hyper (control+option+shift). (Post escape key when pressed alone)",
                         "manipulators": [
                             {
                                 "from": {
@@ -1549,11 +1549,11 @@
                         ]
                     },
                     {
-                        "description": "left_command + right_command + F3 is mission_control",
+                        "description": "left_command + right_command + o is mission_control",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f3",
+                                    "key_code": "o",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_gui",
@@ -1567,6 +1567,34 @@
                                 "to": [
                                     {
                                         "apple_vendor_keyboard_key_code": "mission_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + p is Alt + Tab",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1592,6 +1620,31 @@
                                 "to": [
                                     {
                                         "apple_vendor_keyboard_key_code": "launchpad"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left_command + right_command + u is enter or return",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "right_gui"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -2722,6 +2775,28 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 668,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
