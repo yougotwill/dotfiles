@@ -26,7 +26,7 @@ lk () {
   cd "$(walk "$@")"
 }
 
-setTitleBarDark () {
-defaults write $1 NSRequiresAquaSystemAppearance 0
-echo "set dark title bar for $1"
+setDarkAppearance () {
+defaults write $1 NSRequiresAquaSystemAppearance $2
+echo "set dark appearance for $1 to $2"
 }
