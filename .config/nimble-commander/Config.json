@@ -7,10 +7,11 @@
     "filePanel": {
         "general": {
             "fileSizeFormat": 2,
-            "selectionSizeFormat": 3
+            "selectionSizeFormat": 3,
+            "deselectItemsAfterFileOperations": false
         },
         "presentation": {
-            "showQuickLookAsFloatingPanel": true
+            "filenamesTrimmingMode": 2
         },
         "quickSearch": {},
         "FinderTags": {
@@ -30,9 +31,9 @@
                 {
                     "title": "Short",
                     "brief": {
-                        "mode": 1,
-                        "fixed_mode_width": 150,
-                        "fixed_amount_value": 3,
+                        "mode": 2,
+                        "fixed_mode_width": 200,
+                        "fixed_amount_value": 5,
                         "dynamic_width_min": 140,
                         "dynamic_width_max": 300,
                         "dynamic_width_equal": false,
@@ -42,13 +43,13 @@
                 {
                     "title": "Medium",
                     "brief": {
-                        "mode": 2,
+                        "mode": 1,
                         "fixed_mode_width": 150,
                         "fixed_amount_value": 3,
                         "dynamic_width_min": 140,
                         "dynamic_width_max": 300,
                         "dynamic_width_equal": false,
-                        "icon_scale": 1
+                        "icon_scale": 2
                     }
                 },
                 {
@@ -57,27 +58,31 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 440
-                            },
-                            {
-                                "kind": 2,
-                                "width": 90
-                            },
-                            {
-                                "kind": 3,
-                                "width": 132
-                            },
-                            {
-                                "kind": 5,
-                                "width": 141
-                            },
-                            {
-                                "kind": 4,
-                                "width": 139
+                                "width": 413
                             },
                             {
                                 "kind": 7,
-                                "width": 200
+                                "width": 72
+                            },
+                            {
+                                "kind": 2,
+                                "width": 79
+                            },
+                            {
+                                "kind": 3,
+                                "width": 135
+                            },
+                            {
+                                "kind": 5,
+                                "width": 131
+                            },
+                            {
+                                "kind": 4,
+                                "width": 132
+                            },
+                            {
+                                "kind": 8,
+                                "width": 90
                             }
                         ],
                         "icon_scale": 1
@@ -88,39 +93,10 @@
                     "list": {
                         "columns": [
                             {
-                                "kind": 1,
-                                "width": 282
-                            },
-                            {
-                                "kind": 2,
-                                "width": 75
-                            },
-                            {
-                                "kind": 7,
-                                "width": 50
-                            },
-                            {
-                                "kind": 5,
-                                "width": 172
-                            },
-                            {
-                                "kind": 3,
-                                "width": 155
-                            },
-                            {
-                                "kind": 4,
-                                "width": 205
-                            },
-                            {
-                                "kind": 6,
-                                "width": 207
-                            },
-                            {
-                                "kind": 8,
-                                "width": 90
+                                "kind": 1
                             }
                         ],
-                        "icon_scale": 1
+                        "icon_scale": 2
                     }
                 },
                 {
@@ -161,6 +137,13 @@
                 "path": "/usr/bin/open",
                 "parameters": "-R %p",
                 "shortcut": "⇧⌘r",
+                "startup": 2
+            },
+            {
+                "title": "Open Trash",
+                "path": "/usr/bin/open",
+                "parameters": "/Users/neon/.Trash",
+                "shortcut": "^b",
                 "startup": 2
             }
         ]
@@ -490,6 +473,12 @@
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
         "menu.view.toggle_layout_4": "⌘0",
+        "menu.view.toggle_layout_5": "",
+        "menu.view.toggle_layout_6": "",
+        "menu.view.toggle_layout_7": "",
+        "menu.view.toggle_layout_8": "",
+        "menu.view.toggle_layout_9": "",
+        "menu.view.toggle_layout_10": "",
         "menu.view.sorting_by_name": "⇧^1",
         "menu.view.sorting_by_extension": "⇧^2",
         "menu.view.sorting_by_modify_time": "⇧^3",
@@ -498,10 +487,14 @@
         "menu.view.sorting_by_added_time": "⇧^6",
         "menu.view.sorting_by_accessed_time": "⇧^7",
         "menu.view.show_tabs": "",
+        "menu.view.panels_position.move_up": "^⌘",
+        "menu.view.panels_position.move_down": "^⌘",
+        "menu.view.panels_position.move_left": "^⌘",
+        "menu.view.panels_position.move_right": "^⌘",
         "menu.go.applications": "⌥⌘a",
         "menu.go.restore_last_closed": "⇧⌘t",
-        "menu.command.copy_to": "^n",
+        "menu.command.copy_to": "^c",
         "menu.command.move_to": "^v",
-        "menu.command.rename_in_place": "⇧^m"
+        "menu.command.rename_in_place": "^n"
     }
 }
