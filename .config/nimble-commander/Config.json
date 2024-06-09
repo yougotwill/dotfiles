@@ -7,8 +7,7 @@
     "filePanel": {
         "general": {
             "fileSizeFormat": 2,
-            "selectionSizeFormat": 3,
-            "deselectItemsAfterFileOperations": false
+            "selectionSizeFormat": 3
         },
         "presentation": {
             "filenamesTrimmingMode": 2
