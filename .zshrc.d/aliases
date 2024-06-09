@@ -3,6 +3,24 @@ alias exports='${EDITOR} ~/.zshrc.d/exports'
 alias functions='${EDITOR} ~/.zshrc.d/functions'
 alias sources='${EDITOR} ~/.zshrc.d/sources'
 
+# navigation
+alias cat='bat'
+alias cl='clear'
+alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
+alias ls='eza'
+alias la='ls -a'
+alias ll='ls -l --time-style=long-iso'
+alias lla='ll -a'
+alias lki='lk --icons'
+alias pd='pushd'
+alias qd='popd'
+alias x='exit'
+
+# destructive operations
+alias rm='rm -i'
+alias rmdir='rm -r'
+alias t='trash'
+
 # asdf
 alias asdfrc='${EDITOR} ~/.asdfrc'
 
@@ -17,17 +35,18 @@ alias boutdated='brew update && brew outdated'
 alias brm='brew rmtree'
 alias bupgrade='brew upgrade --cask && brew upgrade'
 alias bcleanup='brew cleanup && brew autoremove'
-alias bbackup-taps='rm ~/.brew/Brewfile-taps && brew bundle dump --taps --file ~/.brew/Brewfile-taps'
-alias bbackup-brews='rm ~/.brew/Brewfile-brews && brew bundle dump --brews --file ~/.brew/Brewfile-brews'
-alias bbackup-casks='rm ~/.brew/Brewfile-casks && brew bundle dump --casks --file ~/.brew/Brewfile-casks'
-alias bbackup-mas='rm ~/.brew/Brewfile-mas && brew bundle dump --mas --file ~/.brew/Brewfile-mas'
-alias bbackup-vscode='rm ~/.brew/Brewfile-vscode && brew bundle dump --vscode --file ~/.brew/Brewfile-vscode'
-alias bbackup='bbackup-taps && bbackup-brews && bbackup-casks && bbackup-mas && bbackup-vscode'
-alias brestore-taps='brew bundle --file ~/.brew/Brewfile-taps'
-alias brestore-brews='brew bundle --file ~/.brew/Brewfile-brews'
-alias brestore-casks='brew bundle --file ~/.brew/Brewfile-casks'
-alias brestore-mas='brew bundle --file ~/.brew/Brewfile-mas'
-alias brestore-vscode='cd ~ && brew bundle --file ~/.brew/Brewfile-vscode'
+alias bbackup-delete='rm ~/.brew/*'
+alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
+alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
+alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
+alias bbackup-mas='brew bundle dump --mas --file ~/.brew/mas'
+alias bbackup-vscode='brew bundle dump --vscode --file ~/.brew/vscode'
+alias bbackup='bbackup-delete && bbackup-taps && bbackup-brews && bbackup-casks && bbackup-mas && bbackup-vscode'
+alias brestore-taps='brew bundle --file ~/.brew/taps'
+alias brestore-brews='brew bundle --file ~/.brew/brews'
+alias brestore-casks='brew bundle --file ~/.brew/casks'
+alias brestore-mas='brew bundle --file ~/.brew/mas'
+alias brestore-vscode='brew bundle --file ~/.brew/vscode'
 alias brestore='brestore-taps && brestore-brews && brestore-casks && brestore-mas && brestore-vscode'
 
 # cmus
@@ -47,19 +66,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
 alias config-backup='bbackup && pipx-export'
 
-# file navigation
-alias ls='eza'
-alias la='ls -a'
-alias ll='ls -l --time-style=long-iso'
-alias lla='ll -a'
-
-# folder navigation
-alias appsupport='cd ~/Library/Application\ Support'
-alias desk='cd ~/Desktop'
-alias down='cd ~/Downloads'
-alias lki='lk --icons'
-alias prj='cd ~/Documents/SourceTree/' 
-
 # flirc
 alias flirc='flirc_util'
 alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
@@ -67,7 +73,11 @@ alias flirc-import='flirc_util loadconfig ~/skip/flirc-usb'
 alias flirc-settings='flirc_util settings > ~/skip/flirc-usb-settings.txt'
 alias flirc-backup="flirc-export && flirc-settings && echo 'flirc backup complete'"
 
-# folder naviation
+# folders
+alias appsupport='cd ~/Library/Application\ Support'
+alias desk='cd ~/Desktop'
+alias down='cd ~/Downloads'
+alias prj='cd ~/Documents/SourceTree/' 
 alias sides='cd ~/_sides'
 alias work='cd ~/_work'
 
@@ -103,6 +113,7 @@ alias grru='git remote rename origin upstream'
 alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
+alias gitdiff="git diff --name-only | uniq | xargs code"
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
@@ -110,8 +121,8 @@ alias nc-import='cp ~/.config/nimble-commander/Config.json ~/Library/Application
 alias nc-export='cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json'
 
 # pipx
-alias pipx-export="rm ~/pipx.requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > /Users/neon/pipx.requirements.txt && echo 'pipx packages exported to /Users/neon/pipx.requirements.txt'"
-alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
+alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
+alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install"
 
 # tmux
 alias tm='tmux'
@@ -119,30 +130,18 @@ alias tmuxconf='${EDITOR} ~/.tmux.conf'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
-alias vimplugs='cd /Users/neon/.config/nvim/plugged'
+alias vimplugs='cd ~/.config/nvim/plugged'
 alias n='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vimf='nvim $(fzf)'
 
 # misc
-alias cl='clear'
-alias duh='du -h -d 1'
-alias x='exit'
-alias rm='rm -i'
-alias rmdir='rm -r'
-alias t='trash'
-alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
-alias gitdiff="git diff --name-only | uniq | xargs code"
-alias ydl='cd ~/Downloads && yt-dlp'
-alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
-alias displayman='display_manager.py'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
-alias pd='pushd'
-alias qd='popd'
-alias cat='bat'
+alias ydl='cd ~/Downloads && yt-dlp'
+alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 alias yif='yarn install --frozen-lockfile'

@@ -25,3 +25,8 @@ write2File () {
 lk () {
   cd "$(walk "$@")"
 }
+
+setTitleBarDark () {
+defaults write $1 NSRequiresAquaSystemAppearance 0
+echo "set dark title bar for $1"
+}
