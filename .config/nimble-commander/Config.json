@@ -495,6 +495,8 @@
         "menu.go.restore_last_closed": "⇧⌘t",
         "menu.command.copy_to": "^c",
         "menu.command.move_to": "^v",
-        "menu.command.rename_in_place": "^n"
+        "menu.command.rename_in_place": "^n",
+        "panel.move_next_and_invert_selection": " ",
+        "panel.show_preview": ""
     }
 }
