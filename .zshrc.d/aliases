@@ -120,6 +120,11 @@ alias nc="open -a 'Nimble Commander'"
 alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json && echo 'nimble commander config imported from ~/.config/nimble-comander/Config.json'"
 alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
 
+# nodejs
+alias npmr='npm run'
+alias yif='yarn install --frozen-lockfile'
+
+
 # pipx
 alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
 alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
@@ -144,4 +149,3 @@ alias spdq='brews stop spotifyd'
 alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
-alias yif='yarn install --frozen-lockfile'

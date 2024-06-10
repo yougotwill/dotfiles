@@ -19,7 +19,11 @@
                     "Red",
                     "6",
                     "Yellow",
-                    "5"
+                    "5",
+                    "Green",
+                    "2",
+                    "Orange",
+                    "7"
                 ]
             }
         },
@@ -665,7 +669,7 @@
         ]
     },
     "hotkeyOverrides_v1": {
-        "menu.edit.deselect_all": "⇧⌘a",
+        "menu.edit.deselect_all": "⌥ ",
         "menu.view.toggle_layout_1": "⌘7",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
@@ -693,7 +697,7 @@
         "menu.command.copy_to": "^c",
         "menu.command.move_to": "^v",
         "menu.command.rename_in_place": "^n",
-        "panel.move_next_and_invert_selection": " ",
-        "panel.show_preview": ""
+        "panel.move_next_and_invert_selection": "⇧ ",
+        "panel.show_preview": "^ "
     }
 }
