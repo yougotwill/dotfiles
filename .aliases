@@ -6,27 +6,48 @@
 alias aliases='${EDITOR} ~/.aliases'
 alias functions='${EDITOR} ~/.functions'
 
+# navigation
+alias cat='bat'
+alias cl='clear'
+alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
+alias ls='eza'
+alias la='ls -a'
+alias ll='ls -l --time-style=long-iso'
+alias lla='ll -a'
+alias lki='lk --icons'
+alias pd='pushd'
+alias qd='popd'
+alias x='exit'
+
+# destructive operations
+alias rm='rm -I'
+alias rmdir='rm -r'
+alias t='trash'
+
+# asdf
+alias asdfrc='${EDITOR} ~/.asdfrc'
+
 # brew
 alias b='brew'
-alias boutdated='brew update && brew outdated --greedy'
+alias boutdated='brew update && brew outdated'
 alias brm='brew rmtree'
-alias bupgrade='brew upgrade --cask --greedy && brew upgrade'
+alias bupgrade='brew upgrade --cask && brew upgrade'
 alias bcleanup='brew cleanup && brew autoremove'
-alias bbackup-taps='cd ~ && rm Brewfile-taps && brew bundle dump --taps --file Brewfile-taps'
-alias bbackup-brews='cd ~ && rm Brewfile-brews && brew bundle dump --brews --file Brewfile-brews'
-alias bbackup-casks='cd ~ && rm Brewfile-casks && brew bundle dump --casks --file Brewfile-casks'
-alias bbackup-mas='cd ~ && rm Brewfile-mas && brew bundle dump --mas --file Brewfile-mas'
-alias bbackup-vscode='cd ~ && rm Brewfile-vscode && brew bundle dump --vscode --file Brewfile-vscode'
-alias bbackup='bbackup-taps && bbackup-brews && bbackup-casks && bbackup-mas && bbackup-vscode'
-alias brestore-taps='cd ~ && brew bundle --file Brewfile-taps'
-alias brestore-brews='cd ~ && brew bundle --file Brewfile-brews'
-alias brestore-casks='cd ~ && brew bundle --file Brewfile-casks'
-alias brestore-mas='cd ~ && brew bundle --file Brewfile-mas'
-alias brestore-vscode='cd ~ && brew bundle --file Brewfile-vscode'
-alias brestore='brestore-taps && brestore-brews && brestore-casks && brestore-mas && brestore-vscode'
+alias bbackup-delete='rm ~/.brew/*'
+alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
+alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
+alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
+alias bbackup-mas='brew bundle dump --mas --file ~/.brew/mas'
+alias bbackup-vscode='brew bundle dump --vscode --file ~/.brew/vscode'
+alias bbackup="bbackup-delete && bbackup-taps && bbackup-brews && bbackup-casks && bbackup-mas && bbackup-vscode && echo 'homebrew backed up to ~/.brew'"
+alias brestore-taps='brew bundle --file ~/.brew/taps'
+alias brestore-brews='brew bundle --file ~/.brew/brews'
+alias brestore-casks='brew bundle --file ~/.brew/casks'
+alias brestore-mas='brew bundle --file ~/.brew/mas'
+alias brestore-vscode='brew bundle --file ~/.brew/vscode'
+alias brestore="brestore-taps && brestore-brews && brestore-casks && brestore-mas && brestore-vscode && echo 'homebrew restored from ~/.brew'"
 
 # cmus
-alias cmux='tmux new-session -A -D -s cmus cmus'
 alias cmus-control='brew services restart cmus-control'
 alias cmus-status='cmus-remote -Q'
 alias cmus-play='cmus-remote -p'
@@ -36,29 +57,20 @@ alias cmus-pause='cmus-remote -u'
 alias rr='exec $SHELL'
 alias zshrc="${EDITOR} ~/.zshrc"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
-alias vimrc="${EDITOR} ~/.vimrc"
-alias vimplugs="cd /Users/neon/.config/nvim/plugged"
-alias tmuxconf="${EDITOR} ~/.tmux.conf"
 alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='bbackup && rm requirements.txt && pip freeze > requirements.txt && rm pipx.requirements.txt && pipx-export'
+alias config-backup='bbackup && pipx-export && nc-export'
 
-# file navigation
-alias ls='eza'
-alias la='ls -la'
-alias ll='ls -l --time-style=long-iso'
-alias lsg='ls --grid'
-alias lsga='ls -a --grid'
-alias lki='lk --icons'
-
-# folder navigation
+# folders
 alias appsupport='cd ~/Library/Application\ Support'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias prj='cd ~/work/projects/'
+alias sides='cd ~/sides'
+alias work='cd ~/work'
 
 # git
 alias g='git'
@@ -92,15 +104,20 @@ alias grru='git remote rename origin upstream'
 alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
+alias gitdiff="git diff --name-only | uniq | xargs code"
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
-alias nc-import='cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json'
-alias nc-export='cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json'
+alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json && echo 'nimble commander config imported from ~/.config/nimble-comander/Config.json'"
+alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
+
+# nodejs
+alias npmr='npm run'
+alias yif='yarn install --frozen-lockfile'
 
 # pipx
-alias pipx-export="pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > /Users/will/pipx.requirements.txt && echo 'pipx packages exported to /Users/will/pipx.requirements.txt'"
-alias pipx-import="cat pipx.requirements.txt | xargs pipx install"
+alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
+alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
 
 # tmux
 alias tm='tmux'
@@ -108,34 +125,18 @@ alias tmuxconf='${EDITOR} ~/.tmux.conf'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
-alias vimplugs='cd /Users/neon/.config/nvim/plugged'
+alias vimplugs='cd ~/.config/nvim/plugged'
 alias n='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vimf='nvim $(fzf)'
 
 # misc
-alias cat='bat'
-alias cl='clear'
-alias duh='du -h -d 1'
-alias x='exit'
-alias rm='rm -i'
-alias t='trash'
-alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
-alias ydl='cd ~/Downloads && yt-dlp'
-alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 alias defb='defaultbrowser'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
-alias neofetch='neofetch --config ~/.neofetch'
-alias sides='cd ~/sides'
-alias work='cd ~/work'
-alias displayman='display_manager.py'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
-alias yif='yarn install --frozen-lockfile'
-alias pd='pushd'
-alias qd='popd'
-alias zel='zellij'
-alias yif='yarn install --frozen-lockfile'
+alias ydl='cd ~/Downloads && yt-dlp'
+alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
 

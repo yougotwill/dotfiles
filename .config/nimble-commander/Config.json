@@ -1,7 +1,6 @@
 {
     "general": {
         "theme": "Dark",
-        "showToolbar": false,
         "showTabs": true,
         "notifications": {}
     },
@@ -11,9 +10,23 @@
             "selectionSizeFormat": 3
         },
         "presentation": {
-            "showQuickLookAsFloatingPanel": true
+            "filenamesTrimmingMode": 2
         },
         "quickSearch": {},
+        "FinderTags": {
+            "tags": {
+                "v1": [
+                    "Red",
+                    "6",
+                    "Yellow",
+                    "5",
+                    "Green",
+                    "2",
+                    "Orange",
+                    "7"
+                ]
+            }
+        },
         "spotlight": {},
         "operations": {},
         "layout": {
@@ -21,9 +34,9 @@
                 {
                     "title": "Short",
                     "brief": {
-                        "mode": 1,
-                        "fixed_mode_width": 150,
-                        "fixed_amount_value": 3,
+                        "mode": 2,
+                        "fixed_mode_width": 200,
+                        "fixed_amount_value": 5,
                         "dynamic_width_min": 140,
                         "dynamic_width_max": 300,
                         "dynamic_width_equal": false,
@@ -33,13 +46,13 @@
                 {
                     "title": "Medium",
                     "brief": {
-                        "mode": 2,
+                        "mode": 1,
                         "fixed_mode_width": 150,
                         "fixed_amount_value": 3,
                         "dynamic_width_min": 140,
                         "dynamic_width_max": 300,
                         "dynamic_width_equal": false,
-                        "icon_scale": 1
+                        "icon_scale": 2
                     }
                 },
                 {
@@ -48,27 +61,31 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 525
-                            },
-                            {
-                                "kind": 2,
-                                "width": 90
-                            },
-                            {
-                                "kind": 3,
-                                "width": 90
-                            },
-                            {
-                                "kind": 5,
-                                "width": 103
-                            },
-                            {
-                                "kind": 4,
-                                "width": 90
+                                "width": 413
                             },
                             {
                                 "kind": 7,
-                                "width": 58
+                                "width": 72
+                            },
+                            {
+                                "kind": 2,
+                                "width": 79
+                            },
+                            {
+                                "kind": 3,
+                                "width": 135
+                            },
+                            {
+                                "kind": 5,
+                                "width": 131
+                            },
+                            {
+                                "kind": 4,
+                                "width": 132
+                            },
+                            {
+                                "kind": 8,
+                                "width": 90
                             }
                         ],
                         "icon_scale": 1
@@ -80,12 +97,9 @@
                         "columns": [
                             {
                                 "kind": 1
-                            },
-                            {
-                                "kind": 2
                             }
                         ],
-                        "icon_scale": 1
+                        "icon_scale": 2
                     }
                 },
                 {
@@ -126,6 +140,13 @@
                 "path": "/usr/bin/open",
                 "parameters": "-R %p",
                 "shortcut": "⇧⌘r",
+                "startup": 2
+            },
+            {
+                "title": "Open Trash",
+                "path": "/usr/bin/open",
+                "parameters": "/Users/neon/.Trash",
+                "shortcut": "^b",
                 "startup": 2
             }
         ]
@@ -446,15 +467,219 @@
                 "viewerTextColor": "#00FFFF",
                 "viewerSelectionColor": "#008080",
                 "viewerBackgroundColor": "#000080"
+            },
+            {
+                "themeName": "Safari Light",
+                "themeAppearance": "light",
+                "filePanelsColoringRules_v1": [
+                    {
+                        "name": "selected",
+                        "regular": "#C8513B",
+                        "focused": "#C8513B",
+                        "filter": {
+                            "selected": true
+                        }
+                    },
+                    {
+                        "name": "hidden",
+                        "regular": "#666666",
+                        "focused": "#999999",
+                        "filter": {
+                            "hidden": true
+                        }
+                    },
+                    {
+                        "name": "other",
+                        "regular": "#000000",
+                        "focused": "#FFFFFF"
+                    }
+                ],
+                "filePanelsGeneralDropBorderColor": "#DEDEDE",
+                "filePanelsGeneralOverlayColor": "#FFFFFF",
+                "filePanelsGeneralSplitterColor": "#BABABABA",
+                "filePanelsGeneralTopSeparatorColor": "#DEDEDE",
+                "filePanelsTabsFont": "@systemFont, 11",
+                "filePanelsTabsTextColor": "#586069",
+                "filePanelsTabsSelectedKeyWndActiveBackgroundColor": "#FFFFFF",
+                "filePanelsTabsSelectedKeyWndInactiveBackgroundColor": "#F8F8F8",
+                "filePanelsTabsSelectedNotKeyWndBackgroundColor": "#FFFFFF",
+                "filePanelsTabsRegularKeyWndHoverBackgroundColor": "#E3E3E3",
+                "filePanelsTabsRegularKeyWndRegularBackgroundColor": "#F0F0F0",
+                "filePanelsTabsRegularNotKeyWndBackgroundColor": "#FFFFFF00",
+                "filePanelsTabsSeparatorColor": "#DEDEDE",
+                "filePanelsTabsPictogramColor": "#586069",
+                "filePanelsHeaderFont": "@labelFont, 11",
+                "filePanelsHeaderTextColor": "#586069",
+                "filePanelsHeaderActiveTextColor": "#586069",
+                "filePanelsHeaderActiveBackgroundColor": "#FFFFFF",
+                "filePanelsHeaderInactiveBackgroundColor": "#FFFFFF00",
+                "filePanelsHeaderSeparatorColor": "#DEDEDE",
+                "filePanelsFooterFont": "@labelFont, 11",
+                "filePanelsFooterTextColor": "#586069",
+                "filePanelsFooterActiveTextColor": "#586069",
+                "filePanelsFooterSeparatorsColor": "#DEDEDE",
+                "filePanelsFooterActiveBackgroundColor": "#FFFFFF",
+                "filePanelsFooterInactiveBackgroundColor": "#E8E8E8",
+                "filePanelsListFont": "@systemFont, 13",
+                "filePanelsListGridColor": "#FFFFFF00",
+                "filePanelsListHeaderFont": "@systemFont, 11",
+                "filePanelsListHeaderBackgroundColor": "#FFFFFF",
+                "filePanelsListHeaderTextColor": "#586069",
+                "filePanelsListHeaderSeparatorColor": "#DEDEDE",
+                "filePanelsListFocusedActiveRowBackgroundColor": "#0064E1",
+                "filePanelsListFocusedInactiveRowBackgroundColor": "#0064E155",
+                "filePanelsListSelectedItemBackgroundColor": "#FFF2BE",
+                "filePanelsListRegularEvenRowBackgroundColor": "#FFFFFF",
+                "filePanelsListRegularOddRowBackgroundColor": "#F6F6F6",
+                "filePanelsBriefFont": "@systemFont, 13",
+                "filePanelsBriefGridColor": "#E6E6E6",
+                "filePanelsBriefRegularEvenRowBackgroundColor": "#FFFFFF",
+                "filePanelsBriefRegularOddRowBackgroundColor": "#F6F6F6",
+                "filePanelsBriefFocusedActiveItemBackgroundColor": "#0064E1",
+                "filePanelsBriefFocusedInactiveItemBackgroundColor": "#0064E155",
+                "filePanelsBriefSelectedItemBackgroundColor": "#FFF2BE",
+                "terminalFont": "Menlo-Regular, 12",
+                "terminalOverlayColor": "#FFFFFF",
+                "terminalForegroundColor": "#FFFFFF",
+                "terminalBoldForegroundColor": "#FFFFFF",
+                "terminalBackgroundColor": "#000000",
+                "terminalSelectionColor": "#E5E5E5",
+                "terminalCursorColor": "#666666",
+                "terminalAnsiColor0": "#000000",
+                "terminalAnsiColor1": "#990000",
+                "terminalAnsiColor2": "#00A600",
+                "terminalAnsiColor3": "#999900",
+                "terminalAnsiColor4": "#0000B2",
+                "terminalAnsiColor5": "#B200B2",
+                "terminalAnsiColor6": "#00A6B2",
+                "terminalAnsiColor7": "#BFC2BF",
+                "terminalAnsiColor8": "#666666",
+                "terminalAnsiColor9": "#E50000",
+                "terminalAnsiColorA": "#00D900",
+                "terminalAnsiColorB": "#E5E500",
+                "terminalAnsiColorC": "#0000FF",
+                "terminalAnsiColorD": "#E500E5",
+                "terminalAnsiColorE": "#00E5E5",
+                "terminalAnsiColorF": "#E5E6E5",
+                "viewerFont": "Menlo-Regular, 12",
+                "viewerOverlayColor": "#FFFFFF",
+                "viewerTextColor": "#586069",
+                "viewerSelectionColor": "#B4D6FC",
+                "viewerBackgroundColor": "#FFFFFF"
+            },
+            {
+                "themeName": "Safari Dark",
+                "themeAppearance": "dark",
+                "filePanelsColoringRules_v1": [
+                    {
+                        "name": "selected",
+                        "regular": "#FFDE8Fcc",
+                        "focused": "#FFDE8F",
+                        "filter": {
+                            "selected": true
+                        }
+                    },
+                    {
+                        "name": "hidden",
+                        "regular": "#EFEFEF55",
+                        "focused": "#EFEFEF88",
+                        "filter": {
+                            "hidden": true
+                        }
+                    },
+                    {
+                        "name": "other",
+                        "regular": "#EFEFEFcc",
+                        "focused": "#EFEFEF"
+                    }
+                ],
+                "filePanelsGeneralDropBorderColor": "#202020",
+                "filePanelsGeneralOverlayColor": "#1D1D1D",
+                "filePanelsGeneralSplitterColor": "#121212",
+                "filePanelsGeneralTopSeparatorColor": "#121212",
+                "filePanelsTabsFont": "@systemFont, 11",
+                "filePanelsTabsTextColor": "#EFEFEF",
+                "filePanelsTabsSelectedKeyWndActiveBackgroundColor": "#353535",
+                "filePanelsTabsSelectedKeyWndInactiveBackgroundColor": "#1D1D1D",
+                "filePanelsTabsSelectedNotKeyWndBackgroundColor": "#353535",
+                "filePanelsTabsRegularKeyWndHoverBackgroundColor": "#35353577",
+                "filePanelsTabsRegularKeyWndRegularBackgroundColor": "#1D1D1D",
+                "filePanelsTabsRegularNotKeyWndBackgroundColor": "#FFFFFF00",
+                "filePanelsTabsSeparatorColor": "#121212",
+                "filePanelsTabsPictogramColor": "#586069",
+                "filePanelsHeaderFont": "@labelFont, 11",
+                "filePanelsHeaderTextColor": "#EFEFEF",
+                "filePanelsHeaderActiveTextColor": "#EFEFEF",
+                "filePanelsHeaderActiveBackgroundColor": "#202020",
+                "filePanelsHeaderInactiveBackgroundColor": "#1D1D1D",
+                "filePanelsHeaderSeparatorColor": "#121212",
+                "filePanelsFooterFont": "@labelFont, 11",
+                "filePanelsFooterTextColor": "#EFEFEF",
+                "filePanelsFooterActiveTextColor": "#EFEFEF",
+                "filePanelsFooterSeparatorsColor": "#121212",
+                "filePanelsFooterActiveBackgroundColor": "#353535",
+                "filePanelsFooterInactiveBackgroundColor": "#1D1D1D",
+                "filePanelsListFont": "@systemFont, 13",
+                "filePanelsListGridColor": "#1D1D1D",
+                "filePanelsListHeaderFont": "@systemFont, 11",
+                "filePanelsListHeaderBackgroundColor": "#1D1D1D",
+                "filePanelsListHeaderTextColor": "#EFEFEF",
+                "filePanelsListHeaderSeparatorColor": "#121212",
+                "filePanelsListFocusedActiveRowBackgroundColor": "#124592",
+                "filePanelsListFocusedInactiveRowBackgroundColor": "#12459255",
+                "filePanelsListSelectedItemBackgroundColor": "#7D3A54AA",
+                "filePanelsListRegularEvenRowBackgroundColor": "#242424",
+                "filePanelsListRegularOddRowBackgroundColor": "#212121",
+                "filePanelsBriefFont": "@systemFont, 13",
+                "filePanelsBriefGridColor": "#1D1D1D",
+                "filePanelsBriefRegularEvenRowBackgroundColor": "#242424",
+                "filePanelsBriefRegularOddRowBackgroundColor": "#212121",
+                "filePanelsBriefFocusedActiveItemBackgroundColor": "#124592",
+                "filePanelsBriefFocusedInactiveItemBackgroundColor": "#12459255",
+                "filePanelsBriefSelectedItemBackgroundColor": "#7D3A54AA",
+                "terminalFont": "Menlo-Regular, 12",
+                "terminalOverlayColor": "#FFFFFF",
+                "terminalForegroundColor": "#FFFFFF",
+                "terminalBoldForegroundColor": "#FFFFFF",
+                "terminalBackgroundColor": "#000000",
+                "terminalSelectionColor": "#E5E5E5",
+                "terminalCursorColor": "#666666",
+                "terminalAnsiColor0": "#000000",
+                "terminalAnsiColor1": "#990000",
+                "terminalAnsiColor2": "#00A600",
+                "terminalAnsiColor3": "#999900",
+                "terminalAnsiColor4": "#0000B2",
+                "terminalAnsiColor5": "#B200B2",
+                "terminalAnsiColor6": "#00A6B2",
+                "terminalAnsiColor7": "#BFC2BF",
+                "terminalAnsiColor8": "#666666",
+                "terminalAnsiColor9": "#E50000",
+                "terminalAnsiColorA": "#00D900",
+                "terminalAnsiColorB": "#E5E500",
+                "terminalAnsiColorC": "#0000FF",
+                "terminalAnsiColorD": "#E500E5",
+                "terminalAnsiColorE": "#00E5E5",
+                "terminalAnsiColorF": "#E5E6E5",
+                "viewerFont": "Menlo-Regular, 12",
+                "viewerOverlayColor": "#FFFFFF",
+                "viewerTextColor": "#EFEFEF",
+                "viewerSelectionColor": "#B4D6FC",
+                "viewerBackgroundColor": "#202020"
             }
         ]
     },
     "hotkeyOverrides_v1": {
-        "menu.edit.deselect_all": "⇧⌘a",
+        "menu.edit.deselect_all": "⌥ ",
         "menu.view.toggle_layout_1": "⌘7",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
         "menu.view.toggle_layout_4": "⌘0",
+        "menu.view.toggle_layout_5": "",
+        "menu.view.toggle_layout_6": "",
+        "menu.view.toggle_layout_7": "",
+        "menu.view.toggle_layout_8": "",
+        "menu.view.toggle_layout_9": "",
+        "menu.view.toggle_layout_10": "",
         "menu.view.sorting_by_name": "⇧^1",
         "menu.view.sorting_by_extension": "⇧^2",
         "menu.view.sorting_by_modify_time": "⇧^3",
@@ -463,10 +688,16 @@
         "menu.view.sorting_by_added_time": "⇧^6",
         "menu.view.sorting_by_accessed_time": "⇧^7",
         "menu.view.show_tabs": "",
+        "menu.view.panels_position.move_up": "^⌘",
+        "menu.view.panels_position.move_down": "^⌘",
+        "menu.view.panels_position.move_left": "^⌘",
+        "menu.view.panels_position.move_right": "^⌘",
         "menu.go.applications": "⌥⌘a",
         "menu.go.restore_last_closed": "⇧⌘t",
-        "menu.command.copy_to": "^n",
-        "menu.command.move_to": "^b",
-        "menu.command.rename_in_place": "⇧^m"
+        "menu.command.copy_to": "^c",
+        "menu.command.move_to": "^v",
+        "menu.command.rename_in_place": "^n",
+        "panel.move_next_and_invert_selection": "⇧ ",
+        "panel.show_preview": "^ "
     }
 }
