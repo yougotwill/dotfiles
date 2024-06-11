@@ -17,6 +17,7 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # homebrew shell completion
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -98,7 +99,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -196,6 +197,9 @@ eval "$(gh completion -s zsh)"
 eval "$(flutter zsh-completion)"
 
 source ~/bin/kitty-macos-match-appearance.sh
+
+# spaceship zsh prompt
+[ -f $(brew --prefix)/opt/spaceship/spaceship.zsh ] && source $(brew --prefix)/opt/spaceship/spaceship.zsh
 
 # syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
