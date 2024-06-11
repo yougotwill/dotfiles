@@ -113,6 +113,7 @@ alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Conf
 
 # nodejs
 alias npmr='npm run'
+alias rmnode='t node_modules'
 alias yif='yarn install --frozen-lockfile'
 
 # pipx
