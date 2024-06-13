@@ -1,5 +1,6 @@
 tap "adoptopenjdk/openjdk"
 tap "blacktop/tap"
+tap "buo/cask-upgrade"
 tap "dteoh/devdocs"
 tap "homebrew/bundle"
 tap "homebrew/cask"
