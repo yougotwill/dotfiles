@@ -1,2 +1,3 @@
+always_keep_download=no
 java_macos_integration_enable=yes
 legacy_version_file = yes
