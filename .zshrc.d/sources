@@ -15,7 +15,7 @@ autoload -Uz compinit && compinit
 [ -f $HOME/.asdf/plugins/java/setjava-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # kitty
-[ -f ~/bin/kitty-macos-match-appearence.sh ] && source ~/bin/kitty-macos-match-appearance.sh
+[ -f ~/bin/kitty-macos-match-appearance.sh ] && source ~/bin/kitty-macos-match-appearance.sh
 
 # spaceship zsh prompt
 [ -f $(brew --prefix)/opt/spaceship/spaceship.zsh ] && source $(brew --prefix)/opt/spaceship/spaceship.zsh

@@ -17,8 +17,8 @@ alias qd='popd'
 alias x='exit'
 
 # destructive operations
-alias rm='rm -I'
-alias rmdir='rm -r'
+alias rmi='rm -I'
+alias rmdir='rmi -R'
 alias t='trash'
 
 # asdf
@@ -36,11 +36,11 @@ alias boutdated='brew update && brew outdated --formula && brew outdated --cask'
 alias brm='brew rmtree'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
-alias bbackup-delete='rm ~/.brew/*'
+alias bbackup-delete='rmdir ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
 alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
 alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
-alias bbackup-casks-pinned='brew cu --no-brew-update pinned --export ~/.brew/casks-pinned'
+alias bbackup-casks-pinned='brew cu pinned --no-brew-update --export ~/.brew/casks-pinned'
 alias bbackup-mas='brew bundle dump --mas --file ~/.brew/mas'
 alias bbackup-vscode='brew bundle dump --vscode --file ~/.brew/vscode'
 alias bbackup="bbackup-delete && bbackup-taps && bbackup-brews && bbackup-casks && bbackup-casks-pinned && bbackup-mas && bbackup-vscode && echo 'homebrew backed up to ~/.brew'"
@@ -60,7 +60,7 @@ alias cmus-pause='cmus-remote -u'
 
 # configs
 alias rr='exec $SHELL'
-alias zshrc="${EDITOR} ~/.zshrc"
+alias zshrc='${EDITOR} ~/.zshrc'
 alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
 alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
 
@@ -79,6 +79,7 @@ alias flirc-backup="flirc-export && flirc-settings && echo 'flirc usb backed up 
 # folders
 alias appsupport='cd ~/Library/Application\ Support'
 alias desk='cd ~/Desktop'
+alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
 alias prj='cd ~/projects'
 alias sides='cd ~/_sides'
