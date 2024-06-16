@@ -125,7 +125,7 @@ alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application
 alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
 
 # nodejs
-alias rmnode='t node_modules'
+alias rmnode='rm -Rf **/node_modules'
 alias npmr='npm run'
 alias yif='yarn install --frozen-lockfile'
 
