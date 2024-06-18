@@ -26,8 +26,8 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 export PATH="$HOME/bin/:$PATH"
 
 # for compilers
-export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
+# export LDFLAGS="-L/opt/homebrew/opt/readline/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/readline/include"
 
 # set locale and language environment
 export LC_ALL=en_US.UTF-8
