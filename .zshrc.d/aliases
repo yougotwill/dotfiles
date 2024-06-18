@@ -31,10 +31,10 @@ alias btOff='blueutil -p 0'
 
 # brew
 alias b='brew'
-alias bcask='brew cu'
-alias boutdated='brew update && brew outdated --formula && brew outdated --cask'
+alias bcask='brew cu -a'
+alias boutdated='brew update && brew outdated --formula && bcask --no-brew-update'
 alias brm='brew rmtree'
-alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --quiet --yes'
+alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
 alias bbackup-delete='rmdir ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
@@ -62,7 +62,7 @@ alias cmus-pause='cmus-remote -u'
 alias rr='exec $SHELL'
 alias zshrc='${EDITOR} ~/.zshrc'
 alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
-alias keyboardconfig="${EDITOR} ~/.config/karabiner/karabiner.json"
+alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -117,7 +117,8 @@ alias grru='git remote rename origin upstream'
 alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
-alias gitdiff="git diff --name-only | uniq | xargs code"
+alias gitdiff='git diff --name-only | uniq | xargs code'
+alias ghrepo='gh repo set-default'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
