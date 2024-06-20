@@ -30,7 +30,7 @@ alias asdfrc='${EDITOR} ~/.asdfrc'
 # brew
 alias b='brew'
 alias bcask='brew cu -a'
-alias boutdated='brew update && brew outdated --formula && bcask --no-brew-update'
+alias boutdated='brew update && brew outdated --formula && brew outdated --cask --greedy'
 alias brm='brew rmtree'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
@@ -109,6 +109,7 @@ alias gs='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
+alias ghrepo='gh repo set-default'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
