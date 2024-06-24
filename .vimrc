@@ -2,17 +2,51 @@
 " By William Grant
 " 2024/01/20
 
-" Initialise plugins
-" Automatically executes `filetype plugin indent on` and `syntax enable`
-call plug#begin('~/.vim/plugged')
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'arzg/vim-colors-xcode'
-Plug 'tomasiser/vim-code-dark'
-call plug#end()
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary Neovim
+    " Initialise plugins
+    " Automatically executes `filetype plugin indent on` and `syntax enable`
+    call plug#begin('~/.vim/plugged')
+    Plug '/usr/local/opt/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'arzg/vim-colors-xcode'
+    Plug 'tomasiser/vim-code-dark'
+    call plug#end()
+
+    " netrw
+    let g:netrw_liststyle = 3 " directory liststyle
+    let g:netrw_banner = 0 " hide banner
+    let g:netrw_browse_split = 4 " open file in previous window
+    let g:netrw_winsize = 30 " width of 30%
+    let g:netrw_fastbrowse = 0 " closes netrw buffer if it's already open 
+    " (slow performance)
+    " let g:netrw_list_hide = netrw_gitignore#Hide() " .gitignore support
+
+    " statusline
+    set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " statusline with ruler set + git branch
+
+    " Dark mode support
+    if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
+    set background=dark
+    colorscheme codedark
+    else
+    set background=light
+    colorscheme PaperColor
+    endif
+
+    " Navigation
+    map <leader>e :Lexplore<cr>
+    map <leader>p :Files<cr>
+    map <leader>f :GFiles<cr>
+    map <leader>t :Ag!<cr>
+    map <leader>r :BTags<cr>
+    map <leader>b :Buffers<cr>
+endif
 
 set title " terminal title
 set hidden " hides buffer when it is abandoned
@@ -37,32 +71,11 @@ set showtabline=2 " forces the tabline to always show
 set splitright " vertical split goes to the right
 set listchars=tab:▸\ ,eol:¬ " Visualise tabs and new lines
 
-" netrw
-let g:netrw_liststyle = 3 " directory liststyle
-let g:netrw_banner = 0 " hide banner
-let g:netrw_browse_split = 4 " open file in previous window
-let g:netrw_winsize = 30 " width of 30%
-let g:netrw_fastbrowse = 0 " closes netrw buffer if it's already open 
-" (slow performance)
-" let g:netrw_list_hide = netrw_gitignore#Hide() " .gitignore support
-
 " GUI
 set cursorline " highlights line with cursor on
 set termguicolors " terminal TrueColor support
 set t_Co=256
 colorscheme codedark
-
-" statusline
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " statusline with ruler set + git branch
-
-" Dark mode support
-if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
-set background=dark
-colorscheme codedark
-else
-set background=light
-colorscheme PaperColor
-endif
 
 " commands
 command! VimRCLoad source $MYVIMRC
@@ -75,14 +88,6 @@ command! ThemeDark set background=dark
 " Shortcuts (leader is \ by default)
 let mapleader = " "
 map <leader>c :noh<cr>
-
-" Navigation
-map <leader>e :Lexplore<cr>
-map <leader>p :Files<cr>
-map <leader>f :GFiles<cr>
-map <leader>t :Ag!<cr>
-map <leader>r :BTags<cr>
-map <leader>b :Buffers<cr>
 
 " Session
 map gs :SessMake<cr>
