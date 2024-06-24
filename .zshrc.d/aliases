@@ -32,7 +32,7 @@ alias btOff='blueutil -p 0'
 # brew
 alias b='brew'
 alias bcask='brew cu -a'
-alias boutdated='brew update && brew outdated --formula && bcask --no-brew-update'
+alias boutdated='brew update && brew outdated --formula && b outdated --cask'
 alias brm='brew rmtree'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
