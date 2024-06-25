@@ -3,10 +3,8 @@
 " 2024/01/20
 
 if exists('g:vscode')
-    " VSCode extension
 else
-    " ordinary Neovim
-    " Initialise plugins
+   " Initialise plugins
     " Automatically executes `filetype plugin indent on` and `syntax enable`
     call plug#begin('~/.vim/plugged')
     Plug '/usr/local/opt/fzf'
@@ -46,6 +44,23 @@ else
     map <leader>t :Ag!<cr>
     map <leader>r :BTags<cr>
     map <leader>b :Buffers<cr>
+
+    " Buffers
+    map gn :bnext<cr>
+    map gm :bprevious<cr>
+    map gs :write<cr>
+    " Refresh buffer discarding any unsaved changes
+    map g<space> :e!<cr>
+    " Close the current buffer
+    map gw :bdelete<cr>
+    " Close all the buffers
+    map gq :q<cr>
+
+
+    " Session
+    map gs :SessMake<cr>
+    map gS: SessLoad<cr>
+
 endif
 
 set title " terminal title
@@ -88,21 +103,6 @@ command! ThemeDark set background=dark
 " Shortcuts (leader is \ by default)
 let mapleader = " "
 map <leader>c :noh<cr>
-
-" Session
-map gs :SessMake<cr>
-map gS: SessLoad<cr>
-
-" Buffers
-map gn :bnext<cr>
-map gN :bprevious<cr>
-map gs :write<cr>
-" Refresh buffer discarding any unsaved changes
-map g<space> :e!<cr>
-" Close the current buffer
-map gw :bdelete<cr>
-" Close all the buffers
-map gq :q<cr>
 
 " Windows
 map <leader><Bslash> :vsp<cr>
