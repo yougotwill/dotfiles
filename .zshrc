@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Disable app analytics https://consoledonottrack.com/
+export DO_NOT_TRACK=1
+
 # homebrew
 CPU=$(uname -p)
 if [[ "$CPU" == "arm" ]]; then
