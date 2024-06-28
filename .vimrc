@@ -28,15 +28,6 @@ else
     " statusline
     set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P " statusline with ruler set + git branch
 
-    " Dark mode support
-    if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
-    set background=dark
-    colorscheme codedark
-    else
-    set background=light
-    colorscheme PaperColor
-    endif
-
     " Navigation
     map <leader>e :Lexplore<cr>
     map <leader>p :Files<cr>
@@ -55,7 +46,6 @@ else
     map gw :bdelete<cr>
     " Close all the buffers
     map gq :q<cr>
-
 
     " Session
     map gs :SessMake<cr>
@@ -91,6 +81,15 @@ set cursorline " highlights line with cursor on
 set termguicolors " terminal TrueColor support
 set t_Co=256
 colorscheme codedark
+
+" Dark mode support
+if system("defaults read -g AppleInterfaceStyle") =~? '^Dark'
+  set background=dark
+  colorscheme codedark
+  else
+  set background=light
+  colorscheme PaperColor
+endif
 
 " commands
 command! VimRCLoad source $MYVIMRC

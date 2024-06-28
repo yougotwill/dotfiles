@@ -66,7 +66,7 @@ alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='bbackup && pipx-export && flirc-backup && nc-export'
+alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nc-export'
 
 # flirc
 alias flirc='flirc_util'
@@ -127,12 +127,17 @@ alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Conf
 # nodejs
 alias rmnode='rm -Rf **/node_modules'
 alias npmr='npm run'
+alias pn='pnpm'
 alias yif='yarn install --frozen-lockfile'
 
 
 # pipx
 alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
 alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
+
+# pnpm 
+alias pnpm-export="rm ~/.default-pnpm-packages && pnpm list -g --depth=0 --parseable | tail -n +2 | sed -E 's|.*/([^@]+)@([^/]+).*|\1@\2|' > ~/.default-pnpm-packages && echo 'pnpm packages exported to ~/.default-pnpm-packages'"
+alias pnpm-import="cat ~/.default-pnpm-packages | xargs pnpm install -g && echo 'pnpm packages imported from ~/.default-pnpm-packages'"
 
 # tmux
 alias tm='tmux'
