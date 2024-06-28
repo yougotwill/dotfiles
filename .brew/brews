@@ -57,7 +57,6 @@ brew "mongosh"
 brew "ncspot"
 brew "neovim"
 brew "pipx"
-brew "pnpm"
 brew "postgresql@16", restart_service: true
 brew "python@3.10"
 brew "ripgrep-all"
