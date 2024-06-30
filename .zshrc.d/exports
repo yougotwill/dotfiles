@@ -27,6 +27,9 @@ export CPPFLAGS="-I/usr/local/opt/readline/include"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# cmus-osx
+# export PYTHON_CONFIGURE_OPTS="--enable-framework"
+
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"

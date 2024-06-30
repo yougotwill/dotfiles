@@ -142,17 +142,24 @@
     "externalTools": {
         "tools_v1": [
             {
-                "title": "Reveal in Finder",
-                "path": "/usr/bin/open",
-                "parameters": "-R %p",
-                "shortcut": "⇧⌘r",
-                "startup": 2
-            },
-            {
                 "title": "Open Trash",
                 "path": "/usr/bin/open",
                 "parameters": "/Users/neon/.Trash",
                 "shortcut": "^b",
+                "startup": 2
+            },
+            {
+                "title": "Play in Cmus",
+                "path": "/usr/local/bin/cmus-remote",
+                "parameters": "--file %p",
+                "shortcut": "",
+                "startup": 2
+            },
+            {
+                "title": "Reveal in Finder",
+                "path": "/usr/bin/open",
+                "parameters": "-R %p",
+                "shortcut": "⇧⌘r",
                 "startup": 2
             }
         ]

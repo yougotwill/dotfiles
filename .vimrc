@@ -4,7 +4,7 @@
 
 if exists('g:vscode')
 else
-   " Initialise plugins
+    " Initialise plugins
     " Automatically executes `filetype plugin indent on` and `syntax enable`
     call plug#begin('~/.vim/plugged')
     Plug '/usr/local/opt/fzf'
