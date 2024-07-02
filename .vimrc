@@ -105,4 +105,3 @@ map <leader>c :noh<cr>
 
 " Windows
 map <leader><Bslash> :vsp<cr>
-
