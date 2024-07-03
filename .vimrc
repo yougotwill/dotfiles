@@ -1,6 +1,6 @@
 " Vim Config
 " By William Grant
-" 2024/01/20
+" 2024/07/03
 
 if exists('g:vscode')
 else
@@ -76,6 +76,17 @@ set showtabline=2 " forces the tabline to always show
 set splitright " vertical split goes to the right
 set listchars=tab:▸\ ,eol:¬ " Visualise tabs and new lines
 
+" use system clipboard
+if has("clipboard")
+  if has("unnamedplus")
+    " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  else
+    " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
+endif
+
 " GUI
 set cursorline " highlights line with cursor on
 set termguicolors " terminal TrueColor support
@@ -105,6 +116,3 @@ map <leader>c :noh<cr>
 
 " Windows
 map <leader><Bslash> :vsp<cr>
-
-" start vim in insert mode
-" autocmd BufRead,BufNewFile * start
