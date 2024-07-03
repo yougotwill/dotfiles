@@ -153,6 +153,7 @@ alias vimf='nvim $(fzf)'
 
 # misc
 alias defb='defaultbrowser'
+alias mpva='mpv --no-video'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'

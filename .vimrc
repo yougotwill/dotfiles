@@ -1,6 +1,6 @@
 " Vim Config
 " By William Grant
-" 2024/06/25
+" 2024/07/03
 
 if exists('g:vscode')
 else
@@ -58,23 +58,36 @@ set hidden " hides buffer when it is abandoned
 set number " shows line numbers
 set laststatus=2 " always show the status line
 
+set mouse=a " allows mouse in all modes
+set ai " auto indentation
+set showtabline=2 " forces the tabline to always show
+set splitright " vertical split goes to the right
+
 " Search
 set ignorecase " ignores case when searching
 set incsearch " shows results as you type
 set hlsearch " search matches are highlighted
 set smartcase " search cases intelligently
 
-" makes tabs 2 spaces
+" Whitespace 
 set tabstop=2
 set shiftwidth=2
-
 set expandtab " use spaces instead of tabs
+" set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~ " Visualise tabs and new lines
+" set list
 
-set mouse=a " allows mouse in all modes
-set ai " auto indentation
-set showtabline=2 " forces the tabline to always show
-set splitright " vertical split goes to the right
-set listchars=tab:▸\ ,eol:¬ " Visualise tabs and new lines
+
+
+" use system clipboard
+if has("clipboard")
+  if has("unnamedplus")
+    " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  else
+    " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
+endif
 
 " GUI
 set cursorline " highlights line with cursor on

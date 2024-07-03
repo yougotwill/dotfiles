@@ -2,4 +2,4 @@
    magic-wormhole==0.14.0
    pdm==2.16.1
    pip-autoremove==0.10.0
-   yt-dlp==2024.5.27
+   yt-dlp==2024.7.1
