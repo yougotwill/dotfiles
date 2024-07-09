@@ -12,6 +12,11 @@
   diffFilter = delta --color-only
 [diff]
   colorMoved = default
+  tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$REMOTE"
 [pull]
 	ff = only
 [delta]
