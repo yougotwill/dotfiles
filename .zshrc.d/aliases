@@ -31,7 +31,7 @@ alias btOff='blueutil -p 0'
 
 # brew
 alias b='brew'
-alias bcask='brew cu -a'
+alias bcu='brew cu -a'
 alias boutdated='brew update && brew outdated --formula && b outdated --cask'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
@@ -97,6 +97,7 @@ alias gcd='git checkout $(git_develop_branch)'
 alias gch='git checkout'
 alias gd='git diff --patch-with-stat'
 alias gdc='git diff --patch-with-stat --cached'
+alias gds='git diff --patch-with-stat --staged'
 alias gf='git fetch'
 alias gfa='git fetch --all'
 alias gfo='git fetch origin'
@@ -125,6 +126,7 @@ alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application
 alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
 
 # nodejs
+alias rmnext='rm -Rf **/.next'
 alias rmnode='rm -Rf **/node_modules'
 alias npmr='npm run'
 alias pn='pnpm'
@@ -158,5 +160,6 @@ alias screenshotlocation='defaults write com.apple.screencapture location ~/Pict
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
+alias sshx='ssh -Xv'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
