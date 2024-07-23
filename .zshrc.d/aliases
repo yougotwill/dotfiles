@@ -14,7 +14,7 @@ alias lla='ll -a'
 alias lki='lk --icons'
 alias pd='pushd'
 alias qd='popd'
-alias x='exit'
+alias q='exit'
 
 # destructive operations
 alias rmi='rm -I'
