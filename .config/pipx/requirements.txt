@@ -1,5 +1,5 @@
    cmus-osx==3.0.6
    magic-wormhole==0.14.0
-   pdm==2.16.1
+   pdm==2.17.1
    pip-autoremove==0.10.0
-   yt-dlp==2024.7.1
+   yt-dlp==2024.7.25
