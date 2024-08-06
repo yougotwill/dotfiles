@@ -1,5 +1,5 @@
-   django==5.0.6
+   django==5.0.7
    magic-wormhole==0.14.0
-   pdm==2.16.1
+   pdm==2.17.3
    yewtube==2.10.5
-   yt-dlp==2024.7.2
+   yt-dlp==2024.8.6
