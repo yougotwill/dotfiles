@@ -110,6 +110,7 @@ alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
 alias ghrepo='gh repo set-default'
+alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} git remote remove {} && git tag -l | xargs git tag -d && git fetch --tags'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
