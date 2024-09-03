@@ -1,4 +1,5 @@
 mas "Bitwarden", id: 1352778147
+mas "Charmstone", id: 1563735522
 mas "Color Picker", id: 1545870783
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
@@ -21,6 +22,7 @@ mas "Pandan", id: 1569600264
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
 mas "Save to Pocket", id: 1477385213
+mas "Scratchpad", id: 6504040051
 mas "Shareful", id: 1522267256
 mas "Shazam", id: 897118787
 mas "Simple Comic", id: 1497435571

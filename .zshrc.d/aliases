@@ -68,6 +68,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
 alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nc-export'
 
+# fedora
+alias ost='rpm-ostree'
+alias tb='toolbox'
+
 # flirc
 alias flirc='flirc_util'
 alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
@@ -114,7 +118,8 @@ alias gr='git remote'
 alias grv='git remote -v'
 alias gra='git remote add'
 alias grru='git remote rename origin upstream'
-alias gs='git status -sb'
+alias gs='git switch'
+alias gsb='git status -sb'
 alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
@@ -160,6 +165,6 @@ alias screenshotlocation='defaults write com.apple.screencapture location ~/Pict
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
-alias sshx='ssh -Xv'
+alias ssx='ssh -Xv'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
