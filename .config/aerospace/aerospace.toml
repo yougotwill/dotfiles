@@ -1,3 +1,5 @@
+# yougotwill aerospace config
+# Mimics the behaviour of Amethyst with my own keybindings
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
@@ -12,7 +14,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget borders active_color=0xff69D9F9 inactive_color=0x00494d64 width=10.0 blur_radius=8']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -52,12 +54,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 0
-inner.vertical =   0
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        10
+outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -81,17 +83,45 @@ outer.right =      0
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-alt-enter = 'exec-and-forget open /Applications/kitty.app'
+
+# Open terminal quake style
+ctrl-alt-shift-space = '''exec-and-forget osascript -e \
+'set kittyAppName to "kitty"
+tell application "System Events"
+	if exists (window 1 of process kittyAppName) then
+		tell process kittyAppName
+			if value of attribute "AXMinimized" of window 1 is true then
+				set value of attribute "AXMinimized" of window 1 to false
+				set frontmost to true
+			else
+				set value of attribute "AXMinimized" of window 1 to true
+			end if
+		end tell
+	else
+		tell application "kitty" to activate
+	end if
+end tell'
+'''
+
+# Restart AeroSpace
+ctrl-alt-shift-a = '''exec-and-forget osascript -e \
+'tell application "AeroSpace" to quit
+delay 2
+tell application "AeroSpace" to activate'
+'''
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-shift-s = 'layout tiles horizontal vertical'
 alt-shift-a = 'layout accordion horizontal vertical'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+alt-shift-space = ['join-with right', 'join-with down']
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-shift-h = 'focus left'
-alt-shift-j = 'focus down'
-alt-shift-k = 'focus up'
-alt-shift-l = 'focus right'
+alt-shift-h = ['focus left', 'focus up']
+alt-shift-j = ['focus down', 'focus right']
+alt-shift-k = ['focus up', 'focus left']
+alt-shift-l = ['focus right', 'focus down']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 ctrl-alt-shift-h = 'move left'
@@ -114,10 +144,11 @@ ctrl-5 = 'workspace 5'
 ctrl-6 = 'workspace 6'
 ctrl-7 = 'workspace 7'
 ctrl-8 = 'workspace 8'
-ctrl-9 = 'workspace 9'
-ctrl-0 = 'workspace 10' # In your config, you can drop workspace bindings that you don't need
+ctrl-9 = 'workspace 9' # In your config, you can drop workspace bindings that you don't need
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
+cmd-ctrl-left = 'focus-monitor prev'
+cmd-ctrl-right = 'focus-monitor next'
 alt-shift-q = 'focus-monitor 1'
 alt-shift-w = 'focus-monitor 2'
 
@@ -133,9 +164,10 @@ ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 ctrl-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
-ctrl-alt-shift-0 = ['move-node-to-workspace 10', 'workspace 0']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
+cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
+cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
 ctrl-alt-shift-q = ['move-node-to-monitor 1', 'focus-monitor 1']
 ctrl-alt-shift-w = ['move-node-to-monitor 2', 'focus-monitor 2']
 
@@ -145,23 +177,26 @@ alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-ctrl-alt-shift-a = 'reload-config'
-
+# Miscellaneous 
 alt-shift-z = 'flatten-workspace-tree' # reset layout
-
 alt-shift-f = 'layout floating tiling' # Toggle between floating and tiling layout
+cmd-h = 'macos-native-minimize' # Replace Hide with Minimize (to only hide the focused window and not the whole app)
+cmd-alt-h = [] # Disable "Hide others"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-comma = 'mode service'
+ctrl-alt-shift-comma = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
+esc = 'mode main'
+space = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
+d = 'enable toggle'
+c = 'exec-and-forget open ~/.config/aerospace/aerospace.toml'
 
 ctrl-alt-shift-h = ['join-with left', 'mode main']
 ctrl-alt-shift-j = ['join-with down', 'mode main']
@@ -177,13 +212,30 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 1'
 
-[[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = 'move-node-to-workspace 2'
+#[[on-window-detected]]
+#if.app-id = 'net.kovidgoyal.kitty'
+##run = 'move-node-to-workspace 2'
+#run = ['layout floating', 'layout tiling']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.thunderbird'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.github.Electron'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
@@ -198,5 +250,25 @@ if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.loki-project.messenger-desktop'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = 'com.colliderli.iina'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = 'com.smartcodeltd.stremio'
 run = 'move-node-to-workspace 7'
