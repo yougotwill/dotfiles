@@ -14,7 +14,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget borders active_color=0xff69D9F9 inactive_color=0x00494d64 width=10.0 blur_radius=8']
+after-startup-command = ['exec-and-forget borders active_color=0xff69D9F9 inactive_color=0x00494d64 width=7.0 blur_radius=8']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -84,8 +84,8 @@ outer.right =      10
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
 
-# Open terminal quake style
-ctrl-alt-shift-space = '''exec-and-forget osascript -e \
+# Terminal window quake style
+ctrl-alt-shift-t = '''exec-and-forget osascript -e \
 'set kittyAppName to "kitty"
 tell application "System Events"
 	if exists (window 1 of process kittyAppName) then
@@ -115,7 +115,7 @@ alt-shift-s = 'layout tiles horizontal vertical'
 alt-shift-a = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-space = ['join-with right', 'join-with down']
+alt-shift-enter = ['join-with right', 'join-with down']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = ['focus left', 'focus up']
@@ -195,8 +195,8 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
-d = 'enable toggle'
-c = 'exec-and-forget open ~/.config/aerospace/aerospace.toml'
+d = ['enable toggle', 'mode main']
+c = ['exec-and-forget open ~/.config/aerospace/aerospace.toml', 'mode main']
 
 ctrl-alt-shift-h = ['join-with left', 'mode main']
 ctrl-alt-shift-j = ['join-with down', 'mode main']
@@ -204,6 +204,56 @@ ctrl-alt-shift-k = ['join-with up', 'mode main']
 ctrl-alt-shift-l = ['join-with right', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
+# Terminal window quake style
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'layout floating'
+check-further-callbacks = true
+
+# Floating windows
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.toggl.daneel'
+if.window-title-regex-substring = 'Toggl Track'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.sindresorhus.Camera-Preview'
+if.window-title-regex-substring = 'Camera Preview'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+if.window-title-regex-substring = 'Buy BetterTouchTool'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.sindresorhus.Scratchpad'
+if.window-title-regex-substring = ''
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+if.window-title-regex-substring = 'Whatsapp video call'
+run = 'layout floating'
+check-further-callbacks = true
+
+# Open applications on specific workspaces
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
@@ -211,11 +261,6 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 1'
-
-#[[on-window-detected]]
-#if.app-id = 'net.kovidgoyal.kitty'
-##run = 'move-node-to-workspace 2'
-#run = ['layout floating', 'layout tiling']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
