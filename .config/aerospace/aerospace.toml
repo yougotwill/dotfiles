@@ -83,6 +83,12 @@ outer.right =      10
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
+# alt-enter = '''exec-and-forget osascript -e '
+# tell application "Terminal"
+#     do script
+#     activate
+# end tell'
+# '''
 
 # Terminal window quake style
 ctrl-alt-shift-t = '''exec-and-forget osascript -e \
@@ -115,7 +121,7 @@ alt-shift-s = 'layout tiles horizontal vertical'
 alt-shift-a = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-enter = ['join-with right', 'join-with down']
+alt-shift-d = ['join-with right', 'join-with down']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = ['focus left', 'focus up']
@@ -149,8 +155,6 @@ ctrl-9 = 'workspace 9' # In your config, you can drop workspace bindings that yo
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
 cmd-ctrl-left = 'focus-monitor prev'
 cmd-ctrl-right = 'focus-monitor next'
-alt-shift-q = 'focus-monitor 1'
-alt-shift-w = 'focus-monitor 2'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
@@ -168,17 +172,19 @@ ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
 cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
 cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
-ctrl-alt-shift-q = ['move-node-to-monitor 1', 'focus-monitor 1']
-ctrl-alt-shift-w = ['move-node-to-monitor 2', 'focus-monitor 2']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
+alt-shift-space = ['focus-back-and-forth', 'workspace-back-and-forth']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#close
+ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'workspace-back-and-forth'] # Close window and focus previous
+
 # Miscellaneous 
-alt-shift-z = 'flatten-workspace-tree' # reset layout
+alt-shift-w = 'flatten-workspace-tree' # Reset layout
 alt-shift-f = 'layout floating tiling' # Toggle between floating and tiling layout
 cmd-h = 'macos-native-minimize' # Replace Hide with Minimize (to only hide the focused window and not the whole app)
 cmd-alt-h = [] # Disable "Hide others"
@@ -205,10 +211,10 @@ ctrl-alt-shift-l = ['join-with right', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 # Terminal window quake style
-[[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = 'layout floating'
-check-further-callbacks = true
+#[[on-window-detected]]
+#if.app-id = 'net.kovidgoyal.kitty'
+#run = 'layout floating'
+#check-further-callbacks = true
 
 # Floating windows
 [[on-window-detected]]
@@ -257,63 +263,84 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 run = 'move-node-to-workspace 1'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 2'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.thunderbird'
 run = 'move-node-to-workspace 2'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.github.Electron'
 run = 'move-node-to-workspace 3'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
 run = 'move-node-to-workspace 3'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace 3'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace 4'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.electron.logseq'
 run = 'move-node-to-workspace 5'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace 6'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace 6'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.loki-project.messenger-desktop'
 run = 'move-node-to-workspace 6'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.tencent.xinWeChat'
 run = 'move-node-to-workspace 6'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace 6'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 7'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.colliderli.iina'
 run = 'move-node-to-workspace 7'
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.smartcodeltd.stremio'
 run = 'move-node-to-workspace 7'
+check-further-callbacks = true
