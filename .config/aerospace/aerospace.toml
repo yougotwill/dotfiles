@@ -185,7 +185,7 @@ ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'work
 
 # Miscellaneous 
 alt-shift-w = 'flatten-workspace-tree' # Reset layout
-alt-shift-f = 'layout floating tiling' # Toggle between floating and tiling layout
+alt-shift-f = ['layout floating tiling', 'mode float']
 cmd-h = 'macos-native-minimize' # Replace Hide with Minimize (to only hide the focused window and not the whole app)
 cmd-alt-h = [] # Disable "Hide others"
 
@@ -194,6 +194,9 @@ ctrl-alt-shift-comma = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.float.binding]
+alt-shift-f = ['layout tiling floating', 'mode main']
+
 [mode.service.binding]
 esc = 'mode main'
 space = ['reload-config', 'mode main']
