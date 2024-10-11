@@ -120,8 +120,11 @@ tell application "AeroSpace" to activate'
 alt-shift-s = 'layout tiles horizontal vertical'
 alt-shift-a = 'layout accordion horizontal vertical'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+alt-shift-d = 'fullscreen'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-d = ['join-with right', 'join-with down']
+alt-shift-x = ['join-with right', 'join-with down']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = ['focus left', 'focus up']
@@ -196,6 +199,7 @@ ctrl-alt-shift-comma = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.float.binding]
 alt-shift-f = ['layout tiling floating', 'mode main']
+alt-shift-d = 'fullscreen'
 
 [mode.service.binding]
 esc = 'mode main'
@@ -259,6 +263,18 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 if.window-title-regex-substring = 'Whatsapp video call'
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.apple.PhotoBooth'
+if.window-title-regex-substring = ''
+run = 'layout floating'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'me.justinyan.justfocus'
+if.window-title-regex-substring = ''
 run = 'layout floating'
 check-further-callbacks = true
 
@@ -345,5 +361,10 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.smartcodeltd.stremio'
+run = 'move-node-to-workspace 7'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
 run = 'move-node-to-workspace 7'
 check-further-callbacks = true

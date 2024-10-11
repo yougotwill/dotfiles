@@ -1,6 +1,7 @@
 tap "alienator88/cask"
 tap "buo/cask-upgrade"
 tap "dteoh/devdocs"
+tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
