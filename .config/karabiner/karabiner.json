@@ -4,6 +4,72 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Kinesis Freestyle2 MAC: Change power to left_control + left_option + left_shift + grave_accent_and_tilde",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "description": "Kinesis Freestyle2 MAC",
+                                                "product_id": 32779,
+                                                "vendor_id": 10730
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "power",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_control", "left_option", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Kinesis Freestyle2 MAC: Change left_command + left_control + left_shift + 3 to left_command + left_shift + 5",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "description": "Kinesis Freestyle2 MAC",
+                                                "product_id": 32779,
+                                                "vendor_id": 10730
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": {
+                                        "mandatory": ["left_command", "left_control", "left_shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["left_command", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change left_control + left_shift + left_option + r to left_command + spacebar",
                         "manipulators": [
                             {
@@ -13,24 +79,6 @@
                                         "mandatory": ["left_control", "left_shift", "left_option"],
                                         "optional": ["any"]
                                     }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change spotlight to left_command+spacebar",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "apple_vendor_keyboard_key_code": "spotlight",
-                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
@@ -64,11 +112,11 @@
                         ]
                     },
                     {
-                        "description": "Change ac_back to left_control + left_arrow",
+                        "description": "Change page_up to left_control + left_arrow",
                         "manipulators": [
                             {
                                 "from": {
-                                    "consumer_key_code": "ac_back",
+                                    "key_code": "page_up",
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": ["any"]
@@ -85,11 +133,11 @@
                         ]
                     },
                     {
-                        "description": "Change ac_forward to left_control + right_arrow",
+                        "description": "Change page_down to left_control + right_arrow",
                         "manipulators": [
                             {
                                 "from": {
-                                    "consumer_key_code": "ac_forward",
+                                    "key_code": "page_down",
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": ["any"]
@@ -106,11 +154,29 @@
                         ]
                     },
                     {
-                        "description": "Change ac_home to left_command+spacebar",
+                        "description": "Change home to left_command+left_control+spacebar",
                         "manipulators": [
                             {
                                 "from": {
-                                    "consumer_key_code": "ac_home",
+                                    "key_code": "home",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command", "left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change end to left_command+spacebar",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "end",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -132,8 +198,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 200,
-                                    "basic.to_if_held_down_threshold_milliseconds": 750
+                                    "basic.to_if_alone_timeout_milliseconds": 1500,
+                                    "basic.to_if_held_down_threshold_milliseconds": 2000
                                 },
                                 "to": [
                                     {
@@ -179,6 +245,24 @@
                                     "modifiers": { "mandatory": ["left_control"] }
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change spotlight to left_command+spacebar",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "apple_vendor_keyboard_key_code": "spotlight",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -1370,10 +1454,11 @@
                         "product_id": 32779,
                         "vendor_id": 10730
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
                 }
             ],
-            "name": "Split Keyboard",
+            "name": "Kinesis Freestyle2 MAC",
             "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
