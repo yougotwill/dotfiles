@@ -151,9 +151,7 @@ ctrl-3 = 'workspace 3'
 ctrl-4 = 'workspace 4'
 ctrl-5 = 'workspace 5'
 ctrl-6 = 'workspace 6'
-ctrl-7 = 'workspace 7'
-ctrl-8 = 'workspace 8'
-ctrl-9 = 'workspace 9' # In your config, you can drop workspace bindings that you don't need
+ctrl-7 = 'workspace 7' # In your config, you can drop workspace bindings that you don't need
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
 cmd-ctrl-left = 'focus-monitor prev'
@@ -169,8 +167,6 @@ ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-ctrl-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
-ctrl-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
 cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
@@ -228,55 +224,46 @@ ctrl-alt-shift-l = ['join-with right', 'mode main']
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
 if.window-title-regex-substring = 'Toggl Track'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Camera-Preview'
 if.window-title-regex-substring = 'Camera Preview'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Buy BetterTouchTool'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Scratchpad'
 if.window-title-regex-substring = ''
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 if.window-title-regex-substring = 'Whatsapp video call'
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.PhotoBooth'
 if.window-title-regex-substring = ''
 run = 'layout floating'
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'me.justinyan.justfocus'
 if.window-title-regex-substring = ''
 run = 'layout floating'
-check-further-callbacks = true
 
 # Open applications on specific workspaces
 [[on-window-detected]]
@@ -296,6 +283,11 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.thunderbird'
+run = 'move-node-to-workspace 2'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 2'
 check-further-callbacks = true
 
