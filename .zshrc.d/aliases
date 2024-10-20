@@ -159,6 +159,8 @@ alias vim='nvim'
 alias vimf='nvim $(fzf)'
 
 # misc
+alias ae='aerospace'
+alias aerc='Z/.config/aerospace/aerospace.toml'
 alias defb='defaultbrowser'
 alias mpva='mpv --no-video'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
