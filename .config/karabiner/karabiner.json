@@ -1459,7 +1459,6 @@
                 }
             ],
             "name": "Kinesis Freestyle2 MAC",
-            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
@@ -2018,7 +2017,7 @@
                     },
                     {
                         "available_since": "13.6.0",
-                        "description": "Mouse Keys Mode v4 (rev 3)",
+                        "description": "Mouse Keys Mode v4 (rev 3) - custom",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2052,7 +2051,7 @@
                                     "key_code": "j",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": 1536 } }],
+                                "to": [{ "mouse_key": { "y": 2000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2101,7 +2100,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": 1536 } }
+                                    { "mouse_key": { "y": 2000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -2137,7 +2136,7 @@
                                     "key_code": "k",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": -1536 } }],
+                                "to": [{ "mouse_key": { "y": -2000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2186,7 +2185,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": -1536 } }
+                                    { "mouse_key": { "y": -2000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -2222,7 +2221,7 @@
                                     "key_code": "h",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": -1536 } }],
+                                "to": [{ "mouse_key": { "x": -2000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2271,7 +2270,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": -1536 } }
+                                    { "mouse_key": { "x": -2000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -2307,7 +2306,7 @@
                                     "key_code": "l",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": 1536 } }],
+                                "to": [{ "mouse_key": { "x": 2000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2356,7 +2355,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": 1536 } }
+                                    { "mouse_key": { "x": 2000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -3157,6 +3156,7 @@
                 }
             ],
             "name": "Custom",
+            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
