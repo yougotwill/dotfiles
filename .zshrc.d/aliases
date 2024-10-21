@@ -136,6 +136,7 @@ alias rmnode='rm -Rf **/node_modules'
 alias npmr='npm run'
 alias pn='pnpm'
 alias yif='yarn install --frozen-lockfile'
+alias yii='yarn install --immutable-cache'
 
 
 # pipx
