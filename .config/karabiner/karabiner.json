@@ -199,14 +199,9 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 1500,
-                                    "basic.to_if_held_down_threshold_milliseconds": 2000
+                                    "basic.to_if_held_down_threshold_milliseconds": 3000
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "key_code": "spacebar" }],
                                 "type": "basic"
                             }
