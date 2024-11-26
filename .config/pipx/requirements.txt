@@ -1,6 +1,5 @@
-   django==5.1.2
-   magic-wormhole==0.16.0
-   pdm==2.19.3
-   spotdl==4.2.8
+   magic-wormhole==0.17.0
+   pdm==2.20.1
+   spotdl==4.2.10
    yewtube==2.12.0
-   yt-dlp==2024.10.7
+   yt-dlp==2024.11.18
