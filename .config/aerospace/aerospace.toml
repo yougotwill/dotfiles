@@ -376,3 +376,8 @@ check-further-callbacks = true
 if.app-id = 'com.utmapp.UTM'
 run = 'move-node-to-workspace 7'
 check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.isaacmarovitz.Whisky'
+run = 'move-node-to-workspace 7'
+check-further-callbacks = true
