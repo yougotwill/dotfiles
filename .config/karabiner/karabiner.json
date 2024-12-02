@@ -550,9 +550,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "j" }
                                     ],
                                     "simultaneous_options": {
@@ -635,9 +635,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "k" }
                                     ],
                                     "simultaneous_options": {
@@ -720,9 +720,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "h" }
                                     ],
                                     "simultaneous_options": {
@@ -805,9 +805,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "l" }
                                     ],
                                     "simultaneous_options": {
@@ -870,9 +870,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "v" }
                                     ],
                                     "simultaneous_options": {
@@ -935,9 +935,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "b" }
                                     ],
                                     "simultaneous_options": {
@@ -1000,9 +1000,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "n" }
                                     ],
                                     "simultaneous_options": {
@@ -1057,7 +1057,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "x",
+                                    "key_code": "s",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -1080,10 +1080,10 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
-                                        { "key_code": "x" }
+                                        { "key_code": "tab" },
+                                        { "key_code": "s" }
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict",
@@ -1158,9 +1158,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "f" }
                                     ],
                                     "simultaneous_options": {
@@ -1215,7 +1215,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "g",
+                                    "key_code": "d",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "mouse_key": { "speed_multiplier": 0.5 } }],
@@ -1223,10 +1223,10 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
-                                        { "key_code": "g" }
+                                        { "key_code": "tab" },
+                                        { "key_code": "d" }
                                     ],
                                     "simultaneous_options": {
                                         "key_down_order": "strict",
@@ -1297,9 +1297,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "u" }
                                     ],
                                     "simultaneous_options": {
@@ -1379,9 +1379,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "i" }
                                     ],
                                     "simultaneous_options": {
@@ -1462,9 +1462,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "o" }
                                     ],
                                     "simultaneous_options": {
@@ -1545,9 +1545,9 @@
                             },
                             {
                                 "from": {
-                                    "modifiers": { "optional": ["any"] },
+                                    "modifiers": { "optional": [] },
                                     "simultaneous": [
-                                        { "key_code": "left_option" },
+                                        { "key_code": "tab" },
                                         { "key_code": "p" }
                                     ],
                                     "simultaneous_options": {
@@ -1613,7 +1613,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 150,
-                                    "basic.to_if_held_down_threshold_milliseconds": 150
+                                    "basic.to_if_held_down_threshold_milliseconds": 50
                                 },
                                 "to_if_alone": [{ "key_code": "spacebar" }],
                                 "to_if_held_down": [
