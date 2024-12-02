@@ -91,38 +91,38 @@ outer.right =      10
 # '''
 
 # Terminal window quake style
-ctrl-alt-shift-t = '''exec-and-forget osascript -e \
-'set kittyAppName to "kitty"
-tell application "System Events"
-	if exists (window 1 of process kittyAppName) then
-		tell process kittyAppName
-			if value of attribute "AXMinimized" of window 1 is true then
-				set value of attribute "AXMinimized" of window 1 to false
-				set frontmost to true
-			else
-				set value of attribute "AXMinimized" of window 1 to true
-			end if
-		end tell
-	else
-		tell application "kitty" to activate
-	end if
-end tell'
-'''
+#ctrl-alt-shift-t = '''exec-and-forget osascript -e \
+#'set kittyAppName to "kitty"
+#tell application "System Events"
+#	if exists (window 1 of process kittyAppName) then
+#		tell process kittyAppName
+#			if value of attribute "AXMinimized" of window 1 is true then
+#				set value of attribute "AXMinimized" of window 1 to false
+#				set frontmost to true
+#			else
+#				set value of attribute "AXMinimized" of window 1 to true
+#			end if
+#		end tell
+#	else
+#		tell application "kitty" to activate
+#	end if
+#end tell'
+#'''
 
 # Restart AeroSpace
-ctrl-alt-shift-a = '''exec-and-forget osascript -e \
+ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
 'tell application "AeroSpace" to quit
 delay 2
 tell application "AeroSpace" to activate'
-'''
+''']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-shift-s = 'layout tiles horizontal vertical'
-alt-shift-a = 'layout accordion horizontal vertical'
+alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
+alt-shift-a = ['layout tiling','layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
-alt-shift-d = 'fullscreen'
+alt-shift-d = ['fullscreen']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
 alt-shift-x = ['join-with right', 'join-with down']
@@ -134,29 +134,29 @@ alt-shift-k = ['focus up', 'focus left']
 alt-shift-l = ['focus right', 'focus down']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-ctrl-alt-shift-h = 'move left'
-ctrl-alt-shift-j = 'move down'
-ctrl-alt-shift-k = 'move up'
-ctrl-alt-shift-l = 'move right'
+ctrl-alt-shift-h = ['move left']
+ctrl-alt-shift-j = ['move down']
+ctrl-alt-shift-k = ['move up']
+ctrl-alt-shift-l = ['move right']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-shift-minus = ['resize smart -50']
+alt-shift-equal = ['resize smart +50']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-left = 'workspace prev'
-ctrl-right = 'workspace next'
-ctrl-1 = 'workspace 1'
-ctrl-2 = 'workspace 2'
-ctrl-3 = 'workspace 3'
-ctrl-4 = 'workspace 4'
-ctrl-5 = 'workspace 5'
-ctrl-6 = 'workspace 6'
-ctrl-7 = 'workspace 7' # In your config, you can drop workspace bindings that you don't need
+ctrl-left = ['workspace prev']
+ctrl-right = ['workspace next']
+ctrl-1 = ['workspace 1']
+ctrl-2 = ['workspace 2']
+ctrl-3 = ['workspace 3']
+ctrl-4 = ['workspace 4']
+ctrl-5 = ['workspace 5']
+ctrl-6 = ['workspace 6']
+ctrl-7 = ['workspace 7'] # In your config, you can drop workspace bindings that you don't need
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
-cmd-ctrl-left = 'focus-monitor prev'
-cmd-ctrl-right = 'focus-monitor next'
+cmd-ctrl-left = ['focus-monitor prev']
+cmd-ctrl-right = ['focus-monitor next']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
@@ -174,27 +174,27 @@ cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor p
 cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'workspace-back-and-forth'
+alt-tab = ['workspace-back-and-forth']
 alt-shift-space = ['workspace-back-and-forth', 'workspace-back-and-forth']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-tab = ['move-workspace-to-monitor --wrap-around next']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#close
 ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'workspace-back-and-forth'] # Close window and focus previous
 
 # Miscellaneous 
-cmd-h = 'macos-native-minimize' # Replace Hide with Minimize (to only hide the focused window and not the whole app)
+cmd-h = ['macos-native-minimize'] # Replace Hide with Minimize (to only hide the focused window and not the whole app)
 cmd-alt-h = [] # Disable "Hide others"
-alt-shift-w = 'flatten-workspace-tree' # Reset layout
+alt-shift-w = ['flatten-workspace-tree'] # Reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-alt-shift-comma = 'mode service'
+ctrl-alt-shift-comma = ['mode service']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = 'mode main'
+esc = ['mode main']
 space = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -212,64 +212,63 @@ ctrl-alt-shift-l = ['join-with right', 'mode main']
 # Terminal window quake style
 #[[on-window-detected]]
 #if.app-id = 'net.kovidgoyal.kitty'
-#run = 'layout floating'
-#check-further-callbacks = true
+#run = ['layout floating']
 
 # Floating windows
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Extension:'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
 if.window-title-regex-substring = 'Toggl Track'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Camera-Preview'
 if.window-title-regex-substring = 'Camera Preview'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Buy BetterTouchTool'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Scratchpad'
 if.window-title-regex-substring = ''
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 if.window-title-regex-substring = 'Whatsapp video call'
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.PhotoBooth'
 if.window-title-regex-substring = ''
-run = 'layout floating'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'me.justinyan.justfocus'
 if.window-title-regex-substring = ''
-run = 'layout floating'
+run = ['layout floating']
 
 # Open applications on specific workspaces
 [[on-window-detected]]
@@ -379,5 +378,15 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.isaacmarovitz.Whisky'
+run = 'move-node-to-workspace 7'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Audiobookshelf'
+run = 'move-node-to-workspace 7'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Ambiphone'
 run = 'move-node-to-workspace 7'
 check-further-callbacks = true
