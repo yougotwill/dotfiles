@@ -14,7 +14,11 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget borders active_color=0xff69D9F9 inactive_color=0x00494d64 width=7.0 blur_radius=8']
+after-startup-command = [
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xff69D9F9 inactive_color=0x00494d64 width=7.0 blur_radius=8'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -36,15 +40,27 @@ default-root-container-layout = 'tiles'
 #               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
-# Possible values: (qwerty|dvorak)
-# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-key-mapping.preset = 'qwerty'
-
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
+# Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# See: https://nikitabobko.github.io/AeroSpace/guide#exec-on-workspace-change-callback
+# Keep Picture in Picture windows on top
+# https://github.com/nikitabobko/AeroSpace/issues/2
+exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/stick-pip-windows.sh']
+
+# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h keyÏ
+# Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+# automatically-unhide-macos-hidden-apps = false
+
+# Possible values: (qwerty|dvorak)
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+preset = 'qwerty'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -64,6 +80,7 @@ outer.right =      10
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
+# Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
 
 # All possible keys:
@@ -110,11 +127,11 @@ outer.right =      10
 #'''
 
 # Restart AeroSpace
-ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
-'tell application "AeroSpace" to quit
-delay 2
-tell application "AeroSpace" to activate'
-''']
+# ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
+# 'tell application "AeroSpace" to quit
+# delay 2
+# tell application "AeroSpace" to activate'
+# ''']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
@@ -197,11 +214,13 @@ ctrl-alt-shift-comma = ['mode service']
 esc = ['mode main']
 space = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 d = ['enable toggle', 'mode main']
 c = ['exec-and-forget open ~/.config/aerospace/aerospace.toml', 'mode main']
+
+# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+#s = ['layout sticky tiling', 'mode main']
 
 ctrl-alt-shift-h = ['join-with left', 'mode main']
 ctrl-alt-shift-j = ['join-with down', 'mode main']
@@ -219,56 +238,104 @@ ctrl-alt-shift-l = ['join-with right', 'mode main']
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-if.window-title-regex-substring = 'Extension:'
-run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = 'Picture-in-picture'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+if.window-title-regex-substring = 'Picture-in-picture'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+if.window-title-regex-substring = 'Extension:'
+run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
-if.window-title-regex-substring = 'Toggl Track'
+if.window-title-regex-substring = 'Untitled'
 run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Camera-Preview'
 if.window-title-regex-substring = 'Camera Preview'
 run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.hegenberg.BetterTouchTool'
-if.window-title-regex-substring = 'Buy BetterTouchTool'
-run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.sindresorhus.Scratchpad'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-if.window-title-regex-substring = 'Whatsapp video call'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.PhotoBooth'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'me.justinyan.justfocus'
 if.window-title-regex-substring = ''
 run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+if.window-title-regex-substring = 'Buy BetterTouchTool'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+if.window-title-regex-substring = 'Whatsapp video call'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.apple.PhotoBooth'
+if.window-title-regex-substring = ''
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+if.window-title-regex-substring = 'Friends List'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+if.window-title-regex-substring = 'Special Offers'
+run = ['layout floating']
+check-further-callbacks = true
+
+## Whisky apps
+[[on-window-detected]]
+if.app-id = 'NULL-APP-BUNDLE-ID'
+if.window-title-regex-substring = 'Friends List'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'NULL-APP-BUNDLE-ID'
+if.window-title-regex-substring = 'Special Offers'
+run = ['layout floating']
+check-further-callbacks = true
 
 # Open applications on specific workspaces
 [[on-window-detected]]
