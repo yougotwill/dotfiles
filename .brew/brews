@@ -71,7 +71,7 @@ brew "the_silver_searcher"
 brew "thefuck"
 brew "tldr"
 brew "tmux"
-brew "trash"
+brew "trash", link: true
 brew "universal-ctags", args: ["HEAD"]
 brew "walk"
 brew "wget"
