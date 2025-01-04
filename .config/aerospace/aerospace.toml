@@ -262,13 +262,11 @@ check-further-callbacks = true
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
@@ -297,6 +295,12 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Buy BetterTouchTool'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+if.window-title-regex-substring = 'Software Update'
 run = ['layout floating']
 check-further-callbacks = true
 

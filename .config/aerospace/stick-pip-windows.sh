@@ -41,6 +41,6 @@ move_win() {
 }
 
 # Process each PIP window found
-echo "$pip_wins" | while IFS= read -r win; do
+for win in $pip_wins; do
   move_win "$win"
 done
