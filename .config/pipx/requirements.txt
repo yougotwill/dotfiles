@@ -1,5 +1,5 @@
    magic-wormhole==0.17.0
    pdm==2.22.1
    spotdl==4.2.10
-   yewtube==2.12.0
-   yt-dlp==2024.12.13
+   yewtube==2.12.1
+   yt-dlp==2024.12.23
