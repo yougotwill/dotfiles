@@ -141,9 +141,6 @@ alt-shift-f = ['layout floating tiling']
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
 alt-shift-d = ['fullscreen']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-x = ['join-with right', 'join-with down']
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = ['focus left', 'focus up']
 alt-shift-j = ['focus down', 'focus right']
@@ -201,9 +198,12 @@ alt-shift-tab = ['move-workspace-to-monitor --wrap-around next']
 ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'workspace-back-and-forth'] # Close window and focus previous
 
 # Miscellaneous 
+# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+alt-shift-x = ['join-with right', 'join-with down']
+alt-shift-z = ['flatten-workspace-tree'] # Reset layout
+
 cmd-h = ['macos-native-minimize'] # Replace Hide with Minimize (to only hide the focused window and not the whole app)
 cmd-alt-h = [] # Disable "Hide others"
-alt-shift-w = ['flatten-workspace-tree'] # Reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-shift-comma = ['mode service']
