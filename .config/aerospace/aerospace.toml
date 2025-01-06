@@ -1,10 +1,10 @@
-# yougotwill aerospace config
-# Mimics the behaviour of Amethyst with my own keybindings
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
-# It's not necessary to copy all keys to your config.
-# If the key is missing in your config, "default-config.toml" will serve as a fallback
+# Author: yougotwill
+# Mimic the Amethyst window manager's behaviour with my custom keybindings
+# Try to match the default file structure as close as possible
+# See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/config-examples/default-config.toml
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -47,13 +47,15 @@ default-root-container-orientation = 'auto'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Custom event changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#exec-on-workspace-change-callback
-# Keep Picture in Picture windows on top
+# Float Picture in Picture windows on top
 # https://github.com/nikitabobko/AeroSpace/issues/2
-exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/stick-pip-windows.sh']
+exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/float-pip-windows.sh']
+# Custom event changes - end
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
-# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h keyÏ
+# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 # automatically-unhide-macos-hidden-apps = false
 
@@ -107,24 +109,25 @@ outer.right =      10
 # end tell'
 # '''
 
-# Terminal window quake style
-#ctrl-alt-shift-t = '''exec-and-forget osascript -e \
-#'set kittyAppName to "kitty"
-#tell application "System Events"
-#	if exists (window 1 of process kittyAppName) then
-#		tell process kittyAppName
-#			if value of attribute "AXMinimized" of window 1 is true then
-#				set value of attribute "AXMinimized" of window 1 to false
-#				set frontmost to true
-#			else
-#				set value of attribute "AXMinimized" of window 1 to true
-#			end if
-#		end tell
-#	else
-#		tell application "kitty" to activate
-#	end if
-#end tell'
-#'''
+# Custom execution commands
+# Quake style terminal window
+# ctrl-alt-shift-t = '''exec-and-forget osascript -e \
+# 'set kittyAppName to "kitty"
+# tell application "System Events"
+#   if exists (window 1 of process kittyAppName) then
+#       tell process kittyAppName
+#           if value of attribute "AXMinimized" of window 1 is true then
+#               set value of attribute "AXMinimized" of window 1 to false
+#               set frontmost to true
+#           else
+#               set value of attribute "AXMinimized" of window 1 to true
+#           end if
+#       end tell
+#   else
+#       tell application "kitty" to activate
+#   end if
+# end tell'
+# '''
 
 # Restart AeroSpace
 # ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
@@ -132,14 +135,12 @@ outer.right =      10
 # delay 2
 # tell application "AeroSpace" to activate'
 # ''']
+# Custom execution commands - end
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
 alt-shift-a = ['layout tiling','layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
-alt-shift-d = ['fullscreen']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-shift-h = ['focus left', 'focus up']
@@ -158,8 +159,6 @@ alt-shift-minus = ['resize smart -50']
 alt-shift-equal = ['resize smart +50']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-left = ['workspace prev']
-ctrl-right = ['workspace next']
 ctrl-1 = ['workspace 1']
 ctrl-2 = ['workspace 2']
 ctrl-3 = ['workspace 3']
@@ -167,14 +166,14 @@ ctrl-4 = ['workspace 4']
 ctrl-5 = ['workspace 5']
 ctrl-6 = ['workspace 6']
 ctrl-7 = ['workspace 7'] # In your config, you can drop workspace bindings that you don't need
+ctrl-left = ['workspace prev']
+ctrl-right = ['workspace next']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
 cmd-ctrl-left = ['focus-monitor prev']
 cmd-ctrl-right = ['focus-monitor next']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
-ctrl-alt-shift-right = ['move-node-to-workspace next', 'workspace next']
 ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
 ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
 ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
@@ -182,28 +181,34 @@ ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
+ctrl-alt-shift-right = ['move-node-to-workspace next', 'workspace next']
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-tab = ['workspace-back-and-forth']
+alt-shift-space = ['workspace-back-and-forth', 'workspace-back-and-forth'] # reset window focus
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
+alt-shift-tab = ['move-workspace-to-monitor --wrap-around next']
+
+# Custom bindings
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+alt-shift-d = ['fullscreen']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
 cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
 cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = ['workspace-back-and-forth']
-alt-shift-space = ['workspace-back-and-forth', 'workspace-back-and-forth']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = ['move-workspace-to-monitor --wrap-around next']
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#close
 ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'workspace-back-and-forth'] # Close window and focus previous
 
-# Miscellaneous 
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-x = ['join-with right', 'join-with down']
+alt-shift-x = ['join-with right', 'join-with down'] # create split in opposite axis to current layout
 alt-shift-z = ['flatten-workspace-tree'] # Reset layout
 
 cmd-h = ['macos-native-minimize'] # Replace Hide with Minimize (to only hide the focused window and not the whole app)
 cmd-alt-h = [] # Disable "Hide others"
+# Custom bindings - end
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-shift-comma = ['mode service']
@@ -211,12 +216,11 @@ ctrl-alt-shift-comma = ['mode service']
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['mode main']
-space = ['reload-config', 'mode main']
+esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
-d = ['enable toggle', 'mode main']
+space = ['enable toggle', 'mode main']
 c = ['exec-and-forget open ~/.config/aerospace/aerospace.toml', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -227,13 +231,14 @@ ctrl-alt-shift-j = ['join-with down', 'mode main']
 ctrl-alt-shift-k = ['join-with up', 'mode main']
 ctrl-alt-shift-l = ['join-with right', 'mode main']
 
-# See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
-# Terminal window quake style
-#[[on-window-detected]]
-#if.app-id = 'net.kovidgoyal.kitty'
-#run = ['layout floating']
+# See: https://nikitabobko.github.io/AeroSpace/commands#volume
+# down = 'volume down'
+# up = 'volume up'
+# shift-down = ['volume set 0', 'mode main']
 
+# Custom behaviours
 # Floating windows
+# See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
@@ -262,11 +267,13 @@ check-further-callbacks = true
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
+check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
@@ -341,7 +348,7 @@ if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
 check-further-callbacks = true
 
-# Open applications on specific workspaces
+# Move applications to specific workspaces
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
@@ -368,18 +375,23 @@ run = 'move-node-to-workspace 2'
 check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.github.Electron'
-run = 'move-node-to-workspace 3'
+if.app-id = 'com.apple.reminders'
+run = 'move-node-to-workspace 2'
 check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.apple.reminders'
+if.app-id = 'com.github.Electron'
 run = 'move-node-to-workspace 3'
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace 3'
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace 4'
 check-further-callbacks = true
 
 [[on-window-detected]]
@@ -461,3 +473,4 @@ check-further-callbacks = true
 if.app-name-regex-substring = 'Ambiphone'
 run = 'move-node-to-workspace 7'
 check-further-callbacks = true
+# Custom behaviour - end
