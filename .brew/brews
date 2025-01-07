@@ -83,3 +83,4 @@ brew "felixkratz/formulae/borders"
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
 brew "mcasper/formulae/git-clean", args: ["HEAD"]
 brew "mongodb/brew/mongodb-community@6.0"
+brew "waydabber/betterdisplay/betterdisplaycli"
