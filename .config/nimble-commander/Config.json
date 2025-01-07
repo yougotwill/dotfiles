@@ -142,25 +142,36 @@
     "externalTools": {
         "tools_v1": [
             {
+                "title": "Reveal in Finder",
+                "path": "/usr/bin/open",
+                "parameters": "-R %p",
+                "shortcut": "⇧⌘r",
+                "startup": 2,
+                "uuid": "9b6973be-4813-4266-8ee3-8f122f9f69b9"
+            },
+            {
+                "title": "Reveal in FlowVision",
+                "path": "/usr/bin/open",
+                "parameters": "-a FlowVision %r",
+                "shortcut": "^f",
+                "startup": 2,
+                "uuid": "7ff3ba0e-f13b-422a-97ac-179d4515256e"
+            },
+            {
                 "title": "Open Trash",
-                "path": "/opt/homebrew/bin/cmus-remote",
-                "parameters": "/Users/neon/.Trash",
+                "path": "/usr/bin/open",
+                "parameters": "/Users/will/.Trash",
                 "shortcut": "^b",
-                "startup": 2
+                "startup": 2,
+                "uuid": "d5293638-9a5b-48ab-8b56-289b33c15e5c"
             },
             {
                 "title": "Play in Cmus",
                 "path": "/opt/homebrew/bin/cmus-remote",
                 "parameters": "--file %p",
-                "shortcut": "",
-                "startup": 2
-            },
-            {
-                "title": "Reveal in Finder",
-                "path": "/usr/bin/open",
-                "parameters": "-R %p",
-                "shortcut": "⇧⌘r",
-                "startup": 2
+                "shortcut": "\u0000",
+                "startup": 2,
+                "uuid": "95143f7e-56d6-4a6c-8224-cecb4a37024f"
             }
         ]
     },
