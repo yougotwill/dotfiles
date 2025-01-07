@@ -3,8 +3,8 @@
 
 # Author: yougotwill
 # Mimic the Amethyst window manager's behaviour with my custom keybindings
-# Try to match the default file structure as close as possible
-# See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/config-examples/default-config.toml
+# Try to keep the default config file structure as best as possible to prevent conflicts
+# See: https://nikitabobko.github.io/AeroSpace/guide#default-config
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -33,7 +33,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 0
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -57,7 +57,7 @@ exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/float-pip-
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-# automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -199,15 +199,13 @@ alt-shift-d = ['fullscreen']
 cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
 cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#close
-ctrl-alt-shift-w = ['close --quit-if-last-window', 'focus-back-and-forth', 'workspace-back-and-forth'] # Close window and focus previous
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
 alt-shift-x = ['join-with right', 'join-with down'] # create split in opposite axis to current layout
 alt-shift-z = ['flatten-workspace-tree'] # Reset layout
 
-cmd-h = ['macos-native-minimize'] # Replace Hide with Minimize (to only hide the focused window and not the whole app)
-cmd-alt-h = [] # Disable "Hide others"
+# See: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
 # Custom bindings - end
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
@@ -308,6 +306,12 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Software Update'
+run = ['layout floating']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+if.window-title-regex-substring = 'Screenshot'
 run = ['layout floating']
 check-further-callbacks = true
 
