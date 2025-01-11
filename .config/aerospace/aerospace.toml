@@ -51,10 +51,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # See: https://nikitabobko.github.io/AeroSpace/guide#exec-on-workspace-change-callback
 # Float Picture in Picture windows on top
 # https://github.com/nikitabobko/AeroSpace/issues/2
-exec-on-workspace-change = [
-# 'exec-and-forget $HOME/.config/aerospace/scripts/float-pip-windows.sh'
-    '/bin/sh', '-c', '$HOME/.config/aerospace/scripts/float-pip-windows.sh'
-]
+exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/scripts/float-pip-windows.sh']
 # Custom event changes - end
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -114,27 +111,6 @@ outer.right =      10
 
 # Custom execution commands
 ctrl-alt-shift-period = ['exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty']
-
-# Quake style terminal window
-# ctrl-alt-shift-t = '''exec-and-forget osascript -e \
-# 'set kittyAppName to "kitty"
-# tell application "System Events"
-#   if exists (window 1 of process kittyAppName) then
-#       tell process kittyAppName
-#           if value of attribute "AXMinimized" of window 1 is true then
-#               set value of attribute "AXMinimized" of window 1 to false
-#               set frontmost to true
-#           else
-#               set value of attribute "AXMinimized" of window 1 to true
-#           end if
-#       end tell
-#   else
-#       tell application "kitty" to activate
-#   end if
-# end tell'
-# '''
-
-
 
 # Restart AeroSpace
 # ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
