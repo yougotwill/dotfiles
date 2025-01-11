@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# NOTE This seems to only work a single pip window at a time for now
+# Float picture in picture windows on top of all workspaces
 
 ws=${1:-$AEROSPACE_FOCUSED_WORKSPACE}
 
