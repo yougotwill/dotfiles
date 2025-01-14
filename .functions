@@ -13,3 +13,7 @@ hl () {
 lk () {
   cd "$(walk "$@")"
 }
+
+bupgradepinned () {
+  bcu unpin $1 && bcu $1 && bcu pin $1
+}

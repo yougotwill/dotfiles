@@ -369,7 +369,7 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 3'
 check-further-callbacks = true
 
 [[on-window-detected]]
