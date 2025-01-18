@@ -74,10 +74,10 @@ alias ost='rpm-ostree'
 alias tb='toolbox'
 
 # flirc
-alias flirc='flirc_util'
-alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
-alias flirc-import='flirc_util loadconfig ~/skip/flirc-usb'
-alias flirc-settings='flirc_util settings > ~/skip/flirc-usb-settings.txt'
+alias flirc='/Applications/Flirc.app/Contents/Resources/flirc_util'
+alias flirc-export='/Applications/Flirc.app/Contents/Resources/flirc_util saveconfig ~/skip/flirc-usb'
+alias flirc-import='/Applications/Flirc.app/Contents/Resources/flirc_util loadconfig ~/skip/flirc-usb'
+alias flirc-settings='/Applications/Flirc.app/Contents/Resources/flirc_util settings > ~/skip/flirc-usb-settings.txt'
 alias flirc-backup="flirc-export && flirc-settings && echo 'flirc usb backed up to ~/skip'"
 
 # folders
