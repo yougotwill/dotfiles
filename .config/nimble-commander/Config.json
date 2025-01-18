@@ -138,9 +138,27 @@
     "viewer": {
         "modalMode": false
     },
-    "terminal": {},
+    "terminal": {
+        "customShellPath": "/bin/zsh"
+    },
     "externalTools": {
         "tools_v1": [
+            {
+                "title": "Open Trash",
+                "path": "/usr/bin/open",
+                "parameters": "/Users/will/.Trash",
+                "shortcut": "^b",
+                "startup": 2,
+                "uuid": "d5293638-9a5b-48ab-8b56-289b33c15e5c"
+            },
+            {
+                "title": "Play in Cmus",
+                "path": "/opt/homebrew/bin/cmus-remote",
+                "parameters": "--file %p",
+                "shortcut": "\u0000",
+                "startup": 2,
+                "uuid": "95143f7e-56d6-4a6c-8224-cecb4a37024f"
+            },
             {
                 "title": "Reveal in Finder",
                 "path": "/usr/bin/open",
@@ -158,20 +176,12 @@
                 "uuid": "7ff3ba0e-f13b-422a-97ac-179d4515256e"
             },
             {
-                "title": "Open Trash",
+                "title": "Reveal in VS Code",
                 "path": "/usr/bin/open",
-                "parameters": "/Users/will/.Trash",
-                "shortcut": "^b",
+                "parameters": "-a Visual\\ Studio\\ Code %p",
+                "shortcut": "^e",
                 "startup": 2,
-                "uuid": "d5293638-9a5b-48ab-8b56-289b33c15e5c"
-            },
-            {
-                "title": "Play in Cmus",
-                "path": "/opt/homebrew/bin/cmus-remote",
-                "parameters": "--file %p",
-                "shortcut": "\u0000",
-                "startup": 2,
-                "uuid": "95143f7e-56d6-4a6c-8224-cecb4a37024f"
+                "uuid": "10d00643-f8bc-485c-b73e-1448e770bd6f"
             }
         ]
     },
@@ -694,16 +704,16 @@
     },
     "hotkeyOverrides_v1": {
         "menu.edit.deselect_all": "⌥ ",
-        "menu.view.toggle_layout_1": "⌘7",
+        "menu.view.toggle_layout_1": "⌘0",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
-        "menu.view.toggle_layout_4": "⌘0",
-        "menu.view.toggle_layout_5": "",
-        "menu.view.toggle_layout_6": "",
-        "menu.view.toggle_layout_7": "",
-        "menu.view.toggle_layout_8": "",
-        "menu.view.toggle_layout_9": "",
-        "menu.view.toggle_layout_10": "",
+        "menu.view.toggle_layout_4": "⌘7",
+        "menu.view.toggle_layout_5": "\u0000",
+        "menu.view.toggle_layout_6": "\u0000",
+        "menu.view.toggle_layout_7": "\u0000",
+        "menu.view.toggle_layout_8": "\u0000",
+        "menu.view.toggle_layout_9": "\u0000",
+        "menu.view.toggle_layout_10": "\u0000",
         "menu.view.sorting_by_name": "⇧^2",
         "menu.view.sorting_by_extension": "⇧^3",
         "menu.view.sorting_by_modify_time": "⇧^1",
@@ -711,7 +721,7 @@
         "menu.view.sorting_by_creation_time": "⇧^5",
         "menu.view.sorting_by_added_time": "⇧^6",
         "menu.view.sorting_by_accessed_time": "⇧^7",
-        "menu.view.show_tabs": "",
+        "menu.view.show_tabs": "\u0000",
         "menu.view.panels_position.move_up": "^⌘",
         "menu.view.panels_position.move_down": "^⌘",
         "menu.view.panels_position.move_left": "^⌘",
