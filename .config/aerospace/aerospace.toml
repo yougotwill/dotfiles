@@ -328,6 +328,11 @@ if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
 check-further-callbacks = true
 
+[[on-window-detected]]
+if.app-id = 'com.github.Electron'
+run = ['layout floating']
+check-further-callbacks = true
+
 ## Whisky apps
 [[on-window-detected]]
 if.app-id = 'NULL-APP-BUNDLE-ID'
@@ -344,126 +349,126 @@ check-further-callbacks = true
 # Move applications to specific workspaces
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace 1'
+run = ['move-node-to-workspace 1']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
-run = 'move-node-to-workspace 1'
+run = ['move-node-to-workspace 1']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 2'
+run = ['move-node-to-workspace 2']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.thunderbird'
-run = 'move-node-to-workspace 2'
+run = ['move-node-to-workspace 2']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace 2'
+run = ['move-node-to-workspace 2']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = 'move-node-to-workspace 3'
+run = ['move-node-to-workspace 3']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.github.Electron'
-run = 'move-node-to-workspace 3'
+run = ['move-node-to-workspace 3']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace 3'
+run = ['move-node-to-workspace 3']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
-run = 'move-node-to-workspace 4'
+run = ['move-node-to-workspace 4']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = 'move-node-to-workspace 4'
+run = ['move-node-to-workspace 4']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.electron.logseq'
-run = 'move-node-to-workspace 5'
+run = ['move-node-to-workspace 5']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.loki-project.messenger-desktop'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.tencent.xinWeChat'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.whispersystems.signal-desktop'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'dev.vencord.vesktop'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace 6'
+run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.colliderli.iina'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.smartcodeltd.stremio'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.utmapp.UTM'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.isaacmarovitz.Whisky'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Audiobookshelf'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ambiphone'
-run = 'move-node-to-workspace 7'
+run = ['move-node-to-workspace 7']
 check-further-callbacks = true
 # Custom behaviour - end
