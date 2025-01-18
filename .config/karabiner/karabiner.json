@@ -43,7 +43,7 @@
                                     "key_code": "j",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": 2000 } }],
+                                "to": [{ "mouse_key": { "y": 1280 } }],
                                 "type": "basic"
                             },
                             {
@@ -92,7 +92,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": 2000 } }
+                                    { "mouse_key": { "y": 1280 } }
                                 ],
                                 "type": "basic"
                             },
@@ -128,7 +128,7 @@
                                     "key_code": "k",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": -2000 } }],
+                                "to": [{ "mouse_key": { "y": -1280 } }],
                                 "type": "basic"
                             },
                             {
@@ -177,7 +177,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": -2000 } }
+                                    { "mouse_key": { "y": -1280 } }
                                 ],
                                 "type": "basic"
                             },
@@ -213,7 +213,7 @@
                                     "key_code": "h",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": -2000 } }],
+                                "to": [{ "mouse_key": { "x": -1280 } }],
                                 "type": "basic"
                             },
                             {
@@ -262,7 +262,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": -2000 } }
+                                    { "mouse_key": { "x": -1280 } }
                                 ],
                                 "type": "basic"
                             },
@@ -298,7 +298,7 @@
                                     "key_code": "l",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": 2000 } }],
+                                "to": [{ "mouse_key": { "x": 1280 } }],
                                 "type": "basic"
                             },
                             {
@@ -347,7 +347,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": 2000 } }
+                                    { "mouse_key": { "x": 1280 } }
                                 ],
                                 "type": "basic"
                             },
@@ -1111,7 +1111,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 150,
-                                    "basic.to_if_held_down_threshold_milliseconds": 50
+                                    "basic.to_if_held_down_threshold_milliseconds": 100
                                 },
                                 "to_if_alone": [{ "key_code": "spacebar" }],
                                 "to_if_held_down": [
@@ -2841,7 +2841,7 @@
                                 },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 150,
-                                    "basic.to_if_held_down_threshold_milliseconds": 50
+                                    "basic.to_if_held_down_threshold_milliseconds": 100
                                 },
                                 "to_if_alone": [{ "key_code": "spacebar" }],
                                 "to_if_held_down": [
