@@ -1,0 +1,179 @@
+alias aliases='${EDITOR} ~/.zshrc.d/aliases'
+alias exports='${EDITOR} ~/.zshrc.d/exports'
+alias functions='${EDITOR} ~/.zshrc.d/functions'
+alias sources='${EDITOR} ~/.zshrc.d/sources'
+
+# navigation
+alias cat='bat'
+alias cl='clear'
+alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
+alias ls='eza'
+alias la='ls -a'
+alias ll='ls -l --time-style=long-iso'
+alias lla='ll -a'
+alias lki='lk --icons'
+alias pd='pushd'
+alias qd='popd'
+alias q='exit'
+
+# destructive operations
+alias rmi='rm -I'
+alias rmdir='rmi -R'
+alias t='trash'
+
+# asdf
+alias asdfrc='${EDITOR} ~/.asdfrc'
+
+# TODO should we keep this
+# bluetooth
+# alias bt='blueutil'
+# alias btOn='blueutil -p 1'
+# alias btOff='blueutil -p 0'
+
+# brew
+alias b='brew'
+alias bcu='brew cu -a'
+alias boutdated='brew update && brew outdated --formula && brew outdated --cask --greedy'
+alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
+alias bcleanup='brew cleanup && brew autoremove'
+alias bbackup-delete='rmdir ~/.brew/*'
+alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
+alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
+alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
+alias bbackup-casks-pinned='brew cu pinned --no-brew-update --export ~/.brew/casks-pinned'
+alias bbackup-mas='brew bundle dump --mas --file ~/.brew/mas'
+alias bbackup-vscode='brew bundle dump --vscode --file ~/.brew/vscode'
+alias bbackup="bbackup-delete && bbackup-taps && bbackup-brews && bbackup-casks && bbackup-casks-pinned && bbackup-mas && bbackup-vscode && echo 'homebrew backed up to ~/.brew'"
+alias brestore-taps='brew bundle --file ~/.brew/taps'
+alias brestore-brews='brew bundle --file ~/.brew/brews'
+alias brestore-casks='brew bundle --file ~/.brew/casks'
+alias brestore-casks-pinned='brew cu pinned --no-brew-update--load ~/.brew/casks-pinned'
+alias brestore-mas='brew bundle --file ~/.brew/mas'
+alias brestore-vscode='brew bundle --file ~/.brew/vscode'
+alias brestore="brestore-taps && brestore-brews && brestore-casks && brestore-casks-pinned && brestore-mas && brestore-vscode && echo 'homebrew restored from ~/.brew'"
+
+# cmus
+alias cmus-control='brew services restart cmus-control'
+alias cmus-status='cmus-remote -Q'
+alias cmus-play='cmus-remote -p'
+alias cmus-pause='cmus-remote -u'
+
+# configs
+alias rr='exec $SHELL'
+alias zshrc='${EDITOR} ~/.zshrc'
+alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
+alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
+
+# dotfiles backup
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
+alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nc-export'
+
+# fedora
+alias ost='rpm-ostree'
+alias tb='toolbox'
+
+# flirc
+alias flirc='flirc_util'
+alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
+alias flirc-import='flirc_util loadconfig ~/skip/flirc-usb'
+alias flirc-settings='flirc_util settings > ~/skip/flirc-usb-settings.txt'
+alias flirc-backup="flirc-export && flirc-settings && echo 'flirc usb backed up to ~/skip'"
+
+# folders
+alias appsupport='cd ~/Library/Application\ Support'
+alias desk='cd ~/Desktop'
+alias docs='cd ~/Documents'
+alias down='cd ~/Downloads'
+alias prj='cd ~/work/projects/'
+# TODO Consolidate these folders on both laptops
+# alias sides='cd ~/_sides'
+# alias work='cd ~/_work'
+alias sides='cd ~/sides'
+alias work='cd ~/work'
+
+# git
+alias g='git'
+alias ga='git add'
+alias gaa='git add -all'
+alias gb='git branch'
+alias gc='git commit'
+alias gc!='git commit -v --amend'
+alias gcl='git clean -i'
+alias gcm='git checkout $(git_main_branch)'
+alias gcd='git checkout $(git_develop_branch)'
+alias gch='git checkout'
+alias gd='git diff --patch-with-stat'
+alias gdc='git diff --patch-with-stat --cached'
+alias gds='git diff --patch-with-stat --staged'
+alias gf='git fetch'
+alias gfa='git fetch --all'
+alias gfo='git fetch origin'
+alias gfu='git fetch upstream'
+alias gl='git pull'
+alias glo='git pull origin'
+alias glu='git pull upstream'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpou='git push --set-upstream origin'
+alias gpu='git push upstream'
+alias gpuu='git push --set-upstream upstream'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gra='git remote add'
+alias grru='git remote rename origin upstream'
+alias gs='git switch'
+alias gsb='git status -sb'
+alias gt='git log --decorate --pretty=oneline'
+alias lg='lazygit'
+alias gitdiff='git diff --name-only | uniq | xargs code'
+alias ghrepo='gh repo set-default'
+alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} git remote remove {} && git tag -l | xargs git tag -d && git fetch --tags'
+
+# nimble commander
+alias nc="open -a 'Nimble Commander'"
+alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json && echo 'nimble commander config imported from ~/.config/nimble-comander/Config.json'"
+alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
+
+# nodejs
+alias npmr='npm run'
+alias pn='pnpm'
+alias pni='pnpm install --frozen-lockfile'
+alias rmnext='rm -Rf **/.next'
+alias rmnode='rm -Rf **/node_modules'
+alias yif='yarn install --frozen-lockfile'
+alias yii='yarn install --immutable-cache'
+
+# pipx
+alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
+alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
+
+# pnpm 
+alias pnpm-export="rm ~/.default-pnpm-packages && pnpm list -g --depth=0 --parseable | tail -n +2 | sed -E 's|.*/([^@]+)@([^/]+).*|\1@\2|' > ~/.default-pnpm-packages && echo 'pnpm packages exported to ~/.default-pnpm-packages'"
+alias pnpm-import="cat ~/.default-pnpm-packages | xargs pnpm install -g && echo 'pnpm packages imported from ~/.default-pnpm-packages'"
+
+# tmux
+alias tm='tmux'
+alias tmuxconf='${EDITOR} ~/.tmux.conf'
+
+# vim
+alias vimrc='${EDITOR} ~/.vimrc'
+alias vimplugs='cd ~/.config/nvim/plugged'
+alias n='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias vimf='nvim $(fzf)'
+
+# misc
+alias ae='aerospace'
+alias aerc='~/.config/aerospace/aerospace.toml'
+alias defb='defaultbrowser'
+alias k='kitten'
+alias mpva='mpv --no-video'
+alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
+alias spd='brews start spotifyd'
+alias spdq='brews stop spotifyd'
+alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
+alias ssx='ssh -Xv'
+alias ydl='cd ~/Downloads && yt-dlp'
+alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
