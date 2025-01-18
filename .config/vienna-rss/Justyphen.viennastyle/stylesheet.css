@@ -1,0 +1,123 @@
+/**
+ * Justyphen Vienna Style
+ *
+ * Author: Teddy <zozxebpyr@mozmail.com>
+ * Version: 0.2
+ */
+:root {
+  --color-background: #fff;
+  --color-text-main: #000;
+  --color-link: hsl(220, 100%, 25%);
+  --color-link-hover: hsl(220, 100%, 50%);
+  --color-border: hsl(220, 0%, 60%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #16161d;
+    --color-text-main: #fff;
+    --color-link: hsl(220, 80%, 75%);
+    --color-link-hover: hsl(220, 80%, 50%);
+    --color-border: hsl(220, 0%, 60%);
+  }
+}
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+}
+#article {
+  box-sizing: border-box;
+  margin: 1rem auto;
+  max-width: 30rem;
+}
+@media all and (max-width: 32rem) {
+  #article {
+    padding: 0 1rem;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* Text formatting */
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+a:active,
+a:focus,
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+
+/* Head */
+.head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.article-meta {
+  display: block;
+  font-size: .8em;
+}
+.article-title {
+  font-size: 1.4em;
+  margin: .5rem 0;
+}
+.article-title a {
+  text-decoration: none;
+}
+.article-title a:active,
+.article-title a:focus,
+.article-title a:hover {
+  text-decoration: underline;
+}
+
+/* Body */
+.body {
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  -webkit-hyphenate-limit-chars: 5 2 2;
+     -moz-hyphenate-limit-chars: 5 2 2;
+      -ms-hyphenate-limit-chars: 5 2 2;
+     -moz-hyphenate-limit-lines: 2;
+      -ms-hyphenate-limit-lines: 2;
+          hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+     -moz-hyphenate-limit-last: always;
+      -ms-hyphenate-limit-last: always;
+          hyphenate-limit-last: always;
+  line-height: 1.5;
+  text-align: justify;
+}
+.body * {
+  height: auto;
+  max-width: 30rem;
+}
+p {
+  margin: 1em 0;
+}
+figure {
+  display: block;
+  margin: 1rem 0;
+}
+figcaption {
+  text-align: center;
+  font-size: .9em;
+}
+blockquote {
+  border-left: .063rem solid var(--color-border);
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+hr {
+  border: 0;
+  margin: 2em 0;
+  text-align: center;
+}
+hr::after {
+  color: var(--color-text-primary);
+  content: "\002042"; /* ⁂ */
+}
