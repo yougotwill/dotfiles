@@ -146,14 +146,14 @@
             {
                 "title": "Open Trash",
                 "path": "/usr/bin/open",
-                "parameters": "/Users/will/.Trash",
+                "parameters": "/Users/neon/.Trash",
                 "shortcut": "^b",
                 "startup": 2,
                 "uuid": "d5293638-9a5b-48ab-8b56-289b33c15e5c"
             },
             {
                 "title": "Play in Cmus",
-                "path": "/opt/homebrew/bin/cmus-remote",
+                "path": "/usr/local/bin/cmus-remote",
                 "parameters": "--file %p",
                 "shortcut": "\u0000",
                 "startup": 2,
