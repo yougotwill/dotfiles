@@ -6,6 +6,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
+# TODO investigate this versus the fzf omz plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go

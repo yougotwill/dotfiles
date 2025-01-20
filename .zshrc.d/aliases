@@ -24,15 +24,16 @@ alias t='trash'
 # asdf
 alias asdfrc='${EDITOR} ~/.asdfrc'
 
+# TODO should we keep this
 # bluetooth
-alias bt='blueutil'
-alias btOn='blueutil -p 1'
-alias btOff='blueutil -p 0'
+# alias bt='blueutil'
+# alias btOn='blueutil -p 1'
+# alias btOff='blueutil -p 0'
 
 # brew
 alias b='brew'
 alias bcu='brew cu -a'
-alias boutdated='brew update && brew outdated --formula && b outdated --cask'
+alias boutdated='brew update && brew outdated --formula && brew outdated --cask'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
 alias bbackup-delete='rmdir ~/.brew/*'
@@ -73,10 +74,10 @@ alias ost='rpm-ostree'
 alias tb='toolbox'
 
 # flirc
-alias flirc='flirc_util'
-alias flirc-export='flirc_util saveconfig ~/skip/flirc-usb'
-alias flirc-import='flirc_util loadconfig ~/skip/flirc-usb'
-alias flirc-settings='flirc_util settings > ~/skip/flirc-usb-settings.txt'
+alias flirc='/Applications/Flirc.app/Contents/Resources/flirc_util'
+alias flirc-export='/Applications/Flirc.app/Contents/Resources/flirc_util saveconfig ~/skip/flirc-usb'
+alias flirc-import='/Applications/Flirc.app/Contents/Resources/flirc_util loadconfig ~/skip/flirc-usb'
+alias flirc-settings='/Applications/Flirc.app/Contents/Resources/flirc_util settings > ~/skip/flirc-usb-settings.txt'
 alias flirc-backup="flirc-export && flirc-settings && echo 'flirc usb backed up to ~/skip'"
 
 # folders
@@ -85,8 +86,8 @@ alias desk='cd ~/Desktop'
 alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
 alias prj='cd ~/projects'
-alias sides='cd ~/_sides'
-alias work='cd ~/_work'
+alias sides='cd ~/sides'
+alias work='cd ~/work'
 
 # git
 alias g='git'
@@ -124,6 +125,7 @@ alias gt='git log --decorate --pretty=oneline'
 alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
 alias ghrepo='gh repo set-default'
+alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} git remote remove {} && git tag -l | xargs git tag -d && git fetch --tags'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
@@ -131,13 +133,13 @@ alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application
 alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
 
 # nodejs
-alias rmnext='rm -Rf **/.next'
-alias rmnode='rm -Rf **/node_modules'
 alias npmr='npm run'
 alias pn='pnpm'
+alias pni='pnpm install --frozen-lockfile'
+alias rmnext='rm -Rf **/.next'
+alias rmnode='rm -Rf **/node_modules'
 alias yif='yarn install --frozen-lockfile'
 alias yii='yarn install --immutable-cache'
-
 
 # pipx
 alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
@@ -161,13 +163,14 @@ alias vimf='nvim $(fzf)'
 
 # misc
 alias ae='aerospace'
-alias aerc='Z/.config/aerospace/aerospace.toml'
+alias aerc='~/.config/aerospace/aerospace.toml'
 alias defb='defaultbrowser'
+alias k='kitten'
 alias mpva='mpv --no-video'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
-alias sqlitebrowser='open -n /Applications/DB\ Browser\ for\ SQLite.app'
+alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
 alias ssx='ssh -Xv'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'

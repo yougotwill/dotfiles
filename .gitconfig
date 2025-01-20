@@ -12,11 +12,6 @@
   diffFilter = delta --color-only
 [diff]
   colorMoved = default
-  tool = nvimdiff
-[difftool]
-    prompt = false
-[difftool "nvimdiff"]
-  cmd = nvim -d "$LOCAL" "$REMOTE"
 [pull]
 	ff = only
 [delta]
@@ -34,6 +29,6 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [user]
-	name = William Grant
-	email = willmgrant@gmail.com
+	name = yougotwill
+	email = yougotwill94@gmail.com
 	site = https://github.com/yougotwill
