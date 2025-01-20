@@ -47,7 +47,7 @@ alias bbackup="bbackup-delete && bbackup-taps && bbackup-brews && bbackup-casks 
 alias brestore-taps='brew bundle --file ~/.brew/taps'
 alias brestore-brews='brew bundle --file ~/.brew/brews'
 alias brestore-casks='brew bundle --file ~/.brew/casks'
-alias brestore-casks-pinned='brew cu pinned --no-brew-update--load ~/.brew/casks-pinned'
+alias brestore-casks-pinned='brew cu pinned --no-brew-update --load ~/.brew/casks-pinned'
 alias brestore-mas='brew bundle --file ~/.brew/mas'
 alias brestore-vscode='brew bundle --file ~/.brew/vscode'
 alias brestore="brestore-taps && brestore-brews && brestore-casks && brestore-casks-pinned && brestore-mas && brestore-vscode && echo 'homebrew restored from ~/.brew'"
@@ -87,8 +87,6 @@ alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
 alias prj='cd ~/work/projects/'
 # TODO Consolidate these folders on both laptops
-# alias sides='cd ~/_sides'
-# alias work='cd ~/_work'
 alias sides='cd ~/sides'
 alias work='cd ~/work'
 

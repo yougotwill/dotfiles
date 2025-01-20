@@ -122,7 +122,7 @@ ctrl-alt-shift-period = ['exec-and-forget $HOME/.config/aerospace/scripts/hotkey
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
-alt-shift-d = ['layout tiling','layout accordion horizontal vertical']
+alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -183,7 +183,7 @@ cmd-alt-h = [] # Disable "hide others"
 alt-shift-z = ['flatten-workspace-tree'] # reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
-alt-shift-a = ['fullscreen']
+alt-shift-d = ['fullscreen']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
 cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']

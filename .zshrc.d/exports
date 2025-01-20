@@ -49,9 +49,6 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 # huff
 export PATH="$PATH:$HOME/.huff/bin"
 
-# pipx
-export PATH="$PATH:$HOME/.local/bin"
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
