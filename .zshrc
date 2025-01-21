@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 
 # homebrew shell completion
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
 # tabtab source for packages
 # uninstall by removing these lines
