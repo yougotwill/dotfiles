@@ -349,6 +349,12 @@ if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
 check-further-callbacks = true
 
+[[on-window-detected]]
+if.app-id = 'com.wulkano.kap'
+if.window-title-regex-substring = ''
+run = ['layout floating']
+check-further-callbacks = true
+
 # Move applications to specific workspaces
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
