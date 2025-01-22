@@ -126,10 +126,10 @@ alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-shift-h = ['focus left']
-alt-shift-j = ['focus down']
-alt-shift-k = ['focus up']
-alt-shift-l = ['focus right']
+alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace']
+alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace']
+alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace']
+alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 ctrl-alt-shift-h = ['move left']
@@ -387,17 +387,17 @@ run = ['move-node-to-workspace 3']
 check-further-callbacks = true
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = ['move-node-to-workspace 3']
+check-further-callbacks = true
+
+[[on-window-detected]]
 if.app-id = 'com.github.Electron'
 run = ['move-node-to-workspace 3']
 check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = ['move-node-to-workspace 3']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'
 run = ['move-node-to-workspace 4']
 check-further-callbacks = true
 
