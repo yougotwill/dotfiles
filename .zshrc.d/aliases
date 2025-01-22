@@ -33,7 +33,7 @@ alias asdfrc='${EDITOR} ~/.asdfrc'
 # brew
 alias b='brew'
 alias bcu='brew cu -a'
-alias boutdated='brew update && brew outdated --formula && brew outdated --cask'
+alias boutdated='brew update && brew outdated --formula && brew outdated --cask --greedy'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
 alias bcleanup='brew cleanup && brew autoremove'
 alias bbackup-delete='rmdir ~/.brew/*'
