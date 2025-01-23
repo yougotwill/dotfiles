@@ -68,6 +68,7 @@ alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
 alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nc-export'
+alias config-lg='lg -g .dotfiles -w $HOME'
 
 # fedora
 alias ost='rpm-ostree'
