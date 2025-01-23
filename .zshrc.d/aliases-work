@@ -1,0 +1,4 @@
+# session
+alias sessdesktop='cd ~/work/oxen/projects/session-desktop'
+alias sessios='cd ~/work/oxen/projects/session-ios'
+alias sessandroid='cd ~/work/oxen/projects/session-android'
