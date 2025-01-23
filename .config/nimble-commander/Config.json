@@ -6,6 +6,7 @@
     },
     "filePanel": {
         "general": {
+            "initialRightPanelPath": "~/Downloads",
             "fileSizeFormat": 2,
             "selectionSizeFormat": 3
         },
@@ -185,7 +186,37 @@
             }
         ]
     },
-    "externalEditors": {},
+    "externalEditors": {
+        "editors_v1": [
+            {
+                "name": "Sublime Text.app",
+                "path": "/Applications/Sublime Text.app",
+                "args": "",
+                "mask": "*",
+                "maxFileSize": 0,
+                "onlyFiles": false,
+                "openInTerminal": false
+            },
+            {
+                "name": "TextEdit",
+                "path": "/System/Applications/TextEdit.app",
+                "args": "",
+                "mask": "*",
+                "maxFileSize": 0,
+                "onlyFiles": true,
+                "openInTerminal": false
+            },
+            {
+                "name": "vi",
+                "path": "/usr/bin/vi",
+                "args": "%%",
+                "mask": "*",
+                "maxFileSize": 0,
+                "onlyFiles": true,
+                "openInTerminal": true
+            }
+        ]
+    },
     "themes": {
         "automaticSwitching": {},
         "themes_v1": [
@@ -703,6 +734,7 @@
         ]
     },
     "hotkeyOverrides_v1": {
+        "menu.file.reveal_in_opposite_panel": "^t",
         "menu.edit.deselect_all": "⌥ ",
         "menu.view.toggle_layout_1": "⌘0",
         "menu.view.toggle_layout_2": "⌘8",
@@ -714,13 +746,13 @@
         "menu.view.toggle_layout_8": "\u0000",
         "menu.view.toggle_layout_9": "\u0000",
         "menu.view.toggle_layout_10": "\u0000",
-        "menu.view.sorting_by_name": "⇧^2",
-        "menu.view.sorting_by_extension": "⇧^3",
-        "menu.view.sorting_by_modify_time": "⇧^1",
-        "menu.view.sorting_by_size": "⇧^4",
-        "menu.view.sorting_by_creation_time": "⇧^5",
-        "menu.view.sorting_by_added_time": "⇧^6",
-        "menu.view.sorting_by_accessed_time": "⇧^7",
+        "menu.view.sorting_by_name": "⌥1",
+        "menu.view.sorting_by_extension": "⌥2",
+        "menu.view.sorting_by_modify_time": "⌥3",
+        "menu.view.sorting_by_size": "⌥4",
+        "menu.view.sorting_by_creation_time": "⌥5",
+        "menu.view.sorting_by_added_time": "⌥6",
+        "menu.view.sorting_by_accessed_time": "⌥7",
         "menu.view.show_tabs": "\u0000",
         "menu.view.panels_position.move_up": "^⌘",
         "menu.view.panels_position.move_down": "^⌘",
