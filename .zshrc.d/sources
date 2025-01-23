@@ -6,8 +6,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
-# TODO investigate this versus the fzf omz plugin
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go
 [ -f $HOME/.asdf/plugins/golang/set-env.sh ] && source $HOME/.asdf/plugins/golang/set-env.sh
@@ -16,7 +14,7 @@ autoload -Uz compinit && compinit
 [ -f $HOME/.asdf/plugins/java/setjava-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # kitty
-[ -f ~/bin/kitty-macos-match-appearance.sh ] && source ~/bin/kitty-macos-match-appearance.sh
+[ -f $HOME/bin/kitty-macos-match-appearance.sh ] && source $HOME/bin/kitty-macos-match-appearance.sh
 
 # spaceship zsh prompt
 [ -f $(brew --prefix)/opt/spaceship/spaceship.zsh ] && source $(brew --prefix)/opt/spaceship/spaceship.zsh

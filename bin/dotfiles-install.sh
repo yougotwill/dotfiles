@@ -14,4 +14,3 @@ config checkout
 config config status.showUntrackedFiles no
 echo "dotfiles are setup!"
 echo "Go back to https://github.com/yougotwill/dotfiles/blob/master/README.md and read further instructions."
-

@@ -4,9 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-
 # homebrew shell completion
-FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+FPATH="$HOMEBREW_PREIFX/share/zsh/site-functions:${FPATH}"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -86,7 +85,7 @@ zstyle ':omz:plugins:z' aliases yes
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( zsh-interactive-cd zsh-autosuggestions fzf z git npm yarn pdm )
+plugins=(zsh-interactive-cd zsh-autosuggestions fzf z git npm yarn pdm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,18 +104,18 @@ source $ZSH/oh-my-zsh.sh
 if [[ -d ~/.zshrc.d ]]; then        
     for rc in ~/.zshrc.d/*; do                
         if [[ -f "$rc" ]]; then                        
-             source "$rc"                
+            source "$rc"                
         fi        
-   done 
+    done 
 fi
 unset rc
 
 if [[ -d ~/.zshrc.d/completions ]]; then        
     for rc in ~/.zshrc.d/completions/*; do                
         if [[ -f "$rc" ]]; then                        
-             source "$rc"                
+            source "$rc"                
         fi        
-   done
+    done
 fi 
 unset rc
 

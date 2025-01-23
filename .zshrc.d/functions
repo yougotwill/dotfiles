@@ -6,10 +6,6 @@ txx () {
   tmux new -A -s "$1"
 }
 
-webtorrentplayer () {
-  webtorrent download $1 --interactive-select --out ~/Downloads/_Torrents --iina
-}
-
 hl () {
   ${@:2} | bat --paging=never -l $1
 }
@@ -19,18 +15,10 @@ lk () {
 }
 
 setDarkAppearance () {
-defaults write $1 NSRequiresAquaSystemAppearance $2
-echo "set dark appearance for $1 to $2"
+  defaults write $1 NSRequiresAquaSystemAppearance $2
+  echo "set dark appearance for $1 to $2"
 }
 
 bcupinned () {
   bcu unpin $1 && bcu $1 && bcu pin $1
-}
-
-write2File () {
-  ${@:2} > $1 
-}
-
-ios2usb () {
-  dd if="$1" of="$2" bs=1m status=progress
 }
