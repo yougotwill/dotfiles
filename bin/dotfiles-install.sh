@@ -1,3 +1,4 @@
+echo ".dotfiles" >> $HOME/.gitignore
 /usr/bin/git clone --bare https://github.com/yougotwill/dotfiles.git $HOME/.dotfiles
 function config {
   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
