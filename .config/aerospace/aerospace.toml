@@ -15,6 +15,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
+    'exec-and-forget source $HOME/.zshrc.d/exports',
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget $HOME/.config/aerospace/scripts/highlight-active-windows.sh'
