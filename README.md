@@ -34,29 +34,7 @@ There are various ways to manage your dotfiles but I thought that this method ha
 
 ## How to install
 
-1. Open your favourite terminal then copy and paste the code below into it. 
-
-   Feel free to paste the code into a script first and then run that. 
-
-```shell
-/usr/bin/git clone --bare https://github.com/yougotwill/dotfiles.git $HOME/.dotfiles
-function config {
-  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
-}
-mkdir -p .dotfiles-backup
-config checkout
-if [ $? = 0 ]; then
- echo "dotfiles loaded successfully";
- else
-  echo "Backing up pre-existing dot files.";
-  config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
-fi;
-config checkout
-config config status.showUntrackedFiles no
-echo "dotfiles are setup!"
-echo "Go back to https://github.com/yougotwill/dotfiles/blob/master/README.md and read further instructions." 
-```
-
+1. Download this [script](bin/dotfiles-install.sh), open your favourite terminal and then run it (don't forget to make it executable)!
 2. Trust in the force.
 3. If it succeeds you should receive the message `dotfiles are setup!`.
 4. Install [Homebrew](https://github.com/Homebrew/brew) by copying and pasting again into your terminal the code below.
