@@ -227,136 +227,131 @@ alt-shift-l = ['join-with right', 'mode main']
 # Floating windows
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'net.kovidgoyal.kitty'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.google.Chrome'
 if.window-title-regex-substring = 'Picture-in-picture'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.brave.Browser'
 if.window-title-regex-substring = 'Picture-in-picture'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.toggl.daneel'
 if.window-title-regex-substring = 'Untitled'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.sindresorhus.Camera-Preview'
 if.window-title-regex-substring = 'Camera Preview'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.sindresorhus.Scratchpad'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'me.justinyan.justfocus'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Buy BetterTouchTool'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Software Update'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Screenshot'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'net.whatsapp.WhatsApp'
 if.window-title-regex-substring = 'Whatsapp video call'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.apple.PhotoBooth'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.valvesoftware.steam'
 if.window-title-regex-substring = 'Friends List'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.valvesoftware.steam'
 if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'com.github.Electron'
-run = ['layout floating']
-check-further-callbacks = true
 
 ## Whisky apps
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'NULL-APP-BUNDLE-ID'
 if.window-title-regex-substring = 'Friends List'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'NULL-APP-BUNDLE-ID'
 if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.wulkano.kap'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 # Move applications to specific workspaces
 [[on-window-detected]]
