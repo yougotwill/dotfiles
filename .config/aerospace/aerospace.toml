@@ -127,10 +127,10 @@ alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace']
-alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace']
-alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace']
-alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace']
+alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace', 'focus up --boundaries-action wrap-around-the-workspace']
+alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace', 'focus right --boundaries-action wrap-around-the-workspace']
+alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace', 'focus left --boundaries-action wrap-around-the-workspace']
+alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace', 'focus down --boundaries-action wrap-around-the-workspace']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 ctrl-alt-shift-h = ['move left']
