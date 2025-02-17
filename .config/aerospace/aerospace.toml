@@ -370,6 +370,11 @@ run = ['move-node-to-workspace 2']
 check-further-callbacks = true
 
 [[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = ['move-node-to-workspace 2']
+check-further-callbacks = true
+
+[[on-window-detected]]
 if.app-id = 'org.mozilla.thunderbird'
 run = ['move-node-to-workspace 2']
 check-further-callbacks = true
@@ -405,7 +410,17 @@ run = ['move-node-to-workspace 4']
 check-further-callbacks = true
 
 [[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
+run = ['move-node-to-workspace 4']
+check-further-callbacks = true
+
+[[on-window-detected]]
 if.app-id = 'com.electron.logseq'
+run = ['move-node-to-workspace 5']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.fabian.hasse.haushaltsbuch'
 run = ['move-node-to-workspace 5']
 check-further-callbacks = true
 
