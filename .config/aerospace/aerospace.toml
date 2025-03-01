@@ -111,7 +111,10 @@ outer.right =      10
 # '''
 
 # Custom execution commands
-ctrl-alt-shift-period = ['exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty']
+ctrl-alt-shift-period = [
+'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty',
+]
+
 
 # Restart AeroSpace
 # ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
@@ -229,31 +232,6 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
 if.during-aerospace-startup = false
 if.app-id = 'net.kovidgoyal.kitty'
-if.window-title-regex-substring = ''
-run = ['layout floating']
-
-[[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'org.mozilla.firefox'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.google.Chrome'
-if.window-title-regex-substring = 'Picture-in-picture'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.brave.Browser'
-if.window-title-regex-substring = 'Picture-in-picture'
 run = ['layout floating']
 
 [[on-window-detected]]
@@ -456,6 +434,12 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace 6']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'im.riot.app'
+if.window-title-regex-substring = 'Element'
 run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
