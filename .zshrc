@@ -98,29 +98,27 @@ source $ZSH/oh-my-zsh.sh
 
 # Tmux on startup
 # ZSH_TMUX_AUTOSTART="true"
-# Don't automatically connect to a previous session if it exists, you can attached instead
+# Don't automatically connect to a previous session if it exists, you can attach instead
 # ZSH_TMUX_AUTOCONNECT="false"
 
-# Load custom zsh configuration
 if [[ -d ~/.zshrc.d ]]; then        
     for rc in ~/.zshrc.d/*; do                
         if [[ -f "$rc" ]]; then                        
-             source "$rc"                
+            source "$rc"                
         fi        
-   done 
+    done 
 fi
 unset rc
 
 if [[ -d ~/.zshrc.d/completions ]]; then        
     for rc in ~/.zshrc.d/completions/*; do                
         if [[ -f "$rc" ]]; then                        
-             source "$rc"                
+            source "$rc"                
         fi        
-   done
+    done
 fi 
 unset rc
 
-# Load custom scripts
 if [[ "$PATH" != *"$HOME/.local/bin:$HOME/bin:"* ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi

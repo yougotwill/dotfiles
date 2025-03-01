@@ -166,22 +166,6 @@
     "externalTools": {
         "tools_v1": [
             {
-                "title": "Open Trash",
-                "path": "/usr/bin/open",
-                "parameters": "/Users/will/.Trash",
-                "shortcut": "^b",
-                "startup": 2,
-                "uuid": "d5293638-9a5b-48ab-8b56-289b33c15e5c"
-            },
-            {
-                "title": "Play in Cmus",
-                "path": "/opt/homebrew/bin/cmus-remote",
-                "parameters": "--file %p",
-                "shortcut": "\u0000",
-                "startup": 2,
-                "uuid": "95143f7e-56d6-4a6c-8224-cecb4a37024f"
-            },
-            {
                 "title": "Reveal in Finder",
                 "path": "/usr/bin/open",
                 "parameters": "-R %p",

@@ -15,8 +15,8 @@ lk () {
 }
 
 setDarkAppearance () {
-defaults write $1 NSRequiresAquaSystemAppearance $2
-echo "set dark appearance for $1 to $2"
+  defaults write $1 NSRequiresAquaSystemAppearance $2
+  echo "set dark appearance for $1 to $2"
 }
 
 bupgradepin () {

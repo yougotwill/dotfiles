@@ -6,8 +6,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
-# TODO investigate this versus the fzf omz plugin
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go
 [ -f $HOME/.asdf/plugins/golang/set-env.sh ] && source $HOME/.asdf/plugins/golang/set-env.sh

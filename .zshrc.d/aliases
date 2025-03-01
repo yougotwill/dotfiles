@@ -86,8 +86,7 @@ alias appsupport='cd ~/Library/Application\ Support'
 alias desk='cd ~/Desktop'
 alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
-alias prj='cd ~/work/projects/'
-# TODO Consolidate these folders on both laptops
+alias prj='cd ~/projects'
 alias sides='cd ~/sides'
 alias work='cd ~/work'
 

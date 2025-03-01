@@ -2,42 +2,27 @@
 
 you got dotfiles!
 
-My Macbook Pro setup
+## my macOS setup
 
-Currently the following are included:
-
-## Packages
-- Homebrew
-- ohmyzsh
-- asdf
-- pipx
-
-## CLI
-
-My [.zshrc](.zshrc)
-
-My vim configuration [.vimrc](.vimrc).
-
-My git configuration [.gitconfig](.gitconfig).
+Start with my [.zshrc](.zshrc)
 
 For some of the custom scripts that I use check out the [bin](bin folder) folder.
 
-Check out the [Brewfile](Brewfile) for the list of various CLIs and apps that I use (includes apps installed from the Apple App Store).
+Check out the [.brew folder](.brew/brews) for files listing the various CLIs and apps that I use (includes apps installed from the Apple App Store and VS Code extensions).
 
-Check out the [npm.global.txt](npm.global.txt) for the list of my globalled installed npm packages
+Check out the `.default-X` files for global packages installed under asdf.
 
 ## Applications
 ### Special Mentions
-- Amethyst (My Window Manager of choice)
+- Aerospace (My Window Manager of choice)
 - Firefox
-- Google Chrome
 - Iina
+- Kitty
 - LibreOffice
 - Logseq
-- Slack
-- Source Tree
+- Nimble Commander
+- Session
 - Spotify
-- Sublime Text
 - Thunderbird
 - Typora
 - Visual Studio Code
@@ -49,61 +34,39 @@ There are various ways to manage your dotfiles but I thought that this method ha
 
 ## How to install
 
-1. Open your favourite terminal then copy and paste the code below into it. 
-
-   Feel free to paste the code into a script first and then run that. 
-
-```zsh
-git clone --bare https://github.com/yougotwill/dotfiles.git $HOME/.dotfiles
-function config {
-  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
-}
-mkdir -p .dotfiles-backup
-config checkout
-if [ $? = 0 ]; then
- echo "dotfiles loaded successfully";
- else
-  echo "Backing up pre-existing dot files.";
-  config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
-fi;
-config checkout
-config config status.showUntrackedFiles no
-echo "To install the global npm packages install node and run npx backup-global file" 
-```
-
+1. Download this [script](bin/dotfiles-install.sh), open your favourite terminal and then run it (don't forget to make it executable)!
 2. Trust in the force.
-3. If it succeeds you should receive the message `dotfiles loaded successfully`.
-4. Install homebrew by copying and pasting again into your terminal the code below.
+3. If it succeeds you should receive the message `dotfiles are setup!`.
+4. Install [Homebrew](https://github.com/Homebrew/brew) by copying and pasting again into your terminal the code below.
 
-```bash
+```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-5. Install `ohmyzsh` by copying and pasting again into your terminal the code below.
+5. Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) by copying and pasting again into your terminal the code below.
 
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-6. Install `zsh-autosuggestions` by copying and pasting again into your terminal the code below.
+6. Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)` by copying and pasting again into your terminal the code below.
 
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```shell
+/usr/bin/git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-7. Install the `spaceship` prompt by copying and pasting again into your terminal the code below.
+7. Install the [spaceship](https://github.com/spaceship-prompt/spaceship-prompt) prompt by copying and pasting again into your terminal the code below.
 
-```bash
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+```shell
+/usr/bin/git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
-8. Install `asdf` by copying and pasting again into your terminal the code below.
+8. Install [asdf](https://github.com/asdf-vm/asdf) by copying and pasting again into your terminal the code below.
 
-```bash
+```shell
 /usr/bin/git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ```
 
-9. Run `brestore`. This will install all the cli and application stuff. You can install parts separately by using the `brestore-` alias see [.aliases](.aliases) for more info.
+9. Run `brestore`. This will install all the packages, applications and VS Code extensions using Homebrew. You can install them incrementally using the `brestore-` aliases see [my aliases](.zshrc.d/aliases) for more info.
 10. Grab a coffee or go for that run you keep procrastinating because this might take a while.
-11. Run `pip install -r requirements.txt`.
-12. Run `pipx-import`.
-13. To install the global npm packages install node and run `npx backup-global file`.
-14. That's it you should be finished!🎉
-
+11. Import global pipx packages with `pipx-import`.
+12. Import global pnpm packages with `pnpm-import`.
+13. Import my configuration for Nimble Commander using `nc-import`.
+13. That's it you should be finished! 🎉
