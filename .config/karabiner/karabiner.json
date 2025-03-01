@@ -1,6 +1,16 @@
 {
     "profiles": [
         {
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 1031,
+                        "vendor_id": 4176
+                    },
+                    "treat_as_built_in_keyboard": true
+                }
+            ],
             "name": "Vanilla",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         },
@@ -1218,6 +1228,14 @@
                         "vendor_id": 10730
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 1031,
+                        "vendor_id": 4176
+                    },
+                    "treat_as_built_in_keyboard": true
                 }
             ],
             "name": "Kinesis Freestyle2 MAC",
@@ -2898,6 +2916,14 @@
                         "vendor_id": 10730
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 1031,
+                        "vendor_id": 4176
+                    },
+                    "treat_as_built_in_keyboard": true
                 }
             ],
             "name": "Kinesis Freestyle2 MAC + Flirc USB",

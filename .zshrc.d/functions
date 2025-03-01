@@ -19,6 +19,6 @@ setDarkAppearance () {
   echo "set dark appearance for $1 to $2"
 }
 
-bcupinned () {
+bupgradepin () {
   bcu unpin $1 && bcu $1 && bcu pin $1
 }

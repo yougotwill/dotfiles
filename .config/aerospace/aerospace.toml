@@ -15,6 +15,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
+    'exec-and-forget source $HOME/.zshrc.d/exports',
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget $HOME/.config/aerospace/scripts/highlight-active-windows.sh'
@@ -110,7 +111,10 @@ outer.right =      10
 # '''
 
 # Custom execution commands
-ctrl-alt-shift-period = ['exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty']
+ctrl-alt-shift-period = [
+'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty',
+]
+
 
 # Restart AeroSpace
 # ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
@@ -126,10 +130,10 @@ alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
 alt-shift-f = ['layout floating tiling']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace']
-alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace']
-alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace']
-alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace']
+alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace', 'focus up --boundaries-action wrap-around-the-workspace']
+alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace', 'focus right --boundaries-action wrap-around-the-workspace']
+alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace', 'focus left --boundaries-action wrap-around-the-workspace']
+alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace', 'focus down --boundaries-action wrap-around-the-workspace']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 ctrl-alt-shift-h = ['move left']
@@ -226,136 +230,106 @@ alt-shift-l = ['join-with right', 'mode main']
 # Floating windows
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'net.kovidgoyal.kitty'
-if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-if.window-title-regex-substring = 'Picture-in-picture'
-run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'com.brave.Browser'
-if.window-title-regex-substring = 'Picture-in-picture'
-run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Extension:'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.toggl.daneel'
 if.window-title-regex-substring = 'Untitled'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.sindresorhus.Camera-Preview'
 if.window-title-regex-substring = 'Camera Preview'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.sindresorhus.Scratchpad'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'me.justinyan.justfocus'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Buy BetterTouchTool'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Software Update'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.hegenberg.BetterTouchTool'
 if.window-title-regex-substring = 'Screenshot'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'net.whatsapp.WhatsApp'
 if.window-title-regex-substring = 'Whatsapp video call'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.apple.PhotoBooth'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.valvesoftware.steam'
 if.window-title-regex-substring = 'Friends List'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.valvesoftware.steam'
 if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
-check-further-callbacks = true
-
-[[on-window-detected]]
-if.app-id = 'com.github.Electron'
-run = ['layout floating']
-check-further-callbacks = true
 
 ## Whisky apps
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'NULL-APP-BUNDLE-ID'
 if.window-title-regex-substring = 'Friends List'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'NULL-APP-BUNDLE-ID'
 if.window-title-regex-substring = 'Special Offers'
 run = ['layout floating']
-check-further-callbacks = true
 
 [[on-window-detected]]
+if.during-aerospace-startup = false
 if.app-id = 'com.wulkano.kap'
 if.window-title-regex-substring = ''
 run = ['layout floating']
-check-further-callbacks = true
 
 # Move applications to specific workspaces
 [[on-window-detected]]
@@ -370,6 +344,11 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace 2']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
 run = ['move-node-to-workspace 2']
 check-further-callbacks = true
 
@@ -409,7 +388,17 @@ run = ['move-node-to-workspace 4']
 check-further-callbacks = true
 
 [[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
+run = ['move-node-to-workspace 4']
+check-further-callbacks = true
+
+[[on-window-detected]]
 if.app-id = 'com.electron.logseq'
+run = ['move-node-to-workspace 5']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'com.fabian.hasse.haushaltsbuch'
 run = ['move-node-to-workspace 5']
 check-further-callbacks = true
 
@@ -445,6 +434,12 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace 6']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'im.riot.app'
+if.window-title-regex-substring = 'Element'
 run = ['move-node-to-workspace 6']
 check-further-callbacks = true
 
