@@ -19,8 +19,6 @@
 # <xbar.desc>Displays currently playing song from cmus. Control cmus in menubar.</xbar.desc>
 # <xbar.image>https://i.imgur.com/qeZCB0a.png</xbar.image>
 
-export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
-
 if [ "$1" = 'launch-iterm' ]; then
   if [ "$(osascript -e 'application "iTerm" is running')" = "false" ]; then
     osascript -e 'tell application "iTerm" to activate'

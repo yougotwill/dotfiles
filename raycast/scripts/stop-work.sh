@@ -14,7 +14,6 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-osascript -e 'tell application "Firefox Developer Edition" to quit'
 osascript -e 'tell application "Visual Studio Code" to quit'
 osascript -e 'tell application "Figma" to quit'
 osascript -e 'tell application "Logseq" to quit'
