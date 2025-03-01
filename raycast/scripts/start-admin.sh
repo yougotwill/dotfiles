@@ -14,12 +14,13 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-open -a "Nimble Commander"
+open -a "Google Drive"
+open -a "Logseq"
+open -a "Calendar"
 open -a "Reminders"
 open -a "Notes"
-open -a "Calendar"
-open -a "Logseq"
-open -a "Google Drive"
-open -a "Firefox"
-open -a "Thunderbird"
 open -a "Mail"
+open -a "Thunderbird"
+open -a "Nimble Commander"
+sleep 10
+open -a "Firefox"
