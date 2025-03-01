@@ -12,6 +12,6 @@ if [ $? = 0 ]; then
   config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
 fi;
 config checkout
-config config --local status.showUntrackedFiles noo
+config config --local status.showUntrackedFiles no
 echo "dotfiles are setup!"
 echo "Go back to https://github.com/yougotwill/dotfiles/blob/master/README.md and read further instructions."
