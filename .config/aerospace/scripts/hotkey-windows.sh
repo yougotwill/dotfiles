@@ -3,8 +3,11 @@
 
 set -euo pipefail
 
+# App CFBundleIdentifier
 APP_ID="$1"
+# App DisplayName
 APP_NAME="$2"
+
 CURRENT_WORKSPACE=$(aerospace list-workspaces --focused)
 
 get_window_id() {

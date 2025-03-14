@@ -115,6 +115,10 @@ ctrl-alt-shift-period = [
 'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty',
 ]
 
+ctrl-alt-t = [
+'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh com.toggl.daneel "Toggl Track"',
+]
+
 
 # Restart AeroSpace
 # ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
@@ -331,6 +335,12 @@ if.app-id = 'com.wulkano.kap'
 if.window-title-regex-substring = ''
 run = ['layout floating']
 
+[[on-window-detected]]
+if.during-aerospace-startup = false
+if.app-id = 'sh.frame.app'
+if.window-title-regex-substring = ''
+run = ['layout floating']
+
 # Move applications to specific workspaces
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
@@ -339,6 +349,11 @@ check-further-callbacks = true
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
+run = ['move-node-to-workspace 1']
+check-further-callbacks = true
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
 run = ['move-node-to-workspace 1']
 check-further-callbacks = true
 
