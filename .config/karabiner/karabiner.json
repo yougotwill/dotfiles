@@ -1239,7 +1239,6 @@
                 }
             ],
             "name": "Kinesis Freestyle2 MAC",
-            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi",
@@ -2927,6 +2926,7 @@
                 }
             ],
             "name": "Kinesis Freestyle2 MAC + Flirc USB",
+            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi",
