@@ -127,6 +127,7 @@ alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
 alias ghrepo='gh repo set-default'
 alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} git remote remove {} && git tag -l | xargs git tag -d && git fetch --tags'
+alias gcleanup='git maintenance run --task=gc && git maintenance run --task=commit-graph'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
