@@ -12,6 +12,7 @@ mas "Folder Peek", id: 1615988943
 mas "Gapplin", id: 768053424
 mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
+mas "Hidden Bar", id: 1452453066
 mas "Ice Cubes", id: 6444915884
 mas "Icon Preview", id: 6480373509
 mas "Iconology", id: 1463452867
@@ -20,8 +21,8 @@ mas "Keka", id: 470158793
 mas "LINE", id: 539883307
 mas "Lynda.com", id: 985958984
 mas "Manabi Reader", id: 1247286380
+mas "OrangeCard", id: 1110195348
 mas "Pages", id: 409201541
-mas "PD", id: 510365488
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
 mas "Recordia", id: 1529006487
@@ -41,3 +42,4 @@ mas "Tuneful", id: 6739804295
 mas "UTM", id: 1538878817
 mas "Velja", id: 1607635845
 mas "Xcode", id: 497799835
+mas "Zero Duplicates", id: 6738340521
