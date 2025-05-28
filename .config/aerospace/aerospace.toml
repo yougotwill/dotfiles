@@ -31,14 +31,14 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 0
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-#               tall monitor (anything higher than wide) gets vertical orientation
+#               tall monitor (anything higher thaÅn wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
 # Mouse follows focus when focused monitor changes
@@ -58,12 +58,12 @@ exec-on-workspace-change = ['/bin/sh', '-c', '$HOME/.config/aerospace/scripts/fl
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = true
+automatically-unhide-macos-hidden-apps = false
 
-# Possible values: (qwerty|dvorak)
+# Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
-preset = 'qwerty'
+    preset = 'qwerty'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -73,423 +73,499 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+    inner.horizontal = 10
+    inner.vertical =   10
+    outer.left =       10
+    outer.bottom =     10
+    outer.top =        10
+    outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
+    # All possible keys:
+    # - Letters.        a, b, c, ..., z
+    # - Numbers.        0, 1, 2, ..., 9
+    # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+    # - F-keys.         f1, f2, ..., f20
+    # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+    #                   leftSquareBracket, rightSquareBracket, space, enter, esc,
+    #                   backspace, backspace, tab, pageUp, pageDown, home, end, forwardDelete,
+    #                   sectionSign (ISO keyboards only, european keyboards only)
+    # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+    #                   keypadMinus, keypadMultiply, keypadPlus
+    # - Arrows.         left, down, up, right
 
-# All possible keys:
-# - Letters.        a, b, c, ..., z
-# - Numbers.        0, 1, 2, ..., 9
-# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-# - F-keys.         f1, f2, ..., f20
-# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
-#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
-# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-#                   keypadMinus, keypadMultiply, keypadPlus
-# - Arrows.         left, down, up, right
+    # All possible modifiers: cmd, alt, ctrl, shift
 
-# All possible modifiers: cmd, alt, ctrl, shift
+    # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
-# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+    # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
+    # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
+    # alt-enter = '''exec-and-forget osascript -e '
+    # tell application "Terminal"
+    #     do script
+    #     activate
+    # end tell'
+    # '''
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
+    # See: https://nikitabobko.github.io/AeroSpace/commands#layout
+    alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
+    alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
+    alt-shift-space = ['layout floating tiling']
 
-# Custom execution commands
-ctrl-alt-shift-period = [
-'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh net.kovidgoyal.kitty kitty',
-]
+    # See: https://nikitabobko.github.io/AeroSpace/commands#focus
+    alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace', 'focus up --boundaries-action wrap-around-the-workspace']
+    alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace', 'focus right --boundaries-action wrap-around-the-workspace']
+    alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace', 'focus left --boundaries-action wrap-around-the-workspace']
+    alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace', 'focus down --boundaries-action wrap-around-the-workspace']
 
-ctrl-alt-t = [
-'exec-and-forget $HOME/.config/aerospace/scripts/hotkey-windows.sh com.toggl.daneel "Toggl Track"',
-]
+    # See: https://nikitabobko.github.io/AeroSpace/commands#move
+    ctrl-alt-shift-h = ['move left']
+    ctrl-alt-shift-j = ['move down']
+    ctrl-alt-shift-k = ['move up']
+    ctrl-alt-shift-l = ['move right']
 
+    # See: https://nikitabobko.github.io/AeroSpace/commands#resize
+    alt-shift-minus = ['resize smart -50']
+    alt-shift-equal = ['resize smart +50']
 
-# Restart AeroSpace
-# ctrl-alt-shift-a = ['''exec-and-forget osascript -e \
-# 'tell application "AeroSpace" to quit
-# delay 2
-# tell application "AeroSpace" to activate'
-# ''']
-# Custom execution commands - end
+    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    ctrl-1 = ['workspace 1']
+    ctrl-2 = ['workspace 2']
+    ctrl-3 = ['workspace 3']
+    ctrl-4 = ['workspace 4']
+    ctrl-5 = ['workspace 5']
+    ctrl-6 = ['workspace 6']
+    ctrl-7 = ['workspace 7'] # In your config, you can drop workspace bindings that you don't need
+    ctrl-left = ['workspace prev']
+    ctrl-right = ['workspace next']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-shift-s = ['layout tiling', 'layout tiles horizontal vertical']
-alt-shift-a = ['layout tiling', 'layout accordion horizontal vertical']
-alt-shift-f = ['layout floating tiling']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
+    cmd-ctrl-left = ['focus-monitor prev']
+    cmd-ctrl-right = ['focus-monitor next']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-shift-h = ['focus left --boundaries-action wrap-around-the-workspace', 'focus up --boundaries-action wrap-around-the-workspace']
-alt-shift-j = ['focus down --boundaries-action wrap-around-the-workspace', 'focus right --boundaries-action wrap-around-the-workspace']
-alt-shift-k = ['focus up --boundaries-action wrap-around-the-workspace', 'focus left --boundaries-action wrap-around-the-workspace']
-alt-shift-l = ['focus right --boundaries-action wrap-around-the-workspace', 'focus down --boundaries-action wrap-around-the-workspace']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+    ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+    ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+    ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+    ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+    ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+    ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+    ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
+    ctrl-alt-shift-right = ['move-node-to-workspace next', 'workspace next']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-ctrl-alt-shift-h = ['move left']
-ctrl-alt-shift-j = ['move down']
-ctrl-alt-shift-k = ['move up']
-ctrl-alt-shift-l = ['move right']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#focus
+    alt-tab = ['focus right --boundaries-action wrap-around-the-workspace', 'focus down --boundaries-action wrap-around-the-workspace']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+    alt-shift-tab = 'workspace-back-and-forth'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = ['resize smart -50']
-alt-shift-equal = ['resize smart +50']
+    # Custom bindings
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-ctrl-1 = ['workspace 1']
-ctrl-2 = ['workspace 2']
-ctrl-3 = ['workspace 3']
-ctrl-4 = ['workspace 4']
-ctrl-5 = ['workspace 5']
-ctrl-6 = ['workspace 6']
-ctrl-7 = ['workspace 7'] # In your config, you can drop workspace bindings that you don't need
-ctrl-left = ['workspace prev']
-ctrl-right = ['workspace next']
+    # cmd-q = ['close --quit-if-last-window']
+    cmd-ctrl-alt-q = ['close-all-windows-but-current --quit-if-last-window']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
-cmd-ctrl-left = ['focus-monitor prev']
-cmd-ctrl-right = ['focus-monitor next']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
+    alt-shift-z = ['flatten-workspace-tree'] # reset layout
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
-ctrl-alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
-ctrl-alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
-ctrl-alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
-ctrl-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
-ctrl-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
-ctrl-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-ctrl-alt-shift-left = ['move-node-to-workspace prev', 'workspace prev']
-ctrl-alt-shift-right = ['move-node-to-workspace next', 'workspace next']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+    alt-shift-f = ['fullscreen']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus-back-and-forth
-alt-tab = ['focus-back-and-forth']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
+    cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
+    cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-shift-space = ['workspace-back-and-forth']
+    ctrl-alt-shift-minus = ['resize smart -500']
+    ctrl-alt-shift-equal = ['resize smart +500']
+    # Custom bindings - end
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = ['move-workspace-to-monitor --wrap-around next']
-
-# Custom bindings
-# See: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-cmd-h = [] # Disable "hide application"
-cmd-alt-h = [] # Disable "hide others"
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#flatten-workspace-tree
-alt-shift-z = ['flatten-workspace-tree'] # reset layout
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
-alt-shift-d = ['fullscreen']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-cmd-ctrl-alt-left = ['move-node-to-monitor --wrap-around prev', 'focus-monitor prev']
-cmd-ctrl-alt-right = ['move-node-to-monitor --wrap-around next', 'focus-monitor next' ]
-
-ctrl-alt-shift-minus = ['resize smart -500']
-ctrl-alt-shift-equal = ['resize smart +500']
-# Custom bindings - end
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-alt-shift-comma = ['mode service']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+    alt-shift-c = ['mode service']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
-space = ['enable toggle', 'mode main']
-c = ['exec-and-forget open ~/.config/aerospace/aerospace.toml', 'mode main']
+    esc = ['mode main']
+    enter = ['mode main']
+    r = ['flatten-workspace-tree', 'mode main'] # reset layout
+    f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    backspace = ['close-all-windows-but-current', 'mode main']
+    c = ['exec-and-forget open ~/.config/aerospace/aerospace.toml', 'mode main']
 
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-#s = ['layout sticky tiling', 'mode main']
+    # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+    #s = ['layout sticky tiling', 'mode main']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#join-with
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#volume
-# down = 'volume down'
-# up = 'volume up'
-# shift-down = ['volume set 0', 'mode main']
+    # See: https://nikitabobko.github.io/AeroSpace/commands#volume
+    down = 'volume down'
+    up = 'volume up'
+    shift-down = ['volume set 0', 'mode main']
+
+    h = 'resize width -50'
+    j = 'resize height +50'
+    k = 'resize height -50'
+    l = 'resize width +50'
 
 # Custom behaviours
 # Floating windows
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
-[[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'net.kovidgoyal.kitty'
-run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'org.mozilla.firefox'
-if.window-title-regex-substring = 'Extension:'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'net.kovidgoyal.kitty-quick-access'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-if.window-title-regex-substring = 'Extension:'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.mitchellh.ghostty'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.toggl.daneel'
-if.window-title-regex-substring = 'Untitled'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'app.zen-browser.zen'
+    if.window-title-regex-substring = 'Picture-In-Picture'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.sindresorhus.Camera-Preview'
-if.window-title-regex-substring = 'Camera Preview'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'org.mozilla.firefox'
+    if.window-title-regex-substring = 'Extension:'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.sindresorhus.Scratchpad'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'org.mozilla.firefoxdeveloperedition'
+    if.window-title-regex-substring = 'Extension:'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'me.justinyan.justfocus'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'app.zen-browser.zen'
+    if.window-title-regex-substring = 'Extension:'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.hegenberg.BetterTouchTool'
-if.window-title-regex-substring = 'Buy BetterTouchTool'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.toggl.daneel'
+    if.window-title-regex-substring = 'Untitled'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.hegenberg.BetterTouchTool'
-if.window-title-regex-substring = 'Software Update'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.chabomakers.Antinote'
+    if.window-title-regex-substring = 'Antinote'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.hegenberg.BetterTouchTool'
-if.window-title-regex-substring = 'Screenshot'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.sindresorhus.Camera-Preview'
+    if.window-title-regex-substring = 'Camera Preview'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'net.whatsapp.WhatsApp'
-if.window-title-regex-substring = 'Whatsapp video call'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.sindresorhus.Scratchpad'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.apple.PhotoBooth'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'me.justinyan.justfocus'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.valvesoftware.steam'
-if.window-title-regex-substring = 'Friends List'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.hegenberg.BetterTouchTool'
+    if.window-title-regex-substring = 'Screenshot'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.valvesoftware.steam'
-if.window-title-regex-substring = 'Special Offers'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'net.whatsapp.WhatsApp'
+    if.window-title-regex-substring = 'Whatsapp video call'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'com.apple.PhotoBooth'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'com.valvesoftware.steam'
+    if.window-title-regex-substring = 'Friends List'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'com.valvesoftware.steam'
+    if.window-title-regex-substring = 'Special Offers'
+    run = ['layout floating']
 
 ## Whisky apps
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'NULL-APP-BUNDLE-ID'
-if.window-title-regex-substring = 'Friends List'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'NULL-APP-BUNDLE-ID'
+    if.window-title-regex-substring = 'Friends List'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'NULL-APP-BUNDLE-ID'
-if.window-title-regex-substring = 'Special Offers'
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'NULL-APP-BUNDLE-ID'
+    if.window-title-regex-substring = 'Special Offers'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'com.wulkano.kap'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'com.wulkano.kap'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.during-aerospace-startup = false
-if.app-id = 'sh.frame.app'
-if.window-title-regex-substring = ''
-run = ['layout floating']
+    if.during-aerospace-startup = false
+    if.app-id = 'sh.frame.app'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'com.raycast.macos'
+    if.window-title-regex-substring = 'AI Chat'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'ch.protonvpn.mac'
+    if.window-title-regex-substring = 'Proton VPN'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'org.gnome.Meld'
+    if.window-title-regex-substring = ''
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-name-regex-substring = 'Audible'
+    if.window-title-regex-substring = 'Audible Cloud Player'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'org.mozilla.thunderbird'
+    if.window-title-regex-substring = 'Write:'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
+    if.app-id = 'org.mozilla.thunderbird'
+    if.window-title-regex-substring = 'Sending Message -'
+    run = ['layout floating']
 
 # Move applications to specific workspaces
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-run = ['move-node-to-workspace 1']
-check-further-callbacks = true
+    if.app-id = 'com.apple.Safari '
+    run = ['move-node-to-workspace 1']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-run = ['move-node-to-workspace 1']
-check-further-callbacks = true
+    if.app-id = 'org.mozilla.firefox'
+    run = ['move-node-to-workspace 1']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
-run = ['move-node-to-workspace 1']
-check-further-callbacks = true
+    if.app-id = 'org.mozilla.firefoxdeveloperedition'
+    run = ['move-node-to-workspace 1']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = ['move-node-to-workspace 2']
-check-further-callbacks = true
+    if.app-id = 'app.zen-browser.zen'
+    run = ['move-node-to-workspace 1']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
-run = ['move-node-to-workspace 2']
-check-further-callbacks = true
+    if.app-id = 'com.brave.Browser'
+    run = ['move-node-to-workspace 1']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.thunderbird'
-run = ['move-node-to-workspace 2']
-check-further-callbacks = true
+    if.app-id = 'com.microsoft.VSCode'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = ['move-node-to-workspace 2']
-check-further-callbacks = true
+    if.app-id = 'dev.zed.Zed'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.apple.reminders'
-run = ['move-node-to-workspace 3']
-check-further-callbacks = true
+    if.app-id = 'org.mozilla.thunderbird'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = ['move-node-to-workspace 3']
-check-further-callbacks = true
+    if.app-id = 'com.apple.mail'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.github.Electron'
-run = ['move-node-to-workspace 3']
-check-further-callbacks = true
+    if.app-id = 'com.jetbrains.WebStorm'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-run = ['move-node-to-workspace 4']
-check-further-callbacks = true
+    if.app-id = 'ch.protonmail.desktop'
+    run = ['move-node-to-workspace 2']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.figma.Desktop'
-run = ['move-node-to-workspace 4']
-check-further-callbacks = true
+    if.app-id = 'com.apple.reminders'
+    run = ['move-node-to-workspace 3']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.electron.dockerdesktop'
-run = ['move-node-to-workspace 4']
-check-further-callbacks = true
+    if.app-id = 'com.apple.Notes'
+    run = ['move-node-to-workspace 3']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.electron.logseq'
-run = ['move-node-to-workspace 5']
-check-further-callbacks = true
+    if.app-id = 'com.github.Electron'
+    run = ['move-node-to-workspace 3']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.fabian.hasse.haushaltsbuch'
-run = ['move-node-to-workspace 5']
-check-further-callbacks = true
+    if.app-id = 'com.apple.iCal'
+    run = ['move-node-to-workspace 4']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.figma.Desktop'
+    run = ['move-node-to-workspace 4']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.electron.dockerdesktop'
+    run = ['move-node-to-workspace 4']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.loki-project.messenger-desktop'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.electron.logseq'
+    run = ['move-node-to-workspace 5']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.tencent.xinWeChat'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.fabian.hasse.haushaltsbuch'
+    run = ['move-node-to-workspace 5']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.hnc.Discord'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'dev.vencord.vesktop'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.loki-project.messenger-desktop'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'im.riot.app'
-if.window-title-regex-substring = 'Element'
-run = ['move-node-to-workspace 6']
-check-further-callbacks = true
+    if.app-id = 'com.tencent.xinWeChat'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'org.whispersystems.signal-desktop'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.colliderli.iina'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'dev.vencord.vesktop'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.smartcodeltd.stremio'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'com.microsoft.teams2'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.utmapp.UTM'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'im.riot.app'
+    if.window-title-regex-substring = 'Element'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-id = 'com.isaacmarovitz.Whisky'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'ru.keepcoder.Telegram'
+    run = ['move-node-to-workspace 6']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Audiobookshelf'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'com.spotify.client'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Ambiphone'
-run = ['move-node-to-workspace 7']
-check-further-callbacks = true
+    if.app-id = 'com.colliderli.iina'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = 'com.smartcodeltd.stremio'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = 'com.utmapp.UTM'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = 'com.isaacmarovitz.Whisky'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Ambiphone'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Audiobookshelf'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Audible'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = 'org.m0k.transmission'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = 'tv.jellyfin.player'
+    run = ['move-node-to-workspace 7']
+    check-further-callbacks = true
+
 # Custom behaviour - end
