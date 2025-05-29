@@ -6,7 +6,8 @@
     },
     "filePanel": {
         "general": {
-            "initialRightPanelPath": "~/Downloads",
+            "initialLeftPanelPath": "~/Downloads",
+            "initialRightPanelPath": "~",
             "fileSizeFormat": 2,
             "selectionSizeFormat": 3
         },
@@ -740,7 +741,7 @@
     },
     "hotkeyOverrides_v1": {
         "menu.file.reveal_in_opposite_panel": "^t",
-        "menu.edit.deselect_all": "⇧ ",
+        "menu.edit.deselect_all": "⌥ ",
         "menu.view.toggle_layout_1": "⌘7",
         "menu.view.toggle_layout_2": "⌘8",
         "menu.view.toggle_layout_3": "⌘9",
@@ -769,7 +770,7 @@
         "menu.command.copy_to": "^c",
         "menu.command.move_to": "^v",
         "menu.command.rename_in_place": "^n",
-        "panel.move_next_and_invert_selection": "⌥ ",
+        "panel.move_next_and_invert_selection": "⇧ ",
         "panel.show_preview": "^ "
     }
 }
