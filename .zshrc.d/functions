@@ -20,5 +20,25 @@ setDarkAppearance () {
 }
 
 bupgradepin () {
-  bcu unpin $1 && bcu $1 && bcu pin $1
+  bcu unpin $1 && brew cu --all --quiet --force --yes $1 && bcu pin $1
+}
+
+wta () {
+  if [ -z "$1" ]; then
+      echo "Usage: wta <branch-name>"
+      return 1
+  fi
+
+  local new_worktree_dir="$(basename "$PWD")-${1//\//-}"
+  git worktree add ../$new_worktree_dir $1
+}
+
+wtab () {
+  if [ -z "$1" ]; then
+      echo "Usage: wta <branch-name>"
+      return 1
+  fi
+
+  local new_worktree_dir="$(basename "$PWD")-${1//\//-}"
+  git worktree add -b $1 ../$new_worktree_dir
 }
