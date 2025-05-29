@@ -7,7 +7,7 @@
 # @raycast.schemaVersion 1
 # @raycast.title Set visible app as the default browser
 # @raycast.mode silent
-# @raycast.argument1 { "type": "text", "placeholder": "Browser (brave, chrome, safari, ff, ffd)", "optional": true }
+# @raycast.argument1 { "type": "text", "placeholder": "Browser (brave, chrome, safari, ff, ffd, zen)", "optional": true }
 
 # Optional parameters:
 # @raycast.packageName Browsing
@@ -49,6 +49,8 @@ if (raycastArgv is equal to "") then
     set browserName to "firefoxdeveloperedition"
   else if (appName is equal to "Firefox") then
     set browserName to "firefox"
+  else if (appName is equal to "Zen") then
+    set browserName to "zen"
   end if
 else
   # appName is used for print log message
@@ -75,6 +77,9 @@ else
   else if (appName is equal to "ff") then
     set browserName to "firefox"
     set appName to "Firefox"
+  else if (appName is equal to "zen") then
+    set browserName to "zen"
+    set appName to "Zen"
   else  
     set browserName to raycastArgv
   end if
