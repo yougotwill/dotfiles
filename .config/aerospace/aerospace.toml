@@ -228,6 +228,11 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.during-aerospace-startup = false
+    if.app-id = 'design.brilliant'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.during-aerospace-startup = false
     if.app-id = 'com.mitchellh.ghostty'
     run = ['layout floating']
 
