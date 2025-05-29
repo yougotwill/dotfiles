@@ -1,23 +1,30 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
-  pager = delta
+	pager = delta
 [init]
 	defaultBranch = main
 [commit]
 	template = ~/.stCommitMsg
 [merge]
-  conflictstyle = diff3
+  tool = code
+	conflictstyle = diff3
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$REMOTE\" \"$BASE\" \"$LOCAL\" --output=\"$MERGED\"
+[mergetool "code"]
+  trustExitCode = true
+  cmd = open -W -n -a \"Visual Studio Code\" --args --merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [diff]
-  colorMoved = default
+	colorMoved = default
 [pull]
 	ff = only
 	rebase = false
 [delta]
-  navigate = true
-  side-by-side = true
+	navigate = true
+	side-by-side = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

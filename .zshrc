@@ -75,6 +75,7 @@ HIST_IGNORE_ALL_DUPS="true"
 # Skip all plugin aliases
 zstyle ':omz:plugins:*' aliases no
 # exceptions
+# zstyle ':omz:plugins:git-commit' aliases yes
 zstyle ':omz:plugins:z' aliases yes
 
 # Would you like to use another custom folder than $ZSH/custom?
