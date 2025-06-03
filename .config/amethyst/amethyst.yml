@@ -16,24 +16,26 @@
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
   - tall
+# - tall-right
   - wide
-  - column
   - two-pane
-  - bsp
-  - four-corners
-  - center-focus
-  - fullscreen
-  - floating
-  # - tall-right
+  - two-pane-right
   # - middle-wide
   # - 3column-left
   # - middle-wide # The legacy name of "3column-middle"
+  # - 3column-middle
   # - 3column-right
   # - 4column-left
   # - 4column-right
+  - fullscreen
+  - column
   # - row
+  - floating
   # - widescreen-tall
   # - widescreen-tall-right
+  - bsp
+  - four-corners
+  - center-focus
 
 
 # First mod (default option + shift).
@@ -400,16 +402,16 @@ relaunch-amethyst:
 disable-padding-on-builtin-display: false
 
 # Boolean flag for whether or not to add margins between windows (default false).
-window-margins: false
+window-margins: true
 
 # Boolean flag for whether or not to set window margins if there is only one window on the screen, assuming window margins are enabled (default false).
-smart-window-margins: false
+smart-window-margins: true
 
 # # Add 10px margin between windows
 # window-margins: true
 # window-margin-size: 5
 # The size of the margins between windows (in px, default 0).
-window-margin-size: 0
+window-margin-size: 10
 
 # The max number of windows that may be visible on a screen at one time before
 # additional windows are minimized. A value of 0 disables the feature.
