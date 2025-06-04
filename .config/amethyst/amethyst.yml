@@ -15,6 +15,7 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
+  - four-corners
   - tall
 # - tall-right
   - wide
@@ -27,16 +28,14 @@ layouts:
   # - 3column-right
   # - 4column-left
   # - 4column-right
-  - fullscreen
   - column
   # - row
-  - floating
   # - widescreen-tall
   # - widescreen-tall-right
   - bsp
-  - four-corners
   - center-focus
-
+  - fullscreen
+  - floating
 
 # First mod (default option + shift).
 mod1:
@@ -164,12 +163,12 @@ swap-screen-cw:
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
   mod: mod2
-  key: j
+  key: l
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
   mod: mod2
-  key: k
+  key: h
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
@@ -361,12 +360,12 @@ select-center-focus-layout:
 # Move the currently focused window to the space to the left.
 throw-space-left:
   mod: mod2
-  key: h
+  key: j
 
 # Move currently the focused window to the space to the right.
 throw-space-right:
   mod: mod2
-  key: l
+  key: k
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:
