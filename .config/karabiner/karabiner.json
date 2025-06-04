@@ -2895,19 +2895,6 @@
             "devices": [
                 {
                     "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 668,
-                        "vendor_id": 76
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "non_us_backslash" },
-                            "to": [{ "key_code": "left_control" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
                         "is_game_pad": true,
                         "is_keyboard": true,
                         "is_pointing_device": true,

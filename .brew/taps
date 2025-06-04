@@ -1,7 +1,7 @@
+tap "alienator88/cask"
 tap "buo/cask-upgrade"
 tap "dteoh/devdocs"
 tap "felixkratz/formulae"
-tap "homebrew/bundle"
 tap "jetpackduba/apps"
 tap "mac-cleanup/mac-cleanup-py"
 tap "mcasper/formulae"

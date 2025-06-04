@@ -6,7 +6,7 @@ alias sources='${EDITOR} ~/.zshrc.d/sources'
 # navigation
 alias cat='bat'
 alias cl='clear'
-alias fdr='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
+alias f='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
 alias ls='eza'
 alias la='ls -a'
 alias ll='ls -l --time-style=long-iso'
@@ -32,10 +32,13 @@ alias asdfrc='${EDITOR} ~/.asdfrc'
 
 # brew
 alias b='brew'
-alias bcu='brew cu -a'
-alias boutdated='brew update && brew outdated --formula && brew outdated --cask --greedy'
-alias bupgrade='brew upgrade --formula && brew cu --no-brew-update -a --quiet --yes'
-alias bcleanup='brew cleanup && brew autoremove'
+alias bcu='brew cu --all'
+alias bcpin='brew cu pin'
+alias bcunpin='brew cu unpin'
+alias bpinned='brew list --pinned && brew cu pinned'
+alias bupdate='brew update && brew outdated --formula && brew outdated --cask --greedy'
+alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --all --yes --quiet'
+alias bclean='brew cleanup && brew autoremove'
 alias bbackup-delete='rmdir ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
 alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
@@ -128,6 +131,10 @@ alias gitdiff='git diff --name-only | uniq | xargs code'
 alias ghrepo='gh repo set-default'
 alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} git remote remove {} && git tag -l | xargs git tag -d && git fetch --tags'
 alias gcleanup='git maintenance run --task=gc && git maintenance run --task=commit-graph'
+alias wt='git worktree'
+
+# github
+alias co='gh copilot'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
@@ -143,6 +150,9 @@ alias rmnode='rm -Rf **/node_modules'
 alias yif='yarn install --frozen-lockfile'
 alias yii='yarn install --immutable-cache'
 
+# pdm
+alias pdmv='pdm venv'
+
 # pipx
 alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
 alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
@@ -150,6 +160,12 @@ alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && e
 # pnpm 
 alias pnpm-export="rm ~/.default-pnpm-packages && pnpm list -g --depth=0 --parseable | tail -n +2 | sed -E 's|.*/([^@]+)@([^/]+).*|\1@\2|' > ~/.default-pnpm-packages && echo 'pnpm packages exported to ~/.default-pnpm-packages'"
 alias pnpm-import="cat ~/.default-pnpm-packages | xargs pnpm install -g && echo 'pnpm packages imported from ~/.default-pnpm-packages'"
+
+# python
+alias pv=". .venv/bin/activate"
+alias pvs="python -m venv .venv"
+alias pvr="pip freeze > requirements.txt"
+alias pvi="pip install -r requirements.txt"
 
 # tmux
 alias tm='tmux'
@@ -164,6 +180,7 @@ alias vim='nvim'
 alias vimf='nvim $(fzf)'
 
 # misc
+alias about='neofetch --backend off'
 alias ae='aerospace'
 alias aerc='~/.config/aerospace/aerospace.toml'
 alias defb='defaultbrowser'

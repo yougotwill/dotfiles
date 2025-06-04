@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -23,4 +23,4 @@ open -a "Mail"
 open -a "Thunderbird"
 open -a "Nimble Commander"
 sleep 10
-open -a "Firefox"
+open -a "Zen"

@@ -25,6 +25,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
@@ -42,6 +45,10 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 # huff
 export PATH="$PATH:$HOME/.huff/bin"
 
+# pip
+# use pipx for anything global
+export PIP_REQUIRE_VIRTUALENV=true
+
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -58,9 +65,6 @@ export PATH="$(brew --prefix)/opt/postgresql@16/bin:$PATH"
 
 # reactjs
 export BROWSER=none
-
-# ruby
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # spicetify
 export SPICETIFY_INSTALL="$HOME/.spicetify"
