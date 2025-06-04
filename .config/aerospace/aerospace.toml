@@ -383,7 +383,7 @@ automatically-unhide-macos-hidden-apps = false
 
 # Move applications to specific workspaces
 [[on-window-detected]]
-    if.app-id = 'com.apple.Safari '
+    if.app-id = 'com.apple.Safari'
     run = ['move-node-to-workspace 1']
     check-further-callbacks = true
 
