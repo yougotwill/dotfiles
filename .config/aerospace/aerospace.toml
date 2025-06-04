@@ -38,7 +38,7 @@ default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-#               tall monitor (anything higher thaÅn wide) gets vertical orientation
+#               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
 # Mouse follows focus when focused monitor changes
