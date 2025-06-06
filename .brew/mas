@@ -15,6 +15,7 @@ mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
 mas "Hidden Bar", id: 1452453066
 mas "Hush", id: 1544743900
+mas "Ice Cubes", id: 6444915884
 mas "Icon Preview", id: 6480373509
 mas "Iconology", id: 1463452867
 mas "iMovie", id: 408981434
@@ -22,6 +23,8 @@ mas "InfoCard", id: 1110195348
 mas "JustFocus", id: 1142151959
 mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "ManabiReader", id: 1247286380
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Picture-In-Picture", id: 6475380719
@@ -34,9 +37,10 @@ mas "Shareful", id: 1522267256
 mas "Shazam", id: 897118787
 mas "Simple Comic", id: 1497435571
 mas "SomaFM", id: 449155338
+mas "Spark", id: 1176895641
 mas "Speediness", id: 1596706466
 mas "stts", id: 1187772509
-mas "Tag Editor Lite", id: 984278082
+mas "Tag Editor 2", id: 984278082
 mas "TestFlight", id: 899247664
 mas "Toggl Track", id: 1291898086
 mas "Tuneful", id: 6739804295

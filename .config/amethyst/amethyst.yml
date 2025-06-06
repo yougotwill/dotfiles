@@ -453,7 +453,7 @@ floating: [
     "window-titles": []
   },
   {
-    id: "net.kovidgoyal.kitty-quick-access",
+    id: "design.brilliant",
     "window-titles": []
   }
 ]

@@ -178,7 +178,7 @@
                 "title": "Reveal in FlowVision",
                 "path": "/usr/bin/open",
                 "parameters": "-a FlowVision %r",
-                "shortcut": "^f",
+                "shortcut": "^l",
                 "startup": 2,
                 "uuid": "7ff3ba0e-f13b-422a-97ac-179d4515256e"
             },

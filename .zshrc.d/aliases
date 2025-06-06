@@ -86,7 +86,9 @@ alias flirc-backup="flirc-export && flirc-settings && echo 'flirc usb backed up 
 
 # folders
 alias appsupport='cd ~/Library/Application\ Support'
+alias cloudstorage='cd ~/Library/CloudStorage/'
 alias desk='cd ~/Desktop'
+alias dev='cd ~/dev'
 alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
 alias prj='cd ~/projects'
