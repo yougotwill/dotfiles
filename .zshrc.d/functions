@@ -1,3 +1,7 @@
+appid () {
+  mdls $1 | grep 'kMDItemCFBundleIdentifier'
+}
+
 tx () {
   tmux new -A -s "$1" "$1"
 }

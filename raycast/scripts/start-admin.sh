@@ -14,13 +14,21 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-open -a "Google Drive"
-open -a "Logseq"
+# Move to Desktop 7 first
+# osascript -e 'tell application "System Events" to key code 26 using control down'
+# sleep 2
+open -a "Proton Mail Bridge"
+open -a "Proton Drive"
+open -a "Yubico Authenticator"
+open -a "Nimble Commander"
+sleep 5
 open -a "Calendar"
-open -a "Reminders"
+open -a "Logseq"
 open -a "Notes"
+sleep 1
+open -a "Reminders"
+open -a "Zen"
+open -a "Proton Pass"
+sleep 15
 open -a "Mail"
 open -a "Thunderbird"
-open -a "Nimble Commander"
-sleep 10
-open -a "Zen"

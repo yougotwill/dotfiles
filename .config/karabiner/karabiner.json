@@ -1,4 +1,8 @@
 {
+    "global": {
+        "check_for_updates_on_startup": false,
+        "show_additional_menu_items": true
+    },
     "profiles": [
         {
             "devices": [

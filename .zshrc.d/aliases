@@ -1,34 +1,28 @@
-alias aliases='${EDITOR} ~/.zshrc.d/aliases'
-alias exports='${EDITOR} ~/.zshrc.d/exports'
-alias functions='${EDITOR} ~/.zshrc.d/functions'
-alias sources='${EDITOR} ~/.zshrc.d/sources'
+alias rc='${EDITOR} ~/.zshrc'
+alias rcd='${EDITOR} ~/.zshrc.d/'
+alias rr='exec $SHELL'
+alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
 
 # navigation
 alias cat='bat'
 alias cl='clear'
-alias f='fd -Hip' # find with fd showing hidden files, ignoring case and displaying full path
+alias f='fd -Hip' # find with fd showing hidden files, ignoring case and displaying the full path
+alias l='lk'
+alias li='lk --icons'
 alias ls='eza'
 alias la='ls -a'
 alias ll='ls -l --time-style=long-iso'
 alias lla='ll -a'
-alias lki='lk --icons'
 alias pd='pushd'
 alias qd='popd'
 alias q='exit'
 
 # destructive operations
 alias rmi='rm -I'
-alias rmdir='rmi -R'
 alias t='trash'
 
 # asdf
 alias asdfrc='${EDITOR} ~/.asdfrc'
-
-# TODO should we keep this
-# bluetooth
-# alias bt='blueutil'
-# alias btOn='blueutil -p 1'
-# alias btOff='blueutil -p 0'
 
 # brew
 alias b='brew'
@@ -37,9 +31,10 @@ alias bcpin='brew cu pin'
 alias bcunpin='brew cu unpin'
 alias bpinned='brew list --pinned && brew cu pinned'
 alias bupdate='brew update && brew outdated --formula && brew outdated --cask --greedy'
+alias bupgradefonts='brew list --cask | grep font- | xargs brew upgrade --fetch-HEAD --greedy'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --all --yes --quiet'
 alias bclean='brew cleanup && brew autoremove'
-alias bbackup-delete='rmdir ~/.brew/*'
+alias bbackup-delete='t ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
 alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
 alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
@@ -60,12 +55,6 @@ alias cmus-control='brew services restart cmus-control'
 alias cmus-status='cmus-remote -Q'
 alias cmus-play='cmus-remote -p'
 alias cmus-pause='cmus-remote -u'
-
-# configs
-alias rr='exec $SHELL'
-alias zshrc='${EDITOR} ~/.zshrc'
-alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
-alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -127,7 +116,8 @@ alias gra='git remote add'
 alias grru='git remote rename origin upstream'
 alias gs='git switch'
 alias gsb='git status -sb'
-alias gt='git log --decorate --pretty=oneline'
+alias gt='git log --pretty=reference --date=iso'
+alias gT='git log --pretty=fuller --date=iso'
 alias lg='lazygit'
 alias gitdiff='git diff --name-only | uniq | xargs code'
 alias ghrepo='gh repo set-default'
@@ -137,6 +127,9 @@ alias wt='git worktree'
 
 # github
 alias co='gh copilot'
+
+# karabiner
+alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
 # nimble commander
 alias nc="open -a 'Nimble Commander'"
@@ -186,12 +179,15 @@ alias about='neofetch --backend off'
 alias ae='aerospace'
 alias aerc='~/.config/aerospace/aerospace.toml'
 alias defb='defaultbrowser'
+alias dc='docker compose'
 alias k='kitten'
 alias mpva='mpv --no-video'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
+alias s='kitten ssh'
 alias ssx='ssh -Xv'
+alias ts='tailscale'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'

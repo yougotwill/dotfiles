@@ -15,25 +15,25 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
+  - fullscreen
   - four-corners
-  - tall
-# - tall-right
+  # - tall
+  # - tall-right
   - wide
   - two-pane
-  - two-pane-right
-  # - middle-wide
-  # - 3column-left
-  # - middle-wide # The legacy name of "3column-middle"
+  # - two-pane-right
+  - 3column-left
+  - middle-wide # The legacy name of "3column-middle"
   # - 3column-middle
-  # - 3column-right
-  # - 4column-left
-  # - 4column-right
-  - column
-  # - row
-  # - widescreen-tall
-  # - widescreen-tall-right
-  - bsp
-  - center-focus
+  - 3column-right
+  - 4column-left
+  - 4column-right
+  # - column
+  - row
+  - widescreen-tall
+  - widescreen-tall-right
+  # - bsp
+  # - center-focus
   - fullscreen
   - floating
 
@@ -128,12 +128,12 @@ command4:
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
   mod: mod1
-  key: j
+  key: h
 
 # Focus the next window in the list going clockwise.
 focus-cw:
   mod: mod1
-  key: k
+  key: l
 
 # Focus the main window in the list.
 focus-main:
@@ -143,21 +143,21 @@ focus-main:
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
   mod: mod3
-  key: left
+  key: h
 
 # Focus the next screen in the list going clockwise.
 focus-screen-cw:
   mod: mod3
-  key: right
+  key: l
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 swap-screen-ccw:
-  mod: mod2
+  mod: mod3
   key: left
 
 # Move the currently focused window onto the next screen in the list going clockwise.
 swap-screen-cw:
-  mod: mod2
+  mod: mod3
   key: right
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
@@ -237,6 +237,8 @@ throw-screen-5:
   mod: <NONE>
   key: <NONE>
 
+# NOTE: Disabled because some windows aren't detected when thrown. Using BetterTouchTool
+
 # Move the currently focused window to the n-th space; e.g., throw-space-3 will move the window to the 3rd space.
 # throw-space-<screen-number>:
 #   mod: mod1
@@ -244,53 +246,53 @@ throw-screen-5:
 
 # throw-space-1:
 throw-space-1:
-  mod: mod2
-  key: 1
+  mod: <NONE> 
+  key: <NONE> 
 
 # throw-space-2:
 throw-space-2:
-  mod: mod2
-  key: 2
+  mod: <NONE> 
+  key: <NONE>
 
 # throw-space-3:
 throw-space-3:
-  mod: mod2
-  key: 3
+  mod: <NONE> 
+  key: <NONE>
 
 # throw-space-4:
 throw-space-4:
-  mod: mod2
-  key: 4
+  mod: <NONE> 
+  key: <NONE>
 
 # throw-space-5:
 throw-space-5:
-  mod: mod2
-  key: 5
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-6:
 throw-space-6:
-  mod: mod2
-  key: 6
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-7:
 throw-space-7:
-  mod: mod2
-  key: 7
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-8:
 throw-space-8:
-  mod: mod2
-  key: 8
+  mod: <NONE> 
+  key: <NONE>
 
 # throw-space-9:
 throw-space-9:
-  mod: mod2
-  key: 9
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-10:
 throw-space-10:
-  mod: mod2
-  key: 0
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-11:
 throw-space-11:
@@ -324,13 +326,18 @@ throw-space-16:
 
 # Select tall layout
 select-tall-layout:
-  mod: mod1
-  key: s
+  mod: <NONE>
+  key: <NONE>
 
 # Select wide layout
 select-wide-layout:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: d
+
+# Select two pane layout
+select-two-pane-layout:
+  mod: mod1
+  key: x
 
 # Select fullscreen layout
 select-fullscreen-layout:
@@ -347,15 +354,25 @@ select-floating-layout:
   mod: mod1
   key: f
 
+# Select widescreen tall layout
+select-widescreen-tall-layout:
+  mod: mod1 
+  key: e
+
+# Select widescreen tall right layout
+select-widescreen-tall-right-layout:
+  mod: <NONE> 
+  key: <NONE>
+
 # Select four corners layout
 select-four-corners-layout:
   mod: mod1
-  key: x
+  key: s
 
 # Select center focus layout
-select-center-focus-layout:
-  mod: mod1
-  key: d
+# select-center-focus-layout:
+#   mod: <NONE> 
+#   key: <NONE>
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
@@ -398,10 +415,10 @@ relaunch-amethyst:
   key: r
 
 # disable screen padding on builtin display
-disable-padding-on-builtin-display: false
+disable-padding-on-builtin-display: true
 
 # Boolean flag for whether or not to add margins between windows (default false).
-window-margins: true
+window-margins: false
 
 # Boolean flag for whether or not to set window margins if there is only one window on the screen, assuming window margins are enabled (default false).
 smart-window-margins: true
@@ -414,7 +431,7 @@ window-margin-size: 10
 
 # The max number of windows that may be visible on a screen at one time before
 # additional windows are minimized. A value of 0 disables the feature.
-window-max-count: 0
+window-max-count: 4
 
 # The smallest height that a window can be sized to regardless of its layout frame (in px, default 0).
 window-minimum-height: 0
@@ -455,6 +472,22 @@ floating: [
   {
     id: "design.brilliant",
     "window-titles": []
+  },
+  {
+    id: "net.kovidgoyal.kitty-quick-access",
+    "window-titles": ["kitty-quick-access"]
+  },
+  {
+    id: "com.hegenberg.BetterTouchTool",
+    "window-titles": ["Screenshot*"]
+  },
+  {
+    id: "com.raycast.macos",
+    "window-titles": ["AI Chat", "Settings"]
+  },
+  {
+    id: "org.mozilla.thunderbird",
+    "window-titles": ["Folder Properties", "Choose a color"]
   }
 ]
 
@@ -486,7 +519,7 @@ mouse-resizes-windows: true
 enables-layout-hud: true
 
 # true to display the name of the layout when moving to a new space (default true).
-enables-layout-hud-on-space-change: false
+enables-layout-hud-on-space-change: false 
 
 # true to get updates to beta versions of the software (default false).
 use-canary-build: false
@@ -501,16 +534,16 @@ follow-space-thrown-windows: true
 window-resize-step: 5
 
 # Padding to apply between windows and the left edge of the screen (in px, default 0).
-screen-padding-left: 0
+screen-padding-left: 10
 
 # Padding to apply between windows and the right edge of the screen (in px, default 0).
-screen-padding-right: 0
+screen-padding-right: 10
 
 # Padding to apply between windows and the top edge of the screen (in px, default 0).
-screen-padding-top: 0
+screen-padding-top: 10
 
 # Padding to apply between windows and the bottom edge of the screen (in px, default 0).
-screen-padding-bottom: 0
+screen-padding-bottom: 10
 
 # true to maintain layout state across application executions (default true).
 restore-layouts-on-launch: true

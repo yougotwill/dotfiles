@@ -1,5 +1,6 @@
 mas "Aiko", id: 1672085276
 mas "Black Out", id: 1319884285
+mas "Blankie", id: 6740096581
 mas "Budget Flow", id: 1640091876
 mas "Camera Preview", id: 1632827132
 mas "Clockzones", id: 6737234391
@@ -13,9 +14,7 @@ mas "Folder Peek", id: 1615988943
 mas "Gapplin", id: 768053424
 mas "Gifski", id: 1351639930
 mas "HEIC Converter", id: 1294126402
-mas "Hidden Bar", id: 1452453066
 mas "Hush", id: 1544743900
-mas "Ice Cubes", id: 6444915884
 mas "Icon Preview", id: 6480373509
 mas "Iconology", id: 1463452867
 mas "iMovie", id: 408981434
@@ -24,17 +23,21 @@ mas "JustFocus", id: 1142151959
 mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
+mas "Lynda.com", id: 985958984
 mas "ManabiReader", id: 1247286380
+mas "Manet", id: 6470928235
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Picture-In-Picture", id: 6475380719
 mas "PiPifier", id: 1160374471
 mas "Poolsuite FM", id: 1514817810
+mas "Proton Pass for Safari", id: 6502835663
 mas "Recordia", id: 1529006487
 mas "Red Lines Tools", id: 1469400117
 mas "Scratchpad", id: 6504040051
 mas "Shareful", id: 1522267256
 mas "Shazam", id: 897118787
+mas "Signal Shifter", id: 6446061552
 mas "Simple Comic", id: 1497435571
 mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641
@@ -45,7 +48,6 @@ mas "TestFlight", id: 899247664
 mas "Toggl Track", id: 1291898086
 mas "Tuneful", id: 6739804295
 mas "Typibara", id: 6701996122
-mas "Userscripts", id: 1463298887
 mas "UTM", id: 1538878817
 mas "Velja", id: 1607635845
 mas "wBlock", id: 0

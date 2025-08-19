@@ -120,6 +120,7 @@ if [[ -d ~/.zshrc.d/completions ]]; then
 fi 
 unset rc
 
+# set PATH to include user's private bin if it exists
 if [[ "$PATH" != *"$HOME/.local/bin:$HOME/bin:"* ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
