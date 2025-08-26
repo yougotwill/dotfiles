@@ -40,7 +40,7 @@ alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --all --yes -
 alias bup='bupgrade'
 alias bclean='brew cleanup && brew autoremove'
 alias bcl='bclean'
-alias bbackup-delete='t ~/.brew/*'
+alias bbackup-delete='trash ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
 alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
 alias bbackup-casks='brew bundle dump --casks --file ~/.brew/casks'
@@ -155,11 +155,11 @@ alias yii='yarn install --immutable-cache'
 alias pdmv='pdm venv'
 
 # pipx
-alias pipx-export="rm ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
+alias pipx-export="trash ~/.config/pipx/requirements.txt && pipx list | grep 'package' | sed -e 's/package \([^ ]*\) \([^,]*\),.*/\1==\2/' > ~/.config/pipx/requirements.txt && echo 'pipx packages exported to ~/.config/pipx/requirements.txt'"
 alias pipx-import="cat ~/.config/pipx/requirements.txt | xargs pipx install && echo 'pipx packages imported from ~/.config/pipx/requirements.txt'"
 
 # pnpm 
-alias pnpm-export="rm ~/.default-pnpm-packages && pnpm list -g --depth=0 --parseable | tail -n +2 | sed -E 's|.*/([^@]+)@([^/]+).*|\1@\2|' > ~/.default-pnpm-packages && echo 'pnpm packages exported to ~/.default-pnpm-packages'"
+alias pnpm-export="trash ~/.default-pnpm-packages && pnpm list -g --depth=0 --parseable | tail -n +2 | sed -E 's|.*/([^@]+)@([^/]+).*|\1@\2|' > ~/.default-pnpm-packages && echo 'pnpm packages exported to ~/.default-pnpm-packages'"
 alias pnpm-import="cat ~/.default-pnpm-packages | xargs pnpm install -g && echo 'pnpm packages imported from ~/.default-pnpm-packages'"
 
 # python
