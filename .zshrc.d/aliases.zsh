@@ -1,7 +1,14 @@
+# shell
 alias rc='${EDITOR} ~/.zshrc'
 alias rcd='${EDITOR} ~/.zshrc.d/'
 alias rr='exec $SHELL'
 alias ohmyzsh='${EDITOR} ~/.oh-my-zsh'
+
+# destructive
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias t='trash'
 
 # navigation
 alias cat='bat'
@@ -17,10 +24,6 @@ alias pd='pushd'
 alias qd='popd'
 alias q='exit'
 
-# destructive operations
-alias rmi='rm -I'
-alias t='trash'
-
 # asdf
 alias asdfrc='${EDITOR} ~/.asdfrc'
 
@@ -30,10 +33,13 @@ alias bcu='brew cu --all'
 alias bcpin='brew cu pin'
 alias bcunpin='brew cu unpin'
 alias bpinned='brew list --pinned && brew cu pinned'
-alias bupdate='brew update && brew outdated --formula && brew outdated --cask'
+alias bupdate='brew update && brew outdated --formula && brew outdated --cask --greedy-auto-updates'
+alias bu='bupdate'
 alias bupgradefonts='brew list --cask | grep font- | xargs brew upgrade --fetch-HEAD --greedy'
 alias bupgrade='brew upgrade --formula && brew cu --no-brew-update --all --yes --quiet'
+alias bup='bupgrade'
 alias bclean='brew cleanup && brew autoremove'
+alias bcl='bclean'
 alias bbackup-delete='t ~/.brew/*'
 alias bbackup-taps='brew bundle dump --taps --file ~/.brew/taps'
 alias bbackup-brews='brew bundle dump --brews --file ~/.brew/brews'
