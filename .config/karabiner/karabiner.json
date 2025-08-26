@@ -1794,7 +1794,7 @@
                                     "key_code": "j",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": 2000 } }],
+                                "to": [{ "mouse_key": { "y": 1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -1843,7 +1843,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": 2000 } }
+                                    { "mouse_key": { "y": 1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -1879,7 +1879,7 @@
                                     "key_code": "k",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": -2000 } }],
+                                "to": [{ "mouse_key": { "y": -1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -1928,7 +1928,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": -2000 } }
+                                    { "mouse_key": { "y": -1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -1964,7 +1964,7 @@
                                     "key_code": "h",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": -2000 } }],
+                                "to": [{ "mouse_key": { "x": -1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2013,7 +2013,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": -2000 } }
+                                    { "mouse_key": { "x": -1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -2049,7 +2049,7 @@
                                     "key_code": "l",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": 2000 } }],
+                                "to": [{ "mouse_key": { "x": 1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -2098,7 +2098,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": 2000 } }
+                                    { "mouse_key": { "x": 1000 } }
                                 ],
                                 "type": "basic"
                             },
