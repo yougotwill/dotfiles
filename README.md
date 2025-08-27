@@ -70,3 +70,10 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 12. Import global pnpm packages with `pnpm-import`.
 13. Import my configuration for Nimble Commander using `nc-import`.
 13. That's it you should be finished! 🎉
+
+## Start from scratch
+
+1. `/usr/bin/git init --bare $HOME/.dotfiles`
+2. `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
+3. `config config --local status.showUntrackedFiles no`
+4. To confirm everything is working run `config status`.
