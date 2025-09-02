@@ -12,30 +12,32 @@
 # In order to register changes restart Amethyst.
 # If you experience issues pulling in the changes you can also quit Amethyst and run: `defaults delete com.amethyst.Amethyst.plist`
 # This removes the current preferences and causes Amethyst to restart with default preferences and pull configs from this file.
+#
+# Source: https://github.com/ianyh/Amethyst/blob/development/.amethyst.sample.yml
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
-  - fullscreen
-  - four-corners
-  # - tall
-  # - tall-right
+  - floating
+  - row
+  - column
   - wide
   - two-pane
-  # - two-pane-right
+  - two-pane-right
   - 3column-left
   - middle-wide # The legacy name of "3column-middle"
   # - 3column-middle
   - 3column-right
   - 4column-left
   - 4column-right
-  # - column
-  - row
+  # - tall
+  # - tall-right
   - widescreen-tall
   - widescreen-tall-right
   # - bsp
-  # - center-focus
+  - center-focus
+  - four-corners
   - fullscreen
-  - floating
+
 
 # First mod (default option + shift).
 mod1:
@@ -100,13 +102,13 @@ expand-main:
 
 # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
 increase-main:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: ","
 
 # Decrease the number of windows in the main pane. Note that not all layouts respond to this command.
 decrease-main:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: "."
 
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command1:
@@ -128,52 +130,52 @@ command4:
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
   mod: mod1
-  key: h
+  key: k
 
 # Focus the next window in the list going clockwise.
 focus-cw:
   mod: mod1
-  key: l
+  key: j
 
 # Focus the main window in the list.
 focus-main:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: e
 
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
   mod: mod3
-  key: h
+  key: k
 
 # Focus the next screen in the list going clockwise.
 focus-screen-cw:
   mod: mod3
-  key: l
+  key: j
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 swap-screen-ccw:
   mod: mod3
-  key: left
+  key: h
 
 # Move the currently focused window onto the next screen in the list going clockwise.
 swap-screen-cw:
   mod: mod3
-  key: right
+  key: l
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
   mod: mod2
-  key: l
+  key: k
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
   mod: mod2
-  key: h
+  key: j
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: "`"
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
@@ -331,13 +333,13 @@ select-tall-layout:
 
 # Select wide layout
 select-wide-layout:
-  mod: mod1
-  key: d
+  mod: mod2
+  key: up
 
 # Select two pane layout
 select-two-pane-layout:
   mod: mod1
-  key: x
+  key: s
 
 # Select fullscreen layout
 select-fullscreen-layout:
@@ -346,8 +348,8 @@ select-fullscreen-layout:
 
 # Select column layout
 select-column-layout:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: d
 
 # Select floating layout
 select-floating-layout:
@@ -356,33 +358,33 @@ select-floating-layout:
 
 # Select widescreen tall layout
 select-widescreen-tall-layout:
-  mod: mod1 
-  key: e
+  mod: mod2
+  key: left
 
 # Select widescreen tall right layout
 select-widescreen-tall-right-layout:
-  mod: <NONE> 
-  key: <NONE>
+  mod: mod2
+  key: right
 
 # Select four corners layout
 select-four-corners-layout:
   mod: mod1
-  key: s
+  key: x
 
 # Select center focus layout
-# select-center-focus-layout:
-#   mod: <NONE> 
-#   key: <NONE>
+select-center-focus-layout:
+  mod: mod2
+  key: down
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
   mod: mod2
-  key: j
+  key: h
 
 # Move currently the focused window to the space to the right.
 throw-space-right:
   mod: mod2
-  key: k
+  key: l
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:

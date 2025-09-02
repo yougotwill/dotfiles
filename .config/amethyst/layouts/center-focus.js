@@ -2,7 +2,7 @@ function layout() {
   return {
     name: "Center Focus",
     getFrameAssignments: (windows, screenFrame) => {
-      if (screenFrame.width < 1800) {
+      if (screenFrame.width < 800) {
         // If the screen is too small, just use a 2-side-by-side layout
         const gridWidth = screenFrame.width / 2;
         const focusWidth = gridWidth;
