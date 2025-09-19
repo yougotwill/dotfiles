@@ -24,9 +24,6 @@ alias pd='pushd'
 alias qd='popd'
 alias q='exit'
 
-# asdf
-alias asdfrc='${EDITOR} ~/.asdfrc'
-
 # brew
 alias b='brew'
 alias bcu='brew cu --all'

@@ -19,14 +19,16 @@
 # <xbar.desc>Displays currently playing song from cmus. Control cmus in menubar.</xbar.desc>
 # <xbar.image>https://i.imgur.com/qeZCB0a.png</xbar.image>
 
+export PATH="/opt/homebrew/bin/:/usr/local/bin:/usr/bin:/bin:$PATH"
+
 if [ "$1" = 'launch-iterm' ]; then
   if [ "$(osascript -e 'application "iTerm" is running')" = "false" ]; then
     osascript -e 'tell application "iTerm" to activate'
-    osascript -e 'tell application "iTerm" to tell current session of current window to write text "cmus"'
+    osascript -e 'tell application "iTerm" to tell current session of current window to do script "cmux"'
   else
     # Then create new tab
     osascript -e 'tell application "iTerm" to tell current window to set newTab to (create tab with default profile)'
-    osascript -e 'tell application "iTerm" to tell current window to tell current tab to tell current session to write text "cmus"'
+    osascript -e 'tell application "iTerm" to tell current window to tell current tab to tell current session to do script "cmux"'
   fi
 
   exit
@@ -34,39 +36,77 @@ fi
 
 if [ "$1" = 'launch-kitty' ]; then
   if [ "$(osascript -e 'application "Kitty" is running')" = "false" ]; then
-    osascript -e 'tell application "Kitty" to activate'
-    osascript -e 'tell application "Terminal" to do script "cmus" in window 1'
+    osascript -e 'tell application "Kitty"
+        create new window
+    end tell'
+    sleep 1
+    osascript -e 'tell application "Kitty"
+        activate
+        tell application "System Events"
+            keystroke "cmux"
+            keystroke return
+        end tell
+    end tell'
   else
-    # Then create new tab
-    osascript -e 'tell application "System Events" to keystroke "t" using command down'
-    osascript -e 'tell application "Kitty" to do script "cmus" in tab 2 of window 1'
+    osascript -e 'tell application "Kitty"
+        activate
+        tell application "System Events"
+            keystroke "t" using command down
+        end tell
+    end tell'
+    sleep 1
+    osascript -e 'tell application "Kitty"
+        activate
+        tell application "System Events"
+            keystroke "cmux"
+            keystroke return
+        end tell
+    end tell'
   fi
-
   exit
 fi
 
 if [ "$1" = 'launch-terminal' ]; then
   if [ "$(osascript -e 'application "Terminal" is running')" = "false" ]; then
-    osascript -e 'tell application "Terminal" to activate'
-    osascript -e 'tell application "Terminal" to do script "cmus" in window 1'
+    osascript -e 'tell application "Terminal"
+        create new window
+    end tell'
+    sleep 1
+    osascript -e 'tell application "Terminal"
+        activate
+        tell application "System Events"
+            keystroke "cmux"
+            keystroke return
+        end tell
+    end tell'
   else
-    # Then create a new tab
-    osascript -e 'tell application "System Events" to keystroke "t" using command down'
-    osascript -e 'tell application "Terminal" to do script "cmus" in tab 2 of window 1'
+    osascript -e 'tell application "Terminal"
+        activate
+        tell application "System Events"
+            keystroke "t" using command down
+        end tell
+    end tell'
+    sleep 1
+    osascript -e 'tell application "Terminal"
+        activate
+        tell application "System Events"
+            keystroke "cmux"
+            keystroke return
+        end tell🎶
+    end tell'
   fi
-
   exit
 fi
 
 state=$(cmus-remote -C status | sed -n 1p | cut -d " " -f2)
 
 if [ "$state" = "" ]; then
-  echo "♫ | color=gray"
+  echo "♬ | color=gray"
   echo "---"
   echo "cmus is not running"
+  echo "Launch cmus in Terminal | bash='$0' param1=launch-terminal terminal=false refresh=true"
   echo "Launch cmus in Kitty | bash='$0' param1=launch-kitty terminal=false refresh=true"
   echo "Launch cmus in iTerm | bash='$0' param1=launch-iterm terminal=false refresh=true"
-  echo "Launch cmus in Terminal | bash='$0' param1=launch-terminal terminal=false refresh=true"
   exit
 fi
 
@@ -118,7 +158,7 @@ fi
 if [ "$state" = "playing" ]; then
   state_icon="▶"
 else
-  state_icon="❚❚  | color=gray"
+  state_icon="❚❚"
 fi
 
 track=$(cmus-remote -C "format_print %{title}")
@@ -132,24 +172,25 @@ repeat=$(cmus-remote -C "format_print %{repeat}")
 follow=$(cmus-remote -C "format_print %{follow}")
 continue=$(cmus-remote -C "format_print %{continue}")
 
-if [ "$track" = "" ]; then
-  echo "${filename:0:40}...  $state_icon"
-else
-  if ["${#track}" -ge 40]; then
-    echo "${track:0:40}... $state_icon"
-  else
-    echo "${track} $state_icon"
-  fi
-fi
+# if [ "$track" = "" ]; then
+#   echo "${filename:0:40}...  $state_icon"
+# else
+#   if ["${#track}" -ge 40]; then
+#     echo "${track:0:40}... $state_icon"
+#   else
+#     echo "${track} $state_icon"
+#   fi
+# fi
 
+echo "$state_icon"
 echo "---"
 
 case "$0" in
   *\ * )
-   echo "Your script path | color=#ff0000"
-   echo "($0) | color=#ff0000"
-   echo "has a space in it, which Xbar does not support. | color=#ff0000"
-   echo "Play/Pause/Next/Previous buttons will not work. | color=#ff0000"
+   echo "Your script path | color=red"
+   echo "($0) | color=red"
+   echo "has a space in it, which Xbar does not support. | color=red"
+   echo "Play/Pause/Next/Previous buttons will not work. | color=red"
   ;;
 esac
 
@@ -167,13 +208,6 @@ if [ "$state" = "playing" ]; then
 else
   echo "Play | bash='$0' param1=playpause terminal=false refresh=true"
 fi
-
-echo "---"
-echo "Track: $track | color=#333333 length=80"
-echo "Artist: $artist | color=#333333 length=80"
-echo "Album: $album | color=#333333 length=80"
-echo "File: $filename | color=#333333 length=80"
-echo "Progress: $position / $duration | color=#333333 length=80"
 
 echo "---"
 if [ "$shuffle" = "S" ]; then
@@ -201,4 +235,13 @@ else
 fi
 
 echo "---"
-echo "Open cmus | bash='$0' param1=launch-kitty terminal=false refresh=true"
+echo "File: $filename | color=gray length=80"
+echo "Track: $track | color=gray length=80"
+echo "Artist: $artist | color=gray length=80"
+echo "Album: $album | color=gray length=80"
+echo "Progress: $position / $duration | color=gray length=80"
+
+echo "---"
+echo "Launch cmus in kitty | bash='$0' param1=launch-kitty terminal=false refresh=true"
+echo "Launch cmus in Terminal | bash='$0' param1=launch-terminal terminal=false refresh=true"
+echo "Launch cmus in iTerm | bash='$0' param1=launch-iterm terminal=false refresh=true"

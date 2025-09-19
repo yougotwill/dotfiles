@@ -25,22 +25,13 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 # export MSBuildSDKsPath="/usr/local/Cellar/dotnet/5.0.104/libexec/sdk/5.0.104/Sdks"
 
-# flutter
-export PATH="$HOME/dev/flutter/bin:$PATH"
-
 # foundry
 export PATH="$HOME/.foundry/bin:$PATH"
-
-# go
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # huff
 export PATH="$PATH:$HOME/.huff/bin"

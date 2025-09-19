@@ -1,11 +1,5 @@
 [ -f ~/.colima/colima.zsh ] && source ~/.colima/colima.zsh
 
-# go
-[ -f $HOME/.asdf/plugins/golang/set-env.sh ] && source $HOME/.asdf/plugins/golang/set-env.sh
-
-# java
-[ -f $HOME/.asdf/plugins/java/setjava-home.zsh ] && source $HOME/.asdf/plugins/java/set-java-home.zsh
-
 # kitty
 [ -f $HOME/bin/kitty-macos-match-appearance.sh ] && source $HOME/bin/kitty-macos-match-appearance.sh
 

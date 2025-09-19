@@ -6,12 +6,28 @@ bkp () {
   cp $1 $1.bkp
 }
 
-tx () {
-  tmux new -A -s "$1" "$1"
+bupgradepin () {
+  bcu unpin $1 && brew cu --no-brew-update --all --quiet --force --yes $1 && bcu pin $1
 }
 
-txx () {
-  tmux new -A -s "$1"
+tx () {
+  tmux has-session -t $1 2>/dev/null
+
+  if [ "$?" -eq 0 ]; then
+    tmux attach -t $1
+  else
+    tmux new -s $1
+  fi
+}
+
+cmux () {
+  tmux has-session -t cmus 2>/dev/null
+
+  if [ "$?" -eq 0 ]; then
+    tmux attach -t cmus
+  else
+    tmux new -s cmus /opt/homebrew/bin/cmus
+  fi
 }
 
 hl () {
@@ -25,10 +41,6 @@ lk () {
 setDarkAppearance () {
   defaults write $1 NSRequiresAquaSystemAppearance $2
   echo "set dark appearance for $1 to $2"
-}
-
-bupgradepin () {
-  bcu unpin $1 && brew cu --all --quiet --force --yes $1 && bcu pin $1
 }
 
 wta () {
