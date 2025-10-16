@@ -34,9 +34,12 @@ layouts:
   - widescreen-tall
   - widescreen-tall-right
   # - bsp
+  - fullscreen
+  # custom layouts
   - center-focus
   - four-corners
-  - fullscreen
+  - uniform-columns
+  - macos-center
 
 
 # First mod (default option + shift).
@@ -83,7 +86,7 @@ mod4:
 # Move to the next layout in the list.
 cycle-layout:
   mod: mod1
-  key: c
+  key: space
 
 # Move to the previous layout in the list.
 cycle-layout-backward:
@@ -348,8 +351,8 @@ select-fullscreen-layout:
 
 # Select column layout
 select-column-layout:
-  mod: mod1
-  key: d
+  mod: <NONE>
+  key: <NONE>
 
 # Select floating layout
 select-floating-layout:
@@ -366,6 +369,8 @@ select-widescreen-tall-right-layout:
   mod: mod2
   key: right
 
+# Custom layouts
+
 # Select four corners layout
 select-four-corners-layout:
   mod: mod1
@@ -375,6 +380,16 @@ select-four-corners-layout:
 select-center-focus-layout:
   mod: mod2
   key: down
+
+# Select uniform columns layout
+select-uniform-columns-layout:
+  mod: mod1
+  key: d
+
+# Select one for all layout
+select-macos-center-layout:
+  mod: mod1
+  key: c
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
@@ -388,7 +403,7 @@ throw-space-right:
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:
-  mod: mod1
+  mod: mod2
   key: space
 
 # Display the layout HUD with the current layout on each screen.
