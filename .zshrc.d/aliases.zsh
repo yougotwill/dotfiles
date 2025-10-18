@@ -129,9 +129,6 @@ alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} g
 alias gcleanup='git maintenance run --task=gc && git maintenance run --task=commit-graph'
 alias wt='git worktree'
 
-# github
-alias co='gh copilot'
-
 # karabiner
 alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
