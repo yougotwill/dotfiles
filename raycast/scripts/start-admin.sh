@@ -19,6 +19,7 @@
 # sleep 2
 open -a "Proton Mail Bridge"
 open -a "Proton Drive"
+open -a "Google Drive"
 open -a "Yubico Authenticator"
 open -a "Nimble Commander"
 sleep 5
