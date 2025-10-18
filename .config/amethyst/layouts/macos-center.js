@@ -3,9 +3,9 @@ function layout() {
     name: "macOS Center",
     getFrameAssignments: (windows, screenFrame) => {
       // percent
-      const widthRatio = 0.70;
-      const heightRatio = 0.70;
-      const yOffset = 0.15;
+      const widthRatio = 0.75;
+      const heightRatio = 0.75;
+      const yOffset = 0.2;
 
       const width = screenFrame.width * widthRatio;
       const x = screenFrame.x + (screenFrame.width - width) / 2;
@@ -15,7 +15,7 @@ function layout() {
 
       const sharedFrame = {
         x: x,
-        y: y - (y * yOffset),
+        y: y - y * yOffset,
         width: width,
         height: height,
       };

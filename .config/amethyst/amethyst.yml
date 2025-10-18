@@ -17,6 +17,8 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
+  - four-corners
+  # default
   - floating
   - row
   - column
@@ -404,7 +406,7 @@ throw-space-right:
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:
   mod: mod2
-  key: space
+  key: f
 
 # Display the layout HUD with the current layout on each screen.
 display-current-layout:
@@ -435,10 +437,10 @@ relaunch-amethyst:
 disable-padding-on-builtin-display: true
 
 # Boolean flag for whether or not to add margins between windows (default false).
-window-margins: false
+window-margins: true
 
 # Boolean flag for whether or not to set window margins if there is only one window on the screen, assuming window margins are enabled (default false).
-smart-window-margins: true
+smart-window-margins: false
 
 # # Add 10px margin between windows
 # window-margins: true
