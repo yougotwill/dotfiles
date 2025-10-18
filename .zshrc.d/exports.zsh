@@ -25,6 +25,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# bettertouchtool
+export PATH="/Applications/BetterTouchTool.app/Contents/SharedSupport/bin:$PATH"
+
 # dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"

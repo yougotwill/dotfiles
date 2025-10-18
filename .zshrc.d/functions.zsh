@@ -34,10 +34,6 @@ hl () {
   ${@:2} | bat --paging=never -l $1
 }
 
-lk () {
-  cd "$(walk "$@")"
-}
-
 setDarkAppearance () {
   defaults write $1 NSRequiresAquaSystemAppearance $2
   echo "set dark appearance for $1 to $2"
