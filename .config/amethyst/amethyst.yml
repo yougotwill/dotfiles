@@ -26,7 +26,7 @@ layouts:
   - two-pane
   - two-pane-right
   - 3column-left
-  - middle-wide # The legacy name of "3column-middle"
+  - middle-wide # The legacy name of '3column-middle'
   # - 3column-middle
   - 3column-right
   - 4column-left
@@ -87,7 +87,7 @@ mod4:
 
 # Move to the next layout in the list.
 cycle-layout:
-  mod: mod1
+  mod: mod2
   key: space
 
 # Move to the previous layout in the list.
@@ -97,23 +97,23 @@ cycle-layout-backward:
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
-  mod: mod1
+  mod: mod2
   key: '-'
 
 # Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 expand-main:
-  mod: mod1
+  mod: mod2
   key: '='
 
 # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
 increase-main:
-  mod: mod1
-  key: ","
+  mod: <NONE>
+  key: <NONE>
 
 # Decrease the number of windows in the main pane. Note that not all layouts respond to this command.
 decrease-main:
-  mod: mod1
-  key: "."
+  mod: <NONE>
+  key: <NONE>
 
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command1:
@@ -134,18 +134,18 @@ command4:
 
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
-  mod: mod1
+  mod: mod2
   key: k
 
 # Focus the next window in the list going clockwise.
 focus-cw:
-  mod: mod1
+  mod: mod2
   key: j
 
 # Focus the main window in the list.
 focus-main:
-  mod: mod1
-  key: e
+  mod: mod2
+  key: '\'
 
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
@@ -169,18 +169,18 @@ swap-screen-cw:
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
-  mod: mod2
+  mod: mod1
   key: k
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
-  mod: mod2
+  mod: mod1
   key: j
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
   mod: mod1
-  key: "`"
+  key: '\'
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
@@ -338,8 +338,8 @@ select-tall-layout:
 
 # Select wide layout
 select-wide-layout:
-  mod: mod2
-  key: up
+  mod: <NONE>
+  key: <NONE>
 
 # Select two pane layout
 select-two-pane-layout:
@@ -359,17 +359,17 @@ select-column-layout:
 # Select floating layout
 select-floating-layout:
   mod: mod1
-  key: f
+  key: space
 
 # Select widescreen tall layout
 select-widescreen-tall-layout:
-  mod: mod2
-  key: left
+  mod: <NONE>
+  key: <NONE>
 
 # Select widescreen tall right layout
 select-widescreen-tall-right-layout:
-  mod: mod2
-  key: right
+  mod: <NONE>
+  key: <NONE>
 
 # Custom layouts
 
@@ -380,8 +380,8 @@ select-four-corners-layout:
 
 # Select center focus layout
 select-center-focus-layout:
-  mod: mod2
-  key: down
+  mod: <NONE>
+  key: <NONE>
 
 # Select uniform columns layout
 select-uniform-columns-layout:
@@ -425,8 +425,8 @@ reevaluate-windows:
 
 # Turn on or off focus-follows-mouse.
 toggle-focus-follows-mouse:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: m
 
 # Automatically quit and reopen Amethyst.
 relaunch-amethyst:
@@ -461,52 +461,52 @@ window-minimum-width: 0
 # List of bundle identifiers for applications to either be automatically floating or automatically tiled based on floating-is-blacklist (default []).
 floating: [
   {
-    id: "com.chabomakers.Antinote",
-    "window-titles": []
+    id: 'com.chabomakers.Antinote',
+    'window-titles': []
   },
   {
-    id: "com.sindresorhus.Camera-Preview",
-    "window-titles": []
+    id: 'com.sindresorhus.Camera-Preview',
+    'window-titles': []
   },
   {
-    id: "sh.frame.app",
-    "window-titles": []
+    id: 'sh.frame.app',
+    'window-titles': []
   },
   {
-    id: "com.toggl.daneel",
-    "window-titles": []
+    id: 'com.toggl.daneel',
+    'window-titles': []
   },
   {
-    id: "com.3bitlab.redLines",
-    "window-titles": []
+    id: 'com.3bitlab.redLines',
+    'window-titles': []
   },
   {
-    id: "com.wulkano.kap",
-    "window-titles": []
+    id: 'com.wulkano.kap',
+    'window-titles': []
   },
   {
-    id: "com.sindresorhus.Dato",
-    "window-titles": []
+    id: 'com.sindresorhus.Dato',
+    'window-titles': []
   },
   {
-    id: "design.brilliant",
-    "window-titles": []
+    id: 'design.brilliant',
+    'window-titles': []
   },
   {
-    id: "net.kovidgoyal.kitty-quick-access",
-    "window-titles": ["kitty-quick-access"]
+    id: 'net.kovidgoyal.kitty-quick-access',
+    'window-titles': ['kitty-quick-access']
   },
   {
-    id: "com.hegenberg.BetterTouchTool",
-    "window-titles": ["Screenshot*"]
+    id: 'com.hegenberg.BetterTouchTool',
+    'window-titles': ['Screenshot*']
   },
   {
-    id: "com.raycast.macos",
-    "window-titles": ["AI Chat", "Settings"]
+    id: 'com.raycast.macos',
+    'window-titles': ['Settings']
   },
   {
-    id: "org.mozilla.thunderbird",
-    "window-titles": ["Folder Properties", "Choose a color"]
+    id: 'org.mozilla.thunderbird',
+    'window-titles': ['Folder Properties', 'Choose a color']
   }
 ]
 
@@ -523,10 +523,10 @@ hide-menu-bar-icon: false
 float-small-windows: true
 
 # true if the mouse should move position to the center of a window when it becomes focused (default false). Note that this is largely incompatible with focus-follows-mouse.
-mouse-follows-focus: true
+mouse-follows-focus: false
 
 # true if the windows underneath the mouse should become focused as the mouse moves (default false). Note that this is largely incompatible with mouse-follows-focus
-focus-follows-mouse: false
+focus-follows-mouse: true
 
 # true if dragging and dropping windows on to each other should swap their positions (default false).
 mouse-swaps-windows: true
