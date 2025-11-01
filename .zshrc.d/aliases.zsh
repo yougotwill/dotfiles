@@ -84,9 +84,12 @@ alias desk='cd ~/Desktop'
 alias dev='cd ~/dev'
 alias docs='cd ~/Documents'
 alias down='cd ~/Downloads'
+alias drive='cd ~/Library/CloudStorage/ProtonDrive-*'
+alias gdrive='cd ~/Library/CloudStorage/GoogleDrive-*'
 alias prj='cd ~/projects'
 alias sides='cd ~/sides'
 alias work='cd ~/work'
+alias vol='cd /Volumes'
 
 # git
 alias g='git'
