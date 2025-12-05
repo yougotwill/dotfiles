@@ -27,6 +27,6 @@ else
   open -a "Vesktop.app"
   open -a "Logseq.app"
   open -a "Visual Studio Code.app"
-  open -a "Zen.app"
+  open "http://" # opens default browser
   echo "Opened Workspace: Work 🧑‍💻"
 fi

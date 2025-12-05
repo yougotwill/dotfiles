@@ -43,9 +43,9 @@ else
   open -a "Notes"
   sleep 1
   open -a "Reminders"
-  open -a "Zen"
   open -a "Proton Pass"
   sleep 15
+  open "http://" # opens default browser
   open -a "Mail"
   open -a "Thunderbird"
   echo "Opened Workspace: Admin ✅"

@@ -166,7 +166,8 @@
         "modalMode": false
     },
     "terminal": {
-        "customShellPath": "/bin/zsh"
+        "customShellPath": "/bin/zsh",
+        "cursorMode": 2
     },
     "externalTools": {
         "tools_v1": [
@@ -206,6 +207,24 @@
                 "maxFileSize": 0,
                 "onlyFiles": false,
                 "openInTerminal": false
+            },
+            {
+                "name": "CotEditor.app",
+                "path": "/Applications/CotEditor.app",
+                "args": "",
+                "mask": "*",
+                "maxFileSize": 0,
+                "onlyFiles": false,
+                "openInTerminal": false
+            },
+            {
+                "name": "neovim",
+                "path": "/opt/homebrew/bin/nvim",
+                "args": "%%",
+                "mask": "*",
+                "maxFileSize": 0,
+                "onlyFiles": true,
+                "openInTerminal": true
             },
             {
                 "name": "TextEdit",
