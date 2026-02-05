@@ -17,11 +17,12 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
-  - four-corners
+  - grid
+  - columns
   # default
   - floating
   - row
-  - column
+  # - column
   - wide
   - two-pane
   - two-pane-right
@@ -29,8 +30,8 @@ layouts:
   - middle-wide # The legacy name of '3column-middle'
   # - 3column-middle
   - 3column-right
-  - 4column-left
-  - 4column-right
+  # - 4column-left
+  # - 4column-right
   # - tall
   # - tall-right
   - widescreen-tall
@@ -40,7 +41,6 @@ layouts:
   # custom layouts
   - center-focus
   - four-corners
-  - uniform-columns
   - macos-center
 
 
@@ -88,7 +88,7 @@ mod4:
 # Move to the next layout in the list.
 cycle-layout:
   mod: mod2
-  key: space
+  key: 'z'
 
 # Move to the previous layout in the list.
 cycle-layout-backward:
@@ -375,16 +375,16 @@ select-widescreen-tall-right-layout:
 
 # Select four corners layout
 select-four-corners-layout:
-  mod: mod1
-  key: x
+  mod: <NONE>
+  key: <NONE>
 
 # Select center focus layout
 select-center-focus-layout:
   mod: <NONE>
   key: <NONE>
 
-# Select uniform columns layout
-select-uniform-columns-layout:
+# Select columns layout
+select-columns-layout:
   mod: mod1
   key: d
 
@@ -392,6 +392,11 @@ select-uniform-columns-layout:
 select-macos-center-layout:
   mod: mod1
   key: c
+
+# Select grid layout
+select-grid-layout:
+  mod: mod1
+  key: x
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
@@ -506,7 +511,7 @@ floating: [
   },
   {
     id: 'org.mozilla.thunderbird',
-    'window-titles': ['Folder Properties', 'Choose a color']
+    'window-titles': ['Folder Properties', 'Choose a color', 'Are you sure? - Mozilla Thunderbird']
   }
 ]
 
@@ -523,7 +528,7 @@ hide-menu-bar-icon: false
 float-small-windows: true
 
 # true if the mouse should move position to the center of a window when it becomes focused (default false). Note that this is largely incompatible with focus-follows-mouse.
-mouse-follows-focus: true
+mouse-follows-focus: false
 
 # true if the windows underneath the mouse should become focused as the mouse moves (default false). Note that this is largely incompatible with mouse-follows-focus
 focus-follows-mouse: false
