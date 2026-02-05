@@ -140,8 +140,11 @@
                     }
                 },
                 {
-                    "title": "Custom Layout VI",
-                    "disabled": null
+                    "title": "Gallery",
+                    "gallery": {
+                        "icon_scale": 2,
+                        "text_lines": 4
+                    }
                 },
                 {
                     "title": "Custom Layout VII",
@@ -183,15 +186,23 @@
                 "title": "Reveal in FlowVision",
                 "path": "/usr/bin/open",
                 "parameters": "-a FlowVision %r",
-                "shortcut": "⌥l",
+                "shortcut": "⌥⌘g",
                 "startup": 2,
                 "uuid": "7ff3ba0e-f13b-422a-97ac-179d4515256e"
+            },
+            {
+                "title": "Reveal in kitty",
+                "path": "/usr/bin/open",
+                "parameters": "-a kitty %p",
+                "shortcut": "⌥\\r",
+                "startup": 2,
+                "uuid": "18e7cbf9-e352-455d-b3f8-a9a665bf4a34"
             },
             {
                 "title": "Reveal in VS Code",
                 "path": "/usr/bin/open",
                 "parameters": "-a Visual\\ Studio\\ Code %p",
-                "shortcut": "⌥e",
+                "shortcut": "⌥⌘e",
                 "startup": 2,
                 "uuid": "10d00643-f8bc-485c-b73e-1448e770bd6f"
             }
@@ -765,16 +776,16 @@
     "hotkeyOverrides_v1": {
         "menu.file.reveal_in_opposite_panel": "^t",
         "menu.edit.deselect_all": "⇧⌘a",
-        "menu.view.toggle_layout_1": "⌘7",
-        "menu.view.toggle_layout_2": "⌘8",
-        "menu.view.toggle_layout_3": "⌘9",
-        "menu.view.toggle_layout_4": "⌘0",
-        "menu.view.toggle_layout_5": "\u0000",
-        "menu.view.toggle_layout_6": "\u0000",
-        "menu.view.toggle_layout_7": "\u0000",
-        "menu.view.toggle_layout_8": "\u0000",
-        "menu.view.toggle_layout_9": "\u0000",
-        "menu.view.toggle_layout_10": "\u0000",
+        "menu.view.toggle_layout_1": "⌥⌘5",
+        "menu.view.toggle_layout_2": "⌥⌘6",
+        "menu.view.toggle_layout_3": "⌥⌘3",
+        "menu.view.toggle_layout_4": "⌥⌘1",
+        "menu.view.toggle_layout_5": "⌥⌘2",
+        "menu.view.toggle_layout_6": "⌥⌘4",
+        "menu.view.toggle_layout_7": "",
+        "menu.view.toggle_layout_8": "",
+        "menu.view.toggle_layout_9": "",
+        "menu.view.toggle_layout_10": "",
         "menu.view.sorting_by_name": "⌥1",
         "menu.view.sorting_by_extension": "⌥2",
         "menu.view.sorting_by_modify_time": "⌥6",
@@ -782,7 +793,7 @@
         "menu.view.sorting_by_creation_time": "⌥5",
         "menu.view.sorting_by_added_time": "⌥3",
         "menu.view.sorting_by_accessed_time": "⌥7",
-        "menu.view.show_tabs": "\u0000",
+        "menu.view.show_tabs": "",
         "menu.view.panels_position.move_up": "^⌘",
         "menu.view.panels_position.move_down": "^⌘",
         "menu.view.panels_position.move_left": "^⌘",
