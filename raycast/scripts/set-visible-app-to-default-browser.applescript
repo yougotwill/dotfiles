@@ -45,6 +45,8 @@ if (raycastArgv is equal to "") then
     set browserName to "chrome"
   else if (appName is equal to "Chromium") then
     set browserName to "chromium"
+  else if (appName is equal to "Helium") then
+    set browserName to "helium"
   else if (appName is equal to "Firefox Developer Edition") then
     set browserName to "firefoxdeveloperedition"
   else if (appName is equal to "Firefox") then
@@ -71,6 +73,9 @@ else
   else if (appName is equal to "chromium") then
     set browserName to "chromium"
     set appName to "Chromium"
+  else if (appName is equal to "helium") then
+    set browserName to "helium"
+    set appName to "Helium"
   else if (appName is equal to "ffd") then
     set browserName to "firefoxdeveloperedition"
     set appName to "Firefox Developer Edition"

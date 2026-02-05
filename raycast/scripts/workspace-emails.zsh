@@ -16,17 +16,9 @@
 
 RAYCAST_WORKSPACE=$(defaults read com.raycast.macos workspace)
 
-if [[ $RAYCAST_WORKSPACE == "Emails" ]]; then
-  osascript -e 'tell application "Mail" to quit'
-  osascript -e 'tell application "Thunderbird" to quit'
-  osascript -e 'tell application "Proton Mail Bridge" to quit'
-  echo "Closed Workspace: Emails ✉️"
-  defaults delete com.raycast.macos workspace
-else
-  open -a "Proton Mail Bridge"
-  sleep 15
-  open -a "Mail"
-  open -a "Thunderbird"
-  echo "Opened Workspace: Emails ✉️"
-  defaults write com.raycast.macos workspace "Emails"
-fi
+defaults write com.raycast.macos workspace "Emails"
+open -a "Proton Mail Bridge"
+sleep 15
+open -a "Mail"
+open -a "Thunderbird"
+echo "Opened Workspace: Emails ✉️"

@@ -1,10 +1,6 @@
-mas "Aiko", id: 1672085276
 mas "Black Out", id: 1319884285
-mas "Blankie", id: 6740096581
 mas "Budget Flow", id: 1640091876
-mas "Camera Preview", id: 1632827132
-mas "Clockzones", id: 6737234391
-mas "Cog", id: 1630499622
+mas "Collabora Office", id: 6754639856
 mas "Color Picker", id: 1545870783
 mas "Command X", id: 6448461551
 mas "CotEditor", id: 1024640650
@@ -22,19 +18,13 @@ mas "iMovie", id: 408981434
 mas "InfoCard", id: 1110195348
 mas "JustFocus", id: 1142151959
 mas "Keka", id: 470158793
-mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
-mas "Lynda.com", id: 985958984
 mas "ManabiReader", id: 1247286380
-mas "Manet", id: 6470928235
-mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Picture-In-Picture", id: 6475380719
-mas "Poolsuite FM", id: 1514817810
 mas "Proton Pass for Safari", id: 6502835663
-mas "Recordia", id: 1529006487
 mas "Red Lines Tools", id: 1469400117
-mas "Scratchpad", id: 6504040051
 mas "Sensei", id: 1495789984
 mas "Session Pal", id: 1515213004
 mas "Shareful", id: 1522267256
@@ -52,6 +42,7 @@ mas "Tuneful", id: 6739804295
 mas "Typibara", id: 6701996122
 mas "UTM", id: 1538878817
 mas "Velja", id: 1607635845
+mas "Vimari", id: 1480933944
 mas "Vimlike", id: 1584519802
 mas "wBlock", id: 6746388723
 mas "Xcode", id: 497799835

@@ -60,9 +60,9 @@ gui:
     rate: 50 # spinner rate in milliseconds
   statusPanelView: 'dashboard' # one of 'dashboard' | 'allBranchesLog'
 git:
-  paging:
-    colorArg: always
-    useConfig: false
+  pagers:
+    - colorArg: always
+      useConfig: false
   commit:
     signOff: false
     autoWrapCommitMessage: true # automatic WYSIWYG wrapping of the commit message as you type
@@ -202,7 +202,7 @@ keybinding:
     viewResetOptions: 'D'
     fetch: 'f'
     toggleTreeView: '`'
-    openMergeTool: 'M'
+    openMergeOptions: 'M'
     openStatusFilter: '<c-b>'
   branches:
     createPullRequest: 'o'

@@ -16,17 +16,9 @@
 
 RAYCAST_WORKSPACE=$(defaults read com.raycast.macos workspace)
 
-if [[ $RAYCAST_WORKSPACE == "Work" ]]; then
-  defaults delete com.raycast.macos workspace
-  osascript -e 'tell application "Logseq" to quit'
-  osascript -e 'tell application "Vesktop" to quit'
-  osascript -e 'tell application "Visual Studio Code" to quit'
-  echo "Closed Workspace: Work 🧑‍💻"
-else
-  defaults write com.raycast.macos workspace "Work"
-  open -a "Vesktop.app"
-  open -a "Logseq.app"
-  open -a "Visual Studio Code.app"
-  open "http://" # opens default browser
-  echo "Opened Workspace: Work 🧑‍💻"
-fi
+defaults write com.raycast.macos workspace "Work"
+open -a "Vesktop.app"
+open -a "Logseq.app"
+open -a "Visual Studio Code.app"
+open "http://" # opens default browser
+echo "Opened Workspace: Work 🧑‍💻"
