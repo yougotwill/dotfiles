@@ -103,10 +103,10 @@ git:
 os:
   copyToClipboardCmd: '' # See 'Custom Command for Copying to Clipboard' section
   editPreset: '' # see 'Configuring File Editing' section
-  edit: ''
-  editAtLine: ''
-  editAtLineAndWait: ''
-  open: ''
+  edit: '$EDITOR -- {{filename}}'
+  editAtLine: '$EDITOR +{{line}} -- {{filename}}'
+  editAtLineAndWait: '$EDITOR +{{line}} -- {{filename}}'
+  open: '$EDITOR -- {{dir}}'
   openLink: ''
 refresher:
   refreshInterval: 10 # File/submodule refresh interval in seconds. Auto-refresh can be disabled via option 'git.autoRefresh'.
