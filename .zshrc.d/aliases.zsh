@@ -15,10 +15,9 @@ alias cat='bat'
 alias cl='clear'
 alias f='fd -Hip' # find with fd showing hidden files, ignoring case and displaying the full path
 alias l='ranger'
-# alias li='lk --icons'
 alias ls='eza'
 alias la='ls -a'
-alias ll='ls -l --time-style=long-iso'
+alias ll='ls -l --time-style=long-iso -h'
 alias lla='ll -a'
 alias pd='pushd'
 alias qd='popd'
@@ -63,7 +62,7 @@ alias cmus-pause='cmus-remote -u'
 # dotfiles backup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-install='chmod 755 ~/bin/dotfiles-install.sh && dotfiles-install.sh'
-alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nc-export'
+alias config-backup='bbackup && pnpm-export && pipx-export && flirc-backup && nimble-commander-export'
 alias config-lg='lg -g .dotfiles -w $HOME'
 
 # fedora
@@ -137,9 +136,9 @@ alias wt='git worktree'
 alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
 # nimble commander
-alias nc="open -a 'Nimble Commander'"
-alias nc-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json && echo 'nimble commander config imported from ~/.config/nimble-comander/Config.json'"
-alias nc-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
+alias ni="open -a 'Nimble Commander'"
+alias nimble-commander-import="cp ~/.config/nimble-commander/Config.json ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json && echo 'nimble commander config imported from ~/.config/nimble-comander/Config.json'"
+alias nimble-commander-export="cp ~/Library/Application\ Support/Nimble\ Commander/Config/Config.json ~/.config/nimble-commander/Config.json && echo 'nimble commander config exported from ~/Library/Application Support/Nimble Commander/Config/Config.json'"
 
 # nodejs
 alias npmr='npm run'
@@ -168,7 +167,6 @@ alias pvr="pip freeze > requirements.txt"
 alias pvi="pip install -r requirements.txt"
 
 # tmux
-alias tm='tmux'
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
 
 # vim
@@ -188,7 +186,6 @@ alias dc='docker compose'
 alias k='kitten'
 alias mpva='mpv --no-video'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
-alias sp='ncspot'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
 alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite'
