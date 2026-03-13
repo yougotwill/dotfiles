@@ -6,8 +6,13 @@ bkp () {
   cp $1 $1.bkp
 }
 
-bupgradepin () {
-  bcu unpin $1 && brew cu --no-brew-update --all --quiet --force --yes $1 && bcu pin $1
+# Only works on casks
+bupgradeforce () {
+  for cask in "$@"; do
+    bcu unpin "$cask" || continue
+    brew cu --no-brew-update --all --quiet --force --yes "$cask"
+    bcu pin "$cask"
+  done
 }
 
 tx () {
@@ -27,6 +32,16 @@ cmux () {
     tmux attach -t cmus
   else
     tmux new -s cmus /opt/homebrew/bin/cmus
+  fi
+}
+
+sp () {
+  tmux has-session -t ncspot 2>/dev/null
+
+  if [ "$?" -eq 0 ]; then
+    tmux attach -t ncspot
+  else
+    tmux new -s ncspot /opt/homebrew/bin/ncspot
   fi
 }
 
