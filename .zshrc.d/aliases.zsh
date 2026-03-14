@@ -192,5 +192,6 @@ alias sqlitebrowser='/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/D
 alias s='kitten ssh'
 alias ssx='ssh -Xv'
 alias ts='tailscale'
+alias unquarantine='xattr -r -d com.apple.quarantine'
 alias ydl='cd ~/Downloads && yt-dlp'
 alias ydl-audio='cd ~/Downloads && yt-dlp -x --embed-thumbnail'
