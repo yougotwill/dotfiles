@@ -21,4 +21,8 @@ open -a "Proton Mail Bridge"
 sleep 15
 open -a "Mail"
 open -a "Thunderbird"
+
+# restart window manager to assign windows to correctly
+# /Users/will/bin/restart-window-manager.sh
+
 echo "Opened Workspace: Emails ✉️"

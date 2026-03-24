@@ -21,4 +21,8 @@ open -a "Vesktop.app"
 open -a "Logseq.app"
 open -a "Visual Studio Code.app"
 open "http://" # opens default browser
+
+# restart window manager to assign windows to correctly
+# /Users/will/bin/restart-window-manager.sh
+
 echo "Opened Workspace: Work 🧑‍💻"

@@ -13,32 +13,15 @@ mouse_follows_focus = false
 # Defaults to 25%, 33%, 50%, 66% and 75%.
 preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
 
-# How many fingers to use for moving windows left and right.
-# Make sure that it doesn't clash with OS setting for workspace switching.
-# Values lower than 3 will be ignored.
-# Remove the line to disable the gesture feature.
-# Apple touchpads support gestures with more than five fingers (!),
-# but it is probably not that useful to use two hands :)
-swipe_gesture_fingers = 3
-
-# Which direction should windows move with a swipe gesture.
-# "Natural" => Swipe fingers to the right, windows move to the right.
-# "Reversed" => Swipe fingers to the right, windows move to the left.
-# Default: "Natural"
-# swipe_gesture_direction = "Natural"
-
-# Swiping keeps sliding windows until the first or last window.
-# Set to false to clamp so edge windows stay on-screen. Enabled by default.
-# continuous_swipe = false
-
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
+# Default: 50
 animation_speed = 50
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
-auto_center = false
+auto_center = true
 
 # Height of off-screen window slivers as a ratio (0.0–1.0) of the display
 # height. Lower values hide the window's corner radius at screen edges.
@@ -50,50 +33,83 @@ auto_center = false
 # Default: 5 pixels.
 # sliver_width = 5
 
-# Padding applied at screen edges (in pixels). Independent from the
-# between-window gaps set by per-window horizontal/vertical_padding.
-# Default: 0 on all sides.
-# padding_top = 0
-# padding_bottom = 0
-# padding_left = 0
-# padding_right = 0
-
 # Override the system-reported menubar height (in pixels).
 # Useful when auto-hiding the menubar or when the detected value is wrong.
 # When unset, the height reported by macOS is used.
 # menubar_height = 25
 
+[swipe]
+# Swipe sensitivity multiplier. Lower values = less distance per finger movement.
+# Range: 0.1–2.0. Default: 0.35.
+sensitivity = 0.5
+
+# Swipe inertia deceleration rate. Higher values = faster stop.
+# Range: 1.0–10.0. Default: 4.0.
+# deceleration = 4.0
+
+# Swiping keeps sliding windows until the first or last window.
+# Set to false to clamp so edge windows stay on-screen. Default: true.
+continuous = false
+
+[swipe.gesture]
+# How many fingers to use for moving windows left and right.
+# Make sure that it doesn't clash with OS setting for workspace switching.
+# Values lower than 3 will be ignored.
+# Remove the line to disable the gesture feature.
+# Apple touchpads support gestures with more than five fingers (!),
+# but it is probably not that useful to use two hands :)
+fingers_count = 3
+
+# Which direction should windows move with a swipe gesture.
+# "Natural" => Swipe fingers to the right, windows move to the right.
+# "Reversed" => Swipe fingers to the right, windows move to the left.
+# Default: "Natural"
+# direction = "Natural"
+
+[padding]
+# Padding applied at screen edges (in pixels). Independent from the
+# between-window gaps set by per-window horizontal/vertical_padding.
+# Default: 0 on all sides.
+# top = 0
+# bottom = 0
+# left = 0
+# right = 0
+
 # Experimental features
 # Disabled by default.
 
+# Window borders
+# [decorations.active.border]
 # Draw a border around the active (focused) window.
 # Default: false.
-border_active_window = true
+# enabled = true
 
 # Hex color for the active window border.
 # Default: "#FFFFFF" (white).
-border_color = "#F7821A"
+# color = "#F7821A"
 
 # Opacity of the active window border (0.0–1.0).
 # Default: 1.0.
-# border_opacity = 1.0
+# opacity = 1.0
 
 # Width of the active window border in pixels.
 # Default: 2.0.
-# border_width = 2.0
+# width = 2.0
 
 # Corner radius of the active window border in pixels.
 # Default: 10.0.
-# border_radius = 10.0
+# radius = 10.0
 
 [bindings]
-# Moves the focus between windows.
+# Moves the focus between windows. If there are no windows when moving up or
+# down, will swtich focus to the display above or below.
 window_focus_west = ["ctrl + alt + shift - h"]
 window_focus_east = ["ctrl + alt + shift - l"]
 window_focus_north = ["ctrl + alt + shift - k"]
 window_focus_south = ["ctrl + alt + shift - j"]
 
-# Swaps windows in chosen direction.
+# Swaps windows in chosen direction. If there are no windows to swap, will
+# move the window to a display above or below.
 window_swap_west = "ctrl + alt + cmd - h"
 window_swap_east = "ctrl + alt + cmd - l"
 window_swap_north = "ctrl + alt + cmd - k"
@@ -147,13 +163,12 @@ title = "Picture.*(in)?.*[Pp]icture"
 # Do not manage this window, e.g. it will be floating.
 floating = true
 
-# Window positioning
 # [windows.neovide]
-# # Matches an editor by title and always inserts its window at index 1,
-# # a specific initial width (as a ratio of display width),
-# # and let some bindings pass through.
-# # Note: bundle_id is optional. Some apps (e.g. plain binaries) do not
-# # report one, so matching by title alone is often more reliable.
+# Matches an editor by title and always inserts its window at index 1,
+# a specific initial width (as a ratio of display width),
+# and let some bindings pass through.
+# Note: bundle_id is optional. Some apps (e.g. plain binaries) do not
+# report one, so matching by title alone is often more reliable.
 # bundle_id = "com.neovide.neovide"
 # title = "Neovide.*"
 # index = 1
@@ -174,82 +189,102 @@ floating = true
 # floating = true
 # grid = "6:6:1:1:4:4"
 
-[windows.yubioath]
-bundle_id = "com.yubico.yubioath"
-title = "Yubico Authenticator"
-# dont_focus = true
-index = 100
+# Window floating
+[windows.floating_bettertouchtool]
+bundle_id = "com.hegenberg.BetterTouchTool"
+title = ".*"
+floating = true
 
-[windows.mailbridge]
-bundle_id = "com.protonmail.bridge"
-title = "Proton Mail Bridge"
-# dont_focus = true
-index = 101
-
-# Window sizing
-[windows.finder]
+[windows.floating_finder]
 bundle_id = "com.apple.finder"
 title = ".*"
-width = 0.5
+floating = true
+
+[windows.floating_thunderbird]
+bundle_id = "org.mozilla.thunderbird"
+title = "Check Spelling|Confirm Deletion|Send Later|About Mozilla Thunderbird|^Are you sure.*$|^Sending Message - .*$|Save Message|Thunderbird Troubleshoot Mode"
+floating = true
+
+[windows.floating_libreoffice]
+bundle_id = "org.libreoffice.script"
+title = "Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
+floating = true
+
+# Window focusing
+[windows.focus_yubioath]
+bundle_id = "com.yubico.yubioath"
+title = "Yubico Authenticator"
+dont_focus = true
+
+[windows.focus_mailbridge]
+bundle_id = "com.protonmail.bridge"
+title = "Proton Mail Bridge"
+dont_focus = true
+
+# Window positioning
+[windows.position_yubioath]
+bundle_id = "com.yubico.yubioath"
+title = "Yubico Authenticator"
+index = 101
+
+[windows.position_mailbridge]
+bundle_id = "com.protonmail.bridge"
+title = "Proton Mail Bridge"
+index = 102
+
+# Window sizing
+# Only manage the main window
+[windows.calendar]
+bundle_id = "com.apple.iCal"
+title = "Calendar"
+width = 0.85
+
+# [windows.finder]
+# bundle_id = "com.apple.finder"
+# title = ".*"
+# width = 0.85
+
+[windows.libreoffice]
+bundle_id = "org.libreoffice.script"
+title = ".*"
+width = 0.85
 
 [windows.logseq]
 bundle_id = "com.electron.logseq"
 title = ".*"
 width = 0.85
 
-[windows.calendar]
-bundle_id = "com.apple.iCal"
-title = "Calendar"
-width = 0.85
-
 [windows.mail]
 bundle_id = "com.apple.mail"
 title = "Inbox"
-width = 0.85
+width = 0.66
 
 [windows.reminders]
 bundle_id = "com.apple.reminders"
 title = "Reminders"
 width = 0.5
 
-[windows.zen]
-bundle_id = "app.zen-browser.zen"
-title = ".*"
-width = 0.85
-
-[windows.libreoffice]
-bundle_id = "org.libreoffice.script"
-title = ".*"
-width = 0.5
-
 [windows.thunderbird]
 bundle_id = "org.mozilla.thunderbird"
 title = ".*"
+width = 0.85
+
+[windows.vesktop]
+bundle_id = "dev.vencord.vesktop"
+title = ".*"
+width = 0.66
+
+[windows.zen]
+bundle_id = "app.zen-browser.zen"
+title = ".*"
 width = 0.5
 
-# Window Whitelist, float windows that break tiling
-# [windows.bettertouchtool]
-# title = ".*"
-# bundle_id = "com.hegenberg.BetterTouchTool"
-# floating = true
-
-[windows.thunderbird_floating]
-title = "Check Spelling|Send Later|About Mozilla Thunderbird|^Are you sure.*$|^Sending Message - .*$|Save Message|Thunderbird Troubleshoot Mode"
-bundle_id = "org.mozilla.thunderbird"
-floating = true
-
-# [windows.libreoffice]
-# # Some libreoffice dialogs don't have a window title, for example confirm save format dialog.
-# title = "Delete Cells|Delete Contents|Format Cells|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet"
-# bundle_id = "org.libreoffice.script"
-# floating = true
-
-# Window Styling
+# Window padding
 [windows.all]
 # Matches all windows and adds a few pixels of spacing to their borders.
 # Note: horizontal_padding and vertical_padding create gaps on all sides of
 # each window. At screen edges, the gap is cancelled out so padding only
-# appears between windows. Use the [options] padding_* settings above to
+# appears between windows. Use the [padding] settings above to
 # control screen edge margins independently.
 title = ".*"
 horizontal_padding = 4

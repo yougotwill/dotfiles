@@ -21,4 +21,8 @@ open -a "Logseq.app"
 open -a "ProNotes.app"
 open -a "Notes.app"
 open -a "Reminders.app"
+
+# restart window manager to assign windows to correctly
+# /Users/will/bin/restart-window-manager.sh
+
 echo "Opened Workspace: Notes 📒"

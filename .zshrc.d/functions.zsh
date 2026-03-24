@@ -15,7 +15,7 @@ bupgradeforce () {
   done
 }
 
-tx () {
+tm () {
   tmux has-session -t $1 2>/dev/null
 
   if [ "$?" -eq 0 ]; then
