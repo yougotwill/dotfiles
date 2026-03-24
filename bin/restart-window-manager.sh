@@ -10,4 +10,4 @@
 # osascript -e 'quit app "OmniWM"' && sleep 2 && open -a "OmniWM.app"
 
 # Paneru
-/Users/will/.cargo/bin/paneru restart
+/Users/will/.cargo/bin/paneru stop && sleep 1 && /Users/will/.cargo/bin/paneru start
