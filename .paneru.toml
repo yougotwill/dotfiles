@@ -17,7 +17,7 @@ preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
 # Default: 50
-animation_speed = 50
+# animation_speed = 50
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
@@ -140,7 +140,7 @@ window_manage = "ctrl + alt + shift - v"
 
 # Stacks and unstacks a window into the left column. Each window gets a 1/N of the height.
 window_stack = "ctrl + alt + shift - ]"
-window_unstack = "ctrl + alt + cmd - ]"
+window_unstack = "ctrl + alt + shift - ["
 
 # Moves currently focused window to the next display.
 window_nextdisplay = "ctrl + alt + shift - n"
@@ -156,6 +156,9 @@ quit = "ctrl + alt + cmd -  q"
 
 # Window properties, matched by a RegExp title string.
 [windows]
+
+# NOTE: the order of the properties matter e.g. bundle_id before title otherwisse you lose specifity.
+# Put the most general rules at the end of the file so it doesn't override other rules e.g. [windows.all]
 
 [windows.pip]
 # Title RegExp pattern is required.
@@ -189,27 +192,6 @@ floating = true
 # floating = true
 # grid = "6:6:1:1:4:4"
 
-# Window floating
-[windows.floating_bettertouchtool]
-bundle_id = "com.hegenberg.BetterTouchTool"
-title = ".*"
-floating = true
-
-[windows.floating_finder]
-bundle_id = "com.apple.finder"
-title = ".*"
-floating = true
-
-[windows.floating_thunderbird]
-bundle_id = "org.mozilla.thunderbird"
-title = "Check Spelling|Confirm Deletion|Send Later|About Mozilla Thunderbird|^Are you sure.*$|^Sending Message - .*$|Save Message|Thunderbird Troubleshoot Mode"
-floating = true
-
-[windows.floating_libreoffice]
-bundle_id = "org.libreoffice.script"
-title = "Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
-floating = true
-
 # Window focusing
 [windows.focus_yubioath]
 bundle_id = "com.yubico.yubioath"
@@ -232,17 +214,38 @@ bundle_id = "com.protonmail.bridge"
 title = "Proton Mail Bridge"
 index = 102
 
+# Window floating
+[windows.floating_bettertouchtool]
+bundle_id = "com.hegenberg.BetterTouchTool"
+title = ".*"
+floating = true
+
+[windows.floating_finder]
+bundle_id = "com.apple.finder"
+title = ".*"
+floating = true
+
+[windows.floating_libreoffice]
+bundle_id = "org.libreoffice.script"
+title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
+floating = true
+
+
+[windows.floating_protondrive]
+bundle_id = "ch.protonmail.drive"
+title = ".*"
+floating = true
+
+[windows.floating_thunderbird]
+bundle_id = "org.mozilla.thunderbird"
+title = "About Mozilla Thunderbird|^Are you sure.*$|Check Spelling|Confirm Deletion|Save Message|Send Later|^Sending Message - .*$|Thunderbird Troubleshoot Mode"
+floating = true
+
 # Window sizing
-# Only manage the main window
 [windows.calendar]
 bundle_id = "com.apple.iCal"
 title = "Calendar"
 width = 0.85
-
-# [windows.finder]
-# bundle_id = "com.apple.finder"
-# title = ".*"
-# width = 0.85
 
 [windows.libreoffice]
 bundle_id = "org.libreoffice.script"
@@ -254,30 +257,10 @@ bundle_id = "com.electron.logseq"
 title = ".*"
 width = 0.85
 
-[windows.mail]
-bundle_id = "com.apple.mail"
-title = "Inbox"
-width = 0.66
-
-[windows.reminders]
-bundle_id = "com.apple.reminders"
-title = "Reminders"
-width = 0.5
-
 [windows.thunderbird]
 bundle_id = "org.mozilla.thunderbird"
 title = ".*"
 width = 0.85
-
-[windows.vesktop]
-bundle_id = "dev.vencord.vesktop"
-title = ".*"
-width = 0.66
-
-[windows.zen]
-bundle_id = "app.zen-browser.zen"
-title = ".*"
-width = 0.5
 
 # Window padding
 [windows.all]
@@ -289,3 +272,4 @@ width = 0.5
 title = ".*"
 horizontal_padding = 4
 vertical_padding = 4
+width = 0.66
