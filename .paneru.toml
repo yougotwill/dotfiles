@@ -11,7 +11,8 @@ mouse_follows_focus = false
 
 # Array of widths used by the `window_resize` action to cycle between.
 # Defaults to 25%, 33%, 50%, 66% and 75%.
-preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
+preset_column_widths = [ 0.32, 0.49, 0.65, 0.85 ]
+
 
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
@@ -38,6 +39,19 @@ auto_center = true
 # When unset, the height reported by macOS is used.
 # menubar_height = 25
 
+# How much of a window can be hidden before it's forced into view on focus
+# change. 0.0 = eager, 1.0 = lazy.
+window_hidden_ratio = 0.0
+
+[padding]
+# Padding applied at screen edges (in pixels). Independent from the
+# between-window gaps set by per-window horizontal/vertical_padding.
+# Default: 0 on all sides.
+# top = 0
+# bottom = 0
+# left = 0
+# right = 0
+
 [swipe]
 # Swipe sensitivity multiplier. Lower values = less distance per finger movement.
 # Range: 0.1–2.0. Default: 0.35.
@@ -49,7 +63,7 @@ sensitivity = 0.5
 
 # Swiping keeps sliding windows until the first or last window.
 # Set to false to clamp so edge windows stay on-screen. Default: true.
-continuous = false
+# continuous = false
 
 [swipe.gesture]
 # How many fingers to use for moving windows left and right.
@@ -66,27 +80,18 @@ fingers_count = 3
 # Default: "Natural"
 # direction = "Natural"
 
-[padding]
-# Padding applied at screen edges (in pixels). Independent from the
-# between-window gaps set by per-window horizontal/vertical_padding.
-# Default: 0 on all sides.
-# top = 0
-# bottom = 0
-# left = 0
-# right = 0
-
 # Experimental features
 # Disabled by default.
 
 # Window borders
-# [decorations.active.border]
+[decorations.active.border]
 # Draw a border around the active (focused) window.
 # Default: false.
-# enabled = true
+enabled = true
 
 # Hex color for the active window border.
 # Default: "#FFFFFF" (white).
-# color = "#F7821A"
+color = "#F7821A"
 
 # Opacity of the active window border (0.0–1.0).
 # Default: 1.0.
@@ -99,6 +104,14 @@ fingers_count = 3
 # Corner radius of the active window border in pixels.
 # Default: 10.0.
 # radius = 10.0
+
+# If enabled, the mouse will warp to another screen above or below,
+# when touching the left or right edge. The direction depends on the direction
+# - a negative value will cause the left edge to war warp to a screen above
+# and the right edge to a screen below. This allows having horizontal positioning
+# of displays while having them aligned in a virtual layout in macOS settings (-1, 1).
+# Default: Off
+horizontal_mouse_warp = 1
 
 [bindings]
 # Moves the focus between windows. If there are no windows when moving up or
@@ -138,26 +151,34 @@ window_fullwidth = "ctrl + alt + shift - f"
 # Toggles the window for management. If unmanaged, the window will be "floating".
 window_manage = "ctrl + alt + shift - v"
 
-# Stacks and unstacks a window into the left column. Each window gets a 1/N of the height.
+# Stack the current window into the column on the left.
 window_stack = "ctrl + alt + shift - ]"
+
+# Pull a window out of a stack into its own column.
 window_unstack = "ctrl + alt + shift - ["
-
-# Moves currently focused window to the next display.
-window_nextdisplay = "ctrl + alt + shift - n"
-
-# Moves the mouse pointer to the next display.
-mouse_nextdisplay = "ctrl + alt + shift - m"
 
 # Size stacked windows in the column to equal heights.
 window_equalize = "ctrl + alt + shift - e"
 
-# Quits the window manager.
+# Moves currently focused window to the next display.
+window_nextdisplay = "ctrl + alt + shift - n"
+
+# Move focused window to the next monitor but stay on current.
+window_nextdisplaysend = "ctrl + alt + cmd - n"
+
+# Moves the mouse pointer to the next display.
+mouse_nextdisplay = "ctrl + alt + shift - m"
+
+# Snap an overflowing window into the viewport.
+window_snap = "ctrl + alt + shift - b"
+
+# Exit paneru
 quit = "ctrl + alt + cmd -  q"
 
 # Window properties, matched by a RegExp title string.
 [windows]
 
-# NOTE: the order of the properties matter e.g. bundle_id before title otherwisse you lose specifity.
+# NOTE: the order of the properties matter e.g. bundle_id before title otherwise you lose specifity.
 # Put the most general rules at the end of the file so it doesn't override other rules e.g. [windows.all]
 
 [windows.pip]
@@ -197,70 +218,63 @@ floating = true
 bundle_id = "com.yubico.yubioath"
 title = "Yubico Authenticator"
 dont_focus = true
+index = 101
 
 [windows.focus_mailbridge]
 bundle_id = "com.protonmail.bridge"
 title = "Proton Mail Bridge"
 dont_focus = true
-
-# Window positioning
-[windows.position_yubioath]
-bundle_id = "com.yubico.yubioath"
-title = "Yubico Authenticator"
-index = 101
-
-[windows.position_mailbridge]
-bundle_id = "com.protonmail.bridge"
-title = "Proton Mail Bridge"
 index = 102
 
+# Window positioning
+
 # Window floating
+# Float windows that don't have a window title.
 [windows.floating_bettertouchtool]
 bundle_id = "com.hegenberg.BetterTouchTool"
-title = ".*"
+title = "^$"
 floating = true
 
-[windows.floating_finder]
-bundle_id = "com.apple.finder"
-title = ".*"
-floating = true
+# [windows.floating_finder]
+# bundle_id = "com.apple.finder"
+# title = ".*"
+# floating = true
 
 [windows.floating_libreoffice]
 bundle_id = "org.libreoffice.script"
 title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
 floating = true
 
-
-[windows.floating_protondrive]
-bundle_id = "ch.protonmail.drive"
-title = ".*"
-floating = true
+# [windows.floating_protondrive]
+# bundle_id = "ch.protonmail.drive"
+# title = ".*"
+# floating = true
 
 [windows.floating_thunderbird]
 bundle_id = "org.mozilla.thunderbird"
-title = "About Mozilla Thunderbird|^Are you sure.*$|Check Spelling|Confirm Deletion|Save Message|Send Later|^Sending Message - .*$|Thunderbird Troubleshoot Mode"
+title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
 floating = true
 
 # Window sizing
-[windows.calendar]
-bundle_id = "com.apple.iCal"
-title = "Calendar"
-width = 0.85
-
-[windows.libreoffice]
-bundle_id = "org.libreoffice.script"
-title = ".*"
-width = 0.85
-
-[windows.logseq]
-bundle_id = "com.electron.logseq"
-title = ".*"
-width = 0.85
-
-[windows.thunderbird]
-bundle_id = "org.mozilla.thunderbird"
-title = ".*"
-width = 0.85
+# [windows.calendar]
+# bundle_id = "com.apple.iCal"
+# title = "Calendar"
+# width = 0.85
+#
+# [windows.libreoffice]
+# bundle_id = "org.libreoffice.script"
+# title = ".*"
+# width = 0.85
+#
+# [windows.logseq]
+# bundle_id = "com.electron.logseq"
+# title = ".*"
+# width = 0.85
+#
+# [windows.thunderbird]
+# bundle_id = "org.mozilla.thunderbird"
+# title = ".*"
+# width = 0.85
 
 # Window padding
 [windows.all]
@@ -272,4 +286,3 @@ width = 0.85
 title = ".*"
 horizontal_padding = 4
 vertical_padding = 4
-width = 0.66

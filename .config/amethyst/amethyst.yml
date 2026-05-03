@@ -41,36 +41,35 @@ layouts:
   # - tall
   # - tall-right
   # - column
-
   # - bsp
 
 # First mod (default option + shift).
 mod1:
   - option
-  # - shift
-  # - control
+  - shift
+  - control
   # - command
 
 # Second mod (default option + shift + control).
 mod2:
   - option
-  - shift
-  # - control
-  # - command
+  # - shift
+  - control
+  - command
 
 # Third mod (default control + command).
 mod3:
-  - option
+  # - option
   # - shift
-  - control
+  # - control
   # - command
 
 # Fourth mod (default option + control + command).
 mod4:
   # - option
   # - shift
-  - control
-  - command
+  # - control
+  # - command
 
 # Commands:
 # special key values
@@ -92,8 +91,8 @@ cycle-layout:
 
 # Move to the previous layout in the list.
 cycle-layout-backward:
-  mod: mod2
-  key: r
+  mod: <NONE>
+  key: <NONE>
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
@@ -108,12 +107,12 @@ expand-main:
 # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
 increase-main:
   mod: mod1
-  key: ','
+  key: y
 
 # Decrease the number of windows in the main pane. Note that not all layouts respond to this command.
 decrease-main:
-  mod: mod1
-  key: '.'
+  mod: mod2
+  key: y
 
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command1:
@@ -145,42 +144,42 @@ focus-cw:
 # Focus the main window in the list.
 focus-main:
   mod: mod1
-  key: '\'
+  key: u
 
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
-  mod: mod2
-  key: h
+  mod: mod1
+  key: k
 
 # Focus the next screen in the list going clockwise.
 focus-screen-cw:
-   mod: mod2
-   key: l
+   mod: mod1
+   key: j
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 swap-screen-ccw:
-  mod: mod4
-  key: h
+  mod: mod2
+  key: k
 
 # Move the currently focused window onto the next screen in the list going clockwise.
 swap-screen-cw:
-  mod: mod4
-  key: l
+  mod: mod2
+  key: j
 
 # Swap the position of the currently focused window with the next window in the list going counter-clockwise.
 swap-ccw:
-  mod: mod3
+  mod: mod2
   key: h
 
 # Swap the position of the currently focused window with the next window in the list going clockwise.
 swap-cw:
-  mod: mod3
+  mod: mod2
   key: l
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
-  mod: mod3
-  key: '\'
+  mod: mod2
+  key: u
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
@@ -253,13 +252,13 @@ throw-screen-5:
 
 # throw-space-1:
 throw-space-1:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: 1
 
 # throw-space-2:
 throw-space-2:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: 2
 
 # throw-space-3:
 throw-space-3:
@@ -358,7 +357,7 @@ select-column-layout:
 
 # Select middle wide layout
 select-middle-wide-layout:
-  mod: mod1
+  mod: mod2
   key: c
 
 # Select floating layout
@@ -396,7 +395,7 @@ select-columns-layout:
 # Select one for all layout
 select-macos-center-layout:
   mod: mod2
-  key: a
+  key: f
 
 # Select grid layout
 select-grid-layout:
@@ -410,18 +409,18 @@ select-center-focus-layout:
 
 select-three-pane-layout:
   mod: mod1
-  key: d
+  key: c
 
 # NOTE: Disabled because some windows aren't detected when thrown. Using BetterTouchTool
 # Move the currently focused window to the space to the left.
 throw-space-left:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: left
 
 # Move currently the focused window to the space to the right.
 throw-space-right:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod1
+  key: right
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:
@@ -435,13 +434,23 @@ display-current-layout:
 
 # Turn on or off tiling entirely.
 toggle-tiling:
-  mod: <NONE>
-  key: <NONE>
+  mod: mod2
+  key: '.'
+
+# Turn on tiling.
+# enable-tiling:
+#   mod: mod2
+#   key: <NONE>
+
+# Turn off tiling.
+# disable-tiling:
+#   mod: mod2
+#   key: <NONE>
 
 # Rerun the current layout's algorithm.
 reevaluate-windows:
-  mod: mod4
-  key: r
+  mod: mod1
+  key: e
 
 # Turn on or off focus-follows-mouse.
 toggle-focus-follows-mouse:
@@ -450,11 +459,11 @@ toggle-focus-follows-mouse:
 
 # Automatically quit and reopen Amethyst.
 relaunch-amethyst:
-  mod: mod3
-  key: r
+  mod: mod1
+  key: '.'
 
 # disable screen padding on builtin display
-disable-padding-on-builtin-display: true
+disable-padding-on-builtin-display: false
 
 # Boolean flag for whether or not to add margins between windows (default false).
 window-margins: true
@@ -513,6 +522,10 @@ floating: [
     'window-titles': []
   },
   {
+    id: 'app.zen-browser.zen',
+    'window-titles': ['Picture-in-Picture'],
+  },
+  {
     id: 'net.kovidgoyal.kitty-quick-access',
     'window-titles': ['kitty-quick-access']
   },
@@ -526,16 +539,12 @@ floating: [
   },
   {
     id: 'org.mozilla.thunderbird',
-    'window-titles': [About Mozilla Thunderbird', 'Are you sure*', 'Check Spelling','Choose a color', 'Folder Properties', 'Save Message', 'Sending Message -*']
+    'window-titles': ['About Mozilla Thunderbird', 'Activity Manager', 'Are you sure*', 'Check Spelling', 'Choose a color', 'Confirm Deletion', 'Folder Properties', 'Save Message', 'Send Later', 'Sending Message -*', 'Text Color', 'Thunderbird Troubleshoot Mode']
   },
   {
-    id: 'app.zen-browser.zen',
-    'window-titles': ["Picture-in-Picture"],
+    id: 'org.libreoffice.script',
+    'window-titles': ['About LibreOffice', 'Delete Cells', 'Delete Contents', 'Format Cells', 'Function Wizard', 'Merge Cells', 'Optimal Column Width', 'Optimal Row Height', 'Paste Special', 'Rename Sheet', "Save Document?"],
   }
-  # {
-  #   id: 'org.libreoffice.script',
-  #   'window-titles': ["Rename Sheet"],
-  # }
 ]
 
 # Boolean flag determining behavior of the floating list. true if the applications should be floating and all others tiled. false if the applications should be tiled and all others floating (default true).
@@ -547,8 +556,11 @@ ignore-menu-bar: false
 # true if menu bar icon should be hidden (default false).
 hide-menu-bar-icon: false
 
-# true if windows smaller than a 500px square should be floating by default (default true)
-float-small-windows: false
+# true if windows smaller than the small-window-size threshold should be floating by default (default true)
+float-small-windows: true
+
+# Pixel threshold for float-small-windows. Windows with both width and height below this value are considered small (in px, default 500).
+small-window-size: 500
 
 # true if the mouse should move position to the center of a window when it becomes focused (default false). Note that this is largely incompatible with focus-follows-mouse.
 mouse-follows-focus: false
@@ -581,16 +593,16 @@ follow-space-thrown-windows: true
 window-resize-step: 5
 
 # Padding to apply between windows and the left edge of the screen (in px, default 0).
-screen-padding-left: 4
+screen-padding-left: 0
 
 # Padding to apply between windows and the right edge of the screen (in px, default 0).
-screen-padding-right: 4
+screen-padding-right: 0
 
 # Padding to apply between windows and the top edge of the screen (in px, default 0).
-screen-padding-top: 8
+screen-padding-top: 0
 
 # Padding to apply between windows and the bottom edge of the screen (in px, default 0).
-screen-padding-bottom: 8
+screen-padding-bottom: 0
 
 # true to maintain layout state across application executions (default true).
 restore-layouts-on-launch: true
