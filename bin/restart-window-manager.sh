@@ -1,13 +1,20 @@
 
 #!/bin/zsh
-# Restarts the currently used window manager. 
-# Useful for global keyboard shortcuts and scripting
+# Restarts any running window managers.
+# Used for global keyboard shortcuts and scripting when the wm doesn't have a reliable reset command.
 
 # Amethyst
-# osascript -e 'quit app "Amethyst"' && sleep 2 && open -a "Amethyst.app"
+if pgrep -il "amethyst" >/dev/null; then
+  osascript -e 'quit app "Amethyst"' && sleep 2 && open -a "Amethyst.app"
+fi
 
 # OmniWM
-# osascript -e 'quit app "OmniWM"' && sleep 2 && open -a "OmniWM.app"
+if pgrep -il "omniwm" >/dev/null; then
+  osascript -e 'quit app "OmniWM"' && sleep 2 && open -a "OmniWM.app"
+fi
 
 # Paneru
-/Users/will/.cargo/bin/paneru stop && sleep 1 && /Users/will/.cargo/bin/paneru start
+if pgrep -il "paneru" >/dev/null; then
+  /Users/will/.cargo/bin/paneru stop && sleep 2 && /Users/will/.cargo/bin/paneru start
+fi
+
