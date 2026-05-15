@@ -13,16 +13,23 @@ mouse_follows_focus = false
 # Defaults to 25%, 33%, 50%, 66% and 75%.
 preset_column_widths = [ 0.32, 0.49, 0.65, 0.85 ]
 
-
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
 # Default: 50
-# animation_speed = 50
+animation_speed = 80
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
-auto_center = true
+auto_center = false
+
+# If enabled, the mouse will warp to another screen above or below,
+# when touching the left or right edge. The direction depends on the direction
+# - a negative value will cause the left edge to war warp to a screen above
+# and the right edge to a screen below. This allows having horizontal positioning
+# of displays while having them aligned in a virtual layout in macOS settings (-1, 1).
+# Default: Off
+horizontal_mouse_warp = 1
 
 # Height of off-screen window slivers as a ratio (0.0–1.0) of the display
 # height. Lower values hide the window's corner radius at screen edges.
@@ -41,7 +48,16 @@ auto_center = true
 
 # How much of a window can be hidden before it's forced into view on focus
 # change. 0.0 = eager, 1.0 = lazy.
-window_hidden_ratio = 0.0
+# window_hidden_ratio = 0.0
+
+# If disabled, window_resize and window_shrink stop at the largest/smallest
+# preset instead of cycling back.
+# window_resize_cycle = true
+
+# If enabled allows window resizing using mouse movement. For example cmd + shift
+# will allow resizing of the window when holding those keys. Proximity of the
+# pointer to left or right window edge determines which side will be adjusted.
+# mouse_resize_modifier = ''
 
 [padding]
 # Padding applied at screen edges (in pixels). Independent from the
@@ -59,11 +75,11 @@ sensitivity = 0.5
 
 # Swipe inertia deceleration rate. Higher values = faster stop.
 # Range: 1.0–10.0. Default: 4.0.
-# deceleration = 4.0
+deceleration = 1.0
 
-# Swiping keeps sliding windows until the first or last window.
-# Set to false to clamp so edge windows stay on-screen. Default: true.
-# continuous = false
+# If enabled, the swipe gesture moves windows smoothly with the fingers.
+# If disabled, it snaps to windows as you swipe. Default: true.
+continuous = true
 
 [swipe.gesture]
 # How many fingers to use for moving windows left and right.
@@ -80,38 +96,25 @@ fingers_count = 3
 # Default: "Natural"
 # direction = "Natural"
 
-# Experimental features
-# Disabled by default.
+# [swipe.scroll]
+# Modifier key(s) required to slide windows with the scroll wheel:
+# "alt", "rcmd", "ralt + cmd", "lctrl + lalt + cmd", etc.
+# modifier = "alt"
 
-# Window borders
-[decorations.active.border]
-# Draw a border around the active (focused) window.
-# Default: false.
-enabled = true
+# Additional modifier key that, when held together with modifier,
+# switches virtual workspaces vertically instead of scrolling horizontally.
+# For example, if modifier = "alt" and vertical_modifier = "shift",
+# then alt + scroll slides windows horizontally and alt + shift + scroll
+# switches virtual workspace rows.
+# vertical_modifier = ''
 
-# Hex color for the active window border.
-# Default: "#FFFFFF" (white).
-color = "#F7821A"
-
-# Opacity of the active window border (0.0–1.0).
-# Default: 1.0.
-# opacity = 1.0
-
-# Width of the active window border in pixels.
-# Default: 2.0.
-# width = 2.0
-
-# Corner radius of the active window border in pixels.
-# Default: 10.0.
-# radius = 10.0
-
-# If enabled, the mouse will warp to another screen above or below,
-# when touching the left or right edge. The direction depends on the direction
-# - a negative value will cause the left edge to war warp to a screen above
-# and the right edge to a screen below. This allows having horizontal positioning
-# of displays while having them aligned in a virtual layout in macOS settings (-1, 1).
-# Default: Off
-horizontal_mouse_warp = 1
+# Visual styling for active and inactive windows.
+# Do not set a color.
+# [decorations.inactive.dim]
+# Dimming intensity. -1.0 is fully black, 1.0 is fully white.
+# opacity = -0.15
+# Dimming intensity used when macOS is in Dark Mode.
+# opacity_night = -0.25
 
 [bindings]
 # Moves the focus between windows. If there are no windows when moving up or
@@ -129,12 +132,12 @@ window_swap_north = "ctrl + alt + cmd - k"
 window_swap_south = "ctrl + alt + cmd - j"
 
 # Jump to the left-most or right-most windows.
-window_focus_first = "ctrl + alt + shift - u"
-window_focus_last = "ctrl + alt + shift - i"
+window_focus_first = "ctrl + alt + shift - y"
+window_focus_last = "ctrl + alt + shift - o"
 
 # Move the current window into the left-most or right-most positions.
-window_swap_first = "ctrl + alt + cmd - u"
-window_swap_last = "ctrl + alt + cmd -  i"
+window_swap_first = "ctrl + alt + cmd - y"
+window_swap_last = "ctrl + alt + cmd -  o"
 
 # Centers the current window on screen.
 window_center = "ctrl + alt + shift - c"
@@ -174,6 +177,47 @@ window_snap = "ctrl + alt + shift - b"
 
 # Exit paneru
 quit = "ctrl + alt + cmd -  q"
+
+# Virtual Workspaces (experiemental)
+# Move to the previous/next virtual workspace.
+window_virtual_north = "ctrl + alt + shift - i"
+window_virtual_south = "ctrl + alt + shift - u"
+
+# Move the current window to the previous/next virtual workspace.
+window_virtualmove_north = "ctrl + alt + cmd - i"
+window_virtualmove_south = "ctrl + alt + cmd - u"
+
+# Experimental features
+# Disabled by default.
+
+# Inactive Window Overlay Dimming
+# [decorations.inactive.dim]
+# Opacity of the dim overlay. 0.0 is transparent, 1.0 is opaque.
+# opacity = 0.3
+# Hex color for the dim overlay (default: black)
+# color = "#000000"
+
+# Active Window border
+# [decorations.active.border]
+# Draw a border around the active (focused) window.
+# Default: false.
+# enabled = true
+
+# Hex color for the active window border.
+# Default: "#FFFFFF" (white).
+# color = "#F7821A"
+
+# Opacity of the active window border (0.0–1.0).
+# Default: 1.0.
+# opacity = 1.0
+
+# Width of the active window border in pixels.
+# Default: 2.0.
+# width = 2.0
+
+# Corner radius of the active window border in pixels.
+# Default: 10.0.
+# radius = 10.0
 
 # Window properties, matched by a RegExp title string.
 [windows]
@@ -240,20 +284,20 @@ floating = true
 # title = ".*"
 # floating = true
 
-[windows.floating_libreoffice]
-bundle_id = "org.libreoffice.script"
-title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
-floating = true
+# [windows.floating_libreoffice]
+# bundle_id = "org.libreoffice.script"
+# title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
+# floating = true
 
 # [windows.floating_protondrive]
 # bundle_id = "ch.protonmail.drive"
 # title = ".*"
 # floating = true
 
-[windows.floating_thunderbird]
-bundle_id = "org.mozilla.thunderbird"
-title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
-floating = true
+# [windows.floating_thunderbird]
+# bundle_id = "org.mozilla.thunderbird"
+# title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
+# floating = true
 
 # Window sizing
 # [windows.calendar]
