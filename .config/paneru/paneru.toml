@@ -11,17 +11,17 @@ mouse_follows_focus = false
 
 # Array of widths used by the `window_resize` action to cycle between.
 # Defaults to 25%, 33%, 50%, 66% and 75%.
-preset_column_widths = [ 0.32, 0.49, 0.65, 0.85 ]
+preset_column_widths = [ 0.33, 0.5, 0.67, 0.99 ]
 
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
 # Default: 50
-animation_speed = 80
+animation_speed = 70
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
-auto_center = false
+auto_center = true
 
 # If enabled, the mouse will warp to another screen above or below,
 # when touching the left or right edge. The direction depends on the direction
@@ -39,7 +39,7 @@ horizontal_mouse_warp = 1
 # Width of off-screen window slivers in pixels. Controls how much of an
 # off-screen window peeks from the screen edge.
 # Default: 5 pixels.
-# sliver_width = 5
+sliver_width = 10
 
 # Override the system-reported menubar height (in pixels).
 # Useful when auto-hiding the menubar or when the detected value is wrong.
@@ -63,23 +63,23 @@ horizontal_mouse_warp = 1
 # Padding applied at screen edges (in pixels). Independent from the
 # between-window gaps set by per-window horizontal/vertical_padding.
 # Default: 0 on all sides.
-# top = 0
-# bottom = 0
-# left = 0
-# right = 0
+top = 8
+bottom = 8
+left = 16
+right = 16
 
 [swipe]
 # Swipe sensitivity multiplier. Lower values = less distance per finger movement.
 # Range: 0.1–2.0. Default: 0.35.
-sensitivity = 0.5
+sensitivity = 0.75
 
 # Swipe inertia deceleration rate. Higher values = faster stop.
 # Range: 1.0–10.0. Default: 4.0.
-deceleration = 1.0
+deceleration = 1.5
 
 # If enabled, the swipe gesture moves windows smoothly with the fingers.
 # If disabled, it snaps to windows as you swipe. Default: true.
-continuous = true
+# continuous = false
 
 [swipe.gesture]
 # How many fingers to use for moving windows left and right.
@@ -96,6 +96,11 @@ fingers_count = 3
 # Default: "Natural"
 # direction = "Natural"
 
+# Interpret the vertical gestures with fingers_count or ignore them.
+# Enabling this allows using vertical swipe gestures to change
+# virtual desktops.
+vertical = false
+
 # [swipe.scroll]
 # Modifier key(s) required to slide windows with the scroll wheel:
 # "alt", "rcmd", "ralt + cmd", "lctrl + lalt + cmd", etc.
@@ -108,15 +113,32 @@ fingers_count = 3
 # switches virtual workspace rows.
 # vertical_modifier = ''
 
+[decorations]
+
+# Toggles display of the currently active virtual workspace in the menubar.
+# Note: disabling menubar indicator requires a restart
+# Default: true
+workspace_menu_status = false
+
+# Toggles display of the currently active virtual workspace in a brief status popup window.
+# Default: true
+workspace_popup_status = true
+
 # Visual styling for active and inactive windows.
 # Do not set a color.
 # [decorations.inactive.dim]
 # Dimming intensity. -1.0 is fully black, 1.0 is fully white.
 # opacity = -0.15
 # Dimming intensity used when macOS is in Dark Mode.
-# opacity_night = -0.25
+# opacity_night = 0
 
 [bindings]
+# Switch to a previously focused window on this workspace.
+window_focus_managed = ["ctrl + alt + shift - return"]
+
+# Switch to a previously focused floating window on this workspace.
+window_focus_unmanaged = ["ctrl + alt + cmd - return"]
+
 # Moves the focus between windows. If there are no windows when moving up or
 # down, will swtich focus to the display above or below.
 window_focus_west = ["ctrl + alt + shift - h"]
@@ -126,76 +148,91 @@ window_focus_south = ["ctrl + alt + shift - j"]
 
 # Swaps windows in chosen direction. If there are no windows to swap, will
 # move the window to a display above or below.
-window_swap_west = "ctrl + alt + cmd - h"
-window_swap_east = "ctrl + alt + cmd - l"
-window_swap_north = "ctrl + alt + cmd - k"
-window_swap_south = "ctrl + alt + cmd - j"
+window_swap_west = ["ctrl + alt + cmd - h"]
+window_swap_east = ["ctrl + alt + cmd - l"]
+window_swap_north = ["ctrl + alt + cmd - k"]
+window_swap_south = ["ctrl + alt + cmd - j"]
 
 # Jump to the left-most or right-most windows.
-window_focus_first = "ctrl + alt + shift - y"
-window_focus_last = "ctrl + alt + shift - o"
+window_focus_first = ["ctrl + alt + shift - u"]
+window_focus_last = ["ctrl + alt + shift - i"]
 
 # Move the current window into the left-most or right-most positions.
-window_swap_first = "ctrl + alt + cmd - y"
-window_swap_last = "ctrl + alt + cmd -  o"
+window_swap_first = ["ctrl + alt + cmd - u"]
+window_swap_last = ["ctrl + alt + cmd - i"]
 
 # Centers the current window on screen.
-window_center = "ctrl + alt + shift - c"
+window_center = ["ctrl + alt + shift - c"]
 
 # Cycles between the window sizes defined in the `preset_column_widths` option.
-window_resize = "ctrl + alt + shift - r"
+window_resize = ["ctrl + alt + shift - r"]
 
 # Cycles backwards through `preset_column_widths`.
-window_shrink = "ctrl + alt + cmd - r"
+window_shrink = ["ctrl + alt + cmd - r"]
 
 # Toggle full width for the current focused window.
-window_fullwidth = "ctrl + alt + shift - f"
+window_fullwidth = ["ctrl + alt + shift - f"]
 
 # Toggles the window for management. If unmanaged, the window will be "floating".
-window_manage = "ctrl + alt + shift - v"
+window_manage = ["ctrl + alt + cmd - v"]
 
 # Stack the current window into the column on the left.
-window_stack = "ctrl + alt + shift - ]"
+window_stack = ["ctrl + alt + shift - ]"]
 
 # Pull a window out of a stack into its own column.
-window_unstack = "ctrl + alt + shift - ["
+window_unstack = ["ctrl + alt + shift - ["]
 
 # Size stacked windows in the column to equal heights.
-window_equalize = "ctrl + alt + shift - e"
+window_equalize = ["ctrl + alt + shift - e"]
 
 # Moves currently focused window to the next display.
-window_nextdisplay = "ctrl + alt + shift - n"
+window_nextdisplay = ["ctrl + alt + shift - n"]
 
 # Move focused window to the next monitor but stay on current.
-window_nextdisplaysend = "ctrl + alt + cmd - n"
+window_nextdisplaysend = ["ctrl + alt + cmd - n"]
 
 # Moves the mouse pointer to the next display.
-mouse_nextdisplay = "ctrl + alt + shift - m"
+mouse_nextdisplay = ["ctrl + alt + shift - m"]
 
 # Snap an overflowing window into the viewport.
-window_snap = "ctrl + alt + shift - b"
+window_snap = ["ctrl + alt + shift - b"]
+
+# Make the floating windows layer visible on the current workspace.
+window_raise_floating = ["ctrl + alt + shift - v"]
+
+# Selectively move the floating windows in front or behind of the workspace windows.
+# window_togglefloatlayer = ["ctrl + alt + shift - v"]
 
 # Exit paneru
-quit = "ctrl + alt + cmd -  q"
+quit = ["ctrl + alt + cmd -  q"]
 
 # Virtual Workspaces (experiemental)
 # Move to the previous/next virtual workspace.
-window_virtual_north = "ctrl + alt + shift - i"
-window_virtual_south = "ctrl + alt + shift - u"
+window_virtual_north = ["ctrl - leftarrow"]
+window_virtual_south = ["ctrl - rightarrow"]
 
 # Move the current window to the previous/next virtual workspace.
-window_virtualmove_north = "ctrl + alt + cmd - i"
-window_virtualmove_south = "ctrl + alt + cmd - u"
+window_virtualmove_north = ["ctrl + alt + shift - leftarrow"]
+window_virtualmove_south = ["ctrl + alt + shift - rightarrow"]
+
+# Move currently focused window to the previous/next virtual workspace but stay on the current one.
+# window_virtualsend_north = ["ctrl + alt + shift - leftarrow"]
+# window_virtualmove_south = ["ctrl + alt + shift - rightarrow"]
+
+# Switch directly to the numbered virtual workspace.
+window_virtualnum_1 = ["ctrl + alt + shift - 1"]
+window_virtualnum_2 = ["ctrl + alt + shift - 2"]
+
+# Move currently focused window to the numbered virtual workspace and follow it.
+# window_virtualmovenum_1 = ["ctrl - 1"]
+# window_virtualmovenum_2 = ["ctrl - 2"]
+
+# Move currently focused window to the numbered virtual workspace but stay on the current one.
+window_virtualsendnum_1 = ["ctrl - 1"]
+window_virtualsendnum_2 = ["ctrl - 2"]
 
 # Experimental features
 # Disabled by default.
-
-# Inactive Window Overlay Dimming
-# [decorations.inactive.dim]
-# Opacity of the dim overlay. 0.0 is transparent, 1.0 is opaque.
-# opacity = 0.3
-# Hex color for the dim overlay (default: black)
-# color = "#000000"
 
 # Active Window border
 # [decorations.active.border]
@@ -273,52 +310,51 @@ index = 102
 # Window positioning
 
 # Window floating
-# Float windows that don't have a window title.
-[windows.floating_bettertouchtool]
+[windows.floating_bettertouchtool_screenshots]
 bundle_id = "com.hegenberg.BetterTouchTool"
-title = "^$"
+title = "Screenshot*"
 floating = true
 
-# [windows.floating_finder]
-# bundle_id = "com.apple.finder"
-# title = ".*"
-# floating = true
+[windows.floating_libreoffice]
+bundle_id = "org.libreoffice.script"
+title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
+floating = true
 
-# [windows.floating_libreoffice]
-# bundle_id = "org.libreoffice.script"
-# title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
-# floating = true
-
-# [windows.floating_protondrive]
-# bundle_id = "ch.protonmail.drive"
-# title = ".*"
-# floating = true
-
-# [windows.floating_thunderbird]
-# bundle_id = "org.mozilla.thunderbird"
-# title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
-# floating = true
+[windows.floating_thunderbird]
+bundle_id = "org.mozilla.thunderbird"
+title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
+floating = true
 
 # Window sizing
-# [windows.calendar]
-# bundle_id = "com.apple.iCal"
-# title = "Calendar"
-# width = 0.85
+[windows.sizing_calendar]
+bundle_id = "com.apple.iCal"
+title = "Calendar"
+width = 0.85
+
+[windows.sizing_finder]
+bundle_id = "com.apple.finder"
+title = ".*"
+width = 0.67
+
+[windows.sizing_libreoffice]
+bundle_id = "org.libreoffice.script"
+title = ".*"
+width = 0.85
 #
-# [windows.libreoffice]
-# bundle_id = "org.libreoffice.script"
-# title = ".*"
-# width = 0.85
-#
-# [windows.logseq]
-# bundle_id = "com.electron.logseq"
-# title = ".*"
-# width = 0.85
-#
-# [windows.thunderbird]
-# bundle_id = "org.mozilla.thunderbird"
-# title = ".*"
-# width = 0.85
+[windows.sizing_logseq]
+bundle_id = "com.electron.logseq"
+title = ".*"
+width = 0.85
+
+[windows.sizing_thunderbird]
+bundle_id = "org.mozilla.thunderbird"
+title = ".*"
+width = 0.85
+
+[windows.sizing_yubioath]
+bundle_id = "com.yubico.yubioath"
+title = "Yubico Authenticator"
+width = 0.85
 
 # Window padding
 [windows.all]
@@ -328,5 +364,5 @@ floating = true
 # appears between windows. Use the [padding] settings above to
 # control screen edge margins independently.
 title = ".*"
-horizontal_padding = 4
+horizontal_padding = 6
 vertical_padding = 4

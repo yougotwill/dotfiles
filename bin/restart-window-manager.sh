@@ -18,3 +18,4 @@ if pgrep -il "paneru" >/dev/null; then
   /Users/will/.cargo/bin/paneru stop && sleep 2 && /Users/will/.cargo/bin/paneru start
 fi
 
+osascript -e 'tell application "BetterTouchTool" to display_notification "Restarted 🔄" with title "Window Manager"'
