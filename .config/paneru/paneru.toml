@@ -11,17 +11,18 @@ mouse_follows_focus = false
 
 # Array of widths used by the `window_resize` action to cycle between.
 # Defaults to 25%, 33%, 50%, 66% and 75%.
-preset_column_widths = [ 0.33, 0.5, 0.67, 0.99 ]
+preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
 
 # Animation speed in 1/10th of display resolution per second.
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
 # Default: 50
-animation_speed = 70
+# animation_speed = 50
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
-auto_center = true
+# Default: false
+# auto_center = true
 
 # If enabled, the mouse will warp to another screen above or below,
 # when touching the left or right edge. The direction depends on the direction
@@ -29,7 +30,7 @@ auto_center = true
 # and the right edge to a screen below. This allows having horizontal positioning
 # of displays while having them aligned in a virtual layout in macOS settings (-1, 1).
 # Default: Off
-horizontal_mouse_warp = 1
+horizontal_mouse_warp = -1
 
 # Height of off-screen window slivers as a ratio (0.0–1.0) of the display
 # height. Lower values hide the window's corner radius at screen edges.
@@ -48,7 +49,7 @@ sliver_width = 10
 
 # How much of a window can be hidden before it's forced into view on focus
 # change. 0.0 = eager, 1.0 = lazy.
-# window_hidden_ratio = 0.0
+# window_hidden_ratio = 0.25
 
 # If disabled, window_resize and window_shrink stop at the largest/smallest
 # preset instead of cycling back.
@@ -59,11 +60,29 @@ sliver_width = 10
 # pointer to left or right window edge determines which side will be adjusted.
 # mouse_resize_modifier = ''
 
+# If enabled, a virtual workspace without any windows will be removed.
+# Default: false
+# reap_empty_workspaces = false
+
+# If enabled, Paneru will not auto-merge a newly-spawned window into a tab group
+# with an existing same-app sibling that shares its frame. Use this if you find
+# unrelated windows being grouped together.
+# Default: false
+# disable_native_tabs = false
+
+# If enabled, Paneru will animate virtual workspace swaps. Off by default,
+# because people use virtual workspaces due to the slow animation of the
+# native macOS workspaces.
+# Default: false
+# virtual_workspace_animations = false
+
 [padding]
 # Padding applied at screen edges (in pixels). Independent from the
 # between-window gaps set by per-window horizontal/vertical_padding.
 # Default: 0 on all sides.
 top = 8
+# Taskbar.app height is 32px and we want 8px vertical spacing
+# bottom = 40
 bottom = 8
 left = 16
 right = 16
@@ -134,7 +153,7 @@ workspace_popup_status = true
 
 [bindings]
 # Switch to a previously focused window on this workspace.
-window_focus_managed = ["ctrl + alt + shift - return"]
+# window_focus_managed = ["ctrl + alt + shift - return"]
 
 # Switch to a previously focused floating window on this workspace.
 window_focus_unmanaged = ["ctrl + alt + cmd - return"]
@@ -177,31 +196,31 @@ window_fullwidth = ["ctrl + alt + shift - f"]
 window_manage = ["ctrl + alt + cmd - v"]
 
 # Stack the current window into the column on the left.
-window_stack = ["ctrl + alt + shift - ]"]
+window_stack = ["ctrl + alt + shift - ["]
 
 # Pull a window out of a stack into its own column.
-window_unstack = ["ctrl + alt + shift - ["]
+window_unstack = ["ctrl + alt + shift - ]"]
 
 # Size stacked windows in the column to equal heights.
-window_equalize = ["ctrl + alt + shift - e"]
+window_equalize = ["ctrl + alt + cmd - ["]
 
 # Moves currently focused window to the next display.
-window_nextdisplay = ["ctrl + alt + shift - n"]
+window_nextdisplay = ["ctrl + alt + cmd - n"]
 
 # Move focused window to the next monitor but stay on current.
-window_nextdisplaysend = ["ctrl + alt + cmd - n"]
+window_nextdisplaysend = ["ctrl + alt + shift - n"]
 
 # Moves the mouse pointer to the next display.
 mouse_nextdisplay = ["ctrl + alt + shift - m"]
 
 # Snap an overflowing window into the viewport.
-window_snap = ["ctrl + alt + shift - b"]
+window_snap = ["ctrl + alt + shift - e"]
 
 # Make the floating windows layer visible on the current workspace.
-window_raise_floating = ["ctrl + alt + shift - v"]
+# window_raise_floating = ["ctrl + alt + shift - v"]
 
 # Selectively move the floating windows in front or behind of the workspace windows.
-# window_togglefloatlayer = ["ctrl + alt + shift - v"]
+window_togglefloatlayer = ["ctrl + alt + shift - v"]
 
 # Exit paneru
 quit = ["ctrl + alt + cmd -  q"]
@@ -222,39 +241,45 @@ window_virtualmove_south = ["ctrl + alt + shift - rightarrow"]
 # Switch directly to the numbered virtual workspace.
 window_virtualnum_1 = ["ctrl + alt + shift - 1"]
 window_virtualnum_2 = ["ctrl + alt + shift - 2"]
+window_virtualnum_3 = ["ctrl + alt + shift - 3"]
+window_virtualnum_4 = ["ctrl + alt + shift - 4"]
 
 # Move currently focused window to the numbered virtual workspace and follow it.
-# window_virtualmovenum_1 = ["ctrl - 1"]
-# window_virtualmovenum_2 = ["ctrl - 2"]
+window_virtualmovenum_1 = ["ctrl + alt + cmd - 1"]
+window_virtualmovenum_2 = ["ctrl + alt + cmd - 2"]
+window_virtualmovenum_3 = ["ctrl + alt + cmd - 3"]
+window_virtualmovenum_4 = ["ctrl + alt + cmd - 4"]
 
 # Move currently focused window to the numbered virtual workspace but stay on the current one.
 window_virtualsendnum_1 = ["ctrl - 1"]
 window_virtualsendnum_2 = ["ctrl - 2"]
+window_virtualsendnum_3 = ["ctrl - 3"]
+window_virtualsendnum_4 = ["ctrl - 4"]
 
 # Experimental features
 # Disabled by default.
 
 # Active Window border
-# [decorations.active.border]
+[decorations.active.border]
 # Draw a border around the active (focused) window.
 # Default: false.
 # enabled = true
 
 # Hex color for the active window border.
 # Default: "#FFFFFF" (white).
-# color = "#F7821A"
+color = "#F7821A"
 
 # Opacity of the active window border (0.0–1.0).
 # Default: 1.0.
-# opacity = 1.0
+opacity = 1.0
 
 # Width of the active window border in pixels.
 # Default: 2.0.
-# width = 2.0
+width = 3.0
 
 # Corner radius of the active window border in pixels.
 # Default: 10.0.
-# radius = 10.0
+radius = 10.0
 
 # Window properties, matched by a RegExp title string.
 [windows]
@@ -294,35 +319,66 @@ floating = true
 # floating = true
 # grid = "6:6:1:1:4:4"
 
-# Window focusing
-[windows.focus_yubioath]
+# Window positioning
+[windows.position_zen]
+bundle_id = "app.zen-browser.zen"
+title = ".*"
+index = 0
+
+[windows.position_yubioath]
 bundle_id = "com.yubico.yubioath"
 title = "Yubico Authenticator"
-dont_focus = true
 index = 101
 
-[windows.focus_mailbridge]
+[windows.position_mailbridge]
 bundle_id = "com.protonmail.bridge"
 title = "Proton Mail Bridge"
-dont_focus = true
 index = 102
 
-# Window positioning
+# Window floating - Simple
+# [windows.floating_antinote]
+# bundle_id = "com.chabomakers.Antinote"
+# title = ".*"
+# floating = true
 
-# Window floating
-[windows.floating_bettertouchtool_screenshots]
-bundle_id = "com.hegenberg.BetterTouchTool"
-title = "Screenshot*"
+# [windows.floating_bettertouchtool]
+# bundle_id = "com.hegenberg.BetterTouchTool"
+# title = ".*"
+# floating = true
+
+# [windows.floating_bettertouchtool_screenshots]
+# bundle_id = "com.hegenberg.BetterTouchTool"
+# title = "^Screenshot.*$"
+# floating = true
+# [windows.floating_steam]
+# bundle_id = "com.valvesoftware.steam"
+# title = ".*"
+# floating = true
+
+# Window Floating - Advanced
+[windows.floating_libreoffice_global_dialogs_1]
+bundle_id = "org.libreoffice.script"
+title = "About LibreOffice|Customize|Document Has Been Changed by Others|Do Not Show Again\\?|Extensions|Function Wizard|Hyperlink|Information|JPG Options|LibreOffice.*Document Recovery$"
 floating = true
 
-[windows.floating_libreoffice]
+[windows.floating_libreoffice_global_dialogs_2]
 bundle_id = "org.libreoffice.script"
-title = "About LibreOffice|Delete Cells|Delete Contents|Format Cells|Function Wizard|Merge Cells|Optimal Column Width|Optimal Row Height|Paste Special|Rename Sheet|Save Document\\?"
+title = "Options - LibreOffice.*$|New Snap Guide|Paste Special|^Paragraph Style:.*$|Position and Size|Rename Sheet|Restart LibreOffice|Save Document\\?|Select Your Preferred User Interface|Templates|Text Import -.*$|Zoom & View Layout"
+floating = true
+
+[windows.floating_libreoffice_cell_dialogs]
+bundle_id = "org.libreoffice.script"
+title = "Column Width|Delete Cells|Delete Contents|Format Cells|Insert Cells|Merge Cells|Optimal Column Width|Optimal Row Height|Row Height"
+floating = true
+
+[windows.floating_libreoffice_sidebar]
+bundle_id = "org.libreoffice.script"
+title = "Functions|Gallery|Navigator|Properties|Styles"
 floating = true
 
 [windows.floating_thunderbird]
 bundle_id = "org.mozilla.thunderbird"
-title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Text Color|Thunderbird Troubleshoot Mode"
+title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Compact folders|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Send Message Error|Text Color|Thunderbird Troubleshoot Mode"
 floating = true
 
 # Window sizing
@@ -334,17 +390,22 @@ width = 0.85
 [windows.sizing_finder]
 bundle_id = "com.apple.finder"
 title = ".*"
-width = 0.67
+width = 0.66
 
 [windows.sizing_libreoffice]
 bundle_id = "org.libreoffice.script"
 title = ".*"
 width = 0.85
-#
+
 [windows.sizing_logseq]
 bundle_id = "com.electron.logseq"
 title = ".*"
 width = 0.85
+
+[windows.sizing_notes]
+bundle_id = "com.apple.Notes"
+title = ".*"
+width = 0.66
 
 [windows.sizing_thunderbird]
 bundle_id = "org.mozilla.thunderbird"
@@ -366,3 +427,30 @@ width = 0.85
 title = ".*"
 horizontal_padding = 6
 vertical_padding = 4
+
+# Paneru saves its managed window layout and can restore it the next time
+# it starts. Restore is a startup-only phase: Paneru loads the saved session,
+# applies it after initial window discovery, keeps matching open for a short
+# grace period, then stops consulting the saved state until the next Paneru
+# process start.
+
+# Matched startup windows use the saved session before static [windows] rules.
+# That means saved layout, virtual workspace, display, and managed/floating
+# state win over configured index, floating, width, and grid rules during restore.
+# Unmatched startup windows, and all windows created after the restore grace
+# period ends, keep normal [windows] behavior.
+# [restore]
+# Enables session restore on startup.
+# Default: true
+# enabled = true
+
+# How long Paneru keeps restore matching active after startup.
+# This gives apps a chance to create windows shortly after Paneru starts.
+# Default: 2000
+# startup_grace_ms = 2000
+
+# Behavior when a saved window is not present during restore.
+# Currently only "ignore" is supported, which drops the missing window
+# and compacts the restored layout.
+# Default: "ignore"
+# missing_windows = "ignore"
