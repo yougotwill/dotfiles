@@ -1,5 +1,7 @@
-# Disable app analytics https://consoledonottrack.com/
+# Disable app analytics
 export DO_NOT_TRACK=1
+export HOMEBREW_NO_ANALYTICS=1
+export GH_TELEMETRY=false
 
 # homebrew
 CPU=$(uname -p)
@@ -18,8 +20,9 @@ else
     export EDITOR="/usr/local/bin/nvim"
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+# remove once the default
+export HOMEBREW_REQUIRE_TAP_TRUST=1
 
 # set locale and language environment
 export LC_ALL=en_US.UTF-8
