@@ -40,7 +40,7 @@ horizontal_mouse_warp = -1
 # Width of off-screen window slivers in pixels. Controls how much of an
 # off-screen window peeks from the screen edge.
 # Default: 5 pixels.
-sliver_width = 10
+# sliver_width = 7
 
 # Override the system-reported menubar height (in pixels).
 # Useful when auto-hiding the menubar or when the detected value is wrong.
@@ -62,7 +62,7 @@ sliver_width = 10
 
 # If enabled, a virtual workspace without any windows will be removed.
 # Default: false
-# reap_empty_workspaces = false
+reap_empty_workspaces = false
 
 # If enabled, Paneru will not auto-merge a newly-spawned window into a tab group
 # with an existing same-app sibling that shares its frame. Use this if you find
@@ -76,25 +76,29 @@ sliver_width = 10
 # Default: false
 # virtual_workspace_animations = false
 
+# When moving a window to another virtual workspace, insert it at the column
+# matching its current on-screen position (keeping it where you see it and
+# shifting the rest) instead of appending it to the end of the destination strip.
+# Default: false
+# insert_windows_mid_strip = true
+
 [padding]
 # Padding applied at screen edges (in pixels). Independent from the
 # between-window gaps set by per-window horizontal/vertical_padding.
 # Default: 0 on all sides.
-top = 8
-# Taskbar.app height is 32px and we want 8px vertical spacing
-# bottom = 40
-bottom = 8
-left = 16
-right = 16
+top = 6
+bottom = 6
+left = 6
+right = 6
 
 [swipe]
 # Swipe sensitivity multiplier. Lower values = less distance per finger movement.
 # Range: 0.1–2.0. Default: 0.35.
-sensitivity = 0.75
+# sensitivity = 0.75
 
 # Swipe inertia deceleration rate. Higher values = faster stop.
 # Range: 1.0–10.0. Default: 4.0.
-deceleration = 1.5
+# deceleration = 2.0
 
 # If enabled, the swipe gesture moves windows smoothly with the fingers.
 # If disabled, it snaps to windows as you swipe. Default: true.
@@ -184,10 +188,11 @@ window_swap_last = ["ctrl + alt + cmd - i"]
 window_center = ["ctrl + alt + shift - c"]
 
 # Cycles between the window sizes defined in the `preset_column_widths` option.
-window_resize = ["ctrl + alt + shift - r"]
+# Alias for window_resize.
+window_grow = ["ctrl + alt + shift - r"]
 
 # Cycles backwards through `preset_column_widths`.
-window_shrink = ["ctrl + alt + cmd - r"]
+window_shrink = ["ctrl + alt + shift - e"]
 
 # Toggle full width for the current focused window.
 window_fullwidth = ["ctrl + alt + shift - f"]
@@ -202,7 +207,7 @@ window_stack = ["ctrl + alt + shift - ["]
 window_unstack = ["ctrl + alt + shift - ]"]
 
 # Size stacked windows in the column to equal heights.
-window_equalize = ["ctrl + alt + cmd - ["]
+window_equalize = ["ctrl + alt + cmd - b"]
 
 # Moves currently focused window to the next display.
 window_nextdisplay = ["ctrl + alt + cmd - n"]
@@ -214,7 +219,10 @@ window_nextdisplaysend = ["ctrl + alt + shift - n"]
 mouse_nextdisplay = ["ctrl + alt + shift - m"]
 
 # Snap an overflowing window into the viewport.
-window_snap = ["ctrl + alt + shift - e"]
+window_snap = ["ctrl + alt + cmd - e"]
+
+# Makes all columns in the active strip the same width as the focused window.
+window_balance = ["ctrl + alt + shift - b"]
 
 # Make the floating windows layer visible on the current workspace.
 # window_raise_floating = ["ctrl + alt + shift - v"]
@@ -223,7 +231,7 @@ window_snap = ["ctrl + alt + shift - e"]
 window_togglefloatlayer = ["ctrl + alt + shift - v"]
 
 # Exit paneru
-quit = ["ctrl + alt + cmd -  q"]
+quit = ["ctrl + alt + shift - comma"]
 
 # Virtual Workspaces (experiemental)
 # Move to the previous/next virtual workspace.
@@ -231,8 +239,8 @@ window_virtual_north = ["ctrl - leftarrow"]
 window_virtual_south = ["ctrl - rightarrow"]
 
 # Move the current window to the previous/next virtual workspace.
-window_virtualmove_north = ["ctrl + alt + shift - leftarrow"]
-window_virtualmove_south = ["ctrl + alt + shift - rightarrow"]
+# window_virtualmove_north = ["ctrl + alt + shift - leftarrow"]
+# window_virtualmove_south = ["ctrl + alt + shift - rightarrow"]
 
 # Move currently focused window to the previous/next virtual workspace but stay on the current one.
 # window_virtualsend_north = ["ctrl + alt + shift - leftarrow"]
@@ -281,6 +289,40 @@ width = 3.0
 # Default: 10.0.
 radius = 10.0
 
+# Window Rules
+# (Required) Regex pattern to match the window title
+# title = ''
+
+# Optional Bundle ID to match (e.g., com.apple.Terminal).
+# bundle_id = ''
+
+# Force the window to be floating/unmanaged.
+# floating = true
+
+# Preferred position in the strip when spawned.
+# index = 0
+
+# Prevent the window from taking focus when spawned.
+# dont_focus = true 
+
+# Initial width ratio for the window. Float (0.0–1.0)
+# width = 0.5 
+
+# Placement for floating windows
+# grid = "cols:rows:x:y:w:h" 
+
+# Gaps to the left/right of this window.
+# grid = "cols:rows:x:y:w:h" 
+
+# Gaps to the left/right of this window.
+# horizontal_padding = 4
+
+# Gaps to the top/bottom of this window.
+# vertical_padding = 4
+
+# Keys that should bypass Paneru and go directly to the app.
+# bindings_passthrough = ["ctrl-h", "ctrl-l"] 
+
 # Window properties, matched by a RegExp title string.
 [windows]
 
@@ -319,51 +361,79 @@ floating = true
 # floating = true
 # grid = "6:6:1:1:4:4"
 
+# Window management
+# Some applications are not detected automatically by paneru so we need to opt-in to it being managed by it.
+[windows.manage_antinote]
+bundle_id = "com.chabomakers.Antinote"
+title = ".*"
+manage = true
+floating = true
+
+[windows.manage_bettertouchtool]
+bundle_id = "com.hegenberg.BetterTouchTool"
+# title = ".*|^$"
+title = ".*"
+manage = true
+floating = true
+
+[windows.manage_chronoid]
+bundle_id = "com.vu.Chronoid"
+title = ".*"
+manage = true
+
+[windows.manage_protonvpn]
+bundle_id = "ch.protonvpn.mac"
+title = ".*"
+manage = true
+
+[windows.manage_tailscale]
+bundle_id = "io.tailscale.ipn.macsys"
+title = ".*"
+manage = true
+
 # Window positioning
 [windows.position_zen]
 bundle_id = "app.zen-browser.zen"
 title = ".*"
 index = 0
 
-[windows.position_yubioath]
-bundle_id = "com.yubico.yubioath"
-title = "Yubico Authenticator"
-index = 101
-
 [windows.position_mailbridge]
 bundle_id = "com.protonmail.bridge"
 title = "Proton Mail Bridge"
-index = 102
+index = 0
+
+[windows.position_protonpass]
+bundle_id = "me.proton.pass.electron"
+title = "Proton Pass"
+index = 0
+
+[windows.position_yubioath]
+bundle_id = "com.yubico.yubioath"
+title = "Yubico Authenticator"
+index = 0
 
 # Window floating - Simple
-# [windows.floating_antinote]
-# bundle_id = "com.chabomakers.Antinote"
-# title = ".*"
-# floating = true
 
 # [windows.floating_bettertouchtool]
 # bundle_id = "com.hegenberg.BetterTouchTool"
-# title = ".*"
+# title = "^$|^Screenshot.*$"
 # floating = true
 
-# [windows.floating_bettertouchtool_screenshots]
-# bundle_id = "com.hegenberg.BetterTouchTool"
-# title = "^Screenshot.*$"
-# floating = true
-# [windows.floating_steam]
-# bundle_id = "com.valvesoftware.steam"
-# title = ".*"
-# floating = true
-
-# Window Floating - Advanced
-[windows.floating_libreoffice_global_dialogs_1]
-bundle_id = "org.libreoffice.script"
-title = "About LibreOffice|Customize|Document Has Been Changed by Others|Do Not Show Again\\?|Extensions|Function Wizard|Hyperlink|Information|JPG Options|LibreOffice.*Document Recovery$"
+[windows.floating_steam]
+bundle_id = "com.valvesoftware.steam"
+title = ".*"
+manage = true
 floating = true
 
-[windows.floating_libreoffice_global_dialogs_2]
-bundle_id = "org.libreoffice.script"
-title = "Options - LibreOffice.*$|New Snap Guide|Paste Special|^Paragraph Style:.*$|Position and Size|Rename Sheet|Restart LibreOffice|Save Document\\?|Select Your Preferred User Interface|Templates|Text Import -.*$|Zoom & View Layout"
+# Window Floating - Advanced
+[windows.floating_calendar]
+bundle_id = "com.apple.iCal"
+title = "General"
+floating = true
+
+[windows.floating_chronoid]
+bundle_id = "com.vu.Chronoid"
+title = "^$"
 floating = true
 
 [windows.floating_libreoffice_cell_dialogs]
@@ -371,31 +441,45 @@ bundle_id = "org.libreoffice.script"
 title = "Column Width|Delete Cells|Delete Contents|Format Cells|Insert Cells|Merge Cells|Optimal Column Width|Optimal Row Height|Row Height"
 floating = true
 
+[windows.floating_libreoffice_global_dialogs_1]
+bundle_id = "org.libreoffice.script"
+title = "About LibreOffice|Area|AutoFormat|AutoText|Confirmation|Customize|Document Converter|Document Has Been Changed by Others|Do Not Show Again\\?|Error|Extensions|Extension Update|Function Wizard|Heading Numbering|Hyperlink|Image|Information|JPG Options|LibreOffice.*Document Recovery$"
+floating = true
+
+[windows.floating_libreoffice_global_dialogs_2]
+bundle_id = "org.libreoffice.script"
+title = "Options - LibreOffice.*$|New Snap Guide|Paste Special|^Paragraph Style:.*$|PDF Options|Position and Size|Rename Sheet|Restart LibreOffice|Save Document\\?|Select Your Preferred User Interface|Signature Line|Templates|Text Import -.*$|Zoom & View Layout|Warning"
+floating = true
+
 [windows.floating_libreoffice_sidebar]
 bundle_id = "org.libreoffice.script"
-title = "Functions|Gallery|Navigator|Properties|Styles"
+title = "Accessibility Check|Animation|Find|Functions|Gallery|Manage Changes|Master Slides|Navigator|Properties|Shapes|Slide Transition|Style Inspector|Styles"
+floating = true
+
+[windows.floating_libreoffice_tables]
+bundle_id = "org.libreoffice.script"
+title = "Insert Table"
 floating = true
 
 [windows.floating_thunderbird]
 bundle_id = "org.mozilla.thunderbird"
-title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Compact folders|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Send Message Error|Text Color|Thunderbird Troubleshoot Mode"
+title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Compact folders|Confirm|Confirm Advanced Configuration|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Send Message Error|Text Color|Thunderbird Troubleshoot Mode"
+floating = true
+
+[windows.floating_whatsapp]
+bundle_id = "net.whatsapp.WhatsApp"
+title = "^.* - WhatsApp voice call$"
 floating = true
 
 # Window sizing
 [windows.sizing_calendar]
 bundle_id = "com.apple.iCal"
 title = "Calendar"
-width = 0.85
-
+width = 0.66
 [windows.sizing_finder]
 bundle_id = "com.apple.finder"
 title = ".*"
-width = 0.66
-
-[windows.sizing_libreoffice]
-bundle_id = "org.libreoffice.script"
-title = ".*"
-width = 0.85
+width = 0.5
 
 [windows.sizing_logseq]
 bundle_id = "com.electron.logseq"
@@ -404,6 +488,11 @@ width = 0.85
 
 [windows.sizing_notes]
 bundle_id = "com.apple.Notes"
+title = ".*"
+width = 0.66
+
+[windows.sizing_reminders]
+bundle_id = "com.apple.reminders"
 title = ".*"
 width = 0.66
 
@@ -426,7 +515,7 @@ width = 0.85
 # control screen edge margins independently.
 title = ".*"
 horizontal_padding = 6
-vertical_padding = 4
+vertical_padding = 6
 
 # Paneru saves its managed window layout and can restore it the next time
 # it starts. Restore is a startup-only phase: Paneru loads the saved session,
