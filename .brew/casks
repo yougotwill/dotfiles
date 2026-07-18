@@ -1,32 +1,64 @@
-cask "adobe-acrobat-reader"
-cask "nikitabobko/tap/aerospace"
+# Configure Gatekeeper, unquarantine and self-sign apps
+cask "alienator88-sentinel"
+# iOS App Store alternative
 cask "altserver"
+# Automatic tiling window manager similar to xmonad
 cask "amethyst"
+# Android SDK component
 cask "android-platform-tools"
+# Tools for building Android applications
 cask "android-studio"
+# Memory training application
 cask "anki"
+# Temporary notes with calculations and extensible features
 cask "antinote"
+# Private desktop AI chat application
+cask "anythingllm"
+# Inspect application bundles
 cask "apparency"
+# Application uninstaller
 cask "appcleaner"
+# User-friendly GUI app for Homebrew
 cask "applite"
+# Tool for digging into binary files
 cask "archaeology"
+# Display management tool
 cask "betterdisplay"
+# Tool to customise input devices and automate computer systems
 cask "bettertouchtool"
+# Open source, extensible AI agent that goes beyond code suggestions
+cask "block-goose"
+# Web browser focusing on privacy
 cask "brave-browser"
+# Native GUI for Homebrew
+cask "msitarzewski/brew-browser/brew-browser", trusted: true
+# Design and communication tool
 cask "brilliant"
+# E-books management software
 cask "calibre"
+# Image, video and clipboard optimiser
 cask "clop"
-cask "copilot-cli"
+# Tool to run Windows software
 cask "crossover"
+# Server and cloud storage browser
 cask "cyberduck"
-cask "deskflow/tap/deskflow"
+# Mouse and keyboard sharing utility
+cask "deskflow/tap/deskflow", trusted: true
+# Command-line tool to set the desktop picture
 cask "desktoppr"
+# Utilities designed to make common development tasks easier
 cask "devtoys"
+# Online diagram software
 cask "drawio"
+# API documentation viewer
 cask "dteoh-devdocs"
+# Matrix collaboration client
 cask "element"
+# Web browser
 cask "firefox"
+# Waterfall-style image viewer
 cask "flowvision"
+# Screen colour temperature controller
 cask "flux-app"
 cask "font-caladea"
 cask "font-carlito"
@@ -41,108 +73,225 @@ cask "font-open-sans"
 cask "font-raleway"
 cask "font-roboto-flex"
 cask "font-saira"
+# Font editor and converter for outline and bitmap fonts
 cask "fontforge-app"
+# Audio player
 cask "foobar2000"
+# UML/SysML modelling tool
 cask "gaphor"
+# Free and open-source image editor
 cask "gimp"
-cask "jetpackduba/apps/gitnuro"
+# FOSS multiplatform git client
+cask "jetpackduba/apps/gitnuro", trusted: true
+# Client for the Google Drive storage service
 cask "google-drive"
+# Graphically shows disk usage within a file system
 cask "grandperspective"
+# IRC client
 cask "halloy"
+# Open-source video transcoder
 cask "handbrake-app"
+# Speech to text application
 cask "handy"
+# Chromium-based web browser
 cask "helium-browser"
+# Keyboard shortcuts for every button on your screen
 cask "homerow"
+# Testing client for REST, GraphQL, and HTTP APIs
 cask "httpie-desktop"
+# Free and open-source media player
 cask "iina"
+# Tool to optimise images to a smaller size
 cask "imageoptim"
+# iPhone management application
 cask "imazing"
+# Game client for itch.io
 cask "itch"
+# Offline AI chat tool
 cask "jan"
-cask "coollabsio/jean/jean"
+# AI Assistant desktop application
+cask "coollabsio/jean/jean", trusted: true
+# Jellyfin desktop client
 cask "jellyfin-media-player"
+# Menu bar manager
 cask "jordanbaird-ice"
+# Open-source screen recorder built with web technology
 cask "kap"
+# Keyboard customiser
 cask "karabiner-elements"
+# Free and Open Source Video Editor
 cask "kdenlive"
+# Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
+# Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Find shortcuts for any installed application
 cask "keyclu"
+# GPU-based terminal emulator
 cask "kitty"
+# Tool to show what is persistently installed on the computer
 cask "knockknock"
+# Free and open-source media player
 cask "kodi"
+# Free and open-source painting and sketching program
 cask "krita"
+# Tool to manage the launchpad
 cask "launchpad-manager"
+# Wallet desktop application to maintain multiple cryptocurrencies
 cask "ledger-wallet"
+# Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# Open-source firewall to block unknown outgoing connections
 cask "lulu"
+# Lyrics for iTunes, Spotify, Vox and Audirvana Plus
 cask "lyricsx"
+# Clipboard manager
 cask "maccy"
+# Tool to create bootable USB installers
+cask "macusb"
+# Audio converter
 cask "mediahuman-audio-converter"
-cask "zackriya-solutions/meetily/meetily"
+# Visual diff and merge tool
 cask "meld"
+# Utility that automatically downloads firmwares and installers
 cask "mist"
+# Open-source DJ software
 cask "mixxx"
+# Menubar app to easily manage external drives
 cask "mountmate"
+# Music app blocker utility
 cask "music-decoy"
-cask "netnewswire"
+# Dual-pane file manager
 cask "nimble-commander"
+# Open-source software for live streaming and screen recording
 cask "obs"
-cask "barutsrb/tap/omniwm"
+# Document editor
 cask "onlyoffice"
+# Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Retro video game emulation
 cask "openemu"
+# AI usage tracker for Cursor, Claude Code, Codex, Copilot and more
+cask "openusage"
+# Share audio between two Bluetooth devices
 cask "pairpods"
+# Self-hosted daemon for AI coding agents
+cask "paseo"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
+# Colour picker for colours onscreen
 cask "pika"
+# Open Source Universal 2D Graphics Editor
 cask "pixieditor"
+# Browse, manage, inspect containers and images
 cask "podman-desktop"
+# Download manager
 cask "progressive-downloader"
+# Client for Proton Drive
 cask "proton-drive"
-cask "proton-mail"
+# Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
 cask "proton-mail-bridge"
+# Desktop client for Proton Meet
+cask "proton-meet"
+# Desktop client for Proton Pass
 cask "proton-pass"
+# VPN client focusing on security
 cask "protonvpn"
+# Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
+# Control your tools with a few keystrokes
 cask "raycast"
+# GUI for Rclone
 cask "rclone-ui"
+# Modified browser that helps in responsive web development
 cask "responsively"
+# Open source virtual/remote desktop application
 cask "rustdesk"
+# Block your own access to distracting websites
 cask "selfcontrol"
-cask "alienator88/cask/sentinel-app"
+# Onion routing based messenger
 cask "session"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
 cask "slack"
+# Displays all open files and sockets in use by all running processes
 cask "sloth"
+# Music streaming service
 cask "spotify"
+# System monitor for the menu bar
 cask "stats"
+# Video game digital distribution service
 cask "steam"
+# Open-source media center
+cask "stremio"
+# Text editor for code, markup and prose
 cask "sublime-text"
+# Kart racing game
 cask "supertuxkart"
+# Application for inspecting installer packages
 cask "suspicious-package"
+# Service that allows users to make symbolic links in the Finder
 cask "symboliclinker"
+# Quicklook extension for source files
 cask "syntax-highlight"
+# Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Windows-style taskbar as a Dock replacement
+cask "taskbar"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# Time Machine log viewer & status inspector
 cask "thetimemachinemechanic"
+# Customizable email client
 cask "thunderbird@esr"
+# Web browser focusing on security
 cask "tor-browser"
+# Open-source BitTorrent client
 cask "transmission"
+# Easy to use text extraction tool
+cask "trex"
+# Configurable document editor that supports Markdown
 cask "typora"
+# Change the default macOS application for a given URL scheme (http:, feed:, etc.).
+cask "relikd/tap/url-scheme-defaults", trusted: true
+# Custom Discord App
 cask "vesktop"
+# RSS and Atom reader
 cask "vienna"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Voice input and translation menu bar app for macOS
+cask "hehehai/tap/voxt", trusted: true
+# Binary releases of VS Code without MS branding/telemetry/licensing
+cask "vscodium"
+# Free messaging and calling application
 cask "wechat"
+# Native desktop client for WhatsApp
 cask "whatsapp"
+# View output from scripts in the menu bar
 cask "xbar"
+# Lossless audio decoder
 cask "xld"
+# Handwriting notetaking software
 cask "xournal++"
+# Comic reader
 cask "yacreader"
+# Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
+# Application for configuring any YubiKey
 cask "yubico-yubikey-manager"
+# Gecko based web browser
 cask "zen"

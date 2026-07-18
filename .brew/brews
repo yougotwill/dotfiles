@@ -1,92 +1,182 @@
+# Run your GitHub Actions locally
 brew "act"
-brew "libpng"
-brew "xz"
+# GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Library for command-line editing
 brew "readline"
+# Download with resuming and segmented downloading
 brew "aria2"
+# Library for manipulating PNG images
+brew "libpng"
+# Automatically exclude development dependencies from Time Machine backups
 brew "asimov"
+# MPEG-4 command-line tool
 brew "atomicparsley"
+# Automatic configure script builder
 brew "autoconf"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Get/set bluetooth power and discoverable state
 brew "blueutil"
+# Core application library for C
 brew "glib"
+# Vector graphics library with cross-device output support
 brew "cairo"
+# Cross-platform make
 brew "cmake"
+# Free lossless audio codec
 brew "flac"
+# GNU multiple precision arithmetic library
 brew "gmp"
-brew "unbound"
+# GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# OpenType text shaping engine
 brew "harfbuzz"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Image format providing lossless and lossy compression for web images
 brew "webp"
+# Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# Blu-Ray disc playback library for media players like VLC
 brew "libbluray"
+# NaCl networking and cryptography library
 brew "libsodium"
+# OCR (Optical Character Recognition) engine
 brew "tesseract"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Music player with an ncurses based interface
 brew "cmus"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Cryptographic recipes and primitives for Python
 brew "cryptography"
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Command-line tool for getting & setting the default browser
 brew "defaultbrowser"
+# More intuitive version of du in rust
 brew "dust"
+# Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
 brew "gawk"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Enable transparent encryption/decryption of files in a git repo
 brew "git-crypt"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Tcl/Tk UI for the git revision control system
 brew "git-gui"
+# Git extension for versioning large files
 brew "git-lfs"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Improved top (interactive process viewer)
 brew "htop"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Network authentication protocol
 brew "krb5"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Open Source Spotify client library
 brew "librespot"
+# YAML Parser
 brew "libyaml"
+# Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Mac App Store command-line interface
 brew "mas"
+# Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Media player based on MPlayer and mplayer2
 brew "mpv"
+# Cross-platform ncurses Spotify client written in Rust
 brew "ncspot"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Net top tool grouping bandwidth per process
 brew "nethogs"
-brew "opencode"
+# Open source suite of directory software
 brew "openldap"
+# OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# File browser
 brew "ranger"
+# Rsync for cloud storage
 brew "rclone"
+# Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
+# Utility that provides fast incremental file transfer
 brew "rsync"
+# Install various Ruby versions and implementations
 brew "ruby-build"
+# Autoformat shell script source code
 brew "shfmt"
+# Cross-platform application to monitor your network traffic
 brew "sniffnet"
+# Zsh prompt for Astronauts
 brew "spaceship"
+# Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
+# Open source continuous file synchronization application
 brew "syncthing"
+# Terminal multiplexer
 brew "tmux"
+# CLI tool that moves files or folder to the trash
 brew "trash", link: true
+# Maintained ctags implementation
 brew "universal-ctags"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Internet file retriever
 brew "wget"
+# Show the current WiFi network password
 brew "wifi-password"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-brew "felixkratz/formulae/borders"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# Python cleanup script for macOS
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
+# Command-line tool for cleaning up local git branches.
 brew "mcasper/formulae/git-clean"
+# BetterDisplay CLI proxy
 brew "waydabber/betterdisplay/betterdisplaycli"

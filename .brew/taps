@@ -1,17 +1,12 @@
-tap "acsandmann/tap"
-tap "alienator88/cask"
-tap "anomalyco/tap"
-tap "barutsrb/tap"
-tap "buo/cask-upgrade"
-tap "coollabsio/jean"
-tap "deskflow/tap"
-tap "dteoh/devdocs"
-tap "felixkratz/formulae"
-tap "jetpackduba/apps"
-tap "mac-cleanup/mac-cleanup-py"
-tap "mcasper/formulae"
-tap "nikitabobko/tap"
-tap "srkomodo/tap"
-tap "thefox/brewery"
-tap "waydabber/betterdisplay"
-tap "zackriya-solutions/meetily"
+tap "anomalyco/tap", trusted: true
+tap "buo/cask-upgrade", trusted: true
+tap "coollabsio/jean", trusted: { casks: ["jean"] }
+tap "deskflow/tap", trusted: { casks: ["deskflo", "deskflow"] }
+tap "dteoh/devdocs", trusted: true
+tap "hehehai/tap", trusted: { casks: ["voxt"] }
+tap "jetpackduba/apps", trusted: { casks: ["gitnuro"] }
+tap "mac-cleanup/mac-cleanup-py", trusted: true
+tap "mcasper/formulae", trusted: true
+tap "msitarzewski/brew-browser", trusted: { casks: ["brew-browser"] }
+tap "relikd/tap", trusted: { casks: ["url-scheme-defaults"] }
+tap "waydabber/betterdisplay", trusted: true
