@@ -14,27 +14,26 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-RAYCAST_WORKSPACE=$(defaults read com.raycast.macos workspace)
-
 defaults write com.raycast.macos workspace "Admin"
 
 open -a "Proton Mail Bridge"
-sleep 5
-open -a "Proton Drive"
-open -a "Yubico Authenticator"
 open -a "Proton Pass"
-sleep 5
+open -a "Yubico Authenticator"
+open -a "Proton Drive"
+
+# specific to omniwm so we open our apps on the correct workspace
+/opt/homebrew/bin/omniwmctl command switch-workspace 1
+
 open -a "Nimble Commander"
+open -a "Reminders"
+open -a "Notes"
 open -a "Calendar"
 open -a "Logseq"
-open -a "Notes"
-open -a "Reminders"
-sleep 5
-open -a "Thunderbird"
-open -a "Mail"
-# open "http://" # opens default browser
 
-# restart window manager to assign windows to correctly
-# /Users/will/bin/restart-window-manager.sh
+sleep 15
+
+open -a "Mail"
+open -a "Thunderbird"
+# open "http://" # opens default browser
 
 echo "Opened Workspace: Admin ✅"

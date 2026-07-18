@@ -14,15 +14,15 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-RAYCAST_WORKSPACE=$(defaults read com.raycast.macos workspace)
-
 defaults write com.raycast.macos workspace "Work"
-open -a "Vesktop.app"
+
 open -a "Logseq.app"
+
+# specific to omniwm so we open our apps on the correct workspace
+/opt/homebrew/bin/omniwmctl command switch-workspace 1
+
+open -a "Vesktop.app"
 open -a "Visual Studio Code.app"
 open "http://" # opens default browser
-
-# restart window manager to assign windows to correctly
-# /Users/will/bin/restart-window-manager.sh
 
 echo "Opened Workspace: Work 🧑‍💻"

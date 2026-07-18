@@ -14,15 +14,15 @@
 # @raycast.author yougotwill
 # @raycast.authorURL https://github.com/yougotwill
 
-RAYCAST_WORKSPACE=$(defaults read com.raycast.macos workspace)
-
 defaults write com.raycast.macos workspace "Notes"
-open -a "Logseq.app"
-open -a "ProNotes.app"
-open -a "Notes.app"
-open -a "Reminders.app"
 
-# restart window manager to assign windows to correctly
-# /Users/will/bin/restart-window-manager.sh
+open -a "Logseq.app"
+
+# specific to omniwm so we open our apps on the correct workspace
+/opt/homebrew/bin/omniwmctl command switch-workspace 1
+
+open -a "Reminders.app"
+open -a "Notes.app"
+open -a "ProNotes.app"
 
 echo "Opened Workspace: Notes 📒"
