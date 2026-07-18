@@ -6,12 +6,19 @@ bkp () {
   cp $1 $1.bkp
 }
 
+bupgrade () {
+  # prevents brew upgrade exiting if you want to ignore a pinned formula
+  HOMEBREW_NO_ASK=1 brew upgrade --formula --quiet
+  unset HOMEBREW_NO_ASK
+  brew cu --no-brew-update --all --yes --quiet
+}
+
 # Only works on casks
 bupgradeforce () {
   for cask in "$@"; do
-    bcu unpin "$cask" || continue
-    brew cu --no-brew-update --all --quiet --force --yes "$cask"
-    bcu pin "$cask"
+    brew cu unpin "$cask" || continue
+    brew cu --no-brew-update --all --force --yes --quiet "$cask"
+    brew cu pin "$cask"
   done
 }
 
