@@ -2,7 +2,6 @@ monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
-version = 5
 
 [appearance]
 mode = "automatic"
@@ -16,6 +15,12 @@ alpha = 1.0
 blue = 0.08231981843709946
 green = 0.5477175116539001
 red = 0.938008725643158
+
+[clipboard]
+historyEnabled = false
+maxItemBytes = 8388608
+maxItems = 200
+maxTotalBytes = 67108864
 
 [dwindle]
 defaultSplitRatio = 1.0
@@ -34,37 +39,30 @@ moveMouseToFocusedWindow = false
 size = 4.0
 
 [gaps.outer]
-bottom = 16.0
+bottom = 32.0
 left = 4.0
 right = 4.0
 top = 4.0
 
 [general]
-animationsEnabled = true
+animationsEnabled = false
 defaultLayoutType = "niri"
 hotkeysEnabled = true
 ipcEnabled = true
 preventSleepEnabled = false
-updateChecksEnabled = false
+updateChecksEnabled = true
 
 [gestures]
 fingerCount = 3
 invertDirection = true
 scrollEnabled = true
 scrollModifierKey = "optionShift"
-scrollSensitivity = 5.0
+scrollSensitivity = 1.0
 
 [mouseWarp]
 axis = "horizontal"
 margin = 1
-
-[[mouseWarp.monitorOrder]]
-displayId = 2
-name = "U28E590"
-
-[[mouseWarp.monitorOrder]]
-displayId = 1
-name = "Built-in Retina Display"
+monitorOrder = []
 
 [niri]
 alwaysCenterSingleColumn = true
@@ -89,7 +87,7 @@ widthPercent = 100.0
 
 [state]
 commandPaletteLastMode = "windows"
-hiddenBarIsCollapsed = true
+hiddenBarIsCollapsed = false
 
 [statusBar]
 showAppNames = false
@@ -125,37 +123,30 @@ green = -1.0
 red = -1.0
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.unicornsonlsd.finamp-ios"
 id = "54E109ED-68F9-431D-8CFA-19DE108A019A"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.protonmail.bridge"
 id = "F469408C-9E09-4337-BE4F-EF56A063525C"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.yubico.yubioath"
 id = "8BE1270D-2549-4B74-BED7-04387FD06D02"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "me.proton.pass.electron"
 id = "3AAD8A3F-1063-4865-811D-AFDDCC446382"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "me.jgrenier.AudioBS"
 id = "82A08E8E-D713-474F-AD5A-DFE965108134"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.apple.Safari.WebApp.7BB0474D-332F-4DC8-B3D3-58B84224B88B"
 id = "E2574C22-6557-4353-A96D-47ECEC53CBDB"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.spotify.client"
 id = "E623755C-0CF1-45F8-8DE5-68C7F2558F87"
 
@@ -164,7 +155,6 @@ bundleId = "com.aone.keka"
 id = "AAE95432-73C1-4CC1-B5C0-38F9CB85521C"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.foobar2000.mac"
 id = "AD7C16B7-1337-4A41-B7AF-106D2C4F90AF"
 
@@ -190,7 +180,6 @@ id = "B1BEDF3F-1C01-4B70-BE53-15E97D482371"
 layout = "float"
 
 [[appRules]]
-assignToWorkspace = "2"
 bundleId = "com.electron.logseq"
 id = "FAAF90F8-11FF-42FB-AA2F-21CEE6597CED"
 
@@ -214,6 +203,16 @@ layout = "float"
 [[appRules]]
 bundleId = "com.apple.PhotoBooth"
 id = "C4DBB4DB-10D5-456F-B0F1-9AAFF623B1FD"
+layout = "tile"
+
+[[appRules]]
+bundleId = "com.apple.FaceTime"
+id = "FA644223-3330-42B8-B550-E176197B55A3"
+layout = "tile"
+
+[[appRules]]
+bundleId = "com.apple.ActivityMonitor"
+id = "E03BF3B5-BE32-44D1-BDBC-3F33D72E2157"
 layout = "tile"
 
 [[hotkeys]]
@@ -609,7 +608,7 @@ name = "1"
 type = "main"
 
 [[workspaces]]
-id = "614C7163-DAE5-43CA-BC02-C2A17CDE1ED9"
+id = "0B2CFF4C-75F8-4AF3-B7F7-4132AA7CF451"
 layoutType = "niri"
 name = "2"
 
