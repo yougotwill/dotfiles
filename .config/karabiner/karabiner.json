@@ -13,6 +13,16 @@
                         "vendor_id": 4176
                     },
                     "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 32779,
+                        "vendor_id": 10730
+                    },
+                    "ignore": false
                 }
             ],
             "name": "Vanilla",
@@ -1253,6 +1263,56 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Left ctrl + hjkl to arrow keys",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "left_command + right_command + o is mission_control",
                         "manipulators": [
                             {
@@ -1754,61 +1814,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change double tap right ⇧ key to caps lock",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "right_shift pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": { "optional": [] }
-                                },
-                                "to": [{ "key_code": "caps_lock" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": { "optional": [] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "right_shift pressed",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "right_shift" }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "right_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "right_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
                                 "type": "basic"
                             }
                         ]
@@ -2965,12 +2970,16 @@
                         ]
                     },
                     {
-                        "description": "Change caps_lock key to hyper (control+option+shift). (Post escape key when pressed alone)",
+                        "description": "Change caps_lock key to hyper (control+option+shift). Hold caps_lock for caps_lock. Post escape when pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 3000,
+                                    "basic.to_if_held_down_threshold_milliseconds": 3000
                                 },
                                 "to": [
                                     {
@@ -2979,6 +2988,7 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
+                                "to_if_held_down": [{ "key_code": "caps_lock" }],
                                 "type": "basic"
                             }
                         ]
@@ -3044,7 +3054,8 @@
                         "product_id": 32779,
                         "vendor_id": 10730
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
                 },
                 {
                     "identifiers": {
