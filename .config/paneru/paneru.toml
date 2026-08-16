@@ -30,7 +30,7 @@ preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
 # and the right edge to a screen below. This allows having horizontal positioning
 # of displays while having them aligned in a virtual layout in macOS settings (-1, 1).
 # Default: Off
-horizontal_mouse_warp = -1
+horizontal_mouse_warp = 1
 
 # Height of off-screen window slivers as a ratio (0.0–1.0) of the display
 # height. Lower values hide the window's corner radius at screen edges.
@@ -40,7 +40,7 @@ horizontal_mouse_warp = -1
 # Width of off-screen window slivers in pixels. Controls how much of an
 # off-screen window peeks from the screen edge.
 # Default: 5 pixels.
-# sliver_width = 7
+sliver_width = 3
 
 # Override the system-reported menubar height (in pixels).
 # Useful when auto-hiding the menubar or when the detected value is wrong.
@@ -49,11 +49,12 @@ horizontal_mouse_warp = -1
 
 # How much of a window can be hidden before it's forced into view on focus
 # change. 0.0 = eager, 1.0 = lazy.
-# window_hidden_ratio = 0.25
+# Default: 0.0
+# window_hidden_ratio = 0.0
 
 # If disabled, window_resize and window_shrink stop at the largest/smallest
 # preset instead of cycling back.
-# window_resize_cycle = true
+window_resize_cycle = false
 
 # If enabled allows window resizing using mouse movement. For example cmd + shift
 # will allow resizing of the window when holding those keys. Proximity of the
@@ -86,8 +87,8 @@ reap_empty_workspaces = false
 # Padding applied at screen edges (in pixels). Independent from the
 # between-window gaps set by per-window horizontal/vertical_padding.
 # Default: 0 on all sides.
-top = 6
-bottom = 6
+top = 2
+bottom = 2
 left = 6
 right = 6
 
@@ -141,7 +142,7 @@ vertical = false
 # Toggles display of the currently active virtual workspace in the menubar.
 # Note: disabling menubar indicator requires a restart
 # Default: true
-workspace_menu_status = false
+# workspace_menu_status = false
 
 # Toggles display of the currently active virtual workspace in a brief status popup window.
 # Default: true
@@ -157,7 +158,7 @@ workspace_popup_status = true
 
 [bindings]
 # Switch to a previously focused window on this workspace.
-# window_focus_managed = ["ctrl + alt + shift - return"]
+window_focus_managed = ["ctrl + alt + shift - return"]
 
 # Switch to a previously focused floating window on this workspace.
 window_focus_unmanaged = ["ctrl + alt + cmd - return"]
@@ -189,16 +190,16 @@ window_center = ["ctrl + alt + shift - c"]
 
 # Cycles between the window sizes defined in the `preset_column_widths` option.
 # Alias for window_resize.
-window_grow = ["ctrl + alt + shift - r"]
+window_grow = ["ctrl + alt + shift - e"]
 
 # Cycles backwards through `preset_column_widths`.
-window_shrink = ["ctrl + alt + shift - e"]
+window_shrink = ["ctrl + alt + shift - r"]
 
 # Toggle full width for the current focused window.
 window_fullwidth = ["ctrl + alt + shift - f"]
 
 # Toggles the window for management. If unmanaged, the window will be "floating".
-window_manage = ["ctrl + alt + cmd - v"]
+window_manage = ["ctrl + alt + cmd - m"]
 
 # Stack the current window into the column on the left.
 window_stack = ["ctrl + alt + shift - ["]
@@ -225,10 +226,10 @@ window_snap = ["ctrl + alt + cmd - e"]
 window_balance = ["ctrl + alt + shift - b"]
 
 # Make the floating windows layer visible on the current workspace.
-# window_raise_floating = ["ctrl + alt + shift - v"]
+window_raise_floating = ["ctrl + alt + shift - v"]
 
 # Selectively move the floating windows in front or behind of the workspace windows.
-window_togglefloatlayer = ["ctrl + alt + shift - v"]
+window_togglefloatlayer = ["ctrl + alt + cmd - v"]
 
 # Exit paneru
 quit = ["ctrl + alt + shift - comma"]
@@ -271,7 +272,7 @@ window_virtualsendnum_4 = ["ctrl - 4"]
 [decorations.active.border]
 # Draw a border around the active (focused) window.
 # Default: false.
-# enabled = true
+enabled = true
 
 # Hex color for the active window border.
 # Default: "#FFFFFF" (white).
@@ -363,69 +364,64 @@ floating = true
 
 # Window management
 # Some applications are not detected automatically by paneru so we need to opt-in to it being managed by it.
+# When capturing windows with empty window titles, use "\A\z" for a strictly empty string and "^$" a less strict option.
 [windows.manage_antinote]
 bundle_id = "com.chabomakers.Antinote"
-title = ".*"
+title = "[\\s\\S]*"
 manage = true
 floating = true
 
 [windows.manage_bettertouchtool]
 bundle_id = "com.hegenberg.BetterTouchTool"
-# title = ".*|^$"
-title = ".*"
+title = "[\\s\\S]*|\\A\\z"
 manage = true
-floating = true
 
 [windows.manage_chronoid]
 bundle_id = "com.vu.Chronoid"
-title = ".*"
+title = "[\\s\\S]*|\\A\\z"
 manage = true
 
 [windows.manage_protonvpn]
 bundle_id = "ch.protonvpn.mac"
-title = ".*"
+title = "[\\s\\S]*"
 manage = true
+
+[windows.manage_steam]
+bundle_id = "com.valvesoftware.steam"
+title = "[\\s\\S]*"
+manage = true
+floating = true
 
 [windows.manage_tailscale]
 bundle_id = "io.tailscale.ipn.macsys"
-title = ".*"
+title = "[\\s\\S]*"
 manage = true
+floating = true
 
 # Window positioning
+[windows.position_reminders]
+bundle_id = "com.apple.reminders"
+title = ".*"
+index = 0
+
 [windows.position_zen]
 bundle_id = "app.zen-browser.zen"
 title = ".*"
 index = 0
 
-[windows.position_mailbridge]
-bundle_id = "com.protonmail.bridge"
-title = "Proton Mail Bridge"
-index = 0
+# Window floating
 
-[windows.position_protonpass]
-bundle_id = "me.proton.pass.electron"
-title = "Proton Pass"
-index = 0
-
-[windows.position_yubioath]
-bundle_id = "com.yubico.yubioath"
-title = "Yubico Authenticator"
-index = 0
-
-# Window floating - Simple
-
-# [windows.floating_bettertouchtool]
-# bundle_id = "com.hegenberg.BetterTouchTool"
-# title = "^$|^Screenshot.*$"
-# floating = true
-
-[windows.floating_steam]
-bundle_id = "com.valvesoftware.steam"
-title = ".*"
+[windows.software_updates]
+title = "^Software Update$|^Updating .*$"
 manage = true
 floating = true
+width = 0.66
 
-# Window Floating - Advanced
+[windows.floating_bettertouchtool]
+bundle_id = "com.hegenberg.BetterTouchTool"
+title = "^Screenshot.*$"
+floating = true
+
 [windows.floating_calendar]
 bundle_id = "com.apple.iCal"
 title = "General"
@@ -433,7 +429,7 @@ floating = true
 
 [windows.floating_chronoid]
 bundle_id = "com.vu.Chronoid"
-title = "^$"
+title = "\\A\\z"
 floating = true
 
 [windows.floating_libreoffice_cell_dialogs]
@@ -443,12 +439,12 @@ floating = true
 
 [windows.floating_libreoffice_global_dialogs_1]
 bundle_id = "org.libreoffice.script"
-title = "About LibreOffice|Area|AutoFormat|AutoText|Confirmation|Customize|Document Converter|Document Has Been Changed by Others|Do Not Show Again\\?|Error|Extensions|Extension Update|Function Wizard|Heading Numbering|Hyperlink|Image|Information|JPG Options|LibreOffice.*Document Recovery$"
+title = "About LibreOffice|Area|AutoFormat|AutoText|Confirmation|Customize|Document Converter|Document Has Been Changed by Others|Do Not Show Again\\?|Error|Export Text File|Extensions|Extension Update|Function Wizard|Heading Numbering|Hyperlink|Image|Information|JPG Options|LibreOffice.*Document Recovery$"
 floating = true
 
 [windows.floating_libreoffice_global_dialogs_2]
 bundle_id = "org.libreoffice.script"
-title = "Options - LibreOffice.*$|New Snap Guide|Paste Special|^Paragraph Style:.*$|PDF Options|Position and Size|Rename Sheet|Restart LibreOffice|Save Document\\?|Select Your Preferred User Interface|Signature Line|Templates|Text Import -.*$|Zoom & View Layout|Warning"
+title = "Options - LibreOffice.*$|New Snap Guide|^Opening .*$|Paste Special|^Paragraph Style:.*$|PDF Options|Position and Size|Rename Sheet|Restart LibreOffice|Save Document\\?|Select Your Preferred User Interface|Search Results|Signature Line|Templates|Text Import.*$|Zoom & View Layout|Warning"
 floating = true
 
 [windows.floating_libreoffice_sidebar]
@@ -463,12 +459,12 @@ floating = true
 
 [windows.floating_thunderbird]
 bundle_id = "org.mozilla.thunderbird"
-title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Compact folders|Confirm|Confirm Advanced Configuration|Confirm Deletion|Folder Properties|Link Properties|Save Message|Send Later|^Sending Message - .*$|Send Message Error|Text Color|Thunderbird Troubleshoot Mode"
+title = "About Mozilla Thunderbird|Activity Manager|^Are you sure.*$|Check Spelling|Choose a color|Compact folders|Confirm|Confirm Advanced Configuration|Confirm Deletion|^Login to account .*$|Save Message|Send Later|^Sending Message - .*$|Send Message Error|Subject Reminder|Text Color|Thunderbird Troubleshoot Mode|^.* Properties"
 floating = true
 
 [windows.floating_whatsapp]
 bundle_id = "net.whatsapp.WhatsApp"
-title = "^.* - WhatsApp voice call$"
+title = "^.* - WhatsApp voice call$|^Whatsapp$"
 floating = true
 
 # Window sizing
@@ -476,13 +472,14 @@ floating = true
 bundle_id = "com.apple.iCal"
 title = "Calendar"
 width = 0.66
-[windows.sizing_finder]
-bundle_id = "com.apple.finder"
-title = ".*"
-width = 0.5
 
 [windows.sizing_logseq]
-bundle_id = "com.electron.logseq"
+bundle_id = "com.logseq.logseq"
+title = ".*"
+width = 0.85
+
+[windows.sizing_logseq-og]
+bundle_id = "com.logseq.logseq-og"
 title = ".*"
 width = 0.85
 
@@ -536,7 +533,7 @@ vertical_padding = 6
 # How long Paneru keeps restore matching active after startup.
 # This gives apps a chance to create windows shortly after Paneru starts.
 # Default: 2000
-# startup_grace_ms = 2000
+startup_grace_ms = 10000
 
 # Behavior when a saved window is not present during restore.
 # Currently only "ignore" is supported, which drops the missing window

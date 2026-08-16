@@ -118,14 +118,17 @@ decrease-main:
 command1:
   mod: <NONE>
   key: <NONE>
+
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command2:
   mod: <NONE>
   key: <NONE>
+
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command3:
   mod: <NONE>
   key: <NONE>
+
 # General purpose command for custom layouts. Functionality is layout-dependent.
 command4:
   mod: <NONE>
@@ -252,13 +255,13 @@ throw-screen-5:
 
 # throw-space-1:
 throw-space-1:
-  mod: mod1
-  key: 1
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-2:
 throw-space-2:
-  mod: mod1
-  key: 2
+  mod: <NONE>
+  key: <NONE>
 
 # throw-space-3:
 throw-space-3:
@@ -343,7 +346,7 @@ select-wide-layout:
 # Select two pane layout
 select-two-pane-layout:
   mod: mod1
-  key: s
+  key: a
 
 # Select fullscreen layout
 select-fullscreen-layout:
@@ -405,7 +408,7 @@ select-grid-layout:
 # Select center focus layout
 select-center-focus-layout:
   mod: mod1
-  key: a
+  key: b
 
 select-three-pane-layout:
   mod: mod1
@@ -414,13 +417,13 @@ select-three-pane-layout:
 # NOTE: Disabled because some windows aren't detected when thrown. Using BetterTouchTool
 # Move the currently focused window to the space to the left.
 throw-space-left:
-  mod: mod1
-  key: left
+  mod: <NONE>
+  key: <NONE>
 
 # Move currently the focused window to the space to the right.
 throw-space-right:
-  mod: mod1
-  key: right
+  mod: <NONE>
+  key: <NONE>
 
 # Toggle the floating state of the currently focused window; i.e., if it was floating make it tiled and if it was tiled make it floating.
 toggle-float:

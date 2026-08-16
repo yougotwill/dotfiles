@@ -1,6 +1,6 @@
 {
     "global": {
-        "check_for_updates_on_startup": false,
+        "check_for_updates": false,
         "show_additional_menu_items": true
     },
     "profiles": [
@@ -3055,7 +3055,7 @@
                         "vendor_id": 10730
                     },
                     "ignore": false,
-                    "treat_as_built_in_keyboard": true
+                    "ignore_vendor_events": true
                 },
                 {
                     "identifiers": {
@@ -3063,7 +3063,17 @@
                         "product_id": 1031,
                         "vendor_id": 4176
                     },
+                    "ignore": false,
+                    "ignore_vendor_events": true,
                     "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 6,
+                        "vendor_id": 8352
+                    },
+                    "ignore_vendor_events": true
                 }
             ],
             "name": "Kinesis Freestyle2 MAC + Flirc USB",
