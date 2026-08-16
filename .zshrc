@@ -4,9 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# homebrew shell completion
-FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh || true
@@ -76,7 +73,6 @@ HIST_IGNORE_ALL_DUPS="true"
 zstyle ':omz:plugins:*' aliases no
 # exceptions
 # zstyle ':omz:plugins:git-commit' aliases yes
-zstyle ':omz:plugins:z' aliases yes
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -86,7 +82,7 @@ zstyle ':omz:plugins:z' aliases yes
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-interactive-cd zsh-autosuggestions fzf z git npm yarn pdm ollama)
+plugins=(zsh-interactive-cd zsh-autosuggestions fzf git npm yarn pdm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,5 +116,6 @@ if [[ -d ~/.zshrc.d/completions ]]; then
 fi 
 unset rc
 
-# activate mise version manager
+# Custom shell integrations
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh --cmd j)"
