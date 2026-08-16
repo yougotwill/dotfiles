@@ -167,6 +167,10 @@ alias pvi="pip install -r requirements.txt"
 # tmux
 alias tmuxconf='${EDITOR} ~/.tmux.conf'
 
+# updates
+alias update='bupdate && mas outdated && pnpm outdated -g && pipx list --outdated'
+alias upgrade='bupgrade && mas upgrade && pnpm upgrade -g && pipx upgrade-all'
+
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
 alias vimplugs='cd ~/.config/nvim/plugged'

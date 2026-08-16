@@ -1,12 +1,15 @@
+mas "Amazing AI", id: 1660147028
 mas "AudioBooth", id: 6753017503
 mas "Black Out", id: 1319884285
 mas "Budget Flow", id: 1640091876
+mas "Collabora Office", id: 6754639856
 mas "Color Picker", id: 1545870783
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Cumbersome", id: 6753016821
 mas "Dark Reader for Safari", id: 1438243180
 mas "Dato", id: 1470584107
+mas "DS_Store Inspector", id: 6758286374
 mas "Endemic", id: 6760927382
 mas "Folder Peek", id: 1615988943
 mas "Gapplin", id: 768053424
@@ -15,6 +18,7 @@ mas "HEIC Converter", id: 1294126402
 mas "Hush", id: 1544743900
 mas "Icon Preview", id: 6480373509
 mas "Iconology", id: 1463452867
+mas "Imago", id: 6758187147
 mas "iMovie", id: 408981434
 mas "InfoCard", id: 1110195348
 mas "JustFocus", id: 1142151959
@@ -23,16 +27,20 @@ mas "Keka", id: 470158793
 mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
 mas "ManabiReader", id: 1247286380
+mas "Menu Drop", id: 6754022187
 mas "Pages", id: 409201541
+mas "Pasteboard Viewer", id: 1499215709
 mas "Picture-In-Picture", id: 6475380719
 mas "Proton Pass for Safari", id: 6502835663
 mas "Red Lines Tools", id: 1469400117
 mas "ScrollPods", id: 6754846074
+mas "Second Clock", id: 6450279539
 mas "Sensei", id: 1495789984
 mas "Session Pal", id: 1515213004
 mas "Shareful", id: 1522267256
 mas "Shazam", id: 897118787
 mas "Signal Shifter", id: 6446061552
+mas "Simple Color Palette", id: 6744484427
 mas "Simple Comic", id: 1497435571
 mas "SomaFM", id: 449155338
 mas "Spark", id: 1176895641

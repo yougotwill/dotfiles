@@ -378,7 +378,7 @@ manage = true
 
 [windows.manage_chronoid]
 bundle_id = "com.vu.Chronoid"
-title = "[\\s\\S]*|\\A\\z"
+title = "[\\s\\S]*"
 manage = true
 
 [windows.manage_protonvpn]
