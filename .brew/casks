@@ -12,8 +12,8 @@ cask "android-studio"
 cask "anki"
 # Temporary notes with calculations and extensible features
 cask "antinote"
-# Private desktop AI chat application
-cask "anythingllm"
+# macOS GUI for anylinuxfs - mount Linux filesystems on macOS
+cask "fenio/tap/anylinuxfs-gui", trusted: true
 # Inspect application bundles
 cask "apparency"
 # Application uninstaller
@@ -24,22 +24,26 @@ cask "applite"
 cask "archaeology"
 # Display management tool
 cask "betterdisplay"
-# Tool to customise input devices and automate computer systems
-cask "bettertouchtool"
 # Open source, extensible AI agent that goes beyond code suggestions
 cask "block-goose"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Native GUI for Homebrew
 cask "msitarzewski/brew-browser/brew-browser", trusted: true
-# Design and communication tool
+# AI-native design tool
 cask "brilliant"
 # E-books management software
 cask "calibre"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Image, video and clipboard optimiser
 cask "clop"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Tool to run Windows software
 cask "crossover"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Server and cloud storage browser
 cask "cyberduck"
 # Mouse and keyboard sharing utility
@@ -147,6 +151,8 @@ cask "libreoffice"
 cask "localsend"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# Privacy-first, open-source platform for knowledge sharing and management
+cask "logseq-og"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Lyrics for iTunes, Spotify, Vox and Audirvana Plus
@@ -163,6 +169,10 @@ cask "meld"
 cask "mist"
 # Open-source DJ software
 cask "mixxx"
+# Run Stable Diffusion natively
+cask "mochi-diffusion"
+# Media streaming client for Jellyfin and Emby
+cask "moonfin"
 # Menubar app to easily manage external drives
 cask "mountmate"
 # Music app blocker utility
@@ -291,7 +301,6 @@ cask "xournal++"
 cask "yacreader"
 # Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
-# Application for configuring any YubiKey
 cask "yubico-yubikey-manager"
 # Gecko based web browser
 cask "zen"

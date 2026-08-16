@@ -8,8 +8,6 @@ brew "openssl@3"
 brew "readline"
 # Download with resuming and segmented downloading
 brew "aria2"
-# Library for manipulating PNG images
-brew "libpng"
 # Automatically exclude development dependencies from Time Machine backups
 brew "asimov"
 # MPEG-4 command-line tool
@@ -22,44 +20,36 @@ brew "libgit2"
 brew "bat"
 # Get/set bluetooth power and discoverable state
 brew "blueutil"
+# Library for manipulating PNG images
+brew "libpng"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Cross-platform make
 brew "cmake"
-# Free lossless audio codec
-brew "flac"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# OpenType text shaping engine
-brew "harfbuzz"
 # General-purpose data compression with high compression ratio
 brew "xz"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
-# Subtitle renderer for the ASS/SSA subtitle format
-brew "libass"
-# Blu-Ray disc playback library for media players like VLC
-brew "libbluray"
-# NaCl networking and cryptography library
-brew "libsodium"
-# OCR (Optical Character Recognition) engine
-brew "tesseract"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Free lossless audio codec
+brew "flac"
 # Music player with an ncurses based interface
 brew "cmus"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Cryptographic recipes and primitives for Python
 brew "cryptography"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Command-line tool for getting & setting the default browser
 brew "defaultbrowser"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # More intuitive version of du in rust
 brew "dust"
 # Perl lib for reading and writing EXIF metadata
@@ -68,8 +58,6 @@ brew "exiftool"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Play, record, convert, and stream select audio and video codecs
-brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU awk utility
@@ -86,10 +74,14 @@ brew "git-delta"
 brew "git-gui"
 # Git extension for versioning large files
 brew "git-lfs"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in select formats
@@ -102,8 +94,14 @@ brew "jq"
 brew "krb5"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Blu-Ray disc playback library for media players like VLC
+brew "libbluray"
 # Open Source Spotify client library
 brew "librespot"
+# NaCl networking and cryptography library
+brew "libsodium"
 # YAML Parser
 brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
@@ -142,6 +140,8 @@ brew "rclone"
 brew "ripgrep-all"
 # Utility that provides fast incremental file transfer
 brew "rsync"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Autoformat shell script source code
@@ -154,10 +154,14 @@ brew "spaceship"
 brew "ssh-copy-id"
 # Open source continuous file synchronization application
 brew "syncthing"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash", link: true
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Maintained ctags implementation
 brew "universal-ctags"
 # Executes a program periodically, showing output fullscreen
@@ -178,5 +182,7 @@ brew "anomalyco/tap/opencode", trusted: true
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
 # Command-line tool for cleaning up local git branches.
 brew "mcasper/formulae/git-clean"
+# Mount any linux-supported filesystem read/write using nfs and a microVM
+brew "nohajc/anylinuxfs/anylinuxfs", trusted: true
 # BetterDisplay CLI proxy
 brew "waydabber/betterdisplay/betterdisplaycli"

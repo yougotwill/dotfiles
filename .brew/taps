@@ -3,10 +3,12 @@ tap "buo/cask-upgrade", trusted: true
 tap "coollabsio/jean", trusted: { casks: ["jean"] }
 tap "deskflow/tap", trusted: { casks: ["deskflo", "deskflow"] }
 tap "dteoh/devdocs", trusted: true
+tap "fenio/tap", trusted: { casks: ["anylinuxfs-gui"] }
 tap "hehehai/tap", trusted: { casks: ["voxt"] }
 tap "jetpackduba/apps", trusted: { casks: ["gitnuro"] }
 tap "mac-cleanup/mac-cleanup-py", trusted: true
 tap "mcasper/formulae", trusted: true
 tap "msitarzewski/brew-browser", trusted: { casks: ["brew-browser"] }
+tap "nohajc/anylinuxfs", trusted: { formulae: ["anylinuxfs"] }
 tap "relikd/tap", trusted: { casks: ["url-scheme-defaults"] }
 tap "waydabber/betterdisplay", trusted: true
