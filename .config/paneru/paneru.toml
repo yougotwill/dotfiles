@@ -419,13 +419,13 @@ floating = true
 
 [windows.manage_steam]
 bundle_id = "com.valvesoftware.steam"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
 floating = true
 
 [windows.manage_steamhelper]
 bundle_id = "com.valvesoftware.steam.helper"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
 floating = true
 
