@@ -1,4 +1,3 @@
-
 #!/bin/zsh
 # Restarts any running window managers.
 # Used for global keyboard shortcuts and scripting when the wm doesn't have a reliable reset command.

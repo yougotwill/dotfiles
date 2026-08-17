@@ -2,7 +2,6 @@ tap "anomalyco/tap", trusted: true
 tap "buo/cask-upgrade", trusted: true
 tap "coollabsio/jean", trusted: { casks: ["jean"] }
 tap "deskflow/tap", trusted: { casks: ["deskflo", "deskflow"] }
-tap "dteoh/devdocs", trusted: true
 tap "fenio/tap", trusted: { casks: ["anylinuxfs-gui"] }
 tap "hehehai/tap", trusted: { casks: ["voxt"] }
 tap "jetpackduba/apps", trusted: { casks: ["gitnuro"] }

@@ -195,9 +195,17 @@
                 "title": "Reveal in VS Code",
                 "path": "/usr/bin/open",
                 "parameters": "-a Visual\\ Studio\\ Code %p",
-                "shortcut": "⌥⌘e",
+                "shortcut": "\u0000",
                 "startup": 2,
                 "uuid": "10d00643-f8bc-485c-b73e-1448e770bd6f"
+            },
+            {
+                "title": "Reveal in VSCodium",
+                "path": "/usr/bin/open",
+                "parameters": "-a VSCodium %p",
+                "shortcut": "⌥⌘e",
+                "startup": 2,
+                "uuid": "8cb9d445-9e68-44ff-a3c0-c4728daa9c63"
             }
         ]
     },
