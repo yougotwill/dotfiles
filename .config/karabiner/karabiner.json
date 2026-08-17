@@ -1837,7 +1837,7 @@
                         ]
                     },
                     {
-                        "description": "Change hyper + d to left_command + spacebar (Raycast)",
+                        "description": "Change hyper + d to left_command + spacebar (Launcher)",
                         "manipulators": [
                             {
                                 "from": {
