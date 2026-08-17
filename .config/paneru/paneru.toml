@@ -17,7 +17,7 @@ preset_column_widths = [ 0.33, 0.5, 0.66, 0.85 ]
 # E.g. a value of 20 means: move at a speed of two display sizes per second.
 # To disable animations, leave this unset or set to a very large value.
 # Default: 50
-# animation_speed = 50
+animation_speed = 50
 
 # Automatically center the focused window when switching focus with keyboard,
 # i.e. 'window_focus_west' or 'window_focus_east'.
@@ -95,15 +95,15 @@ right = 6
 [swipe]
 # Swipe sensitivity multiplier. Lower values = less distance per finger movement.
 # Range: 0.1–2.0. Default: 0.35.
-# sensitivity = 0.75
+sensitivity = 0.7
 
 # Swipe inertia deceleration rate. Higher values = faster stop.
 # Range: 1.0–10.0. Default: 4.0.
-# deceleration = 2.0
+deceleration = 2.0
 
 # If enabled, the swipe gesture moves windows smoothly with the fingers.
 # If disabled, it snaps to windows as you swipe. Default: true.
-# continuous = false
+# continuous = true
 
 [swipe.gesture]
 # How many fingers to use for moving windows left and right.
@@ -161,7 +161,7 @@ workspace_popup_status = true
 window_focus_managed = ["ctrl + alt + shift - return"]
 
 # Switch to a previously focused floating window on this workspace.
-window_focus_unmanaged = ["ctrl + alt + cmd - return"]
+window_focus_unmanaged = ["ctrl + alt + shift + cmd - return"]
 
 # Moves the focus between windows. If there are no windows when moving up or
 # down, will swtich focus to the display above or below.
@@ -172,18 +172,18 @@ window_focus_south = ["ctrl + alt + shift - j"]
 
 # Swaps windows in chosen direction. If there are no windows to swap, will
 # move the window to a display above or below.
-window_swap_west = ["ctrl + alt + cmd - h"]
-window_swap_east = ["ctrl + alt + cmd - l"]
-window_swap_north = ["ctrl + alt + cmd - k"]
-window_swap_south = ["ctrl + alt + cmd - j"]
+window_swap_west = ["ctrl + alt + shift + cmd - h"]
+window_swap_east = ["ctrl + alt + shift + cmd - l"]
+window_swap_north = ["ctrl + alt + shift + cmd - k"]
+window_swap_south = ["ctrl + alt + shift + cmd - j"]
 
 # Jump to the left-most or right-most windows.
 window_focus_first = ["ctrl + alt + shift - u"]
 window_focus_last = ["ctrl + alt + shift - i"]
 
 # Move the current window into the left-most or right-most positions.
-window_swap_first = ["ctrl + alt + cmd - u"]
-window_swap_last = ["ctrl + alt + cmd - i"]
+window_swap_first = ["ctrl + alt + shift + cmd - u"]
+window_swap_last = ["ctrl + alt + shift + cmd - i"]
 
 # Centers the current window on screen.
 window_center = ["ctrl + alt + shift - c"]
@@ -199,7 +199,7 @@ window_shrink = ["ctrl + alt + shift - r"]
 window_fullwidth = ["ctrl + alt + shift - f"]
 
 # Toggles the window for management. If unmanaged, the window will be "floating".
-window_manage = ["ctrl + alt + cmd - m"]
+window_manage = ["ctrl + alt + shift + cmd - m"]
 
 # Stack the current window into the column on the left.
 window_stack = ["ctrl + alt + shift - ["]
@@ -208,10 +208,10 @@ window_stack = ["ctrl + alt + shift - ["]
 window_unstack = ["ctrl + alt + shift - ]"]
 
 # Size stacked windows in the column to equal heights.
-window_equalize = ["ctrl + alt + cmd - b"]
+window_equalize = ["ctrl + alt + shift + cmd - b"]
 
 # Moves currently focused window to the next display.
-window_nextdisplay = ["ctrl + alt + cmd - n"]
+window_nextdisplay = ["ctrl + alt + shift + cmd - n"]
 
 # Move focused window to the next monitor but stay on current.
 window_nextdisplaysend = ["ctrl + alt + shift - n"]
@@ -220,7 +220,7 @@ window_nextdisplaysend = ["ctrl + alt + shift - n"]
 mouse_nextdisplay = ["ctrl + alt + shift - m"]
 
 # Snap an overflowing window into the viewport.
-window_snap = ["ctrl + alt + cmd - e"]
+window_snap = ["ctrl + alt + shift + cmd - e"]
 
 # Makes all columns in the active strip the same width as the focused window.
 window_balance = ["ctrl + alt + shift - b"]
@@ -229,10 +229,10 @@ window_balance = ["ctrl + alt + shift - b"]
 window_raise_floating = ["ctrl + alt + shift - v"]
 
 # Selectively move the floating windows in front or behind of the workspace windows.
-window_togglefloatlayer = ["ctrl + alt + cmd - v"]
+window_togglefloatlayer = ["ctrl + alt + shift + cmd - v"]
 
 # Exit paneru
-quit = ["ctrl + alt + shift - comma"]
+quit = ["ctrl + alt + shift + cmd - q"]
 
 # Virtual Workspaces (experiemental)
 # Move to the previous/next virtual workspace.
@@ -254,10 +254,10 @@ window_virtualnum_3 = ["ctrl + alt + shift - 3"]
 window_virtualnum_4 = ["ctrl + alt + shift - 4"]
 
 # Move currently focused window to the numbered virtual workspace and follow it.
-window_virtualmovenum_1 = ["ctrl + alt + cmd - 1"]
-window_virtualmovenum_2 = ["ctrl + alt + cmd - 2"]
-window_virtualmovenum_3 = ["ctrl + alt + cmd - 3"]
-window_virtualmovenum_4 = ["ctrl + alt + cmd - 4"]
+window_virtualmovenum_1 = ["ctrl + alt + shift + cmd - 1"]
+window_virtualmovenum_2 = ["ctrl + alt + shift + cmd - 2"]
+window_virtualmovenum_3 = ["ctrl + alt + shift + cmd - 3"]
+window_virtualmovenum_4 = ["ctrl + alt + shift + cmd - 4"]
 
 # Move currently focused window to the numbered virtual workspace but stay on the current one.
 window_virtualsendnum_1 = ["ctrl - 1"]
@@ -362,29 +362,60 @@ floating = true
 # floating = true
 # grid = "6:6:1:1:4:4"
 
+# Matches windows opened from menubar applications e.g. BetterTouchtool, Google Drive, ProtonVPN, Tailscale.
+[windows.controlcentre]
+title = "^Control Centre$"
+floating = true
+
+# Matches windows from software updating e.g. Sparkle
+[windows.software_updates]
+title = "^Software Update$|^Updating.*$"
+floating = true
+
 # Window management
 # Some applications are not detected automatically by paneru so we need to opt-in to it being managed by it.
 # When capturing windows with empty window titles, use "\A\z" for a strictly empty string and "^$" a less strict option.
+# If you want to capture all possible strings including strictly empty strings use "[\s\S]*".
+
 [windows.manage_antinote]
 bundle_id = "com.chabomakers.Antinote"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
 floating = true
 
 [windows.manage_bettertouchtool]
 bundle_id = "com.hegenberg.BetterTouchTool"
-title = "[\\s\\S]*|\\A\\z"
+title = ".*"
 manage = true
 
 [windows.manage_chronoid]
 bundle_id = "com.vu.Chronoid"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
+
+[windows.manage_googledrive]
+bundle_id = "com.google.drivefs"
+title = ".*"
+manage = true
+floating = true
+
+[windows.manage_homerow]
+bundle_id = "com.superultra.Homerow"
+title = ".*"
+manage = true
+floating = true
+
+[windows.manage_protondrive]
+bundle_id = "ch.protonmail.drive"
+title = ".*"
+manage = true
+floating = true
 
 [windows.manage_protonvpn]
 bundle_id = "ch.protonvpn.mac"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
+floating = true
 
 [windows.manage_steam]
 bundle_id = "com.valvesoftware.steam"
@@ -392,9 +423,15 @@ title = "[\\s\\S]*"
 manage = true
 floating = true
 
+[windows.manage_steamhelper]
+bundle_id = "com.valvesoftware.steam.helper"
+title = "[\\s\\S]*"
+manage = true
+floating = true
+
 [windows.manage_tailscale]
 bundle_id = "io.tailscale.ipn.macsys"
-title = "[\\s\\S]*"
+title = ".*"
 manage = true
 floating = true
 
@@ -411,15 +448,9 @@ index = 0
 
 # Window floating
 
-[windows.software_updates]
-title = "^Software Update$|^Updating .*$"
-manage = true
-floating = true
-width = 0.66
-
 [windows.floating_bettertouchtool]
 bundle_id = "com.hegenberg.BetterTouchTool"
-title = "^Screenshot.*$"
+title = "\\A\\z|^Screenshot.*$"
 floating = true
 
 [windows.floating_calendar]
@@ -471,7 +502,7 @@ floating = true
 [windows.sizing_calendar]
 bundle_id = "com.apple.iCal"
 title = "Calendar"
-width = 0.66
+width = 0.85
 
 [windows.sizing_logseq]
 bundle_id = "com.logseq.logseq"
@@ -533,7 +564,7 @@ vertical_padding = 6
 # How long Paneru keeps restore matching active after startup.
 # This gives apps a chance to create windows shortly after Paneru starts.
 # Default: 2000
-startup_grace_ms = 10000
+# startup_grace_ms = 2000
 
 # Behavior when a saved window is not present during restore.
 # Currently only "ignore" is supported, which drops the missing window
