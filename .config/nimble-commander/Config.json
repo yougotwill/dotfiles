@@ -206,6 +206,22 @@
                 "shortcut": "⌥⌘e",
                 "startup": 2,
                 "uuid": "8cb9d445-9e68-44ff-a3c0-c4728daa9c63"
+            },
+            {
+                "title": "Download (iCloud)",
+                "path": "/Users/will/bin/icloud-download.sh",
+                "parameters": "%p",
+                "shortcut": "\u0000",
+                "startup": 2,
+                "uuid": "f05098e5-0c4e-43bc-923a-f2e16152b84a"
+            },
+            {
+                "title": "Evict (iCloud)",
+                "path": "/Users/will/bin/icloud-evict.sh",
+                "parameters": "%p",
+                "shortcut": "\u0000",
+                "startup": 2,
+                "uuid": "daf4837e-3325-4458-baff-7a7f695422dc"
             }
         ]
     },
