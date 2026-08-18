@@ -1,9 +1,11 @@
 tap "anomalyco/tap", trusted: true
+tap "barutsrb/tap", "https://github.com/BarutSRB/homebrew-tap", trusted: { casks: ["omniwm"] }
 tap "buo/cask-upgrade", trusted: true
 tap "coollabsio/jean", trusted: { casks: ["jean"] }
 tap "deskflow/tap", trusted: { casks: ["deskflo", "deskflow"] }
 tap "fenio/tap", trusted: { casks: ["anylinuxfs-gui"] }
 tap "hehehai/tap", trusted: { casks: ["voxt"] }
+tap "icanhasjonas/tap", trusted: { formulae: ["icloud-tools"] }
 tap "jetpackduba/apps", trusted: { casks: ["gitnuro"] }
 tap "mac-cleanup/mac-cleanup-py", trusted: true
 tap "mcasper/formulae", trusted: true

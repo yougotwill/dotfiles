@@ -145,6 +145,8 @@ cask "krita"
 cask "launchpad-manager"
 # Wallet desktop application to maintain multiple cryptocurrencies
 cask "ledger-wallet"
+# Audible audiobook manager and liberator
+cask "libation"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Open-source cross-platform alternative to AirDrop
@@ -181,6 +183,8 @@ cask "music-decoy"
 cask "nimble-commander"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Tiling window manager for macOS with Niri-inspired column-based layout
+cask "barutsrb/tap/omniwm", trusted: true
 # Document editor
 cask "onlyoffice"
 # Verify system files structure, run miscellaneous maintenance and more

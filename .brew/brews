@@ -178,6 +178,8 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
+# CLI for managing iCloud Drive files (replacement for brctl download/evict)
+brew "icanhasjonas/tap/icloud-tools", trusted: true
 # Python cleanup script for macOS
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
 # Command-line tool for cleaning up local git branches.
