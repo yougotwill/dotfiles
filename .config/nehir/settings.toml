@@ -1,0 +1,87 @@
+
+[appearance]
+mode = "automatic"
+
+[borders]
+enabled = true
+width = 3.0
+
+[borders.color]
+alpha = 1.0
+blue = 0.08231981843709946
+green = 0.5477175116539001
+red = 0.938008725643158
+
+[focus]
+followsMouse = false
+followsWindowToMonitor = false
+moveMouseToFocusedWindow = false
+
+[gaps]
+size = 6.0
+
+[gaps.outer]
+bottom = 6.0
+left = 6.0
+right = 6.0
+top = 6.0
+
+[general]
+backgroundTraceMaxBytes = 67108864
+backgroundTraceRetentionSeconds = 0.0
+debugBarEnabled = true
+debugTraceExportCopiesFile = false
+developerModeEnabled = false
+dockShieldColorDarkHex = ""
+dockShieldColorHex = "#1F1F1F"
+dockShieldEnabled = false
+dockShieldOpacity = 1.0
+hotkeysEnabled = true
+ignoreMonitorIdentity = true
+ipcEnabled = false
+preventSleepEnabled = false
+viewportTraceVerbosity = "standard"
+
+[gestures]
+fingerCount = 3
+invertDirection = true
+overrideModifier = "option"
+scrollEnabled = true
+scrollModifierKey = "optionShift"
+scrollSensitivity = 3.5
+
+[mouseWarp]
+axis = "horizontal"
+enabled = true
+margin = 1
+monitorOrder = ["LG HDR 4K", "Built-in Retina Display"]
+
+[niri]
+balancedColumnCount = 2
+columnWidthPresets = [0.33, 0.5, 0.66, 0.85]
+infiniteLoop = false
+revealStyle = "center"
+
+[statusBar]
+showAppNames = false
+showWorkspaceName = true
+useWorkspaceId = false
+
+[workspaceBar]
+backgroundOpacity = 0.1
+deduplicateAppIcons = false
+enabled = false
+height = 24.0
+hideEmptyWorkspaces = false
+labelFontSize = 12.0
+notchAware = true
+position = "belowMenuBar"
+reserveLayoutSpace = false
+showFloatingWindows = true
+showLabels = true
+showScrollLockButton = false
+showTraceButton = false
+showWorkspacesFromOtherDisplays = false
+windowLevel = "popup"
+xOffset = 0.0
+yOffset = 0.0

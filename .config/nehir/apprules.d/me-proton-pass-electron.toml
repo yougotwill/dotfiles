@@ -1,0 +1,8 @@
+id = "978A3E24-6681-4E7A-A335-46D9274C5686"
+order = 5
+
+[match]
+bundleId = "me.proton.pass.electron"
+
+[effect]
+assignToWorkspace = "2"

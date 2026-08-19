@@ -1,0 +1,11 @@
+id = "2AEEDB87-3632-4783-8BE2-1F11A5D8B8D1"
+order = 0
+
+[match]
+bundleId = "com.hegenberg.BetterTouchTool"
+titleRegex = "^$"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+
+[effect]
+layout = "float"

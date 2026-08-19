@@ -1,0 +1,8 @@
+id = "15361B9C-BC05-458A-88E2-4DB4860ACD18"
+order = 4
+
+[match]
+bundleId = "com.yubico.yubioath"
+
+[effect]
+assignToWorkspace = "2"

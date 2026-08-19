@@ -1,0 +1,8 @@
+id = "69EA203B-D856-4833-AF65-20A7857EB059"
+order = 3
+
+[match]
+bundleId = "com.protonmail.bridge"
+
+[effect]
+assignToWorkspace = "2"
