@@ -1,11 +1,9 @@
-id = "2AEEDB87-3632-4783-8BE2-1F11A5D8B8D1"
-order = 0
+id = "A3A15B91-0D49-4143-B816-BB9B875FEB06"
+order = 5
 
 [match]
 bundleId = "com.hegenberg.BetterTouchTool"
-titleRegex = "^$"
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
+titleRegex = "^Screenshot.*$"
 
 [effect]
 layout = "float"

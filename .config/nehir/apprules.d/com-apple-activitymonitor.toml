@@ -1,5 +1,5 @@
 id = "27345EF4-339B-40F9-ABD9-44CF2268DC90"
-order = 1
+order = 0
 
 [match]
 bundleId = "com.apple.ActivityMonitor"
