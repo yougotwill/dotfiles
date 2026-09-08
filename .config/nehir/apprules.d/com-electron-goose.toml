@@ -1,0 +1,8 @@
+id = "3E4E3C76-30FE-4CA1-B987-E0F1F7B46BA9"
+order = 1
+
+[match]
+bundleId = "com.electron.goose"
+
+[effect]
+layout = "float"

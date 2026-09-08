@@ -1,15 +1,14 @@
 tap "anomalyco/tap", trusted: true
-tap "barutsrb/tap", "https://github.com/BarutSRB/homebrew-tap", trusted: { casks: ["omniwm"] }
+tap "arthur-ficial/tap", "https://github.com/Arthur-Ficial/homebrew-tap", trusted: { casks: ["apfel-chat"] }
 tap "buo/cask-upgrade", trusted: true
 tap "coollabsio/jean", trusted: { casks: ["jean"] }
 tap "deskflow/tap", trusted: { casks: ["deskflo", "deskflow"] }
 tap "fenio/tap", trusted: { casks: ["anylinuxfs-gui"] }
+tap "guria/tap", trusted: { casks: ["nehir@rc"] }
 tap "hehehai/tap", trusted: { casks: ["voxt"] }
 tap "icanhasjonas/tap", trusted: { formulae: ["icloud-tools"] }
-tap "jetpackduba/apps", trusted: { casks: ["gitnuro"] }
 tap "mac-cleanup/mac-cleanup-py", trusted: true
 tap "mcasper/formulae", trusted: true
-tap "msitarzewski/brew-browser", trusted: { casks: ["brew-browser"] }
 tap "nohajc/anylinuxfs", trusted: { formulae: ["anylinuxfs"] }
 tap "relikd/tap", trusted: { casks: ["url-scheme-defaults"] }
 tap "waydabber/betterdisplay", trusted: true

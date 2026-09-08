@@ -1,5 +1,7 @@
 # Run your GitHub Actions locally
 brew "act"
+# Apple Intelligence from the command-line, with OpenAi-compatible API server
+brew "apfel"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
 # Cryptography and SSL/TLS Toolkit
@@ -18,6 +20,8 @@ brew "autoconf"
 brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Open source, extensible AI agent that goes beyond code suggestions
+brew "block-goose-cli"
 # Get/set bluetooth power and discoverable state
 brew "blueutil"
 # Library for manipulating PNG images
@@ -183,7 +187,7 @@ brew "icanhasjonas/tap/icloud-tools", trusted: true
 # Python cleanup script for macOS
 brew "mac-cleanup/mac-cleanup-py/mac-cleanup-py"
 # Command-line tool for cleaning up local git branches.
-brew "mcasper/formulae/git-clean"
+brew "mcasper/formulae/git-clean", trusted: true
 # Mount any linux-supported filesystem read/write using nfs and a microVM
 brew "nohajc/anylinuxfs/anylinuxfs", trusted: true
 # BetterDisplay CLI proxy

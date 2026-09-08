@@ -1,9 +1,8 @@
-id = "A3A15B91-0D49-4143-B816-BB9B875FEB06"
-order = 5
+id = "3D9DF955-8335-4E01-8066-CD3ED2EDF773"
+order = 2
 
 [match]
 bundleId = "com.hegenberg.BetterTouchTool"
-titleRegex = "^Screenshot.*$"
 
 [effect]
 layout = "float"

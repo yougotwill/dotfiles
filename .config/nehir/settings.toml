@@ -38,7 +38,7 @@ dockShieldEnabled = false
 dockShieldOpacity = 1.0
 hotkeysEnabled = true
 ignoreMonitorIdentity = true
-ipcEnabled = false
+ipcEnabled = true
 preventSleepEnabled = false
 viewportTraceVerbosity = "standard"
 
@@ -68,20 +68,32 @@ showWorkspaceName = true
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.1
+backgroundOpacity = 0.5
 deduplicateAppIcons = false
 enabled = false
-height = 24.0
+height = 40.0
 hideEmptyWorkspaces = false
 labelFontSize = 12.0
-notchAware = true
+notchAware = false
 position = "belowMenuBar"
-reserveLayoutSpace = false
+reserveLayoutSpace = true
 showFloatingWindows = true
 showLabels = true
-showScrollLockButton = false
+showScrollLockButton = true
 showTraceButton = false
 showWorkspacesFromOtherDisplays = false
-windowLevel = "popup"
+windowLevel = "floating"
 xOffset = 0.0
-yOffset = 0.0
+yOffset = 2.0
+
+[workspaceBar.accentColor]
+alpha = 1.0
+blue = 0.10588235294117647
+green = 0.5098039215686274
+red = 0.9686274509803922
+
+[workspaceBar.textColor]
+alpha = 1.0
+blue = 0.7461740970611572
+green = 0.7461740970611572
+red = 0.7461740970611572

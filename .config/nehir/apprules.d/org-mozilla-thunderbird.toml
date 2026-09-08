@@ -1,0 +1,11 @@
+id = "1558D5CE-EC69-43F6-94E4-92E3B9A733A1"
+order = 6
+
+[match]
+bundleId = "org.mozilla.thunderbird"
+titleRegex = "^Send Later - .*$"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+
+[effect]
+layout = "float"

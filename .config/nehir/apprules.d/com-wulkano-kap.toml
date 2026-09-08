@@ -1,0 +1,8 @@
+id = "6AE41B69-E448-4045-9C7E-23DFB8B50DA7"
+order = 5
+
+[match]
+bundleId = "com.wulkano.kap"
+
+[effect]
+layout = "float"

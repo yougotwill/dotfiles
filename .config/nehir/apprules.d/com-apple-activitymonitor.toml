@@ -5,4 +5,4 @@ order = 0
 bundleId = "com.apple.ActivityMonitor"
 
 [effect]
-layout = "tile"
+layout = "float"

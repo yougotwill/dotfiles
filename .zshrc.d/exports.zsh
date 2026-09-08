@@ -19,10 +19,9 @@ else
     export PATH="/usr/local/opt/openssl@3/bin:$PATH"
     export EDITOR="/usr/local/bin/nvim"
 fi
+
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-# remove once the default
-export HOMEBREW_REQUIRE_TAP_TRUST=1
 
 # set locale and language environment
 export LC_ALL=en_US.UTF-8

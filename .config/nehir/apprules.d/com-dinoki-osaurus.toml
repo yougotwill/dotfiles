@@ -1,0 +1,8 @@
+id = "BEA37060-5EC6-48BC-95F8-389282FE5027"
+order = 3
+
+[match]
+bundleId = "com.dinoki.osaurus"
+
+[effect]
+layout = "float"
