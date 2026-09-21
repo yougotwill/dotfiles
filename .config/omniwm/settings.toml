@@ -66,8 +66,8 @@ fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
-overviewGestureEnabled = false
-overviewGestureFingerCount = 4
+overviewGestureEnabled = true
+overviewGestureFingerCount = 3
 scrollEnabled = true
 scrollModifierKey = "optionShift"
 scrollSensitivity = 3.0000000000000004
@@ -100,7 +100,7 @@ singleWindowFit = "container_primary_span"
 visibleContainerCount = 2
 
 [overview]
-zoom = 1.0
+zoom = 1.5
 
 [overview.backdrop]
 alpha = 1.0
@@ -112,9 +112,9 @@ red = 0.05
 
 [overview.windowBorders.hovered]
 alpha = 1.0
-blue = 1.0
-green = 0.6
-red = 0.4
+blue = 0.08231981843709946
+green = 0.5477175116539001
+red = 0.938008725643158
 
 [overview.windowBorders.normal]
 alpha = 0.5

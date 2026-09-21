@@ -3,6 +3,8 @@ order = 1
 
 [match]
 bundleId = "com.electron.goose"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
 
 [effect]
 layout = "float"

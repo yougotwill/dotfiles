@@ -3,6 +3,8 @@ order = 0
 
 [match]
 bundleId = "com.apple.ActivityMonitor"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
 
 [effect]
 layout = "float"

@@ -1,5 +1,5 @@
 id = "1558D5CE-EC69-43F6-94E4-92E3B9A733A1"
-order = 6
+order = 5
 
 [match]
 bundleId = "org.mozilla.thunderbird"
