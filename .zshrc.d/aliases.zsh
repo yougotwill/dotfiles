@@ -130,6 +130,9 @@ alias gremotesprune='git remote | grep -vE "^(origin|upstream)$" | xargs -I {} g
 alias gcleanup='git maintenance run --task=gc && git maintenance run --task=commit-graph'
 alias wt='git worktree'
 
+# jan
+alias jan-serve='jan serve --api-key $JAN_API_KEY'
+
 # karabiner
 alias keyboardconfig='${EDITOR} ~/.config/karabiner/karabiner.json'
 
@@ -169,7 +172,7 @@ alias tmuxconf='${EDITOR} ~/.tmux.conf'
 
 # updates
 alias update='bupdate && mas outdated && pnpm outdated -g && pipx list --outdated'
-alias upgrade='bupgrade && mas upgrade && pnpm upgrade -g && pipx upgrade-all'
+alias upgrade='bupgrade && mas upgrade && pnpm upgrade -g && pipx upgrade-all && spicetify upgrade'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
@@ -192,7 +195,7 @@ alias k='kitten'
 alias mpva='mpv --no-video'
 alias oc='opencode'
 alias panerulogs='co /tmp/com.github.karinushka.paneru*.log'
-alias panerutoml='${EDITOR} ~/.config/paneru/paneru.toml'
+alias panerutoml='${EDITOR} ~/.config/paneru/init.lua'
 alias screenshotlocation='defaults write com.apple.screencapture location ~/Pictures/Screenshots'
 alias spd='brews start spotifyd'
 alias spdq='brews stop spotifyd'
