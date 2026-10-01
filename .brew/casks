@@ -1,3 +1,5 @@
+# Menu bar system monitor
+cask "airstats"
 # Configure Gatekeeper, unquarantine and self-sign apps
 cask "alienator88-sentinel"
 # iOS App Store alternative
@@ -12,14 +14,12 @@ cask "android-studio"
 cask "anki"
 # Temporary notes with calculations and extensible features
 cask "antinote"
-# macOS GUI for anylinuxfs - mount Linux filesystems on macOS
+# GUI for mounting Linux filesystems
 cask "fenio/tap/anylinuxfs-gui", trusted: true
+# Super-fast on-device AI chat for macOS — powered by apfel
+cask "arthur-ficial/tap/apfel-chat", trusted: true
 # Inspect application bundles
 cask "apparency"
-# Application uninstaller
-cask "appcleaner"
-# User-friendly GUI app for Homebrew
-cask "applite"
 # Tool for digging into binary files
 cask "archaeology"
 # Display management tool
@@ -28,18 +28,22 @@ cask "betterdisplay"
 cask "block-goose"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Native GUI for Homebrew
-cask "msitarzewski/brew-browser/brew-browser", trusted: true
 # AI-native design tool
 cask "brilliant"
 # E-books management software
 cask "calibre"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Image, video and clipboard optimiser
 cask "clop"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Menu bar usage monitor for Codex and Claude
+cask "codexbar"
 # Tool to run Windows software
 cask "crossover"
 # Write, edit, and chat about your code with AI
@@ -50,8 +54,6 @@ cask "cyberduck"
 cask "deskflow/tap/deskflow", trusted: true
 # Command-line tool to set the desktop picture
 cask "desktoppr"
-# Utilities designed to make common development tasks easier
-cask "devtoys"
 # Online diagram software
 cask "drawio"
 # API documentation viewer
@@ -85,8 +87,6 @@ cask "foobar2000"
 cask "gaphor"
 # Free and open-source image editor
 cask "gimp"
-# FOSS multiplatform git client
-cask "jetpackduba/apps/gitnuro", trusted: true
 # Client for the Google Drive storage service
 cask "google-drive"
 # Graphically shows disk usage within a file system
@@ -99,6 +99,10 @@ cask "handbrake-app"
 cask "handy"
 # Chromium-based web browser
 cask "helium-browser"
+# Open-source desktop AI agent
+cask "hermes-desktop"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Keyboard shortcuts for every button on your screen
 cask "homerow"
 # Testing client for REST, GraphQL, and HTTP APIs
@@ -115,10 +119,6 @@ cask "itch"
 cask "jan"
 # AI Assistant desktop application
 cask "coollabsio/jean/jean", trusted: true
-# Jellyfin desktop client
-cask "jellyfin-media-player"
-# Menu bar manager
-cask "jordanbaird-ice"
 # Open-source screen recorder built with web technology
 cask "kap"
 # Keyboard customiser
@@ -127,12 +127,8 @@ cask "karabiner-elements"
 cask "kdenlive"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
-# Blocks all Keyboard and TouchBar input
-cask "keyboardcleantool"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Find shortcuts for any installed application
-cask "keyclu"
 # GPU-based terminal emulator
 cask "kitty"
 # Tool to show what is persistently installed on the computer
@@ -141,8 +137,6 @@ cask "knockknock"
 cask "kodi"
 # Free and open-source painting and sketching program
 cask "krita"
-# Tool to manage the launchpad
-cask "launchpad-manager"
 # Wallet desktop application to maintain multiple cryptocurrencies
 cask "ledger-wallet"
 # Audible audiobook manager and liberator
@@ -175,30 +169,28 @@ cask "mixxx"
 cask "mochi-diffusion"
 # Media streaming client for Jellyfin and Emby
 cask "moonfin"
-# Menubar app to easily manage external drives
-cask "mountmate"
 # Music app blocker utility
 cask "music-decoy"
+# Scrolling tiling window manager
+cask "guria/tap/nehir@rc", trusted: true
 # Dual-pane file manager
 cask "nimble-commander"
 # Open-source software for live streaming and screen recording
 cask "obs"
-# Tiling window manager for macOS with Niri-inspired column-based layout
-cask "barutsrb/tap/omniwm", trusted: true
+# Tiling window manager
+cask "omniwm"
 # Document editor
 cask "onlyoffice"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
 # AI coding agent desktop client
 cask "opencode-desktop"
-# Retro video game emulation
-cask "openemu"
 # AI usage tracker for Cursor, Claude Code, Codex, Copilot and more
 cask "openusage"
+# LLM server built on MLX
+cask "osaurus"
 # Share audio between two Bluetooth devices
 cask "pairpods"
-# Self-hosted daemon for AI coding agents
-cask "paseo"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # Colour picker for colours onscreen
@@ -229,8 +221,6 @@ cask "rclone-ui"
 cask "responsively"
 # Open source virtual/remote desktop application
 cask "rustdesk"
-# Block your own access to distracting websites
-cask "selfcontrol"
 # Onion routing based messenger
 cask "session"
 # Tool that provides consistent, highly configurable symbols for apps
@@ -273,8 +263,6 @@ cask "thunderbird@esr"
 cask "tor-browser"
 # Open-source BitTorrent client
 cask "transmission"
-# Easy to use text extraction tool
-cask "trex"
 # Configurable document editor that supports Markdown
 cask "typora"
 # Change the default macOS application for a given URL scheme (http:, feed:, etc.).
@@ -287,6 +275,8 @@ cask "vienna"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Voice input and translation menu bar app for macOS
 cask "hehehai/tap/voxt", trusted: true
 # Binary releases of VS Code without MS branding/telemetry/licensing
@@ -299,8 +289,6 @@ cask "whatsapp"
 cask "xbar"
 # Lossless audio decoder
 cask "xld"
-# Handwriting notetaking software
-cask "xournal++"
 # Comic reader
 cask "yacreader"
 # Full-featured companion app to the YubiKey
