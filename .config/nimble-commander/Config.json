@@ -211,7 +211,7 @@
                 "title": "Download (iCloud)",
                 "path": "/Users/will/bin/icloud-download.sh",
                 "parameters": "%p",
-                "shortcut": "\u0000",
+                "shortcut": "⇧^d",
                 "startup": 2,
                 "uuid": "f05098e5-0c4e-43bc-923a-f2e16152b84a"
             },
@@ -219,7 +219,7 @@
                 "title": "Evict (iCloud)",
                 "path": "/Users/will/bin/icloud-evict.sh",
                 "parameters": "%p",
-                "shortcut": "\u0000",
+                "shortcut": "⇧^e",
                 "startup": 2,
                 "uuid": "daf4837e-3325-4458-baff-7a7f695422dc"
             }
@@ -804,8 +804,8 @@
         "menu.edit.deselect_all": "⇧⌘a",
         "menu.view.toggle_layout_1": "⇧⌥5",
         "menu.view.toggle_layout_2": "⇧⌥6",
-        "menu.view.toggle_layout_3": "⇧⌥1",
-        "menu.view.toggle_layout_4": "⇧⌥2",
+        "menu.view.toggle_layout_3": "⇧⌥2",
+        "menu.view.toggle_layout_4": "⇧⌥1",
         "menu.view.toggle_layout_5": "⇧⌥3",
         "menu.view.toggle_layout_6": "⇧⌥4",
         "menu.view.toggle_layout_7": "",

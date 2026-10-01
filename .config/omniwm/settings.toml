@@ -2,7 +2,7 @@ monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorGapOverrides = []
 monitorOrientationOverrides = []
-schemaVersion = 3
+schemaVersion = 4
 
 [appearance]
 mode = "automatic"
@@ -10,7 +10,7 @@ tabRailAppIcons = true
 
 [borders]
 enabled = true
-width = 3.0
+width = 4.0
 
 [borders.color]
 alpha = 1.0
@@ -18,8 +18,25 @@ blue = 0.08231981843709946
 green = 0.5477175116539001
 red = 0.938008725643158
 
+[borders.gradient]
+direction = "topLeftToBottomRight"
+enabled = false
+
+[borders.gradient.end]
+alpha = 1.0
+blue = 0.7
+green = 1.0
+red = 0.0
+
+[borders.gradient.start]
+alpha = 1.0
+blue = 1.0
+green = 0.4
+red = 0.0
+
 [clipboard]
 historyEnabled = false
+ignoredTypes = []
 maxItemBytes = 8388608
 maxItems = 200
 maxTotalBytes = 67108864
@@ -36,7 +53,7 @@ useGlobalGaps = false
 crossesMonitorAtEdge = false
 followsMouse = false
 followsWindowToMonitor = false
-lockModifier = "off"
+lockModifier = "control"
 moveCrossesMonitorAtEdge = false
 moveMouseToFocusedWindow = false
 raiseOnMouseFocus = false
@@ -66,25 +83,35 @@ fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
-overviewGestureEnabled = true
-overviewGestureFingerCount = 3
+overviewGestureEnabled = false
+overviewGestureFingerCount = 4
 scrollEnabled = true
 scrollModifierKey = "optionShift"
 scrollSensitivity = 3.0000000000000004
 trackpadScrollStyle = "snap"
 windowGestureSensitivity = 1.0
-windowMoveEnabled = true
+windowMoveEnabled = false
 windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
 workspaceSwipeAxis = "vertical"
 workspaceSwipeEnabled = false
-workspaceSwipeFingerCount = 3
+workspaceSwipeFingerCount = 4
 
 [hiddenBar]
 enabled = true
 hiddenBundleIDs = []
 rehideIntervalSeconds = 5.0
+
+[monitors]
+
+[[monitors.ranking]]
+displayUUID = "5F3AF6B5-9E9C-43D4-8F9A-4BDF70B56393"
+name = "LG HDR 4K"
+
+[[monitors.ranking]]
+displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+name = "Built-in Retina Display"
 
 [mouseWarp]
 constrainToArrangement = false
@@ -95,11 +122,17 @@ margin = 1
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "onOverflow"
 containerPrimarySpanPresets = [0.33, 0.5, 0.6666666666666666, 0.85]
+edgeGaps = true
 infiniteLoop = false
+resizeStepPercent = 5
 singleWindowFit = "container_primary_span"
 visibleContainerCount = 2
 
 [overview]
+enabled = true
+invertScrollDirection = false
+matchFocusBorder = true
+mouseScrollSpeed = 1.0
 zoom = 1.5
 
 [overview.backdrop]
@@ -141,8 +174,22 @@ position = "center"
 widthPercent = 50.0
 
 [routing]
-arrangements = []
-mode = "macOS"
+mode = "custom"
+
+[[routing.arrangements]]
+id = "4714B645-6F99-46E8-B76C-304298E77BFD"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "5F3AF6B5-9E9C-43D4-8F9A-4BDF70B56393"
+monitorName = "LG HDR 4K"
+
+[[routing.arrangements.monitors]]
+gridColumn = 1
+gridRow = 0
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
 
 [scratchpads]
 
@@ -154,22 +201,24 @@ showWorkspaceName = true
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.1
+backgroundOpacity = 0.5
 deduplicateAppIcons = false
-enabled = false
+enabled = true
 excludedBundleIDs = []
-height = 24.0
-hideEmptyWorkspaces = false
-hideInNativeFullscreen = false
+height = 36.0
+hideEmptyWorkspaces = true
+hideInNativeFullscreen = true
+hoverPreviewsEnabled = true
+inactiveIconOpacity = 0.4
 notchActiveZoneWidth = 180.0
-notchMode = "moveBelowMenuBar"
-position = "belowMenuBar"
-reserveLayoutSpace = false
+notchMode = "off"
+position = "bottom"
+reserveLayoutSpace = true
 revealHoldMilliseconds = 200.0
 revealModifier = "off"
 showAccentHighlights = true
 showFloatingWindows = true
-showItemBackgrounds = true
+showItemBackgrounds = false
 showLabels = true
 solidBlackBackground = false
 systemStatsButton = true
@@ -183,13 +232,6 @@ yOffset = 0.0
 [[appRules]]
 bundleId = "com.hegenberg.BetterTouchTool"
 id = "D3E242F5-8A35-42FF-8AEB-42EFE71C9EFD"
-layout = "float"
-
-[[appRules]]
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
-bundleId = "com.vu.Chronoid"
-id = "1016626A-1761-4940-8E0E-A3B98C9ACCCE"
 layout = "float"
 
 [[appRules]]
@@ -208,12 +250,16 @@ id = "20B3107D-D1EC-45AC-89F6-B02AE5C0A7FA"
 layout = "float"
 
 [[appRules]]
+bundleId = "design.brilliant"
+id = "ED43D180-33C2-4DC8-894A-BA033DC149DD"
+layout = "float"
+
+[[appRules]]
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
-bundleId = "org.mozilla.thunderbird"
-id = "4A586BB1-5308-4CAC-B86A-059BF80C26BD"
+bundleId = "com.valvesoftware.steam"
+id = "1F88A1A1-878B-4EE1-A3CE-69DF239B3F19"
 layout = "float"
-titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
 
 [[appRules]]
 axRole = "AXWindow"
@@ -225,9 +271,10 @@ layout = "float"
 [[appRules]]
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
-bundleId = "com.valvesoftware.steam"
-id = "1F88A1A1-878B-4EE1-A3CE-69DF239B3F19"
+bundleId = "org.mozilla.thunderbird"
+id = "4A586BB1-5308-4CAC-B86A-059BF80C26BD"
 layout = "float"
+titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -646,11 +693,11 @@ binding = "Unassigned"
 id = "moveWorkspaceToMonitor.down"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+N"
 id = "moveWindowToMonitor.left"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+N"
 id = "moveWindowToMonitor.right"
 
 [[hotkeys]]
@@ -694,7 +741,7 @@ binding = "Hyper+Command+I"
 id = "moveColumnToLast"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+X"
 id = "toggleColumnTabbed"
 
 [[hotkeys]]
@@ -842,7 +889,7 @@ binding = "Hyper+F"
 id = "toggleContainerFullPrimarySpan"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+E"
 id = "expandContainerToAvailablePrimarySpan"
 
 [[hotkeys]]
@@ -942,7 +989,7 @@ binding = "Hyper+Command+V"
 id = "raiseAllFloatingWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+Z"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
@@ -956,6 +1003,14 @@ id = "closeFocusedWindow"
 [[hotkeys]]
 binding = "Hyper+Command+Quote"
 id = "openMenuAnywhere"
+
+[[hotkeys]]
+binding = "Hyper+M"
+id = "setWindowMark"
+
+[[hotkeys]]
+binding = "Hyper+Command+M"
+id = "removeWindowMark"
 
 [[hotkeys]]
 binding = "Control+Option+Command+Period"
@@ -974,7 +1029,7 @@ binding = "Hyper+Z"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
-binding = "Hyper+Command+A"
+binding = "Control+Command+Up Arrow"
 id = "toggleOverview"
 
 [[hotkeys]]
@@ -992,7 +1047,7 @@ visibleContainerCount = 1
 
 [[workspaces]]
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
-layoutType = "default"
+layoutType = "niri"
 name = "1"
 
 [workspaces.monitorAssignment]
@@ -1012,44 +1067,12 @@ layoutType = "default"
 name = "3"
 
 [workspaces.monitorAssignment]
-type = "main"
+type = "secondary"
 
 [[workspaces]]
 id = "248AA883-2261-4D45-943C-79C0E46A232B"
 layoutType = "default"
 name = "4"
-
-[workspaces.monitorAssignment]
-type = "main"
-
-[[workspaces]]
-id = "8B8C45D6-CE9E-41D9-BD50-BE4989D5E3DE"
-layoutType = "default"
-name = "5"
-
-[workspaces.monitorAssignment]
-type = "secondary"
-
-[[workspaces]]
-id = "5953F2BF-A378-4266-91B2-287174C4FA4D"
-layoutType = "default"
-name = "6"
-
-[workspaces.monitorAssignment]
-type = "secondary"
-
-[[workspaces]]
-id = "A7D5E104-6985-4516-8ED5-07F144F2A33D"
-layoutType = "default"
-name = "7"
-
-[workspaces.monitorAssignment]
-type = "secondary"
-
-[[workspaces]]
-id = "0E18F6B0-345A-4078-8B21-33641F07A861"
-layoutType = "default"
-name = "8"
 
 [workspaces.monitorAssignment]
 type = "secondary"

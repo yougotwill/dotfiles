@@ -34,6 +34,7 @@
                     {
                         "available_since": "13.6.0",
                         "description": "Mouse Keys Mode v4 (rev 3a)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -67,7 +68,7 @@
                                     "key_code": "j",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": 1280 } }],
+                                "to": [{ "mouse_key": { "y": 1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -116,7 +117,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": 1280 } }
+                                    { "mouse_key": { "y": 1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -152,7 +153,7 @@
                                     "key_code": "k",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "y": -1280 } }],
+                                "to": [{ "mouse_key": { "y": -1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -201,7 +202,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "y": -1280 } }
+                                    { "mouse_key": { "y": -1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -237,7 +238,7 @@
                                     "key_code": "h",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": -1280 } }],
+                                "to": [{ "mouse_key": { "x": -1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -286,7 +287,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": -1280 } }
+                                    { "mouse_key": { "x": -1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -322,7 +323,7 @@
                                     "key_code": "l",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "mouse_key": { "x": 1280 } }],
+                                "to": [{ "mouse_key": { "x": 1000 } }],
                                 "type": "basic"
                             },
                             {
@@ -371,7 +372,7 @@
                                             "text": "Mouse Keys Mode v4"
                                         }
                                     },
-                                    { "mouse_key": { "x": 1280 } }
+                                    { "mouse_key": { "x": 1000 } }
                                 ],
                                 "type": "basic"
                             },
@@ -1126,22 +1127,17 @@
                         ]
                     },
                     {
-                        "description": "Change spacebar if held down to left_command. (Post spacebar if pressed alone)",
+                        "description": "Change left_option + left_shift + e to left_command + left_control + spacebar (Emojis)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "e",
+                                    "modifiers": { "mandatory": ["left_option", "left_shift"] }
                                 },
-                                "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 150,
-                                    "basic.to_if_held_down_threshold_milliseconds": 100
-                                },
-                                "to_if_alone": [{ "key_code": "spacebar" }],
-                                "to_if_held_down": [
+                                "to": [
                                     {
-                                        "key_code": "left_command",
-                                        "lazy": true
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command", "left_control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -1149,12 +1145,34 @@
                         ]
                     },
                     {
-                        "description": "Change caps_lock key to hyper (control+option+shift). (Post escape key when pressed alone)",
+                        "description": "Change hyper + d to left_command + spacebar (Launcher)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "mandatory": ["left_option", "left_control", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change caps_lock key to hyper (control+option+shift). Hold caps_lock for caps_lock. Post escape when pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 5000,
+                                    "basic.to_if_held_down_threshold_milliseconds": 5000
                                 },
                                 "to": [
                                     {
@@ -1163,6 +1181,7 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
+                                "to_if_held_down": [{ "key_code": "caps_lock" }],
                                 "type": "basic"
                             }
                         ]
@@ -1249,10 +1268,18 @@
                         "product_id": 1031,
                         "vendor_id": 4176
                     },
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "manipulate_caps_lock_led": false,
                     "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": { "is_consumer": true },
+                    "ignore": true
                 }
             ],
-            "name": "Kinesis Freestyle2 MAC",
+            "name": "Custom",
+            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi",
@@ -1842,10 +1869,7 @@
                             {
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["left_option", "left_control", "left_shift"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["left_option", "left_control", "left_shift"] }
                                 },
                                 "to": [
                                     {
@@ -1861,10 +1885,7 @@
                         "description": "Change space if held down to left_command",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
+                                "from": { "key_code": "spacebar" },
                                 "parameters": {
                                     "basic.to_if_alone_timeout_milliseconds": 250,
                                     "basic.to_if_held_down_threshold_milliseconds": 250
@@ -3077,7 +3098,6 @@
                 }
             ],
             "name": "Kinesis Freestyle2 MAC + Flirc USB",
-            "selected": true,
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi",
