@@ -20,19 +20,19 @@ red = 0.938008725643158
 
 [borders.gradient]
 direction = "topLeftToBottomRight"
-enabled = false
+enabled = true
 
 [borders.gradient.end]
 alpha = 1.0
-blue = 0.7
-green = 1.0
-red = 0.0
+blue = 0.08231981843709946
+green = 0.5477175116539001
+red = 0.938008725643158
 
 [borders.gradient.start]
 alpha = 1.0
-blue = 1.0
-green = 0.4
-red = 0.0
+blue = 0.08231981843709946
+green = 0.5477175116539001
+red = 0.938008725643158
 
 [clipboard]
 historyEnabled = false
@@ -69,6 +69,7 @@ right = 2.0
 top = 0.0
 
 [general]
+animationSpeed = 1.5
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -133,7 +134,7 @@ enabled = true
 invertScrollDirection = false
 matchFocusBorder = true
 mouseScrollSpeed = 1.0
-zoom = 1.5
+zoom = 1.0
 
 [overview.backdrop]
 alpha = 1.0
@@ -197,13 +198,17 @@ monitorName = "Built-in Retina Display"
 
 [statusBar]
 showAppNames = false
+showIcon = true
 showWorkspaceName = true
 useWorkspaceId = false
 
 [workspaceBar]
+autoHide = false
+autoHideHideDelayMilliseconds = 0.0
+autoHideRevealDelayMilliseconds = 0.0
 backgroundOpacity = 0.5
 deduplicateAppIcons = false
-enabled = true
+enabled = false
 excludedBundleIDs = []
 height = 36.0
 hideEmptyWorkspaces = true
@@ -212,6 +217,8 @@ hoverPreviewsEnabled = true
 inactiveIconOpacity = 0.4
 notchActiveZoneWidth = 180.0
 notchMode = "off"
+notificationBadgeRefreshIntervalSeconds = 5.0
+notificationBadges = "off"
 position = "bottom"
 reserveLayoutSpace = true
 revealHoldMilliseconds = 200.0
@@ -228,6 +235,7 @@ xOffset = 0.0
 yOffset = 0.0
 
 [workspaceBar.iconOverrides]
+"com.valvesoftware.steam.helper" = "/Applications/Steam.app/Contents/Resources/Steam.icns"
 
 [[appRules]]
 bundleId = "com.hegenberg.BetterTouchTool"
@@ -985,8 +993,12 @@ binding = "Hyper+S"
 id = "openCommandPalette"
 
 [[hotkeys]]
-binding = "Hyper+Command+V"
+binding = "Unassigned"
 id = "raiseAllFloatingWindows"
+
+[[hotkeys]]
+binding = "Hyper+Command+V"
+id = "toggleFloatingFocus"
 
 [[hotkeys]]
 binding = "Hyper+Command+Z"
@@ -1025,7 +1037,7 @@ binding = "Unassigned"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
-binding = "Hyper+Z"
+binding = "Hyper+X"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
@@ -1055,7 +1067,7 @@ type = "main"
 
 [[workspaces]]
 id = "454CECD4-5E9D-4ED1-95D7-979D48817F5F"
-layoutType = "default"
+layoutType = "niri"
 name = "2"
 
 [workspaces.monitorAssignment]
@@ -1071,7 +1083,7 @@ type = "secondary"
 
 [[workspaces]]
 id = "248AA883-2261-4D45-943C-79C0E46A232B"
-layoutType = "default"
+layoutType = "niri"
 name = "4"
 
 [workspaces.monitorAssignment]

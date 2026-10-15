@@ -34,6 +34,8 @@ cask "brilliant"
 cask "calibre"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Automatic time tracker and productivity insights app
+cask "chronoid"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -42,7 +44,7 @@ cask "claude-code"
 cask "clop"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# Menu bar usage monitor for Codex and Claude
+# Menu bar app for tracking agentic coding limits and usage
 cask "codexbar"
 # Tool to run Windows software
 cask "crossover"
@@ -50,6 +52,8 @@ cask "crossover"
 cask "cursor"
 # Server and cloud storage browser
 cask "cyberduck"
+# Presentation editor
+cask "deckcraft"
 # Mouse and keyboard sharing utility
 cask "deskflow/tap/deskflow", trusted: true
 # Command-line tool to set the desktop picture
@@ -60,6 +64,8 @@ cask "drawio"
 cask "dteoh-devdocs"
 # Matrix collaboration client
 cask "element"
+# Video editor
+cask "filmcraft"
 # Web browser
 cask "firefox"
 # Waterfall-style image viewer
@@ -91,6 +97,8 @@ cask "gimp"
 cask "google-drive"
 # Graphically shows disk usage within a file system
 cask "grandperspective"
+# Spreadsheet editor
+cask "gridcraft"
 # IRC client
 cask "halloy"
 # Open-source video transcoder
@@ -123,8 +131,8 @@ cask "coollabsio/jean/jean", trusted: true
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
-# Free and Open Source Video Editor
-cask "kdenlive"
+# Tool to prevent the system from going into sleep mode
+cask "keepingyouawake"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
 # Open-source keystroke visualiser
@@ -155,6 +163,8 @@ cask "lulu"
 cask "lyricsx"
 # Clipboard manager
 cask "maccy"
+# Screenshot and screen recording tool
+cask "macshot"
 # Tool to create bootable USB installers
 cask "macusb"
 # Audio converter
@@ -191,12 +201,14 @@ cask "openusage"
 cask "osaurus"
 # Share audio between two Bluetooth devices
 cask "pairpods"
+# PDF editor
+cask "pdfcraft"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
+# Image editor
+cask "photocraft"
 # Colour picker for colours onscreen
 cask "pika"
-# Open Source Universal 2D Graphics Editor
-cask "pixieditor"
 # Browse, manage, inspect containers and images
 cask "podman-desktop"
 # Download manager
@@ -231,6 +243,10 @@ cask "signal"
 cask "slack"
 # Displays all open files and sockets in use by all running processes
 cask "sloth"
+# Digital audio workstation
+cask "soundcraft"
+# Native Spotify client
+cask "crmne/tap/spotifast", trusted: true
 # Music streaming service
 cask "spotify"
 # System monitor for the menu bar
@@ -267,6 +283,8 @@ cask "transmission"
 cask "typora"
 # Change the default macOS application for a given URL scheme (http:, feed:, etc.).
 cask "relikd/tap/url-scheme-defaults", trusted: true
+# Vector editor
+cask "vectorcraft"
 # Custom Discord App
 cask "vesktop"
 # RSS and Atom reader
@@ -285,6 +303,8 @@ cask "vscodium"
 cask "wechat"
 # Native desktop client for WhatsApp
 cask "whatsapp"
+# Word processor
+cask "wordcraft"
 # View output from scripts in the menu bar
 cask "xbar"
 # Lossless audio decoder

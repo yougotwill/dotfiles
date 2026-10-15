@@ -66,7 +66,7 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 737
+                                "width": 808
                             }
                         ],
                         "icon_scale": 1
@@ -78,15 +78,15 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 486
+                                "width": 503
                             },
                             {
                                 "kind": 2,
                                 "width": 90
                             },
                             {
-                                "kind": 4,
-                                "width": 136
+                                "kind": 5,
+                                "width": 151
                             },
                             {
                                 "kind": 8,
@@ -102,7 +102,7 @@
                         "columns": [
                             {
                                 "kind": 1,
-                                "width": 351
+                                "width": 277
                             },
                             {
                                 "kind": 7,
