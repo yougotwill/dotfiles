@@ -180,8 +180,8 @@ brew "zoxide"
 brew "zsh"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # CLI for managing iCloud Drive files (replacement for brctl download/evict)
 brew "icanhasjonas/tap/icloud-tools", trusted: true
 # Python cleanup script for macOS

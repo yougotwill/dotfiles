@@ -243,6 +243,13 @@ id = "D3E242F5-8A35-42FF-8AEB-42EFE71C9EFD"
 layout = "float"
 
 [[appRules]]
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.hegenberg.BetterTouchTool"
+id = "73BF69FF-E53C-445A-8CA4-08D288DB09FD"
+layout = "float"
+
+[[appRules]]
 bundleId = "com.dinoki.osaurus"
 id = "CE57D5A5-16CA-4AEF-AD34-E23AB6B740A2"
 layout = "float"
@@ -283,6 +290,22 @@ bundleId = "org.mozilla.thunderbird"
 id = "4A586BB1-5308-4CAC-B86A-059BF80C26BD"
 layout = "float"
 titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
+
+[[appRules]]
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.vu.Chronoid"
+id = "8BD92E5B-5C37-4339-A14F-3427953E8445"
+layout = "float"
+titleRegex = "^Timer$"
+
+[[appRules]]
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.vu.Chronoid"
+id = "232BE8EA-0950-448A-98F8-82C5F9399423"
+layout = "tile"
+titleRegex = "^Stats$|^Activity Report$|^AI Assistant$|^Today$"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -509,7 +532,7 @@ binding = "Unassigned"
 id = "moveToWorkspaceSlot.9"
 
 [[hotkeys]]
-binding = "Control+Option+Command+Return"
+binding = "Control+Option+Command+Tab"
 id = "workspaceBackAndForth"
 
 [[hotkeys]]
@@ -537,7 +560,7 @@ binding = "Hyper+L"
 id = "focus.right"
 
 [[hotkeys]]
-binding = "Hyper+Return"
+binding = "Hyper+Tab"
 id = "focusPrevious"
 
 [[hotkeys]]
@@ -905,11 +928,11 @@ binding = "Unassigned"
 id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Minus"
 id = "setContainerPrimarySpan.decrease10Percent"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Equal"
 id = "setContainerPrimarySpan.increase10Percent"
 
 [[hotkeys]]
@@ -961,11 +984,11 @@ binding = "Unassigned"
 id = "resizeShrink.vertical"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+Equal"
 id = "resizeFocusedWindow.grow"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+Minus"
 id = "resizeFocusedWindow.shrink"
 
 [[hotkeys]]

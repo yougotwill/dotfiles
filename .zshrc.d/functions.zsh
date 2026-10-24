@@ -13,8 +13,8 @@ bupgrade () {
   brew cu --no-brew-update --all --yes --quiet
 }
 
-# Only works on casks
-bupgradeforce () {
+# Only works on homebrew casks
+upgradef () {
   for cask in "$@"; do
     brew cu unpin "$cask" || continue
     brew cu --no-brew-update --all --force --yes --quiet "$cask"

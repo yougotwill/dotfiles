@@ -222,6 +222,14 @@
                 "shortcut": "⇧^e",
                 "startup": 2,
                 "uuid": "daf4837e-3325-4458-baff-7a7f695422dc"
+            },
+            {
+                "title": "Unquarantine",
+                "path": "/usr/bin/xattr",
+                "parameters": " -r -d com.apple.quarantine %p",
+                "shortcut": "\u0000",
+                "startup": 2,
+                "uuid": "5ced3fa2-d961-4baa-beeb-521db99f2a0e"
             }
         ]
     },

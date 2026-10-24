@@ -30,7 +30,6 @@ alias bupdate='brew update --quiet && brew outdated --formula && brew outdated -
 alias bu='bupdate'
 alias bupgradefonts='brew list --cask | grep font- | xargs brew upgrade --fetch-HEAD --greedy --quiet'
 alias bup='bupgrade'
-alias bupf='bupgradeforce'
 alias bcup='brew cu --no-brew-update --all --yes --quiet'
 alias bclean='brew cleanup && brew autoremove'
 alias bcpin='brew cu pin'
@@ -173,6 +172,7 @@ alias tmuxconf='${EDITOR} ~/.tmux.conf'
 # updates
 alias update='bupdate && mas outdated && pnpm outdated -g && pipx list --outdated'
 alias upgrade='bupgrade && mas upgrade && pnpm upgrade -g && pipx upgrade-all && spicetify upgrade'
+alias clean='bclean'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'
