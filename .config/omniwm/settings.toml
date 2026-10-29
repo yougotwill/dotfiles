@@ -295,17 +295,24 @@ titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
 bundleId = "com.vu.Chronoid"
-id = "8BD92E5B-5C37-4339-A14F-3427953E8445"
-layout = "float"
-titleRegex = "^Timer$"
+id = "232BE8EA-0950-448A-98F8-82C5F9399423"
+layout = "tile"
+titleRegex = "^Stats$|^Activity Report$|^AI Assistant$|^Today$"
 
 [[appRules]]
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
 bundleId = "com.vu.Chronoid"
-id = "232BE8EA-0950-448A-98F8-82C5F9399423"
-layout = "tile"
-titleRegex = "^Stats$|^Activity Report$|^AI Assistant$|^Today$"
+id = "8BD92E5B-5C37-4339-A14F-3427953E8445"
+layout = "float"
+titleRegex = "^Timer$"
+
+[[appRules]]
+assignToWorkspace = "3"
+axRole = "AXWindow"
+axSubrole = "AXStandardWindow"
+bundleId = "com.spotify.client"
+id = "8E2119D6-E29B-46A7-B29B-3E1815387797"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -532,7 +539,7 @@ binding = "Unassigned"
 id = "moveToWorkspaceSlot.9"
 
 [[hotkeys]]
-binding = "Control+Option+Command+Tab"
+binding = "Hyper+Command+Return"
 id = "workspaceBackAndForth"
 
 [[hotkeys]]
@@ -560,7 +567,7 @@ binding = "Hyper+L"
 id = "focus.right"
 
 [[hotkeys]]
-binding = "Hyper+Tab"
+binding = "Hyper+Return"
 id = "focusPrevious"
 
 [[hotkeys]]
