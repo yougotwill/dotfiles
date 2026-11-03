@@ -23,9 +23,9 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
-# set locale and language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# set locale and language environment. Only needed in very specific cases
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # bettertouchtool
 export PATH="/Applications/BetterTouchTool.app/Contents/SharedSupport/bin:$PATH"
