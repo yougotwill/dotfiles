@@ -1,8 +1,4 @@
-monitorBarOverrides = []
-monitorDwindleOverrides = []
-monitorGapOverrides = []
-monitorOrientationOverrides = []
-schemaVersion = 4
+schemaVersion = 5
 
 [appearance]
 mode = "automatic"
@@ -51,7 +47,9 @@ useGlobalGaps = false
 
 [focus]
 crossesMonitorAtEdge = false
+edgeNavigationInterval = 1.5
 followsMouse = false
+followsMouseOnlyFullyVisible = false
 followsWindowToMonitor = false
 lockModifier = "control"
 moveCrossesMonitorAtEdge = false
@@ -63,29 +61,34 @@ fullscreenUsesOuterGaps = true
 size = 12.0
 
 [gaps.outer]
-bottom = 0.0
-left = 2.0
-right = 2.0
-top = 0.0
+bottom = 4.0
+left = 6.0
+right = 6.0
+top = 34.0
 
 [general]
-animationSpeed = 1.5
+animationSpeed = 0.5
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift"
 ipcEnabled = true
-preventSleepEnabled = false
+preventSleepEnabled = true
 systemHyperTrigger = "None"
 updateChecksEnabled = false
+workspaceAutoBackAndForth = true
 
 [gestures]
+adoptNativeMoveAcrossDisplays = false
+adoptNativeResize = false
+dwindleGroupDragAcrossDisplays = "group"
 fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
 overviewGestureEnabled = false
 overviewGestureFingerCount = 4
+resizePreviewStyle = "live"
 scrollEnabled = true
 scrollModifierKey = "optionShift"
 scrollSensitivity = 3.0000000000000004
@@ -96,13 +99,27 @@ windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
 workspaceSwipeAxis = "vertical"
+workspaceSwipeEdgeBehavior = "cycle"
 workspaceSwipeEnabled = false
 workspaceSwipeFingerCount = 4
 
 [hiddenBar]
 enabled = true
-hiddenBundleIDs = []
+hiddenBundleIDs = ["eu.punke.AirPods-Sanity", "com.anylinuxfs.gui", "com.chabomakers.Antinote", "org.herf.Flux", "org.fedoraproject.MediaWriter", "com.electron.goose", "com.superultra.Homerow", "jan.ai.app", "org.pqrs.Karabiner-Console-User-Server", "org.localsend.localsendApp", "com.dexterleng.ProNotes", "me.proton.pass.electron", "com.codeweavers.CrossOverHelper.4DB4563826BAD0EB2F60EE6E42D0EA4B.D7B460B2ACE2473B3D92C221DB864590", "com.westbridge.stremio5-mac", "com.fpfxtknjju.wbgcdolfev", "com.utmapp.UTM", "com.yubico.yubioath"]
 rehideIntervalSeconds = 5.0
+
+[island]
+enabled = false
+
+[keyboardModes]
+
+[launcher]
+appFolders = []
+cliFolders = []
+entries = []
+shell = "system"
+shellExecutable = ""
+terminal = "terminal"
 
 [monitors]
 
@@ -120,11 +137,14 @@ enabled = true
 margin = 1
 
 [niri]
+allowOverscroll = true
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "onOverflow"
 containerPrimarySpanPresets = [0.33, 0.5, 0.6666666666666666, 0.85]
 edgeGaps = true
 infiniteLoop = false
+moveWindowStacksIntoColumn = true
+overscrollVisibleStripPercent = 5
 resizeStepPercent = 5
 singleWindowFit = "container_primary_span"
 visibleContainerCount = 2
@@ -167,12 +187,22 @@ animationDuration = 0.2
 autoHide = false
 backgroundBlurRadius = 0
 backgroundEffect = "standardBlur"
-enabled = false
+enabled = true
 heightPercent = 50.0
 monitorMode = "focusedWindow"
 opacity = 1.0
 position = "center"
+provider = "kitty"
 widthPercent = 50.0
+
+[quakeTerminal.kitty]
+autoHide = false
+opacity = 0.85
+
+[quakeTerminal.kitty.placement]
+heightPercent = 100.0
+position = "top"
+widthPercent = 100.0
 
 [routing]
 mode = "custom"
@@ -196,11 +226,26 @@ monitorName = "Built-in Retina Display"
 
 [scratchpads.labels]
 
+[shellPermissions]
+programs = []
+widgets = []
+
+[shellPermissions.services]
+lyrics = true
+weather = true
+
 [statusBar]
 showAppNames = false
 showIcon = true
-showWorkspaceName = true
+showWorkspaceName = false
 useWorkspaceId = false
+
+[windowSwitcher]
+commandTab = "activeWorkspace"
+enabled = false
+optionTab = "allWorkspaces"
+scope = "allWorkspaces"
+showFooter = true
 
 [workspaceBar]
 autoHide = false
@@ -208,8 +253,10 @@ autoHideHideDelayMilliseconds = 0.0
 autoHideRevealDelayMilliseconds = 0.0
 backgroundOpacity = 0.5
 deduplicateAppIcons = false
-enabled = false
+enabled = true
 excludedBundleIDs = []
+fullWidth = false
+fullWidthNotchMode = "rightOfNotch"
 height = 36.0
 hideEmptyWorkspaces = true
 hideInNativeFullscreen = true
@@ -290,22 +337,6 @@ bundleId = "org.mozilla.thunderbird"
 id = "4A586BB1-5308-4CAC-B86A-059BF80C26BD"
 layout = "float"
 titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
-
-[[appRules]]
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
-bundleId = "com.vu.Chronoid"
-id = "232BE8EA-0950-448A-98F8-82C5F9399423"
-layout = "tile"
-titleRegex = "^Stats$|^Activity Report$|^AI Assistant$|^Today$"
-
-[[appRules]]
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
-bundleId = "com.vu.Chronoid"
-id = "8BD92E5B-5C37-4339-A14F-3427953E8445"
-layout = "float"
-titleRegex = "^Timer$"
 
 [[appRules]]
 assignToWorkspace = "3"
@@ -936,27 +967,27 @@ id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
 binding = "Hyper+Minus"
-id = "setContainerPrimarySpan.decrease10Percent"
+id = "resizeContainerPrimarySpan.shrink"
 
 [[hotkeys]]
 binding = "Hyper+Equal"
-id = "setContainerPrimarySpan.increase10Percent"
+id = "resizeContainerPrimarySpan.grow"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowPrimarySpan.decrease10Percent"
+id = "resizeWindowPrimarySpan.shrink"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowPrimarySpan.increase10Percent"
+id = "resizeWindowPrimarySpan.grow"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowSecondarySpan.decrease10Percent"
+id = "resizeWindowSecondarySpan.shrink"
 
 [[hotkeys]]
 binding = "Unassigned"
-id = "setWindowSecondarySpan.increase10Percent"
+id = "resizeWindowSecondarySpan.grow"
 
 [[hotkeys]]
 binding = "Hyper+B"
@@ -1019,8 +1050,72 @@ binding = "Unassigned"
 id = "preselectClear"
 
 [[hotkeys]]
+binding = "Unassigned"
+id = "volumeUp"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "volumeDown"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "volumeMute"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "mediaPlayPause"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "mediaNext"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "mediaPrevious"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShortcutPause"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "beginPrefix"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleWindowMode"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "exitKeyboardMode"
+
+[[hotkeys]]
 binding = "Hyper+S"
 id = "openCommandPalette"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.windows"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.menu"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.clipboard"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.commands"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.applications"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openCommandPalette.files"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -1063,7 +1158,7 @@ binding = "Unassigned"
 id = "toggleHiddenBarPanel"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+T"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
@@ -1077,6 +1172,30 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.hidden-bar"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.lake"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.media"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.system-stats"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.weather"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleShellWidget.workspaces"
 
 [[monitorNiriOverrides]]
 alwaysCenterSingleColumn = false
@@ -1105,7 +1224,7 @@ type = "main"
 
 [[workspaces]]
 id = "BEB842B5-E894-4791-9FD1-397C3CDD3538"
-layoutType = "default"
+layoutType = "niri"
 name = "3"
 
 [workspaces.monitorAssignment]
