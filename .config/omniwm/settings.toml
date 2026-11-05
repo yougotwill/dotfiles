@@ -43,7 +43,7 @@ moveToRootStable = true
 singleWindowFit = "fill"
 smartSplit = false
 splitWidthMultiplier = 1.0
-useGlobalGaps = false
+useGlobalGaps = true
 
 [focus]
 crossesMonitorAtEdge = false
@@ -76,7 +76,7 @@ ipcEnabled = true
 preventSleepEnabled = true
 systemHyperTrigger = "None"
 updateChecksEnabled = false
-workspaceAutoBackAndForth = true
+workspaceAutoBackAndForth = false
 
 [gestures]
 adoptNativeMoveAcrossDisplays = false
@@ -86,6 +86,7 @@ fingerCount = 3
 invertDirection = true
 mouseMoveModifierKey = "option"
 mouseResizeModifierKey = "option"
+mouseWheelSensitivity = 1.0
 overviewGestureEnabled = false
 overviewGestureFingerCount = 4
 resizePreviewStyle = "live"
@@ -119,7 +120,7 @@ cliFolders = []
 entries = []
 shell = "system"
 shellExecutable = ""
-terminal = "terminal"
+terminal = "kitty"
 
 [monitors]
 
@@ -240,10 +241,18 @@ showIcon = true
 showWorkspaceName = false
 useWorkspaceId = false
 
+[statusMenu]
+hiddenControls = []
+hiddenMenuItems = []
+showControlHelp = true
+showControls = true
+showMenuItems = true
+
 [windowSwitcher]
 commandTab = "activeWorkspace"
 enabled = false
 optionTab = "allWorkspaces"
+order = "omniLayout"
 scope = "allWorkspaces"
 showFooter = true
 
@@ -285,16 +294,22 @@ yOffset = 0.0
 "com.valvesoftware.steam.helper" = "/Applications/Steam.app/Contents/Resources/Steam.icns"
 
 [[appRules]]
-bundleId = "com.hegenberg.BetterTouchTool"
-id = "D3E242F5-8A35-42FF-8AEB-42EFE71C9EFD"
+bundleId = ""
+id = "66B37B56-BC6C-4702-A65C-51791EEE3786"
 layout = "float"
+titleRegex = "Picture.*(in)?.*[Pp]icture"
 
 [[appRules]]
+assignToWorkspace = "3"
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
-bundleId = "com.hegenberg.BetterTouchTool"
-id = "73BF69FF-E53C-445A-8CA4-08D288DB09FD"
-layout = "float"
+bundleId = "com.spotify.client"
+id = "8E2119D6-E29B-46A7-B29B-3E1815387797"
+
+[[appRules]]
+assignToWorkspace = "3"
+bundleId = "com.foobar2000.mac"
+id = "E1CC8754-2F55-4CBA-BB4C-7AC40247C62E"
 
 [[appRules]]
 bundleId = "com.dinoki.osaurus"
@@ -339,11 +354,11 @@ layout = "float"
 titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
 
 [[appRules]]
-assignToWorkspace = "3"
 axRole = "AXWindow"
 axSubrole = "AXStandardWindow"
-bundleId = "com.spotify.client"
-id = "8E2119D6-E29B-46A7-B29B-3E1815387797"
+bundleId = "com.vu.Chronoid"
+id = "E66727A7-4590-4B69-91B7-77CC3D3BCCA8"
+layout = "tile"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -1088,6 +1103,14 @@ id = "toggleWindowMode"
 [[hotkeys]]
 binding = "Unassigned"
 id = "exitKeyboardMode"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "openShellApp.example"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "newShellAppWindow.example"
 
 [[hotkeys]]
 binding = "Hyper+S"

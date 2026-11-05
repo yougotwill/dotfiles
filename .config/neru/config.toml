@@ -1,0 +1,574 @@
+#:schema https://raw.githubusercontent.com/y3owk1n/neru/v1.61.0/schemas/config.schema.json
+# Neru default configuration
+# Copy to ~/.config/neru/config.toml to customize.
+
+# Full config reference: https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md
+# Full CLI reference: https://github.com/y3owk1n/neru/blob/main/docs/reference/cli.md
+
+# font_family takes an installed family name or a generic alias:
+# https://github.com/y3owk1n/neru/blob/main/docs/reference/platform-support.md#capability-matrix
+
+# General settings
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#general
+[general]
+excluded_apps = []                          # Bundle IDs, e.g. "com.apple.Terminal"
+passthrough_unbounded_keys = false
+should_exit_after_passthrough = false
+passthrough_unbounded_keys_blacklist = []
+hide_overlay_in_screen_share = false
+# exec_shell = "/bin/zsh"                    # Deprecated, removed in v2. Use [general.shell]
+# exec_shell_args = ["-lc"]                  # Deprecated, removed in v2. Use [general.shell]
+
+# The keyboard layout keys are named in, per platform. Empty = auto
+[general.kb_layout_to_use]
+darwin = ""
+linux = ""
+windows = ""
+
+# The shell an exec step runs on each platform. The command string is appended last
+[general.shell]
+darwin = ["/bin/zsh", "-lc"]
+linux = ["/bin/bash", "-lc"]
+windows = ['C:\Windows\System32\cmd.exe', "/c"]
+
+# What a Primary hotkey means on each platform, so one file serves every machine
+[general.primary_modifier]
+darwin = "Ctrl"
+linux = "Ctrl"
+windows = "Ctrl"
+
+# Theme palette
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#theme
+[theme.light]
+# surface = "#EEF2FF"
+# accent = "#465FBC"
+# accent_alt = "#0B2377"
+# on_accent_alt = "#F8FAFF"
+# text = "#17327A"
+surface = "#151515"
+accent = "#e0e0e0"
+accent_alt = "#666666"
+on_accent_alt = "#000000"
+text = "#e0e0e0"
+
+[theme.dark]
+# surface = "#0A1338"
+# accent = "#6E82D6"
+# accent_alt = "#8FA2F0"
+# on_accent_alt = "#081022"
+# text = "#E8EEFF"
+surface = "#151515"
+accent = "#e0e0e0"
+accent_alt = "#666666"
+on_accent_alt = "#000000"
+text = "#e0e0e0"
+
+# Hotkeys
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#hotkeys
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/cli.md
+[hotkeys]
+"Primary+Shift+Alt+Space" = "hints"
+"Primary+Shift+Alt+Cmd+G" = "grid"
+"Primary+Shift+Alt+G" = "recursive_grid"
+"Primary+Shift+Alt+Cmd+B" = "bisect"
+"Primary+Shift+Alt+Cmd+S" = "scroll"
+
+# Macros
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#macros
+#
+[macros]
+# click_and_exit = ["action left_click --bail-on-error", "idle"]
+# click_at = ["action move_mouse --x $1 --y $2", "action left_click"]
+click_and_refresh = ["action left_click --bail-on-error", "hints"]
+#
+# [hints.hotkeys]
+# "Enter" = "macro click_and_exit"
+
+# Declared modes
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#modes
+#
+# [modes.window]
+# indicator = "Window"
+#
+# [modes.window.hotkeys]
+# "h" = "exec yabai -m window --focus west"
+# "l" = "exec yabai -m window --focus east"
+# "s" = "scroll"
+#
+# [hotkeys]
+# "Primary+Shift+W" = "mode window"
+
+# Hooks: steps run when something happens, written like any binding.
+# exec steps see the event in NERU_EVENT and the NERU_* variables the
+# reference lists for it, such as NERU_MODE or NERU_BUNDLE_ID.
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#hooks
+#
+# [hooks]
+# on_mode_enter = "exec sketchybar --trigger neru_mode MODE=\"$NERU_MODE\""
+# on_mode_exit = "exec [ \"$NERU_REASON\" = switched ] || sketchybar --trigger neru_mode MODE=idle"
+# on_select = []                        # NERU_MODE, NERU_ACTION, NERU_X, NERU_Y
+# on_app_focus = []
+# on_enable = []
+# on_disable = []
+# on_config_reload = []
+# on_mission_control_activated = []     # macOS, needs hints.detect_mission_control
+# on_mission_control_deactivated = []
+# on_scroll_invert = []                 # NERU_ON
+# on_screen_share_hide = []             # NERU_ON
+# on_cursor_save = []                   # NERU_SLOT, NERU_X, NERU_Y
+# on_cursor_restore = []                # NERU_SLOT
+# on_sticky_modifiers = []              # needs sticky_modifiers.enabled, NERU_MODIFIERS
+# on_monitor_move = []                  # NERU_MONITOR
+# on_screen_change = []
+# on_ready = []
+# on_quit = []                          # exec steps only, waited on for one second
+
+# Hint mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#hints
+[hints]
+enabled = true
+strategy = "axtree"                         # axtree, vision, contour, segment
+capture_scope = "window"                    # window, screen
+hint_characters = "asdfghjkl"
+label_direction = "normal"                  # normal, reverse
+max_depth = 50                              # 0 = unlimited
+include_menubar_hints = true
+additional_menubar_hints_targets = [
+    "com.apple.TextInputMenuAgent",
+    "com.apple.controlcenter",
+    "com.apple.systemuiserver",
+    "com.y3owk1n.neru",
+]
+include_dock_hints = false
+include_nc_hints = false
+include_stage_manager_hints = false
+include_pip_hints = true
+include_screen_capture_hints = false
+detect_mission_control = false
+# No default, so these stay commented out.
+# on_mission_control_activated = "idle"     # Deprecated, removed in v2. Use [hooks]
+# on_mission_control_deactivated = ["hints"]  # Deprecated, removed in v2. Use [hooks]
+clickable_roles = [
+    ## Semantic roles, valid on every platform. `neru roles` lists them.
+    "button",
+    "menu_button",
+    "popup_button",
+    "combo_box",
+    "checkbox",
+    "radio",
+    "switch",
+    "disclosure",
+    "link",
+    "text_field",
+    "text_area",
+    "slider",
+    "tab",
+    "menu_item",
+    "cell",
+    "row",
+    "list_item",
+    ## Native roles (ax:, atspi:, uia:), ignored on other platforms.
+    "ax:AXGenericElement",
+]
+ignore_clickable_check = false
+visible_check_enabled = false
+
+[hints.hotkeys]
+"Escape" = "idle"
+"/" = "action search_hints"
+"Backspace" = "action backspace"
+"Tab" = "action cycle_hint"
+"Shift+Tab" = "action cycle_hint --backward"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+"Space" = "macro click_and_refresh"
+
+[hints.ui]
+font_size = 14
+font_family = ""                            # Empty = platform sans
+border_radius = -1                          # -1 = auto pill
+padding_x = -1                              # -1 = auto
+padding_y = -1                              # -1 = auto
+border_width = 1
+placement = "bottom"                        # top, center, bottom
+
+[hints.search_input_ui]
+font_size = 14
+font_family = ""                            # Empty = platform sans
+border_radius = -1                          # -1 = auto pill
+padding_x = -1                              # -1 = auto
+padding_y = -1                              # -1 = auto
+border_width = 1
+position = "bottom_center"                  # top_left, top_center, top_right, center, bottom_left, bottom_center, bottom_right
+x_offset = 0
+y_offset = 24
+width = 320                                 # px
+
+[hints.boundary_highlight]
+enabled = false
+border_width = 1
+border_radius = -1                          # -1 = auto pill
+
+[hints.vision]
+detect_text = true
+detect_rectangles = true
+request_timeout_ms = 5000
+minimum_confidence = 0.0                    # 0.0 to 1.0
+merge_iou_threshold = 0.5
+rectangle_max_candidates = 100
+rectangle_min_size = 0.01                   # Fraction of width/height (0.01 = 1%)
+rectangle_min_aspect = 0.3                  # width/height
+rectangle_max_aspect = 10.0                 # width/height
+button_min_confidence = 0.3
+button_min_aspect = 0.8                     # width/height
+button_max_aspect = 8.0                     # width/height
+button_icon_max_size = 48                   # px
+link_min_aspect = 5.0                       # width/height
+link_max_height = 40                        # px
+link_min_width = 50                         # px
+image_min_size = 48                         # px
+checkbox_max_size = 32                      # px
+generic_clickable_min_confidence = 0.5
+
+[hints.contour]
+request_timeout_ms = 2000
+edge_low_threshold = 70                     # 0-255 luma
+edge_high_threshold = 220                   # 0-255 luma
+min_target_width = 7.0                      # logical px
+min_target_height = 3.0                     # logical px
+max_target_width = 650.0                    # logical px
+max_target_height = 160.0                   # logical px
+flat_line_height = 6.0
+container_height = 50.0
+same_center_slack = 8.0                     # px
+square_icon_size = 40.0
+square_icon_slack = 5.0
+
+[hints.segment]
+targets = "words"                           # words, phrases, controls
+
+# Grid mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#grid
+[grid]
+enabled = true
+capture_scope = "screen"                    # screen, window
+characters = "abcdefghijklmnpqrstuvwxyz"
+sublayer_keys = "abcdefghijklmnpqrstuvwxyz" # First 9 used (empty = infer from characters)
+max_label_length = 4                        # 2-4
+row_labels = ""                             # Empty = infer from characters
+col_labels = ""                             # Empty = infer from characters
+live_match_update = true
+hide_unmatched = true
+prewarm_enabled = true
+enable_gc = false
+
+[grid.hotkeys]
+"Escape" = "idle"
+"`" = "toggle-cursor-follow-selection"
+"Space" = "action reset"
+"Backspace" = "action backspace"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+
+[grid.ui]
+font_size = 14
+font_family = ""
+border_width = 1
+
+# Recursive grid mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#recursive_grid
+[recursive_grid]
+enabled = true
+capture_scope = "screen"                    # screen, window
+grid_cols = 3                               # >= 1
+grid_rows = 3                               # >= 1
+keys = "rtyfghvbn"                          # grid_cols * grid_rows chars
+min_size_width = 1                          # px
+min_size_height = 1                         # px
+max_depth = 10                              # 1-20
+
+[recursive_grid.animation]
+enabled = true
+duration_ms = 50
+
+[recursive_grid.hotkeys]
+"Escape" = "idle"
+"`" = "toggle-cursor-follow-selection"
+"Space" = "action reset"
+"Backspace" = "action backspace"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+
+[recursive_grid.ui]
+line_width = 1
+font_size = 14
+font_family = ""
+label_background = true
+label_background_padding_x = -1
+label_background_padding_y = -1
+label_background_border_radius = -1
+label_background_border_width = 1
+label_char = ""                             # Empty = use key
+min_font_size = 6
+label_autohide_multiplier = 1.5             # 0 = disable
+sub_key_preview = false
+sub_key_preview_font_size = 8
+sub_key_preview_autohide_multiplier = 1.5   # 0 = disable
+sub_key_preview_label_char = ""             # Empty = use key
+
+# Bisect mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#bisect
+[bisect]
+enabled = true
+capture_scope = "screen"                    # screen, window
+
+[bisect.animation]
+enabled = true
+duration_ms = 50
+
+[bisect.hotkeys]
+"Escape" = "idle"
+"`" = "toggle-cursor-follow-selection"
+"h" = "action bisect --direction=left"
+"j" = "action bisect --direction=down"
+"k" = "action bisect --direction=up"
+"l" = "action bisect --direction=right"
+"y" = "action bisect --direction=up_left"
+"u" = "action bisect --direction=up_right"
+"b" = "action bisect --direction=down_left"
+"n" = "action bisect --direction=down_right"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+"Space" = "action reset"
+"Backspace" = "action backspace"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+
+[bisect.ui]
+line_width = 1
+font_size = 14
+font_family = ""
+label_background = true
+label_background_padding_x = -1
+label_background_padding_y = -1
+label_background_border_radius = -1
+label_background_border_width = 1
+label_char = ""                             # Empty = use key
+min_font_size = 6
+label_autohide_multiplier = 1.5             # 0 = disable
+sub_key_preview = false                     # No effect in bisect
+sub_key_preview_font_size = 8
+sub_key_preview_autohide_multiplier = 1.5
+sub_key_preview_label_char = ""
+
+# Virtual pointer
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#virtual_pointer
+[virtual_pointer.ui]
+char = "●"
+font_size = 8
+font_family = ""
+
+# Mouse action indicator (macOS)
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#mouse_action_indicator
+[mouse_action_indicator]
+enabled = true
+actions = [
+  "left_click",
+  "right_click",
+  "middle_click",
+  "left_mouse_down",
+  "left_mouse_up",
+  "right_mouse_down",
+  "right_mouse_up",
+  "middle_mouse_down",
+  "middle_mouse_up",
+  "left_mouse_toggle",
+  "right_mouse_toggle",
+  "middle_mouse_toggle",
+]
+
+[mouse_action_indicator.ui]
+size = 36
+border_width = 2
+shape = "circle"                            # circle, square
+
+[mouse_action_indicator.animation]
+duration_ms = 260
+start_scale = 0.55
+end_scale = 1.35
+start_opacity = 0.85
+end_opacity = 0.0
+easing = "ease_out"                         # linear, ease_in, ease_out, ease_in_out
+
+# Monitor select mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#monitor_select
+[monitor_select]
+enabled = false
+characters = "123456789"
+
+[monitor_select.ui]
+font_size = 96
+font_family = ""
+subtitle_font_size = 18
+subtitle_font_family = ""                   # Empty = font_family
+border_radius = -1                          # -1 = auto
+padding_x = -1                              # -1 = auto
+padding_y = -1                              # -1 = auto
+border_width = 0
+backdrop_color = ""
+
+[monitor_select.hotkeys]
+"Escape" = "idle"
+
+# Scroll mode
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#scroll
+[scroll]
+scroll_step = 50                            # px
+scroll_step_half = 500                      # px
+scroll_step_full = 1000000                  # px
+invert_scroll = false
+
+[scroll.hotkeys]
+"Escape" = "idle"
+"k" = "action scroll_up"
+"j" = "action scroll_down"
+"h" = "action scroll_left"
+"l" = "action scroll_right"
+"gg" = "action go_top"
+"Shift+G" = "action go_bottom"
+"u" = "action page_up"
+"PageUp" = "action page_up"
+"d" = "action page_down"
+"PageDown" = "action page_down"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+
+# Mode indicator
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#mode_indicator
+[mode_indicator]
+
+[mode_indicator.scroll]
+enabled = true
+text = "Scroll"
+
+[mode_indicator.hints]
+enabled = false
+text = "Hints"
+
+[mode_indicator.grid]
+enabled = false
+text = "Grid"
+
+[mode_indicator.recursive_grid]
+enabled = false
+text = "Recursive Grid"
+
+[mode_indicator.bisect]
+enabled = false
+text = "Bisect"
+
+[mode_indicator.monitor_select]
+enabled = false
+text = "Monitor Select"
+
+[mode_indicator.ui]
+font_size = 14
+font_family = ""
+border_width = 1
+padding_x = -1
+padding_y = -1
+border_radius = -1
+indicator_x_offset = 20
+indicator_y_offset = 20
+
+# Sticky modifiers
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#sticky_modifiers
+[sticky_modifiers]
+enabled = true
+tap_max_duration = 300                      # ms, 0 = always toggle
+
+[sticky_modifiers.ui]
+font_size = 14
+font_family = ""
+border_width = 1
+padding_x = -1
+padding_y = -1
+border_radius = -1
+indicator_x_offset = -40
+indicator_y_offset = 20
+
+# Smooth cursor
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#smooth_cursor
+[smooth_cursor]
+move_mouse_enabled = false
+steps = 10
+max_duration = 200                          # ms
+duration_per_pixel = 0.1                    # ms per px
+relative_movement_duration = 50             # ms
+
+# Smooth scroll
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#smooth_scroll
+[smooth_scroll]
+enabled = false
+steps = 20
+max_duration = 180                          # ms
+duration_per_pixel = 1.00                   # ms per px
+
+# Held-key repeat
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#held_repeat
+[held_repeat]
+enabled = false
+initial_delay_ms = 50
+interval_ms = 50
+accel_enabled = false
+accel_ramp_ms = 500
+accel_max_multiplier = 4.0
+accel_targets = ["move_mouse_relative"]
+
+# Systray
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#systray
+[systray]
+enabled = true                              # false = headless mode
+
+# Logging
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#logging
+[logging]
+log_level = "info"                          # debug, info, warn, error
+log_file = ""                               # Empty = default location
+disable_file_logging = true
+max_file_size = 10                          # MB
+max_backups = 5
+max_age = 30                                # days
