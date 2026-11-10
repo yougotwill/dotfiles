@@ -46,6 +46,7 @@ splitWidthMultiplier = 1.0
 useGlobalGaps = true
 
 [focus]
+clickFocusWithoutScrolling = false
 crossesMonitorAtEdge = false
 edgeNavigationInterval = 1.5
 followsMouse = false
@@ -73,9 +74,9 @@ defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift"
 ipcEnabled = true
-preventSleepEnabled = true
+preventSleepEnabled = false
 systemHyperTrigger = "None"
-updateChecksEnabled = false
+updateChecksEnabled = true
 workspaceAutoBackAndForth = false
 
 [gestures]
@@ -92,7 +93,7 @@ overviewGestureFingerCount = 4
 resizePreviewStyle = "live"
 scrollEnabled = true
 scrollModifierKey = "optionShift"
-scrollSensitivity = 3.0000000000000004
+scrollSensitivity = 2.5000000000000004
 trackpadScrollStyle = "snap"
 windowGestureSensitivity = 1.0
 windowMoveEnabled = false
@@ -144,7 +145,7 @@ centerFocusedColumn = "onOverflow"
 containerPrimarySpanPresets = [0.33, 0.5, 0.6666666666666666, 0.85]
 edgeGaps = true
 infiniteLoop = false
-moveWindowStacksIntoColumn = true
+moveWindowStacksIntoColumn = false
 overscrollVisibleStripPercent = 5
 resizeStepPercent = 5
 singleWindowFit = "container_primary_span"
@@ -206,7 +207,7 @@ position = "top"
 widthPercent = 100.0
 
 [routing]
-mode = "custom"
+mode = "macOS"
 
 [[routing.arrangements]]
 id = "4714B645-6F99-46E8-B76C-304298E77BFD"
@@ -238,6 +239,7 @@ weather = true
 [statusBar]
 showAppNames = false
 showIcon = true
+showLayout = false
 showWorkspaceName = false
 useWorkspaceId = false
 
@@ -249,11 +251,11 @@ showControls = true
 showMenuItems = true
 
 [windowSwitcher]
-commandTab = "activeWorkspace"
-enabled = false
-optionTab = "allWorkspaces"
-order = "omniLayout"
-scope = "allWorkspaces"
+commandTab = "disabled"
+enabled = true
+optionTab = "activeWorkspace"
+order = "lastUsed"
+scope = "activeWorkspace"
 showFooter = true
 
 [workspaceBar]
@@ -301,15 +303,23 @@ titleRegex = "Picture.*(in)?.*[Pp]icture"
 
 [[appRules]]
 assignToWorkspace = "3"
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
-bundleId = "com.spotify.client"
-id = "8E2119D6-E29B-46A7-B29B-3E1815387797"
+bundleId = "com.barnabas.absorb"
+id = "B81540CB-CDA9-48A7-83AE-37A55A39CC09"
 
 [[appRules]]
 assignToWorkspace = "3"
 bundleId = "com.foobar2000.mac"
 id = "E1CC8754-2F55-4CBA-BB4C-7AC40247C62E"
+
+[[appRules]]
+assignToWorkspace = "3"
+bundleId = "com.spotify.client"
+id = "8E2119D6-E29B-46A7-B29B-3E1815387797"
+
+[[appRules]]
+assignToWorkspace = "3"
+bundleId = "com.unicornsonlsd.finamp-ios"
+id = "0C2FF59E-2ED4-4576-996A-306D61C2F5E8"
 
 [[appRules]]
 bundleId = "com.dinoki.osaurus"
@@ -324,6 +334,14 @@ layout = "float"
 [[appRules]]
 bundleId = "com.wulkano.kap"
 id = "20B3107D-D1EC-45AC-89F6-B02AE5C0A7FA"
+layout = "float"
+
+[[appRules]]
+appNameSubstring = "Chronoid"
+axRole = "AXWindow"
+axSubrole = "AXStandard Window"
+bundleId = "com.vu.Chronoid"
+id = "E66727A7-4590-4B69-91B7-77CC3D3BCCA8"
 layout = "float"
 
 [[appRules]]
@@ -352,13 +370,6 @@ bundleId = "org.mozilla.thunderbird"
 id = "4A586BB1-5308-4CAC-B86A-059BF80C26BD"
 layout = "float"
 titleRegex = "Check Spelling|^Send Later - .*$|^Sending Message - .*$"
-
-[[appRules]]
-axRole = "AXWindow"
-axSubrole = "AXStandardWindow"
-bundleId = "com.vu.Chronoid"
-id = "E66727A7-4590-4B69-91B7-77CC3D3BCCA8"
-layout = "tile"
 
 [[hotkeys]]
 binding = "Unassigned"
@@ -1113,11 +1124,11 @@ binding = "Unassigned"
 id = "newShellAppWindow.example"
 
 [[hotkeys]]
-binding = "Hyper+S"
+binding = "Hyper+Command+D"
 id = "openCommandPalette"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Hyper+Command+S"
 id = "openCommandPalette.windows"
 
 [[hotkeys]]
@@ -1199,10 +1210,6 @@ id = "toggleSystemStats"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleShellWidget.hidden-bar"
-
-[[hotkeys]]
-binding = "Unassigned"
-id = "toggleShellWidget.lake"
 
 [[hotkeys]]
 binding = "Unassigned"
