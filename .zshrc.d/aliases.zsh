@@ -173,6 +173,7 @@ alias tmuxconf='${EDITOR} ~/.tmux.conf'
 alias update='bupdate && mas outdated && pnpm outdated -g && pipx list --outdated'
 alias upgrade='bupgrade && mas upgrade && pnpm upgrade -g && pipx upgrade-all && spicetify upgrade'
 alias clean='bclean'
+alias pinned='bpinned'
 
 # vim
 alias vimrc='${EDITOR} ~/.vimrc'

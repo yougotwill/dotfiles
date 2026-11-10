@@ -1,4 +1,4 @@
    magic-wormhole==0.24.0
-   pdm==2.29.5
+   pdm==2.29.7
    spotdl==4.6.0
    yewtube==2.13.1

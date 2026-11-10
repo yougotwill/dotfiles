@@ -12,3 +12,4 @@ tap "mac-cleanup/mac-cleanup-py", trusted: true
 tap "mcasper/formulae", trusted: true
 tap "nohajc/anylinuxfs", trusted: { formulae: ["anylinuxfs"] }
 tap "relikd/tap", trusted: { casks: ["url-scheme-defaults"] }
+tap "y3owk1n/tap", trusted: { casks: ["neru"] }

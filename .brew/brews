@@ -119,7 +119,7 @@ brew "mpv"
 # Cross-platform ncurses Spotify client written in Rust
 brew "ncspot"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", pin: true
 # Net top tool grouping bandwidth per process
 brew "nethogs"
 # Open source suite of directory software

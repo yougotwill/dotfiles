@@ -64,6 +64,8 @@ cask "drawio"
 cask "dteoh-devdocs"
 # Matrix collaboration client
 cask "element"
+# Interface design and prototyping tool
+cask "figcraft"
 # Video editor
 cask "filmcraft"
 # Web browser
@@ -183,6 +185,8 @@ cask "moonfin"
 cask "music-decoy"
 # Scrolling tiling window manager
 cask "guria/tap/nehir@rc", trusted: true
+# Keyboard driven navigation
+cask "y3owk1n/tap/neru", trusted: true
 # Dual-pane file manager
 cask "nimble-commander"
 # Open-source software for live streaming and screen recording
